@@ -5,7 +5,7 @@ namespace Navia\Tests;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Orchestra\Testbench\BrowserKit\TestCase as OrchestraTestCase;
 use Navia\Models\User;
-use Navia\VoyagerServiceProvider;
+use Navia\NaviaServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
@@ -47,7 +47,7 @@ class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            VoyagerServiceProvider::class,
+            NaviaServiceProvider::class,
         ];
     }
 
@@ -86,7 +86,7 @@ class TestCase extends OrchestraTestCase
     {
         $this->artisan('voyager:install', ['--with-dummy' => $this->withDummy]);
 
-        app(VoyagerServiceProvider::class, ['app' => $this->app])->loadAuth();
+        app(NaviaServiceProvider::class, ['app' => $this->app])->loadAuth();
 
         if (file_exists(base_path('routes/web.php'))) {
             require base_path('routes/web.php');

@@ -25,12 +25,12 @@ use Navia\Models\Setting;
 use Navia\Policies\BasePolicy;
 use Navia\Policies\MenuItemPolicy;
 use Navia\Policies\SettingPolicy;
-use Navia\Providers\VoyagerDummyServiceProvider;
+use Navia\Providers\NaviaDummyServiceProvider;
 use Navia\Providers\VoyagerEventServiceProvider;
 use Navia\Seed;
 use Navia\Translator\Collection as TranslatorCollection;
 
-class VoyagerServiceProvider extends ServiceProvider
+class NaviaServiceProvider extends ServiceProvider
 {
     /**
      * The policy mappings for the application.
@@ -57,7 +57,7 @@ class VoyagerServiceProvider extends ServiceProvider
     {
         $this->app->register(VoyagerEventServiceProvider::class);
         $this->app->register(ImageServiceProvider::class);
-        $this->app->register(VoyagerDummyServiceProvider::class);
+        $this->app->register(NaviaDummyServiceProvider::class);
 
         $loader = AliasLoader::getInstance();
         $loader->alias('Voyager', VoyagerFacade::class);
@@ -296,7 +296,7 @@ class VoyagerServiceProvider extends ServiceProvider
                 $this->registerPolicies();
             }
         } catch (\PDOException $e) {
-            Log::info('No database connection yet in VoyagerServiceProvider loadAuth(). No worries, this is not a problem!');
+            Log::info('No database connection yet in NaviaServiceProvider loadAuth(). No worries, this is not a problem!');
         }
 
         // Gates

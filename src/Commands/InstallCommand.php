@@ -6,8 +6,8 @@ use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Composer;
 use Symfony\Component\Console\Input\InputOption;
-use Navia\Providers\VoyagerDummyServiceProvider;
-use Navia\VoyagerServiceProvider;
+use Navia\Providers\NaviaDummyServiceProvider;
+use Navia\NaviaServiceProvider;
 
 class InstallCommand extends Command
 {
@@ -89,7 +89,7 @@ class InstallCommand extends Command
         // Publish only relevant resources on install
         $tags = ['seeders'];
 
-        $this->call('vendor:publish', ['--provider' => VoyagerServiceProvider::class, '--tag' => $tags]);
+        $this->call('vendor:publish', ['--provider' => NaviaServiceProvider::class, '--tag' => $tags]);
 
         $this->info('Migrating the database tables into your application');
         $this->call('migrate', ['--force' => $this->option('force')]);
@@ -124,9 +124,9 @@ class InstallCommand extends Command
         if ($this->option('with-dummy')) {
             $this->info('Publishing dummy content');
             $tags = ['dummy_seeders', 'dummy_content', 'dummy_config', 'dummy_migrations'];
-            $this->call('vendor:publish', ['--provider' => VoyagerDummyServiceProvider::class, '--tag' => $tags]);
+            $this->call('vendor:publish', ['--provider' => NaviaDummyServiceProvider::class, '--tag' => $tags]);
         } else {
-            $this->call('vendor:publish', ['--provider' => VoyagerServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
+            $this->call('vendor:publish', ['--provider' => NaviaServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
         }
 
         $this->info('Dumping the autoloaded files and reloading all new files');

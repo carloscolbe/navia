@@ -6,7 +6,7 @@ use Arrilot\Widgets\ServiceProvider as WidgetServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Navia\Seed;
 
-class VoyagerDummyServiceProvider extends ServiceProvider
+class NaviaDummyServiceProvider extends ServiceProvider
 {
     /**
      * Register the application services.
