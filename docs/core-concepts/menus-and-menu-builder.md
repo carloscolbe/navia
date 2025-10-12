@@ -1,6 +1,6 @@
 # Menus and Menu Builder
 
-With Voyager you can easily create menus for your application. In fact the Voyager admin is using the menu builder for the navigation you use on the left hand side.
+With Navia you can easily create menus for your application. In fact the Navia admin is using the menu builder for the navigation you use on the left hand side.
 
 You can view your current Menus by clicking on the _Tools-&gt;Menu Builder_ button. You can add, edit, or delete any current menu. This means that you can create a new menu for the header, sidebar, or footer of your site. Create as many menus as you would like.
 

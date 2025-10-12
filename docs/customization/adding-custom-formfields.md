@@ -1,6 +1,6 @@
 # Adding custom Formfields
 
-You can easily add a new Formfield to Voyager. In the example below we will add a number form field \(which is already included by default in Voyager\).
+You can easily add a new Formfield to Navia. In the example below we will add a number form field \(which is already included by default in Navia\).
 
 First we create a new class in our project \(it doesn't matter where it is placed\) called `NumberFormField`
 
@@ -9,7 +9,7 @@ First we create a new class in our project \(it doesn't matter where it is place
 
 namespace App\FormFields;
 
-use TCG\Voyager\FormFields\AbstractHandler;
+use Navia\FormFields\AbstractHandler;
 
 class NumberFormField extends AbstractHandler
 {
@@ -44,14 +44,14 @@ Next, we will create the view specified above.
 
 In the view we can add whatever logic we want.
 
-When we are done with our view, we will tell Voyager that we have a new form field. We will do this in a service provider \(in the example below we use the `AppServiceProvider`.
+When we are done with our view, we will tell Navia that we have a new form field. We will do this in a service provider \(in the example below we use the `AppServiceProvider`.
 
 ```php
 <?php
 
 namespace App\Providers;
 
-use TCG\Voyager\Facades\Voyager;
+use Navia\Facades\Navia;
 use App\FormFields\NumberFormField;
 use Illuminate\Support\ServiceProvider;
 
@@ -61,7 +61,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function register()
     {
-        Voyager::addFormField(NumberFormField::class);
+        Navia::addFormField(NumberFormField::class);
     }
 }
 ```

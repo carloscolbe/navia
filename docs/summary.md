@@ -4,7 +4,7 @@
 
 ## Getting started
 
-* [What is Voyager](getting-started/what-is-voyager.md)
+* [What is Navia](getting-started/what-is-navia.md)
 * [Prerequisites](getting-started/prerequisites.md)
 * [Installation](getting-started/installation.md)
 * [Upgrading](getting-started/upgrading.md)

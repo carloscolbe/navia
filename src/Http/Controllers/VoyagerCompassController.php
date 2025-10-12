@@ -21,7 +21,7 @@ class VoyagerCompassController extends Controller
         // Check permission
         $this->authorize('browse_compass');
         //Check if app is not local
-        if (!\App::environment('local') && !config('voyager.compass_in_production', false)) {
+        if (!\App::environment('local') && !config('navia.compass_in_production', false)) {
             throw new AccessDeniedHttpException();
         }
 
@@ -46,7 +46,7 @@ class VoyagerCompassController extends Controller
             app('files')->delete(LogViewer::pathToLogFile(base64_decode($this->request->input('del'))));
 
             return redirect($this->request->url().'?logs=true')->with([
-                'message'    => __('voyager::compass.logs.delete_success').' '.base64_decode($this->request->input('del')),
+                'message'    => __('navia::compass.logs.delete_success').' '.base64_decode($this->request->input('del')),
                 'alert-type' => 'success',
             ]);
         } elseif ($this->request->has('delall')) {
@@ -56,7 +56,7 @@ class VoyagerCompassController extends Controller
             }
 
             return redirect($this->request->url().'?logs=true')->with([
-                'message'    => __('voyager::compass.logs.delete_all_success'),
+                'message'    => __('navia::compass.logs.delete_all_success'),
                 'alert-type' => 'success',
             ]);
         }
@@ -84,7 +84,7 @@ class VoyagerCompassController extends Controller
         // get the full list of artisan commands and store the output
         $commands = $this->getArtisanCommands();
 
-        return view('voyager::compass.index', compact('logs', 'files', 'current_file', 'active_tab', 'commands', 'artisan_output'))->with($message);
+        return view('navia::compass.index', compact('logs', 'files', 'current_file', 'active_tab', 'commands', 'artisan_output'))->with($message);
     }
 
     private function getArtisanCommands()

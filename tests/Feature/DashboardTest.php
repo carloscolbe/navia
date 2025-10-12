@@ -3,7 +3,7 @@
 namespace Navia\Tests\Feature;
 
 use Illuminate\Support\Facades\Auth;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Tests\TestCase;
 
 class DashboardTest extends TestCase
@@ -26,30 +26,30 @@ class DashboardTest extends TestCase
         // We must first login and visit the dashboard page.
         Auth::loginUsingId(1);
 
-        $this->visit(route('voyager.dashboard'))
-            ->see(__('voyager::generic.dashboard'));
+        $this->visit(route('navia.dashboard'))
+            ->see(__('navia::generic.dashboard'));
 
         // Test UserDimmer widget
-        $this->see(trans_choice('voyager::dimmer.user', 1))
-             ->click(__('voyager::dimmer.user_link_text'))
-             ->seePageIs(route('voyager.users.index'))
-             ->click(__('voyager::generic.dashboard'))
-             ->seePageIs(route('voyager.dashboard'));
+        $this->see(trans_choice('navia::dimmer.user', 1))
+             ->click(__('navia::dimmer.user_link_text'))
+             ->seePageIs(route('navia.users.index'))
+             ->click(__('navia::generic.dashboard'))
+             ->seePageIs(route('navia.dashboard'));
 
         // Test PostDimmer widget
-        $this->see(trans_choice('voyager::dimmer.post', 4))
-             ->click(__('voyager::dimmer.post_link_text'))
-             ->seePageIs(route('voyager.posts.index'))
-             ->click(__('voyager::generic.dashboard'))
-             ->seePageIs(route('voyager.dashboard'));
+        $this->see(trans_choice('navia::dimmer.post', 4))
+             ->click(__('navia::dimmer.post_link_text'))
+             ->seePageIs(route('navia.posts.index'))
+             ->click(__('navia::generic.dashboard'))
+             ->seePageIs(route('navia.dashboard'));
 
         // Test PageDimmer widget
-        $this->see(trans_choice('voyager::dimmer.page', 1))
-             ->click(__('voyager::dimmer.page_link_text'))
-             ->seePageIs(route('voyager.pages.index'))
-             ->click(__('voyager::generic.dashboard'))
-             ->seePageIs(route('voyager.dashboard'))
-             ->see(__('voyager::generic.dashboard'));
+        $this->see(trans_choice('navia::dimmer.page', 1))
+             ->click(__('navia::dimmer.page_link_text'))
+             ->seePageIs(route('navia.pages.index'))
+             ->click(__('navia::generic.dashboard'))
+             ->seePageIs(route('navia.dashboard'))
+             ->see(__('navia::generic.dashboard'));
     }
 
     /**
@@ -65,12 +65,12 @@ class DashboardTest extends TestCase
             $user->role->permissions()->where('key', 'browse_users')->first()
         );
 
-        $this->visit(route('voyager.dashboard'))
-            ->see(__('voyager::generic.dashboard'));
+        $this->visit(route('navia.dashboard'))
+            ->see(__('navia::generic.dashboard'));
 
         // Test UserDimmer widget
-        $this->dontSee('<h4>1 '.trans_choice('voyager::dimmer.user', 1).'</h4>')
-             ->dontSee(__('voyager::dimmer.user_link_text'));
+        $this->dontSee('<h4>1 '.trans_choice('navia::dimmer.user', 1).'</h4>')
+             ->dontSee(__('navia::dimmer.user_link_text'));
     }
 
     /**
@@ -86,12 +86,12 @@ class DashboardTest extends TestCase
             $user->role->permissions()->where('key', 'browse_posts')->first()
         );
 
-        $this->visit(route('voyager.dashboard'))
-            ->see(__('voyager::generic.dashboard'));
+        $this->visit(route('navia.dashboard'))
+            ->see(__('navia::generic.dashboard'));
 
         // Test PostDimmer widget
-        $this->dontSee('<h4>1 '.trans_choice('voyager::dimmer.post', 1).'</h4>')
-             ->dontSee(__('voyager::dimmer.post_link_text'));
+        $this->dontSee('<h4>1 '.trans_choice('navia::dimmer.post', 1).'</h4>')
+             ->dontSee(__('navia::dimmer.post_link_text'));
     }
 
     /**
@@ -107,12 +107,12 @@ class DashboardTest extends TestCase
             $user->role->permissions()->where('key', 'browse_pages')->first()
         );
 
-        $this->visit(route('voyager.dashboard'))
-            ->see(__('voyager::generic.dashboard'));
+        $this->visit(route('navia.dashboard'))
+            ->see(__('navia::generic.dashboard'));
 
         // Test PageDimmer widget
-        $this->dontSee('<h4>1 '.trans_choice('voyager::dimmer.page', 1).'</h4>')
-             ->dontSee(__('voyager::dimmer.page_link_text'));
+        $this->dontSee('<h4>1 '.trans_choice('navia::dimmer.page', 1).'</h4>')
+             ->dontSee(__('navia::dimmer.page_link_text'));
     }
 
     /**
@@ -125,7 +125,7 @@ class DashboardTest extends TestCase
         // We must first login and visit the dashboard page.
         Auth::loginUsingId(1);
 
-        $this->visit(route('voyager.dashboard'))
-             ->see(Voyager::getVersion());
+        $this->visit(route('navia.dashboard'))
+             ->see(Navia::getVersion());
     }
 }

@@ -16,16 +16,16 @@
     <coordinates
         inline-template
         ref="coordinates"
-        api-key="{{ config('voyager.googlemaps.key') }}"
-        :points='@json($dataTypeContent->getCoordinates() && count($dataTypeContent->getCoordinates()) ? $dataTypeContent->getCoordinates() : [[ 'lat' => config('voyager.googlemaps.center.lat'), 'lng' => config('voyager.googlemaps.center.lng') ]])'
+        api-key="{{ config('navia.googlemaps.key') }}"
+        :points='@json($dataTypeContent->getCoordinates() && count($dataTypeContent->getCoordinates()) ? $dataTypeContent->getCoordinates() : [[ 'lat' => config('navia.googlemaps.center.lat'), 'lng' => config('navia.googlemaps.center.lng') ]])'
         :show-autocomplete="{{ $showAutocomplete }}"
         :show-lat-lng="{{ $showLatLng }}"
-        :zoom={{ config('voyager.googlemaps.zoom') }}
+        :zoom={{ config('navia.googlemaps.zoom') }}
     >
         <div>
             <div class="form-group">
                 <div class="col-md-5" v-if="showAutocomplete">
-                    <label class="control-label">{{ __('voyager::generic.find_by_place') }}</label>
+                    <label class="control-label">{{ __('navia::generic.find_by_place') }}</label>
                     <input
                         class="form-control"
                         type="text"
@@ -35,7 +35,7 @@
                     />
                 </div>
                 <div class="col-md-2" v-if="showLatLng">
-                    <label class="control-label">{{ __('voyager::generic.latitude') }}</label>
+                    <label class="control-label">{{ __('navia::generic.latitude') }}</label>
                     <input
                         class="form-control"
                         type="number"
@@ -48,7 +48,7 @@
                     />
                 </div>
                 <div class="col-md-2" v-if="showLatLng">
-                    <label class="control-label">{{ __('voyager::generic.longitude') }}</label>
+                    <label class="control-label">{{ __('navia::generic.longitude') }}</label>
                     <input
                         class="form-control"
                         type="number"

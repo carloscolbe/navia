@@ -1,6 +1,6 @@
 # Formfields
 
-Formfields are the hearth of Voyagers BREAD-system.  
+Formfields are the hearth of Navias BREAD-system.  
 Each formfield represents a field in your database-table and one input (or output) in BREAD.  
 To tweak your formfields you can insert JSON options which are described in the following pages.  
 
@@ -8,7 +8,7 @@ All formfields share a handful options:
 
 ## Description
 
-All types can include a description in order to help your future self or other users using your Voyager admin panel to understand exactly what a specific BREAD input field is for, this can be defined in the `Optional Details` JSON input field:
+All types can include a description in order to help your future self or other users using your Navia admin panel to understand exactly what a specific BREAD input field is for, this can be defined in the `Optional Details` JSON input field:
 
 ```php
 {

@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Links',
         'documentation'         => 'Documentazione',
-        'voyager_homepage'      => 'Voyager Homepage',
+        'voyager_homepage'      => 'Navia Homepage',
     ],
     'commands'      => [
         'title'                 => 'Comandi',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Risorse',
-        'text'                  => 'Voyager resources to help you find things quicker.',
+        'text'                  => 'Navia resources to help you find things quicker.',
 
     ],
     'logs'          => [

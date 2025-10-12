@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Bağlantılar',
         'documentation'         => 'Dokümantasyon',
-        'voyager_homepage'      => 'Voyager Anasayfa',
+        'voyager_homepage'      => 'Navia Anasayfa',
     ],
     'commands'      => [
         'title'                 => 'Komutlar',

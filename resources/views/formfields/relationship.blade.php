@@ -17,14 +17,14 @@
                 @if(isset($query))
                     <p>{{ $query->{$options->label} }}</p>
                 @else
-                    <p>{{ __('voyager::generic.no_results') }}</p>
+                    <p>{{ __('navia::generic.no_results') }}</p>
                 @endif
 
             @else
 
                 <select
                     class="form-control select2-ajax" name="{{ $options->column }}"
-                    data-get-items-route="{{route('voyager.' . $dataType->slug.'.relation')}}"
+                    data-get-items-route="{{route('navia.' . $dataType->slug.'.relation')}}"
                     data-get-items-field="{{$row->field}}"
                     @if(!is_null($dataTypeContent->getKey())) data-id="{{$dataTypeContent->getKey()}}" @endif
                     data-method="{{ !is_null($dataTypeContent->getKey()) ? 'edit' : 'add' }}"
@@ -36,7 +36,7 @@
                     @endphp
 
                     @if(!$row->required)
-                        <option value="">{{__('voyager::generic.none')}}</option>
+                        <option value="">{{__('navia::generic.none')}}</option>
                     @endif
 
                     @foreach($query as $relationshipData)
@@ -59,7 +59,7 @@
             @if(isset($query))
                 <p>{{ $query->{$options->label} }}</p>
             @else
-                <p>{{ __('voyager::generic.no_results') }}</p>
+                <p>{{ __('navia::generic.no_results') }}</p>
             @endif
 
         @elseif($options->type == 'hasMany')
@@ -81,13 +81,13 @@
                         if(mb_strlen($string_values) > 25){ $string_values = mb_substr($string_values, 0, 25) . '...'; }
                     @endphp
                     @if(empty($selected_values))
-                        <p>{{ __('voyager::generic.no_results') }}</p>
+                        <p>{{ __('navia::generic.no_results') }}</p>
                     @else
                         <p>{{ $string_values }}</p>
                     @endif
                 @else
                     @if(empty($selected_values))
-                        <p>{{ __('voyager::generic.no_results') }}</p>
+                        <p>{{ __('navia::generic.no_results') }}</p>
                     @else
                         <ul>
                             @foreach($selected_values as $selected_value)
@@ -111,7 +111,7 @@
                         @endforeach
                     </ul>
                 @else
-                    <p>{{ __('voyager::generic.no_results') }}</p>
+                    <p>{{ __('navia::generic.no_results') }}</p>
                 @endif
 
             @endif
@@ -134,13 +134,13 @@
                         if(mb_strlen($string_values) > 25){ $string_values = mb_substr($string_values, 0, 25) . '...'; }
                     @endphp
                     @if(empty($selected_values))
-                        <p>{{ __('voyager::generic.no_results') }}</p>
+                        <p>{{ __('navia::generic.no_results') }}</p>
                     @else
                         <p>{{ $string_values }}</p>
                     @endif
                 @else
                     @if(empty($selected_values))
-                        <p>{{ __('voyager::generic.no_results') }}</p>
+                        <p>{{ __('navia::generic.no_results') }}</p>
                     @else
                         <ul>
                             @foreach($selected_values as $selected_value)
@@ -154,14 +154,14 @@
                 <select
                     class="form-control select2-ajax @if(isset($options->taggable) && $options->taggable === 'on') taggable @endif"
                     name="{{ $relationshipField }}[]" multiple
-                    data-get-items-route="{{route('voyager.' . $dataType->slug.'.relation')}}"
+                    data-get-items-route="{{route('navia.' . $dataType->slug.'.relation')}}"
                     data-get-items-field="{{$row->field}}"
                     @if(!is_null($dataTypeContent->getKey())) data-id="{{$dataTypeContent->getKey()}}" @endif
                     data-method="{{ !is_null($dataTypeContent->getKey()) ? 'edit' : 'add' }}"
                     @if(isset($options->taggable) && $options->taggable === 'on')
-                        data-route="{{ route('voyager.'.\Illuminate\Support\Str::slug($options->table).'.store') }}"
+                        data-route="{{ route('navia.'.\Illuminate\Support\Str::slug($options->table).'.store') }}"
                         data-label="{{$options->label}}"
-                        data-error-message="{{__('voyager::bread.error_tagging')}}"
+                        data-error-message="{{__('navia::bread.error_tagging')}}"
                     @endif
                     @if($row->required == 1) required @endif
                 >
@@ -184,7 +184,7 @@
                         @endphp
 
                         @if(!$row->required)
-                            <option value="">{{__('voyager::generic.none')}}</option>
+                            <option value="">{{__('navia::generic.none')}}</option>
                         @endif
 
                         @foreach ($selected_values as $key => $value)

@@ -78,7 +78,7 @@ return [
         'admin' => [
             'background_image'           => 'Yönetim Paneli Arkaplan Görseli',
             'description'                => 'Yönetim Paneli Açıklaması',
-            'description_value'          => 'Voyager\'e hoş geldiniz. Laravel\'in Aranan Yönetim Paneli',
+            'description_value'          => 'Navia\'e hoş geldiniz. Laravel\'in Aranan Yönetim Paneli',
             'google_analytics_client_id' => 'Google Analytics İstemci Kimliği (Client ID) (Yönetim Paneli için kullanılacak)',
             'icon_image'                 => 'Yönetim Paneli İkon Görseli',
             'loader'                     => 'Yönetim Paneli Yükleniyor İkonu',

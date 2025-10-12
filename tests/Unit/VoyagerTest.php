@@ -3,7 +3,7 @@
 namespace Navia\Tests\Unit;
 
 use Illuminate\Support\Facades\Config;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Tests\TestCase;
 
 class VoyagerTest extends TestCase
@@ -16,12 +16,12 @@ class VoyagerTest extends TestCase
      */
     public function testDimmersReturnsCollectionOfConfiguredWidgets()
     {
-        Config::set('voyager.dashboard.widgets', [
+        Config::set('navia.dashboard.widgets', [
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
         ]);
 
-        $dimmers = Voyager::dimmers();
+        $dimmers = Navia::dimmers();
 
         $this->assertEquals(2, $dimmers[0]->count());
     }
@@ -34,13 +34,13 @@ class VoyagerTest extends TestCase
      */
     public function testDimmersReturnsCollectionOfConfiguredWidgetsWhichShouldBeDisplayed()
     {
-        Config::set('voyager.dashboard.widgets', [
+        Config::set('navia.dashboard.widgets', [
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
             'Navia\\Tests\\Stubs\\Widgets\\InAccessibleDimmer',
             'Navia\\Tests\\Stubs\\Widgets\\InAccessibleDimmer',
         ]);
 
-        $dimmers = Voyager::dimmers();
+        $dimmers = Navia::dimmers();
 
         $this->assertEquals(1, $dimmers[0]->count());
     }
@@ -53,7 +53,7 @@ class VoyagerTest extends TestCase
      */
     public function testCreateEnoughDimmerCollectionsToContainAllAvailableDimmers()
     {
-        Config::set('voyager.dashboard.widgets', [
+        Config::set('navia.dashboard.widgets', [
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
@@ -61,7 +61,7 @@ class VoyagerTest extends TestCase
             'Navia\\Tests\\Stubs\\Widgets\\AccessibleDimmer',
         ]);
 
-        $dimmers = Voyager::dimmers();
+        $dimmers = Navia::dimmers();
 
         $this->assertEquals(2, count($dimmers));
         $this->assertEquals(3, $dimmers[0]->count());

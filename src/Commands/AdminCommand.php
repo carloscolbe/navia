@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class AdminCommand extends Command
 {
@@ -16,7 +16,7 @@ class AdminCommand extends Command
      *
      * @var string
      */
-    protected $name = 'voyager:admin';
+    protected $name = 'navia:admin';
 
     /**
      * The console command description.
@@ -61,7 +61,7 @@ class AdminCommand extends Command
         $role = $this->getAdministratorRole();
 
         // Get all permissions
-        $permissions = Voyager::model('Permission')->all();
+        $permissions = Navia::model('Permission')->all();
 
         // Assign all permissions to the admin role
         $role->permissions()->sync(
@@ -94,7 +94,7 @@ class AdminCommand extends Command
      */
     protected function getAdministratorRole()
     {
-        $role = Voyager::model('Role')->firstOrNew([
+        $role = Navia::model('Role')->firstOrNew([
             'name' => 'admin',
         ]);
 
@@ -118,7 +118,7 @@ class AdminCommand extends Command
     {
         $email = $this->argument('email');
 
-        $model = Auth::guard(app('VoyagerGuard'))->getProvider()->getModel();
+        $model = Auth::guard(app('NaviaGuard'))->getProvider()->getModel();
         $model = Str::start($model, '\\');
 
         // If we need to create a new user go ahead and create it

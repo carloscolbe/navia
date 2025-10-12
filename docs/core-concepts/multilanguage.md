@@ -1,10 +1,10 @@
 # Multilanguage
 
-Voyager supports multiple languages for your models.To get started, you need to configure some things first.
+Navia supports multiple languages for your models.To get started, you need to configure some things first.
 
 ## Setup
 
-First you need to define some `locales` in your `config/voyager.php` file and `enable` multilanguage:
+First you need to define some `locales` in your `config/navia.php` file and `enable` multilanguage:
 
 ```php
 'multilingual' => [
@@ -20,7 +20,7 @@ First you need to define some `locales` in your `config/voyager.php` file and `e
 After that you need to include the `Translatable` Trait in your model and define the translatable attributes:
 
 ```php
-use TCG\Voyager\Traits\Translatable;
+use Navia\Traits\Translatable;
 class Post extends Model
 {
     use Translatable;
@@ -88,12 +88,12 @@ If you do not define locale, the current application locale will be used. You ca
 
 ```php
 // with string
-if (Voyager::translatable(Post::class)) {
+if (Navia::translatable(Post::class)) {
     // it's translatable
 }
 
 // with object of Model or Collection
-if (Voyager::translatable($post)) {
+if (Navia::translatable($post)) {
     // it's translatable
 }
 ```

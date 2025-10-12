@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Enlaces',
         'documentation'         => 'Documentación',
-        'voyager_homepage'      => 'Voyager Homepage',
+        'voyager_homepage'      => 'Navia Homepage',
     ],
     'commands'      => [
         'title'                 => 'Comandos',

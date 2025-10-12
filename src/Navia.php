@@ -31,7 +31,7 @@ use Navia\Models\Translation;
 use Navia\Models\User;
 use Navia\Traits\Translatable;
 
-class Voyager
+class Navia
 {
     protected $version;
     protected $filesystem;
@@ -195,10 +195,10 @@ class Voyager
      */
     public function dimmers()
     {
-        $widgetClasses = config('voyager.dashboard.widgets');
+        $widgetClasses = config('navia.dashboard.widgets');
         $dimmerGroups = [];
         $dimmerCount = 0;
-        $dimmers = Widget::group("voyager::dimmers-{$dimmerCount}");
+        $dimmers = Widget::group("navia::dimmers-{$dimmerCount}");
 
         foreach ($widgetClasses as $widgetClass) {
             $widget = app($widgetClass);
@@ -210,7 +210,7 @@ class Voyager
                 if ($dimmerCount % 3 === 0 && $dimmerCount !== 0) {
                     $dimmerGroups[] = $dimmers;
                     $dimmerGroupTag = ceil($dimmerCount / 3);
-                    $dimmers = Widget::group("voyager::dimmers-{$dimmerGroupTag}");
+                    $dimmers = Widget::group("navia::dimmers-{$dimmerGroupTag}");
                 }
 
                 $dimmers->addWidget($widgetClass);
@@ -225,7 +225,7 @@ class Voyager
 
     public function setting($key, $default = null)
     {
-        $globalCache = config('voyager.settings.cache', false);
+        $globalCache = config('navia.settings.cache', false);
 
         if ($globalCache && Cache::tags('settings')->has($key)) {
             return Cache::tags('settings')->get($key);
@@ -261,7 +261,7 @@ class Voyager
     public function image($file, $default = '')
     {
         if (!empty($file)) {
-            return str_replace('\\', '/', Storage::disk(config('voyager.storage.disk'))->url($file));
+            return str_replace('\\', '/', Storage::disk(config('navia.storage.disk'))->url($file));
         }
 
         return $default;
@@ -269,7 +269,7 @@ class Voyager
 
     public function routes()
     {
-        require __DIR__.'/../routes/voyager.php';
+        require __DIR__.'/../routes/navia.php';
     }
 
     public function getVersion()
@@ -305,9 +305,9 @@ class Voyager
                 $this->filesystem->get(base_path('composer.lock'))
             );
 
-            // Loop through all the packages and get the version of voyager
+            // Loop through all the packages and get the version of navia
             foreach ($file->packages as $package) {
-                if ($package->name == 'tcg/voyager') {
+                if ($package->name == 'carloscolmenarez/navia') {
                     $this->version = $package->version;
                     break;
                 }
@@ -322,7 +322,7 @@ class Voyager
      */
     public function translatable($model)
     {
-        if (!config('voyager.multilingual.enabled')) {
+        if (!config('navia.multilingual.enabled')) {
             return false;
         }
 
@@ -346,8 +346,8 @@ class Voyager
     public function getLocales()
     {
         $appLocales = [];
-        if ($this->filesystem->exists(resource_path('lang/vendor/voyager'))) {
-            $appLocales = array_diff(scandir(resource_path('lang/vendor/voyager')), ['..', '.']);
+        if ($this->filesystem->exists(resource_path('lang/vendor/navia'))) {
+            $appLocales = array_diff(scandir(resource_path('lang/vendor/navia')), ['..', '.']);
         }
 
         $vendorLocales = array_diff(scandir(realpath(__DIR__.'/../publishable/lang')), ['..', '.']);

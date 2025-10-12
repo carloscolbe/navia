@@ -78,7 +78,7 @@ return [
         'admin' => [
             'background_image'           => 'Admin Background Image',
             'description'                => 'Admin Description',
-            'description_value'          => 'Welcome to Navia. The Missing Admin for Laravel',
+            'description_value'          => 'Welcome to Navia. A powerful and revitalized admin panel for Laravel.',
             'google_analytics_client_id' => 'Google Analytics Client ID (used for admin dashboard)',
             'icon_image'                 => 'Admin Icon Image',
             'loader'                     => 'Admin Loader',

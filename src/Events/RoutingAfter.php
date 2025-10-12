@@ -16,6 +16,6 @@ class RoutingAfter
 
         // @deprecate
         //
-        event('voyager.routing.after', $this->router);
+        event('navia.routing.after', $this->router);
     }
 }

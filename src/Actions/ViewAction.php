@@ -6,7 +6,7 @@ class ViewAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.view');
+        return __('navia::generic.view');
     }
 
     public function getIcon()
@@ -28,6 +28,6 @@ class ViewAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.'.$this->dataType->slug.'.show', $this->data->{$this->data->getKeyName()});
+        return route('navia.'.$this->dataType->slug.'.show', $this->data->{$this->data->getKeyName()});
     }
 }

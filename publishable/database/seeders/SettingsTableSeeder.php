@@ -15,8 +15,8 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('site.title');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.site.title'),
-                'value'        => __('voyager::seeders.settings.site.title'),
+                'display_name' => __('navia::seeders.settings.site.title'),
+                'value'        => __('navia::seeders.settings.site.title'),
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 1,
@@ -27,8 +27,8 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('site.description');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.site.description'),
-                'value'        => __('voyager::seeders.settings.site.description'),
+                'display_name' => __('navia::seeders.settings.site.description'),
+                'value'        => __('navia::seeders.settings.site.description'),
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 2,
@@ -39,7 +39,7 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('site.logo');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.site.logo'),
+                'display_name' => __('navia::seeders.settings.site.logo'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'image',
@@ -51,7 +51,7 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('site.google_analytics_tracking_id');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.site.google_analytics_tracking_id'),
+                'display_name' => __('navia::seeders.settings.site.google_analytics_tracking_id'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'text',
@@ -63,7 +63,7 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('admin.bg_image');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.admin.background_image'),
+                'display_name' => __('navia::seeders.settings.admin.background_image'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'image',
@@ -75,8 +75,8 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('admin.title');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.admin.title'),
-                'value'        => 'Voyager',
+                'display_name' => __('navia::seeders.settings.admin.title'),
+                'value'        => 'Navia',
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 1,
@@ -87,8 +87,8 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('admin.description');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.admin.description'),
-                'value'        => __('voyager::seeders.settings.admin.description_value'),
+                'display_name' => __('navia::seeders.settings.admin.description'),
+                'value'        => __('navia::seeders.settings.admin.description_value'),
                 'details'      => '',
                 'type'         => 'text',
                 'order'        => 2,
@@ -99,7 +99,7 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('admin.loader');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.admin.loader'),
+                'display_name' => __('navia::seeders.settings.admin.loader'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'image',
@@ -111,7 +111,7 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('admin.icon_image');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.admin.icon_image'),
+                'display_name' => __('navia::seeders.settings.admin.icon_image'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'image',
@@ -123,7 +123,7 @@ class SettingsTableSeeder extends Seeder
         $setting = $this->findSetting('admin.google_analytics_client_id');
         if (!$setting->exists) {
             $setting->fill([
-                'display_name' => __('voyager::seeders.settings.admin.google_analytics_client_id'),
+                'display_name' => __('navia::seeders.settings.admin.google_analytics_client_id'),
                 'value'        => '',
                 'details'      => '',
                 'type'         => 'text',

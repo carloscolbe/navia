@@ -9,20 +9,20 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerController extends Controller
 {
     public function index()
     {
-        return Voyager::view('voyager::index');
+        return Navia::view('navia::index');
     }
 
     public function logout()
     {
         Auth::logout();
 
-        return redirect()->route('voyager.login');
+        return redirect()->route('navia.login');
     }
 
     public function upload(Request $request)
@@ -33,7 +33,7 @@ class VoyagerController extends Controller
         $slug = $request->input('type_slug');
         $file = $request->file('image');
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->firstOrFail();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->firstOrFail();
 
         if ($this->userCannotUploadImageIn($dataType, 'add') && $this->userCannotUploadImageIn($dataType, 'edit')) {
             abort(403);
@@ -45,7 +45,7 @@ class VoyagerController extends Controller
         $filename_counter = 1;
 
         // Make sure the filename does not exist, if it does make sure to add a number to the end 1, 2, 3, etc...
-        while (Storage::disk(config('voyager.storage.disk'))->exists($path.$filename.'.'.$file->getClientOriginalExtension())) {
+        while (Storage::disk(config('navia.storage.disk'))->exists($path.$filename.'.'.$file->getClientOriginalExtension())) {
             $filename = basename($file->getClientOriginalName(), '.'.$file->getClientOriginalExtension()).(string) ($filename_counter++);
         }
 
@@ -65,18 +65,18 @@ class VoyagerController extends Controller
             $image->encode($file->getClientOriginalExtension(), 75);
 
             // move uploaded file from temp to uploads directory
-            if (Storage::disk(config('voyager.storage.disk'))->put($fullPath, (string) $image, 'public')) {
-                $status = __('voyager::media.success_uploading');
+            if (Storage::disk(config('navia.storage.disk'))->put($fullPath, (string) $image, 'public')) {
+                $status = __('navia::media.success_uploading');
                 $fullFilename = $fullPath;
             } else {
-                $status = __('voyager::media.error_uploading');
+                $status = __('navia::media.error_uploading');
             }
         } else {
-            $status = __('voyager::media.uploading_wrong_type');
+            $status = __('navia::media.uploading_wrong_type');
         }
 
         // Return URL for TinyMCE
-        return Voyager::image($fullFilename);
+        return Navia::image($fullFilename);
     }
 
     public function assets(Request $request)

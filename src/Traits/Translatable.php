@@ -5,7 +5,7 @@ namespace Navia\Traits;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Models\Translation;
 use Navia\Translator;
 
@@ -32,9 +32,9 @@ trait Translatable
      */
     public function translations()
     {
-        return $this->hasMany(Voyager::model('Translation'), 'foreign_key', $this->getKeyName())
+        return $this->hasMany(Navia::model('Translation'), 'foreign_key', $this->getKeyName())
             ->where('table_name', $this->getTable())
-            ->whereIn('locale', config('voyager.multilingual.locales', []));
+            ->whereIn('locale', config('navia.multilingual.locales', []));
     }
 
     /**
@@ -132,7 +132,7 @@ trait Translatable
     public function getTranslatedAttribute($attribute, $language = null, $fallback = true)
     {
         // If multilingual is not enabled don't check for translations
-        if (!config('voyager.multilingual.enabled')) {
+        if (!config('navia.multilingual.enabled')) {
             return $this->getAttributeValue($attribute);
         }
 
@@ -144,7 +144,7 @@ trait Translatable
     public function getTranslationsOf($attribute, array $languages = null, $fallback = true)
     {
         if (is_null($languages)) {
-            $languages = config('voyager.multilingual.locales', [config('voyager.multilingual.default')]);
+            $languages = config('navia.multilingual.locales', [config('navia.multilingual.default')]);
         }
 
         $response = [];
@@ -160,7 +160,7 @@ trait Translatable
         // Attribute is translatable
         //
         if (!in_array($attribute, $this->getTranslatableAttributes())) {
-            return [$this->getAttribute($attribute), config('voyager.multilingual.default'), false];
+            return [$this->getAttribute($attribute), config('navia.multilingual.default'), false];
         }
 
         if (is_null($locale)) {
@@ -171,7 +171,7 @@ trait Translatable
             $fallback = config('app.fallback_locale', 'en');
         }
 
-        $default = config('voyager.multilingual.default');
+        $default = config('navia.multilingual.default');
 
         if ($default == $locale) {
             return [$this->getAttribute($attribute), $default, true];
@@ -225,8 +225,8 @@ trait Translatable
             $this->load('translations');
         }
 
-        $default = config('voyager.multilingual.default', 'en');
-        $locales = config('voyager.multilingual.locales', [$default]);
+        $default = config('navia.multilingual.default', 'en');
+        $locales = config('navia.multilingual.locales', [$default]);
 
         foreach ($locales as $locale) {
             if (empty($translations[$locale])) {
@@ -358,7 +358,7 @@ trait Translatable
             $trans = json_decode($request->input($field.'_i18n'), true);
 
             // Set the default local value
-            $request->merge([$field => $trans[config('voyager.multilingual.default', 'en')]]);
+            $request->merge([$field => $trans[config('navia.multilingual.default', 'en')]]);
 
             $translations[$field] = $this->setAttributeTranslations(
                 $field,
@@ -395,7 +395,7 @@ trait Translatable
         $trans = json_decode($requestData[$field.'_i18n'], true);
 
         // Set the default local value
-        $requestData['display_name'] = $trans[config('voyager.multilingual.default', 'en')];
+        $requestData['display_name'] = $trans[config('navia.multilingual.default', 'en')];
 
         $translations['display_name'] = $this->setAttributeTranslations(
             'display_name',

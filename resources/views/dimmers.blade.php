@@ -1,5 +1,5 @@
 @php
-$dimmerGroups = Voyager::dimmers();
+$dimmerGroups = Navia::dimmers();
 @endphp
 
 @forelse($dimmerGroups as $dimmerGroup)

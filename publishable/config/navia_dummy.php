@@ -6,7 +6,7 @@ return [
     | User config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager user configs
+    | Here you can specify navia user configs
     |
     */
 
@@ -22,7 +22,7 @@ return [
     | Controllers config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager controller settings
+    | Here you can specify navia controller settings
     |
     */
 
@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-       // 'namespace' => 'App\\Models\\',
+        //'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -74,7 +74,7 @@ return [
     | Database Config
     |--------------------------------------------------------------------------
     |
-    | Here you can specify voyager database settings
+    | Here you can specify navia database settings
     |
     */
 
@@ -90,7 +90,7 @@ return [
     | Multilingual configuration
     |--------------------------------------------------------------------------
     |
-    | Here you can specify if you want Voyager to ship with support for
+    | Here you can specify if you want Navia to ship with support for
     | multilingual and what locales are enabled.
     |
     */
@@ -127,24 +127,26 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'voyager::generic.profile' => [
-                'route'      => 'voyager.profile',
+            'navia::generic.profile' => [
+                'route'      => 'navia.profile',
                 'classes'    => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
-            'voyager::generic.home' => [
+            'navia::generic.home' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
-            'voyager::generic.logout' => [
-                'route'      => 'voyager.logout',
+            'navia::generic.logout' => [
+                'route'      => 'navia.logout',
                 'icon_class' => 'voyager-power',
             ],
         ],
 
         'widgets' => [
-
+            'Navia\\Widgets\\UserDimmer',
+            'Navia\\Widgets\\PostDimmer',
+            'Navia\\Widgets\\PageDimmer',
         ],
 
     ],
@@ -154,7 +156,7 @@ return [
     | Automatic Procedures
     |--------------------------------------------------------------------------
     |
-    | When a change happens on Voyager, we can automate some routines.
+    | When a change happens on Navia, we can automate some routines.
     |
     */
 
@@ -177,7 +179,7 @@ return [
     | UI Generic Config
     |--------------------------------------------------------------------------
     |
-    | Here you change some of the Voyager UI settings.
+    | Here you change some of the Navia UI settings.
     |
     */
 
@@ -201,21 +203,6 @@ return [
             'lng' => env('GOOGLE_MAPS_DEFAULT_CENTER_LNG', '-117.161084'),
         ],
         'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Model specific settings
-    |--------------------------------------------------------------------------
-    |
-    | Here you change some model specific settings
-    |
-    */
-
-    'settings' => [
-        // Enables Laravel cache method for
-        // storing cache values between requests
-        'cache' => false,
     ],
 
     // Activate compass when environment is NOT local

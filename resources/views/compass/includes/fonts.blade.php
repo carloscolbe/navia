@@ -1,4 +1,4 @@
-<h2>{{ __('voyager::compass.fonts.font_class') }}</h2>
+<h2>{{ __('navia::compass.fonts.font_class') }}</h2>
 <ul class="glyphs css-mapping">
     <li>
         <div class="icon voyager-bread"></div>
@@ -826,7 +826,7 @@
     </li>
 </ul>
 
-<h2>{{ __('voyager::compass.fonts.font_character') }}</h2>
+<h2>{{ __('navia::compass.fonts.font_character') }}</h2>
 <ul class="glyphs character-mapping">
     <li>
         <div data-icon="a" class="icon"></div>

@@ -16,7 +16,7 @@ use Navia\Database\Types\Type;
 use Navia\Events\TableAdded;
 use Navia\Events\TableDeleted;
 use Navia\Events\TableUpdated;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerDatabaseController extends Controller
 {
@@ -24,7 +24,7 @@ class VoyagerDatabaseController extends Controller
     {
         $this->authorize('browse_database');
 
-        $dataTypes = Voyager::model('DataType')->select('id', 'name', 'slug')->get()->keyBy('name')->toArray();
+        $dataTypes = Navia::model('DataType')->select('id', 'name', 'slug')->get()->keyBy('name')->toArray();
 
         $tables = array_map(function ($table) use ($dataTypes) {
             $table = Str::replaceFirst(DB::getTablePrefix(), '', $table);
@@ -39,7 +39,7 @@ class VoyagerDatabaseController extends Controller
             return (object) $table;
         }, SchemaManager::listTableNames());
 
-        return Voyager::view('voyager::tools.database.index')->with(compact('dataTypes', 'tables'));
+        return Navia::view('navia::tools.database.index')->with(compact('dataTypes', 'tables'));
     }
 
     /**
@@ -53,7 +53,7 @@ class VoyagerDatabaseController extends Controller
 
         $db = $this->prepareDbManager('create');
 
-        return Voyager::view('voyager::tools.database.edit-add', compact('db'));
+        return Navia::view('navia::tools.database.edit-add', compact('db'));
     }
 
     /**
@@ -81,7 +81,7 @@ class VoyagerDatabaseController extends Controller
             SchemaManager::createTable($table);
 
             if (isset($request->create_model) && $request->create_model == 'on') {
-                $modelNamespace = config('voyager.models.namespace', app()->getNamespace());
+                $modelNamespace = config('navia.models.namespace', app()->getNamespace());
                 $params = [
                     'name' => $modelNamespace.Str::studly(Str::singular($table->name)),
                 ];
@@ -94,7 +94,7 @@ class VoyagerDatabaseController extends Controller
                     $params['--migration'] = true;
                 }
 
-                Artisan::call('voyager:make:model', $params);
+                Artisan::call('navia:make:model', $params);
             } elseif (isset($request->create_migration) && $request->create_migration == 'on') {
                 Artisan::call('make:migration', [
                     'name'    => 'create_'.$table->name.'_table',
@@ -105,8 +105,8 @@ class VoyagerDatabaseController extends Controller
             event(new TableAdded($table));
 
             return redirect()
-               ->route('voyager.database.index')
-               ->with($this->alertSuccess(__('voyager::database.success_create_table', ['table' => $table->name])));
+               ->route('navia.database.index')
+               ->with($this->alertSuccess(__('navia::database.success_create_table', ['table' => $table->name])));
         } catch (Exception $e) {
             return back()->with($this->alertException($e))->withInput();
         }
@@ -125,13 +125,13 @@ class VoyagerDatabaseController extends Controller
 
         if (!SchemaManager::tableExists($table)) {
             return redirect()
-                ->route('voyager.database.index')
-                ->with($this->alertError(__('voyager::database.edit_table_not_exist')));
+                ->route('navia.database.index')
+                ->with($this->alertError(__('navia::database.edit_table_not_exist')));
         }
 
         $db = $this->prepareDbManager('update', $table);
 
-        return Voyager::view('voyager::tools.database.edit-add', compact('db'));
+        return Navia::view('navia::tools.database.edit-add', compact('db'));
     }
 
     /**
@@ -157,8 +157,8 @@ class VoyagerDatabaseController extends Controller
         }
 
         return redirect()
-               ->route('voyager.database.index')
-               ->with($this->alertSuccess(__('voyager::database.success_create_table', ['table' => $table['name']])));
+               ->route('navia.database.index')
+               ->with($this->alertSuccess(__('navia::database.success_create_table', ['table' => $table['name']])));
     }
 
     protected function prepareDbManager($action, $table = '')
@@ -170,7 +170,7 @@ class VoyagerDatabaseController extends Controller
 
         if ($action == 'update') {
             $db->table = SchemaManager::listTableDetails($table);
-            $db->formAction = route('voyager.database.update', $table);
+            $db->formAction = route('navia.database.update', $table);
         } else {
             $db->table = new Table('New Table');
 
@@ -183,7 +183,7 @@ class VoyagerDatabaseController extends Controller
 
             $db->table->setPrimaryKey(['id'], 'primary');
 
-            $db->formAction = route('voyager.database.store');
+            $db->formAction = route('navia.database.store');
         }
 
         $oldTable = old('table');
@@ -209,7 +209,7 @@ class VoyagerDatabaseController extends Controller
             }
 
             $params = ['name' => Str::studly(Str::singular($tableName))];
-            Artisan::call('voyager:make:model', $params);
+            Artisan::call('navia:make:model', $params);
         }
     }
 
@@ -244,7 +244,7 @@ class VoyagerDatabaseController extends Controller
         $this->authorize('browse_database');
 
         $additional_attributes = [];
-        $model_name = Voyager::model('DataType')->where('name', $table)->pluck('model_name')->first();
+        $model_name = Navia::model('DataType')->where('name', $table)->pluck('model_name')->first();
         if (isset($model_name)) {
             $model = app($model_name);
             if (isset($model->additional_attributes)) {
@@ -273,8 +273,8 @@ class VoyagerDatabaseController extends Controller
             event(new TableDeleted($table));
 
             return redirect()
-                ->route('voyager.database.index')
-                ->with($this->alertSuccess(__('voyager::database.success_delete_table', ['table' => $table])));
+                ->route('navia.database.index')
+                ->with($this->alertSuccess(__('navia::database.success_delete_table', ['table' => $table])));
         } catch (Exception $e) {
             return back()->with($this->alertException($e));
         }

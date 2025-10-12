@@ -16,6 +16,6 @@ class RoutingAdminAfter
 
         // @deprecate
         //
-        event('voyager.admin.routing.after', $this->router);
+        event('navia.admin.routing.after', $this->router);
     }
 }

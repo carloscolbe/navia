@@ -1,14 +1,14 @@
 # Routing
 
-After running the voyager installer you will see a few new routes that have been added to your `routes/web.php` file which look like the following:
+After running the naviainstaller you will see a few new routes that have been added to your `routes/web.php` file which look like the following:
 
 ```php
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+    Navia::routes();
 });
 ```
 
-This is where the Voyager routes will be rendered. You can change the `admin` prefix if you desire, or set any other route configuration you need, such as `middleware` or `domain`.
+This is where the Navia routes will be rendered. You can change the `admin` prefix if you desire, or set any other route configuration you need, such as `middleware` or `domain`.
 
 When creating a new BREAD type and specifying a slug for that BREAD, you can then visit that route from the following link:
 

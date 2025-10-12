@@ -5,7 +5,7 @@ namespace Navia\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Traits\Resizable;
 use Navia\Traits\Translatable;
 
@@ -32,7 +32,7 @@ class Post extends Model
 
     public function authorId()
     {
-        return $this->belongsTo(Voyager::modelClass('User'), 'author_id', 'id');
+        return $this->belongsTo(Navia::modelClass('User'), 'author_id', 'id');
     }
 
     /**
@@ -52,6 +52,6 @@ class Post extends Model
      */
     public function category()
     {
-        return $this->belongsTo(Voyager::modelClass('Category'));
+        return $this->belongsTo(Navia::modelClass('Category'));
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'welcome'                => 'Voyager Compassa xoş gəlmisiniz. Bütün yaxşı tətbiqlərə Compass lazımdır ki, onun düzgün istiqamət göstərilsin.
+    'welcome'                => 'Navia Compassa xoş gəlmisiniz. Bütün yaxşı tətbiqlərə Compass lazımdır ki, onun düzgün istiqamət göstərilsin.
      Bu bölümdə tətbiqinizi yaratmağa kömək edəcək çoxlu resurs və administrativ misallar tapacaqsınız.',
     'links'         => [
         'title'                 => 'Linklər',
         'documentation'         => 'Dokumentasiya',
-        'voyager_homepage'      => 'Voyager səhifəsi',
+        'voyager_homepage'      => 'Navia səhifəsi',
     ],
     'commands'      => [
         'title'                 => 'Əmrlər',
-        'text'                  => 'Voyagerdən olan Artisan əmrini işlədin.',
+        'text'                  => 'Naviadən olan Artisan əmrini işlədin.',
         'clear_output'          => 'çıxarılanı təmizlə',
         'command_output'        => 'Artisan əmrinin çıxarılması',
         'additional_args'       => 'Əlavə arqumentlər?',

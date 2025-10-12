@@ -3,7 +3,7 @@
 namespace Navia\Listeners;
 
 use Navia\Events\BreadAdded;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class AddBreadPermission
 {
@@ -26,14 +26,14 @@ class AddBreadPermission
      */
     public function handle(BreadAdded $bread)
     {
-        if (config('voyager.bread.add_permission') && file_exists(base_path('routes/web.php'))) {
+        if (config('navia.bread.add_permission') && file_exists(base_path('routes/web.php'))) {
             // Create permission
             //
             // Permission::generateFor(Str::snake($bread->dataType->slug));
-            $role = Voyager::model('Role')->where('name', config('voyager.bread.default_role'))->firstOrFail();
+            $role = Navia::model('Role')->where('name', config('navia.bread.default_role'))->firstOrFail();
 
             // Get permission for added table
-            $permissions = Voyager::model('Permission')->where(['table_name' => $bread->dataType->name])->get()->pluck('id')->all();
+            $permissions = Navia::model('Permission')->where(['table_name' => $bread->dataType->name])->get()->pluck('id')->all();
 
             // Assign permission to admin
             $role->permissions()->attach($permissions);

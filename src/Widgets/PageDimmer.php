@@ -4,7 +4,7 @@ namespace Navia\Widgets;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class PageDimmer extends BaseDimmer
 {
@@ -21,18 +21,18 @@ class PageDimmer extends BaseDimmer
      */
     public function run()
     {
-        $count = Voyager::model('Page')->count();
-        $string = trans_choice('voyager::dimmer.page', $count);
+        $count = Navia::model('Page')->count();
+        $string = trans_choice('navia::dimmer.page', $count);
 
-        return view('voyager::dimmer', array_merge($this->config, [
+        return view('navia::dimmer', array_merge($this->config, [
             'icon'   => 'voyager-file-text',
             'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.page_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'text'   => __('navia::dimmer.page_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [
-                'text' => __('voyager::dimmer.page_link_text'),
-                'link' => route('voyager.pages.index'),
+                'text' => __('navia::dimmer.page_link_text'),
+                'link' => route('navia.pages.index'),
             ],
-            'image' => voyager_asset('images/widget-backgrounds/03.jpg'),
+            'image' => navia_asset('images/widget-backgrounds/03.jpg'),
         ]));
     }
 
@@ -43,6 +43,6 @@ class PageDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return Auth::user()->can('browse', Voyager::model('Page'));
+        return Auth::user()->can('browse', Navia::model('Page'));
     }
 }

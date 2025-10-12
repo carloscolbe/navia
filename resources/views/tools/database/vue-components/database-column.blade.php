@@ -33,11 +33,11 @@
                 :disabled="column.type.notSupportIndex"
                 class="form-control">
             <option value=""></option>
-            <option value="INDEX">{{ __('voyager::database.index') }}</option>
-            <option value="UNIQUE">{{ __('voyager::database.unique') }}</option>
-            <option value="PRIMARY">{{ __('voyager::database.primary') }}</option>
+            <option value="INDEX">{{ __('navia::database.index') }}</option>
+            <option value="UNIQUE">{{ __('navia::database.unique') }}</option>
+            <option value="PRIMARY">{{ __('navia::database.primary') }}</option>
         </select>
-        <small v-if="column.composite" v-once>{{ __('voyager::database.composite_warning') }}</small>
+        <small v-if="column.composite" v-once>{{ __('navia::database.composite_warning') }}</small>
     </td>
 
     <td>
@@ -52,8 +52,8 @@
 
 @endsection
 
-@include('voyager::tools.database.vue-components.database-types')
-@include('voyager::tools.database.vue-components.database-column-default')
+@include('navia::tools.database.vue-components.database-types')
+@include('navia::tools.database.vue-components.database-column-default')
 
 <script>
     Vue.component('database-column', {
@@ -101,7 +101,7 @@
             },
             onIndexTypeChange(event) {
                 if (this.column.name == '') {
-                    return toastr.error("{{ __('voyager::database.name_warning') }}");
+                    return toastr.error("{{ __('navia::database.name_warning') }}");
                 }
 
                 return this.$emit('indexChanged', {

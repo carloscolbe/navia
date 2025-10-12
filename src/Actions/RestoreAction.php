@@ -6,7 +6,7 @@ class RestoreAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.restore');
+        return __('navia::generic.restore');
     }
 
     public function getIcon()
@@ -30,6 +30,6 @@ class RestoreAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.'.$this->dataType->slug.'.restore', $this->data->{$this->data->getKeyName()});
+        return route('navia.'.$this->dataType->slug.'.restore', $this->data->{$this->data->getKeyName()});
     }
 }

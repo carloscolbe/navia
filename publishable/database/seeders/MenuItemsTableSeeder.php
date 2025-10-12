@@ -19,9 +19,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.dashboard'),
+            'title'   => __('navia::seeders.menu_items.dashboard'),
             'url'     => '',
-            'route'   => 'voyager.dashboard',
+            'route'   => 'navia.dashboard',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -35,9 +35,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.media'),
+            'title'   => __('navia::seeders.menu_items.media'),
             'url'     => '',
-            'route'   => 'voyager.media.index',
+            'route'   => 'navia.media.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -51,9 +51,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.users'),
+            'title'   => __('navia::seeders.menu_items.users'),
             'url'     => '',
-            'route'   => 'voyager.users.index',
+            'route'   => 'navia.users.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -67,9 +67,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.roles'),
+            'title'   => __('navia::seeders.menu_items.roles'),
             'url'     => '',
-            'route'   => 'voyager.roles.index',
+            'route'   => 'navia.roles.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -83,7 +83,7 @@ class MenuItemsTableSeeder extends Seeder
 
         $toolsMenuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.tools'),
+            'title'   => __('navia::seeders.menu_items.tools'),
             'url'     => '',
         ]);
         if (!$toolsMenuItem->exists) {
@@ -98,9 +98,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.menu_builder'),
+            'title'   => __('navia::seeders.menu_items.menu_builder'),
             'url'     => '',
-            'route'   => 'voyager.menus.index',
+            'route'   => 'navia.menus.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -114,9 +114,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.database'),
+            'title'   => __('navia::seeders.menu_items.database'),
             'url'     => '',
-            'route'   => 'voyager.database.index',
+            'route'   => 'navia.database.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -130,9 +130,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.compass'),
+            'title'   => __('navia::seeders.menu_items.compass'),
             'url'     => '',
-            'route'   => 'voyager.compass.index',
+            'route'   => 'navia.compass.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -146,9 +146,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.bread'),
+            'title'   => __('navia::seeders.menu_items.bread'),
             'url'     => '',
-            'route'   => 'voyager.bread.index',
+            'route'   => 'navia.bread.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([
@@ -162,9 +162,9 @@ class MenuItemsTableSeeder extends Seeder
 
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.settings'),
+            'title'   => __('navia::seeders.menu_items.settings'),
             'url'     => '',
-            'route'   => 'voyager.settings.index',
+            'route'   => 'navia.settings.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([

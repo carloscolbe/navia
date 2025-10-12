@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Navia\Events\MediaFileAdded;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerMediaController extends Controller
 {
@@ -21,7 +21,7 @@ class VoyagerMediaController extends Controller
 
     public function __construct()
     {
-        $this->filesystem = config('voyager.storage.disk');
+        $this->filesystem = config('navia.storage.disk');
     }
 
     public function index()
@@ -29,7 +29,7 @@ class VoyagerMediaController extends Controller
         // Check permission
         $this->authorize('browse_media');
 
-        return Voyager::view('voyager::media.index');
+        return Navia::view('navia::media.index');
     }
 
     public function files(Request $request)
@@ -72,7 +72,7 @@ class VoyagerMediaController extends Controller
                     'last_modified' => '',
                 ];
             } else {
-                if (empty(pathinfo($item['path'], PATHINFO_FILENAME)) && !config('voyager.hidden_files')) {
+                if (empty(pathinfo($item['path'], PATHINFO_FILENAME)) && !config('navia.hidden_files')) {
                     continue;
                 }
                 // Its a thumbnail and thumbnails should be hidden
@@ -120,11 +120,11 @@ class VoyagerMediaController extends Controller
         $error = '';
 
         if (Storage::disk($this->filesystem)->exists($new_folder)) {
-            $error = __('voyager::media.folder_exists_already');
+            $error = __('navia::media.folder_exists_already');
         } elseif (Storage::disk($this->filesystem)->makeDirectory($new_folder)) {
             $success = true;
         } else {
-            $error = __('voyager::media.error_creating_dir');
+            $error = __('navia::media.error_creating_dir');
         }
 
         return compact('success', 'error');
@@ -143,11 +143,11 @@ class VoyagerMediaController extends Controller
             $file_path = $path.$file['name'];
             if ($file['type'] == 'folder') {
                 if (!Storage::disk($this->filesystem)->deleteDirectory($file_path)) {
-                    $error = __('voyager::media.error_deleting_folder');
+                    $error = __('navia::media.error_deleting_folder');
                     $success = false;
                 }
             } elseif (!Storage::disk($this->filesystem)->delete($file_path)) {
-                $error = __('voyager::media.error_deleting_file');
+                $error = __('navia::media.error_deleting_file');
                 $success = false;
             }
         }
@@ -199,7 +199,7 @@ class VoyagerMediaController extends Controller
         $error = false;
 
         if (pathinfo($filename)['extension'] !== pathinfo($newFilename)['extension']) {
-            $error = __('voyager::media.error_renaming_ext');
+            $error = __('navia::media.error_renaming_ext');
         } else {
             if (is_array($folderLocation)) {
                 $folderLocation = rtrim(implode('/', $folderLocation), '/');
@@ -211,10 +211,10 @@ class VoyagerMediaController extends Controller
                 if (Storage::disk($this->filesystem)->move("{$location}/{$filename}", "{$location}/{$newFilename}")) {
                     $success = true;
                 } else {
-                    $error = __('voyager::media.error_moving');
+                    $error = __('navia::media.error_moving');
                 }
             } else {
-                $error = __('voyager::media.error_may_exist');
+                $error = __('navia::media.error_may_exist');
             }
         }
 
@@ -234,9 +234,9 @@ class VoyagerMediaController extends Controller
         try {
             $realPath = Storage::disk($this->filesystem)->path('/');
 
-            $allowedMimeTypes = config('voyager.media.allowed_mimetypes', '*');
+            $allowedMimeTypes = config('navia.media.allowed_mimetypes', '*');
             if ($allowedMimeTypes != '*' && (is_array($allowedMimeTypes) && !in_array($request->file->getMimeType(), $allowedMimeTypes))) {
-                throw new Exception(__('voyager::generic.mimetype_not_allowed'));
+                throw new Exception(__('navia::generic.mimetype_not_allowed'));
             }
 
             if (!$request->has('filename') || $request->get('filename') == 'null') {
@@ -329,7 +329,7 @@ class VoyagerMediaController extends Controller
             }
 
             $success = true;
-            $message = __('voyager::media.success_uploaded_file');
+            $message = __('navia::media.success_uploaded_file');
             $path = preg_replace('/^public\//', '', $file);
 
             event(new MediaFileAdded($path));
@@ -374,7 +374,7 @@ class VoyagerMediaController extends Controller
             Storage::disk($this->filesystem)->put($destImagePath, $image->encode()->encoded);
 
             $success = true;
-            $message = __('voyager::media.success_crop_image');
+            $message = __('navia::media.success_crop_image');
         } catch (Exception $e) {
             $success = false;
             $message = $e->getMessage();

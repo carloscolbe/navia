@@ -41,7 +41,7 @@ class DatabaseTest extends TestCase
         $this->table = $newTable->toArray();
 
         // Create table
-        $this->post(route('voyager.database.store'), [
+        $this->post(route('navia.database.store'), [
             'table' => json_encode($this->table),
         ]);
     }
@@ -49,8 +49,8 @@ class DatabaseTest extends TestCase
     public function test_table_created_successfully()
     {
         // Test correct response
-        $this->assertSessionHasAll($this->alertSuccess(__('voyager::database.success_create_table', ['table' => $this->table['name']])));
-        $this->assertRedirectedToRoute('voyager.database.index');
+        $this->assertSessionHasAll($this->alertSuccess(__('navia::database.success_create_table', ['table' => $this->table['name']])));
+        $this->assertRedirectedToRoute('navia.database.index');
 
         // Test table exists
         $this->assertTrue(SchemaManager::tableExists($this->table['name']));
@@ -102,11 +102,11 @@ class DatabaseTest extends TestCase
     {
         $this->assertTrue(SchemaManager::tableExists($this->table['name']));
 
-        $this->delete(route('voyager.database.destroy', $this->table['name']));
+        $this->delete(route('navia.database.destroy', $this->table['name']));
 
         // Test correct response
-        $this->assertSessionHasAll($this->alertSuccess(__('voyager::database.success_delete_table', ['table' => $this->table['name']])));
-        $this->assertRedirectedToRoute('voyager.database.index');
+        $this->assertSessionHasAll($this->alertSuccess(__('navia::database.success_delete_table', ['table' => $this->table['name']])));
+        $this->assertRedirectedToRoute('navia.database.index');
 
         $this->assertFalse(SchemaManager::tableExists($this->table['name']));
     }
@@ -115,7 +115,7 @@ class DatabaseTest extends TestCase
     {
         $table = (new Table('i_dont_exist_please_create_me_first'))->toArray();
 
-        $this->put(route('voyager.database.update', $table['oldName']), [
+        $this->put(route('navia.database.update', $table['oldName']), [
             'table' => json_encode($table),
         ]);
 
@@ -138,7 +138,7 @@ class DatabaseTest extends TestCase
     {
         $dbTable = SchemaManager::listTableDetails($this->table['name']);
 
-        $column = 'new_voyager_column';
+        $column = 'new_navia_column';
         $dbTable->addColumn($column, 'text', [
             'notnull' => false,
         ]);
@@ -184,7 +184,7 @@ class DatabaseTest extends TestCase
         $columnName = $this->table['columns'][$column]['name'];
 
         $notnull = false;
-        $default = 'voyager admin';
+        $default = 'navia admin';
 
         $this->table['columns'][$column]['notnull'] = $notnull;
         $this->table['columns'][$column]['default'] = $default;
@@ -228,13 +228,13 @@ class DatabaseTest extends TestCase
     protected function update_table(array $table)
     {
         // Update table
-        $this->put(route('voyager.database.update', $table['oldName']), [
+        $this->put(route('navia.database.update', $table['oldName']), [
             'table' => json_encode($table),
         ]);
 
         // Test correct response
-        $this->assertSessionHasAll($this->alertSuccess(__('voyager::database.success_create_table', ['table' => $table['name']])));
-        $this->assertRedirectedToRoute('voyager.database.index');
+        $this->assertSessionHasAll($this->alertSuccess(__('navia::database.success_create_table', ['table' => $table['name']])));
+        $this->assertRedirectedToRoute('navia.database.index');
 
         return SchemaManager::listTableDetails($table['name']);
     }

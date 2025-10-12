@@ -3,7 +3,7 @@
     $add  = is_null($dataTypeContent->getKey());
 @endphp
 
-@extends('voyager::master')
+@extends('navia::master')
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -54,19 +54,19 @@
     </style>
 @stop
 
-@section('page_title', __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular'))
+@section('page_title', __('navia::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular'))
 
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-        {{ __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
+        {{ __('navia::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('navia::multilingual.language-selector')
 @stop
 
 @section('content')
     <div class="page-content container-fluid">
-        <form class="form-edit-add" role="form" action="@if($edit){{ route('voyager.posts.update', $dataTypeContent->id) }}@else{{ route('voyager.posts.store') }}@endif" method="POST" enctype="multipart/form-data">
+        <form class="form-edit-add" role="form" action="@if($edit){{ route('navia.posts.update', $dataTypeContent->id) }}@else{{ route('navia.posts.store') }}@endif" method="POST" enctype="multipart/form-data">
             <!-- PUT Method if we are editing -->
             @if($edit)
                 {{ method_field("PUT") }}
@@ -89,33 +89,33 @@
 
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <i class="voyager-character"></i> {{ __('voyager::post.title') }}
-                                <span class="panel-desc"> {{ __('voyager::post.title_sub') }}</span>
+                                <i class="voyager-character"></i> {{ __('navia::post.title') }}
+                                <span class="panel-desc"> {{ __('navia::post.title_sub') }}</span>
                             </h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('navia::multilingual.input-hidden', [
                                 '_field_name'  => 'title',
                                 '_field_trans' => get_field_translations($dataTypeContent, 'title')
                             ])
-                            <input type="text" class="form-control" id="title" name="title" placeholder="{{ __('voyager::generic.title') }}" value="{{ $dataTypeContent->title ?? '' }}">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="{{ __('navia::generic.title') }}" value="{{ $dataTypeContent->title ?? '' }}">
                         </div>
                     </div>
 
                     <!-- ### CONTENT ### -->
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">{{ __('voyager::post.content') }}</h3>
+                            <h3 class="panel-title">{{ __('navia::post.content') }}</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
                             </div>
                         </div>
 
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('navia::multilingual.input-hidden', [
                                 '_field_name'  => 'body',
                                 '_field_trans' => get_field_translations($dataTypeContent, 'body')
                             ])
@@ -123,20 +123,20 @@
                                 $dataTypeRows = $dataType->{($edit ? 'editRows' : 'addRows' )};
                                 $row = $dataTypeRows->where('field', 'body')->first();
                             @endphp
-                            {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                            {!! app('navia')->formField($row, $dataType, $dataTypeContent) !!}
                         </div>
                     </div><!-- .panel -->
 
                     <!-- ### EXCERPT ### -->
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">{!! __('voyager::post.excerpt') !!}</h3>
+                            <h3 class="panel-title">{!! __('navia::post.excerpt') !!}</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('navia::multilingual.input-hidden', [
                                 '_field_name'  => 'excerpt',
                                 '_field_trans' => get_field_translations($dataTypeContent, 'excerpt')
                             ])
@@ -146,7 +146,7 @@
 
                     <div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">{{ __('voyager::post.additional_fields') }}</h3>
+                            <h3 class="panel-title">{{ __('navia::post.additional_fields') }}</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
@@ -163,19 +163,19 @@
                                         $display_options = $row->details->display ?? NULL;
                                     @endphp
                                     @if (isset($row->details->formfields_custom))
-                                        @include('voyager::formfields.custom.' . $row->details->formfields_custom)
+                                        @include('navia::formfields.custom.' . $row->details->formfields_custom)
                                     @else
                                         <div class="form-group @if($row->type == 'hidden') hidden @endif @if(isset($display_options->width)){{ 'col-md-' . $display_options->width }}@endif" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                             {{ $row->slugify }}
                                             <label for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
-                                            @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                            @include('navia::multilingual.input-hidden-bread-edit-add')
                                             @if($row->type == 'relationship')
-                                                @include('voyager::formfields.relationship', ['options' => $row->details])
+                                                @include('navia::formfields.relationship', ['options' => $row->details])
                                             @else
-                                                {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                                {!! app('navia')->formField($row, $dataType, $dataTypeContent) !!}
                                             @endif
 
-                                            @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
+                                            @foreach (app('navia')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
                                                 {!! $after->handle($row, $dataType, $dataTypeContent) !!}
                                             @endforeach
                                         </div>
@@ -190,15 +190,15 @@
                     <!-- ### DETAILS ### -->
                     <div class="panel panel panel-bordered panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> {{ __('voyager::post.details') }}</h3>
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> {{ __('navia::post.details') }}</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="slug">{{ __('voyager::post.slug') }}</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                <label for="slug">{{ __('navia::post.slug') }}</label>
+                                @include('navia::multilingual.input-hidden', [
                                     '_field_name'  => 'slug',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'slug')
                                 ])
@@ -208,23 +208,23 @@
                                     value="{{ $dataTypeContent->slug ?? '' }}">
                             </div>
                             <div class="form-group">
-                                <label for="status">{{ __('voyager::post.status') }}</label>
+                                <label for="status">{{ __('navia::post.status') }}</label>
                                 <select class="form-control" name="status">
-                                    <option value="PUBLISHED"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PUBLISHED') selected="selected"@endif>{{ __('voyager::post.status_published') }}</option>
-                                    <option value="DRAFT"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'DRAFT') selected="selected"@endif>{{ __('voyager::post.status_draft') }}</option>
-                                    <option value="PENDING"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PENDING') selected="selected"@endif>{{ __('voyager::post.status_pending') }}</option>
+                                    <option value="PUBLISHED"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PUBLISHED') selected="selected"@endif>{{ __('navia::post.status_published') }}</option>
+                                    <option value="DRAFT"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'DRAFT') selected="selected"@endif>{{ __('navia::post.status_draft') }}</option>
+                                    <option value="PENDING"@if(isset($dataTypeContent->status) && $dataTypeContent->status == 'PENDING') selected="selected"@endif>{{ __('navia::post.status_pending') }}</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="category_id">{{ __('voyager::post.category') }}</label>
+                                <label for="category_id">{{ __('navia::post.category') }}</label>
                                 <select class="form-control" name="category_id">
-                                    @foreach(Voyager::model('Category')::all() as $category)
+                                    @foreach(Navia::model('Category')::all() as $category)
                                         <option value="{{ $category->id }}"@if(isset($dataTypeContent->category_id) && $dataTypeContent->category_id == $category->id) selected="selected"@endif>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="featured">{{ __('voyager::generic.featured') }}</label>
+                                <label for="featured">{{ __('navia::generic.featured') }}</label>
                                 <input type="checkbox" name="featured"@if(isset($dataTypeContent->featured) && $dataTypeContent->featured) checked="checked"@endif>
                             </div>
                         </div>
@@ -233,14 +233,14 @@
                     <!-- ### IMAGE ### -->
                     <div class="panel panel-bordered panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-image"></i> {{ __('voyager::post.image') }}</h3>
+                            <h3 class="panel-title"><i class="icon wb-image"></i> {{ __('navia::post.image') }}</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
                             @if(isset($dataTypeContent->image))
-                                <img src="{{ filter_var($dataTypeContent->image, FILTER_VALIDATE_URL) ? $dataTypeContent->image : Voyager::image( $dataTypeContent->image ) }}" style="width:100%" />
+                                <img src="{{ filter_var($dataTypeContent->image, FILTER_VALIDATE_URL) ? $dataTypeContent->image : Navia::image( $dataTypeContent->image ) }}" style="width:100%" />
                             @endif
                             <input type="file" name="image">
                         </div>
@@ -249,31 +249,31 @@
                     <!-- ### SEO CONTENT ### -->
                     <div class="panel panel-bordered panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-search"></i> {{ __('voyager::post.seo_content') }}</h3>
+                            <h3 class="panel-title"><i class="icon wb-search"></i> {{ __('navia::post.seo_content') }}</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label for="meta_description">{{ __('voyager::post.meta_description') }}</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                <label for="meta_description">{{ __('navia::post.meta_description') }}</label>
+                                @include('navia::multilingual.input-hidden', [
                                     '_field_name'  => 'meta_description',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'meta_description')
                                 ])
                                 <textarea class="form-control" name="meta_description">{{ $dataTypeContent->meta_description ?? '' }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="meta_keywords">{{ __('voyager::post.meta_keywords') }}</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                <label for="meta_keywords">{{ __('navia::post.meta_keywords') }}</label>
+                                @include('navia::multilingual.input-hidden', [
                                     '_field_name'  => 'meta_keywords',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'meta_keywords')
                                 ])
                                 <textarea class="form-control" name="meta_keywords">{{ $dataTypeContent->meta_keywords ?? '' }}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="seo_title">{{ __('voyager::post.seo_title') }}</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                <label for="seo_title">{{ __('navia::post.seo_title') }}</label>
+                                @include('navia::multilingual.input-hidden', [
                                     '_field_name'  => 'seo_title',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'seo_title')
                                 ])
@@ -286,14 +286,14 @@
 
             @section('submit-buttons')
                 <button type="submit" class="btn btn-primary pull-right">
-                     @if($edit){{ __('voyager::post.update') }}@else <i class="icon wb-plus-circle"></i> {{ __('voyager::post.new') }} @endif
+                     @if($edit){{ __('navia::post.update') }}@else <i class="icon wb-plus-circle"></i> {{ __('navia::post.new') }} @endif
                 </button>
             @stop
             @yield('submit-buttons')
         </form>
 
         <div style="display:none">
-            <input type="hidden" id="upload_url" value="{{ route('voyager.upload') }}">
+            <input type="hidden" id="upload_url" value="{{ route('navia.upload') }}">
             <input type="hidden" id="upload_type_slug" value="{{ $dataType->slug }}">
         </div>
     </div>
@@ -305,16 +305,16 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"
                             aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="voyager-warning"></i> {{ __('voyager::generic.are_you_sure') }}</h4>
+                    <h4 class="modal-title"><i class="voyager-warning"></i> {{ __('navia::generic.are_you_sure') }}</h4>
                 </div>
 
                 <div class="modal-body">
-                    <h4>{{ __('voyager::generic.are_you_sure_delete') }} '<span class="confirm_delete_name"></span>'</h4>
+                    <h4>{{ __('navia::generic.are_you_sure_delete') }} '<span class="confirm_delete_name"></span>'</h4>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
-                    <button type="button" class="btn btn-danger" id="confirm_delete">{{ __('voyager::generic.delete_confirm') }}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('navia::generic.cancel') }}</button>
+                    <button type="button" class="btn btn-danger" id="confirm_delete">{{ __('navia::generic.delete_confirm') }}</button>
                 </div>
             </div>
         </div>
@@ -373,7 +373,7 @@
             $('.form-group').on('click', '.remove-single-file', deleteHandler('a', false));
 
             $('#confirm_delete').on('click', function(){
-                $.post('{{ route('voyager.'.$dataType->slug.'.media.remove') }}', params, function (response) {
+                $.post('{{ route('navia.'.$dataType->slug.'.media.remove') }}', params, function (response) {
                     if ( response
                         && response.data
                         && response.data.status

@@ -21,7 +21,7 @@ You will first specify which type of relationship this is going to be, then you 
 
 You can also specify which columns you would like to see in the dropdown or the multi-select.
 
-Now, you can easily create `belongsTo`, `belongsToMany`, `hasOne`, and `hasMany` relationships directly in Voyager.
+Now, you can easily create `belongsTo`, `belongsToMany`, `hasOne`, and `hasMany` relationships directly in Navia.
 
 ## Advanced options
 

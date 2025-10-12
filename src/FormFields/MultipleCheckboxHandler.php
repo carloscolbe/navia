@@ -8,7 +8,7 @@ class MultipleCheckboxHandler extends AbstractHandler
 
     public function createContent($row, $dataType, $dataTypeContent, $options)
     {
-        return view('voyager::formfields.multiple_checkbox', [
+        return view('navia::formfields.multiple_checkbox', [
             'row'             => $row,
             'options'         => $options,
             'dataType'        => $dataType,

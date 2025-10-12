@@ -3,7 +3,7 @@
 namespace Navia\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerRoleController extends VoyagerBaseController
 {
@@ -12,7 +12,7 @@ class VoyagerRoleController extends VoyagerBaseController
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('edit', app($dataType->model_name));
@@ -26,9 +26,9 @@ class VoyagerRoleController extends VoyagerBaseController
         $data->permissions()->sync($request->input('permissions', []));
 
         return redirect()
-            ->route("voyager.{$dataType->slug}.index")
+            ->route("navia.{$dataType->slug}.index")
             ->with([
-                'message'    => __('voyager::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+                'message'    => __('navia::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
                 'alert-type' => 'success',
             ]);
     }
@@ -38,7 +38,7 @@ class VoyagerRoleController extends VoyagerBaseController
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('add', app($dataType->model_name));
@@ -52,9 +52,9 @@ class VoyagerRoleController extends VoyagerBaseController
         $data->permissions()->sync($request->input('permissions', []));
 
         return redirect()
-            ->route("voyager.{$dataType->slug}.index")
+            ->route("navia.{$dataType->slug}.index")
             ->with([
-                'message'    => __('voyager::generic.successfully_added_new')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+                'message'    => __('navia::generic.successfully_added_new')." {$dataType->getTranslatedAttribute('display_name_singular')}",
                 'alert-type' => 'success',
             ]);
     }

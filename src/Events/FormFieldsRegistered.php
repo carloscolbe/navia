@@ -16,6 +16,6 @@ class FormFieldsRegistered
 
         // @deprecate
         //
-        event('voyager.form-fields.registered', $fields);
+        event('navia.form-fields.registered', $fields);
     }
 }

@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => '連接',
         'documentation'         => '文件',
-        'voyager_homepage'      => 'Voyager 官網',
+        'voyager_homepage'      => 'Navia 官網',
     ],
     'commands'      => [
         'title'                 => '指令',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => '資源',
-        'text'                  => 'Voyager 資源幫助您更快找到需要的東西',
+        'text'                  => 'Navia 資源幫助您更快找到需要的東西',
 
     ],
     'logs'          => [

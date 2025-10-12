@@ -17,6 +17,6 @@ class MenuDisplay
 
         // @deprecate
         //
-        event('voyager.menu.display', $menu);
+        event('navia.menu.display', $menu);
     }
 }

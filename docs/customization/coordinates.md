@@ -1,6 +1,6 @@
 # Coordinates
 
-With Voyager you are able to store coordinates and select them from a map.  
+With Navia you are able to store coordinates and select them from a map.  
 To do so, you first need to make sure that the column in your table is either `GEOMETRY` or `POINT`.
 
 After that you have to include the Spatial-Trait in your Model and define the column:
@@ -11,7 +11,7 @@ After that you have to include the Spatial-Trait in your Model and define the co
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Traits\Spatial;
+use Navia\Traits\Spatial;
 
 class Category extends Model
 {

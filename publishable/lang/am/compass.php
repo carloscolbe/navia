@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Հղումներ',
         'documentation'         => 'Փաստաթղթեր',
-        'voyager_homepage'      => 'Voyager Գլխավոր էջ',
+        'voyager_homepage'      => 'Navia Գլխավոր էջ',
     ],
     'commands'      => [
         'title'                 => 'Հրամաններ',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Ռեսուրսներ',
-        'text'                  => 'Voyager-ի ռեսուրսները օգնում են Ձեզ գտնել ավելի արագ',
+        'text'                  => 'Navia-ի ռեսուրսները օգնում են Ձեզ գտնել ավելի արագ',
 
     ],
     'logs'          => [

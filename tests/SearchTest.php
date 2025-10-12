@@ -35,12 +35,12 @@ class SearchTest extends TestCase
             'filter' => 'equals',
             's'      => '0',
         ];
-        $this->visit(route('voyager.posts.index').'?'.http_build_query($params))
+        $this->visit(route('navia.posts.index').'?'.http_build_query($params))
             ->dontSee($post->title)
             ->see(Post::where('featured', 0)->first()->title);
 
         $params['s'] = 1;
-        $this->visit(route('voyager.posts.index').'?'.http_build_query($params))
+        $this->visit(route('navia.posts.index').'?'.http_build_query($params))
             ->see($post->title)
             ->dontSee(Post::where('featured', 0)->first()->title);
     }
@@ -60,14 +60,14 @@ class SearchTest extends TestCase
             's'      => substr($user->name, 0, 2),
         ];
 
-        $response = $this->fakeVisit('voyager.posts.index', 'GET', $params);
+        $response = $this->fakeVisit('navia.posts.index', 'GET', $params);
 
         $this->assertCount(1, $response->dataTypeContent);
         $this->assertEquals($post->id, $response->dataTypeContent->first()->id);
 
         $params['s'] = 'random';
 
-        $response = $this->fakeVisit('voyager.posts.index', 'GET', $params);
+        $response = $this->fakeVisit('navia.posts.index', 'GET', $params);
 
         $this->assertCount(0, $response->dataTypeContent);
     }
@@ -95,7 +95,7 @@ class SearchTest extends TestCase
             'order_by' => 'post_belongsto_user_relationship'
         ];
 
-        $response = $this->fakeVisit('voyager.posts.index', 'GET', $params);
+        $response = $this->fakeVisit('navia.posts.index', 'GET', $params);
 
         $this->assertCount(2, $response->dataTypeContent);
         $this->assertEquals($post->id, $response->dataTypeContent[0]->id);
@@ -103,7 +103,7 @@ class SearchTest extends TestCase
 
         $params['sort_order'] = 'desc';
 
-        $response = $this->fakeVisit('voyager.posts.index', 'GET', $params);
+        $response = $this->fakeVisit('navia.posts.index', 'GET', $params);
 
         $this->assertCount(2, $response->dataTypeContent);
         $this->assertEquals($other_post->id, $response->dataTypeContent[0]->id);

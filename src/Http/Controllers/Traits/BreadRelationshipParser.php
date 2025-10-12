@@ -68,7 +68,7 @@ trait BreadRelationshipParser
     protected function eagerLoadRelations($dataTypeContent, DataType $dataType, string $action, bool $isModelTranslatable)
     {
         // Eagerload Translations
-        if (config('voyager.multilingual.enabled')) {
+        if (config('navia.multilingual.enabled')) {
             // Check if BREAD is Translatable
             if ($isModelTranslatable) {
                 $dataTypeContent->load('translations');
