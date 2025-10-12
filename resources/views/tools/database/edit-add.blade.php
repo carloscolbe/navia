@@ -1,17 +1,17 @@
-@extends('voyager::master')
+@extends('navia::master')
 @if($db->action == 'update')
-    @section('page_title', __('voyager::database.editing_table', ['table' => $db->table->name]))
+    @section('page_title', __('navia::database.editing_table', ['table' => $db->table->name]))
 @else
-    @section('page_title', __('voyager::database.create_new_table'))
+    @section('page_title', __('navia::database.create_new_table'))
 @endif
 
 @section('page_header')
     <h1 class="page-title">
         <i class="voyager-data"></i>
         @if($db->action == 'update')
-            {{ __('voyager::database.editing_table', ['table' => $db->table->name]) }}
+            {{ __('navia::database.editing_table', ['table' => $db->table->name]) }}
         @else
-            {{ __('voyager::database.create_new_table') }}
+            {{ __('navia::database.create_new_table') }}
         @endif
     </h1>
 @stop
@@ -19,19 +19,19 @@
 @section('breadcrumbs')
 <ol class="breadcrumb hidden-xs">
     <li>
-        <a href="{{ route('voyager.dashboard')}}"><i class="voyager-boat"></i> {{ __('voyager::generic.dashboard') }}</a>
+        <a href="{{ route('navia.dashboard')}}"><i class="voyager-boat"></i> {{ __('navia::generic.dashboard') }}</a>
     </li>
     <li>
-        <a href="{{ route('voyager.database.index') }}">
-            {{ __('voyager::generic.database') }}
+        <a href="{{ route('navia.database.index') }}">
+            {{ __('navia::generic.database') }}
         </a>
     </li>
 
     @if($db->action == 'update')
-    <li class="active">{{ __('voyager::generic.edit') }}</li>
+    <li class="active">{{ __('navia::generic.edit') }}</li>
     <li class="active">{{ $db->table->name }}</li>
     @else
-    <li class="active">{{ __('voyager::generic.add') }}</li>
+    <li class="active">{{ __('navia::generic.add') }}</li>
     @endif
 </ol>
 @endsection
@@ -57,7 +57,7 @@
 @stop
 
 @section('javascript')
-    @include('voyager::tools.database.vue-components.database-table-editor')
+    @include('navia::tools.database.vue-components.database-table-editor')
 
     <script>
         new Vue({

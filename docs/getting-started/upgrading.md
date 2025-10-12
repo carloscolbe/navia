@@ -6,7 +6,7 @@
 
 To update to the latest version inside of your composer.json file make sure to update the version of Navia inside the require declaration of your composer.json to:
 
-`tcg/voyager": "1.6.*`
+`carloscolmenarez/navia": "1.1.*`
 
 And then run `composer update`
 

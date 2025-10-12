@@ -13,43 +13,43 @@ class RouteTest extends TestCase
     {
         $this->disableExceptionHandling();
 
-        $this->visit(route('voyager.login'));
+        $this->visit(route('navia.login'));
         $this->type('admin@admin.com', 'email');
         $this->type('password', 'password');
-        $this->press(__('voyager::generic.login'));
+        $this->press(__('navia::generic.login'));
 
         $urls = [
-            route('voyager.dashboard'),
-            route('voyager.media.index'),
-            route('voyager.settings.index'),
-            route('voyager.roles.index'),
-            route('voyager.roles.create'),
-            route('voyager.roles.show', 1),
-            route('voyager.roles.edit', 1),
-            route('voyager.users.index'),
-            route('voyager.users.create'),
-            route('voyager.users.show', 1),
-            route('voyager.users.edit', 1),
-            route('voyager.posts.index'),
-            route('voyager.posts.create'),
-            route('voyager.posts.show', 1),
-            route('voyager.posts.edit', 1),
-            route('voyager.pages.index'),
-            route('voyager.pages.create'),
-            route('voyager.pages.show', 1),
-            route('voyager.pages.edit', 1),
-            route('voyager.categories.index'),
-            route('voyager.categories.create'),
-            route('voyager.categories.show', 1),
-            route('voyager.categories.edit', 1),
-            route('voyager.menus.index'),
-            route('voyager.menus.create'),
-            route('voyager.menus.show', 1),
-            route('voyager.menus.edit', 1),
-            route('voyager.database.index'),
-            route('voyager.bread.edit', 'categories'),
-            route('voyager.database.edit', 'categories'),
-            route('voyager.database.create'),
+            route('navia.dashboard'),
+            route('navia.media.index'),
+            route('navia.settings.index'),
+            route('navia.roles.index'),
+            route('navia.roles.create'),
+            route('navia.roles.show', 1),
+            route('navia.roles.edit', 1),
+            route('navia.users.index'),
+            route('navia.users.create'),
+            route('navia.users.show', 1),
+            route('navia.users.edit', 1),
+            route('navia.posts.index'),
+            route('navia.posts.create'),
+            route('navia.posts.show', 1),
+            route('navia.posts.edit', 1),
+            route('navia.pages.index'),
+            route('navia.pages.create'),
+            route('navia.pages.show', 1),
+            route('navia.pages.edit', 1),
+            route('navia.categories.index'),
+            route('navia.categories.create'),
+            route('navia.categories.show', 1),
+            route('navia.categories.edit', 1),
+            route('navia.menus.index'),
+            route('navia.menus.create'),
+            route('navia.menus.show', 1),
+            route('navia.menus.edit', 1),
+            route('navia.database.index'),
+            route('navia.bread.edit', 'categories'),
+            route('navia.database.edit', 'categories'),
+            route('navia.database.create'),
         ];
 
         foreach ($urls as $url) {

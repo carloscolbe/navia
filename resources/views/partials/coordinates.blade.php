@@ -10,10 +10,10 @@
         @forelse($dataTypeContent->getCoordinates() as $point)
             var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
         @empty
-            var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
+            var center = {lat: {{ config('navia.googlemaps.center.lat') }}, lng: {{ config('navia.googlemaps.center.lng') }}};
         @endforelse
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: {{ config('voyager.googlemaps.zoom') }},
+            zoom: {{ config('navia.googlemaps.zoom') }},
             center: center
         });
         var markers = [];
@@ -27,4 +27,4 @@
     }
 </script>
 <div id="map"/>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('voyager.googlemaps.key') }}&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('navia.googlemaps.key') }}&callback=initMap"></script>

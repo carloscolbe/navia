@@ -19,7 +19,7 @@ class User extends Authenticatable implements UserContract
 
     public function getAvatarAttribute($value)
     {
-        return $value ?? config('voyager.user.default_avatar', 'users/default.png');
+        return $value ?? config('navia.user.default_avatar', 'users/default.png');
     }
 
     public function setCreatedAtAttribute($value)

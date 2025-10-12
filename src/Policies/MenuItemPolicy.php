@@ -3,7 +3,7 @@
 namespace Navia\Policies;
 
 use Navia\Contracts\User;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class MenuItemPolicy extends BasePolicy
 {
@@ -22,14 +22,14 @@ class MenuItemPolicy extends BasePolicy
     protected function checkPermission(User $user, $model, $action)
     {
         if (self::$permissions == null) {
-            self::$permissions = Voyager::model('Permission')->all();
+            self::$permissions = Navia::model('Permission')->all();
         }
 
         if (self::$datatypes == null) {
-            self::$datatypes = Voyager::model('DataType')::all()->keyBy('slug');
+            self::$datatypes = Navia::model('DataType')::all()->keyBy('slug');
         }
 
-        $regex = str_replace('/', '\/', preg_quote(route('voyager.dashboard')));
+        $regex = str_replace('/', '\/', preg_quote(route('navia.dashboard')));
         $slug = preg_replace('/'.$regex.'/', '', $model->link(true));
         $slug = str_replace('/', '', $slug);
 
@@ -39,7 +39,7 @@ class MenuItemPolicy extends BasePolicy
 
         if ($slug == '') {
             $slug = 'admin';
-        } elseif ($slug == 'compass' && !\App::environment('local') && !config('voyager.compass_in_production', false)) {
+        } elseif ($slug == 'compass' && !\App::environment('local') && !config('navia.compass_in_production', false)) {
             return false;
         }
 

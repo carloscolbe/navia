@@ -75,8 +75,8 @@ class TestCase extends OrchestraTestCase
             'prefix'   => '',
         ]);
 
-        // Setup Voyager configuration
-        $app['config']->set('voyager.user.namespace', User::class);
+        // Setup Navia configuration
+        $app['config']->set('navia.user.namespace', User::class);
 
         // Setup Authentication configuration
         $app['config']->set('auth.providers.users.model', User::class);
@@ -84,7 +84,7 @@ class TestCase extends OrchestraTestCase
 
     protected function install()
     {
-        $this->artisan('voyager:install', ['--with-dummy' => $this->withDummy]);
+        $this->artisan('navia:install', ['--with-dummy' => $this->withDummy]);
 
         app(NaviaServiceProvider::class, ['app' => $this->app])->loadAuth();
 

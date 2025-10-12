@@ -3,5 +3,5 @@
 return [
     'loggingin'    => 'ログイン',
     'signin_below' => 'サインイン:',
-    'welcome'      => 'Voyagerへようこそ. The Missing Admin for Laravel',
+    'welcome'      => 'Voyagerへようこそ. A powerful and revitalized admin panel for Laravel.',
 ];

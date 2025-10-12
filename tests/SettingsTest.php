@@ -14,7 +14,7 @@ class SettingsTest extends TestCase
         parent::setUp();
 
         $this->user = Auth::loginUsingId(1);
-        session()->setPreviousUrl(route('voyager.settings.index'));
+        session()->setPreviousUrl(route('navia.settings.index'));
     }
 
     public function testCanUpdateSettings()
@@ -22,12 +22,12 @@ class SettingsTest extends TestCase
         $key = 'site.title';
         $newTitle = 'Just Another LaravelVoyager.com Site';
 
-        $this->visit(route('voyager.settings.index'))
+        $this->visit(route('navia.settings.index'))
              ->seeInField($key, Setting::where('key', '=', $key)->first()->value)
              ->type($newTitle, $key)
-             ->seeInElement('button', __('voyager::settings.save'))
-             ->press(__('voyager::settings.save'))
-             ->seePageIs(route('voyager.settings.index'))
+             ->seeInElement('button', __('navia::settings.save'))
+             ->press(__('navia::settings.save'))
+             ->seePageIs(route('navia.settings.index'))
              ->seeInDatabase('settings', [
                  'key'   => $key,
                  'value' => $newTitle,
@@ -36,13 +36,13 @@ class SettingsTest extends TestCase
 
     public function testCanCreateSetting()
     {
-        $this->visitRoute('voyager.settings.index')
+        $this->visitRoute('navia.settings.index')
              ->type('New Setting', 'display_name')
              ->type('new_setting', 'key')
              ->select('text', 'type')
              ->select('Site', 'group')
-             ->press(__('voyager::settings.add_new'))
-             ->seePageIs(route('voyager.settings.index'))
+             ->press(__('navia::settings.add_new'))
+             ->seePageIs(route('navia.settings.index'))
              ->seeInDatabase('settings', [
                  'display_name' => 'New Setting',
                  'key'          => 'site.new_setting',
@@ -55,7 +55,7 @@ class SettingsTest extends TestCase
     {
         $setting = Setting::firstOrFail();
 
-        $this->call('DELETE', route('voyager.settings.delete', $setting->id));
+        $this->call('DELETE', route('navia.settings.delete', $setting->id));
 
         $this->notSeeInDatabase('settings', [
             'id'    => $setting->id,
@@ -67,7 +67,7 @@ class SettingsTest extends TestCase
         $setting = Setting::firstOrFail();
         $this->assertFalse(Setting::find($setting->id)->value == null);
 
-        $this->call('PUT', route('voyager.settings.delete_value', $setting->id));
+        $this->call('PUT', route('navia.settings.delete_value', $setting->id));
 
         $this->seeInDatabase('settings', [
             'id'    => $setting->id,
@@ -79,7 +79,7 @@ class SettingsTest extends TestCase
     {
         $setting = Setting::where('order', '!=', 1)->first();
 
-        $this->call('GET', route('voyager.settings.move_up', $setting->id));
+        $this->call('GET', route('navia.settings.move_up', $setting->id));
 
         $this->seeInDatabase('settings', [
             'id'    => $setting->id,
@@ -91,7 +91,7 @@ class SettingsTest extends TestCase
     {
         $setting = Setting::where('order', '!=', 1)->first();
 
-        $this->call('GET', route('voyager.settings.move_down', $setting->id));
+        $this->call('GET', route('navia.settings.move_down', $setting->id));
 
         $this->seeInDatabase('settings', [
             'id'    => $setting->id,

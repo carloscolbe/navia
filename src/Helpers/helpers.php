@@ -3,21 +3,21 @@
 if (!function_exists('setting')) {
     function setting($key, $default = null)
     {
-        return Navia\Facades\Voyager::setting($key, $default);
+        return Navia\Facades\Navia::setting($key, $default);
     }
 }
 
 if (!function_exists('menu')) {
     function menu($menuName, $type = null, array $options = [])
     {
-        return Navia\Facades\Voyager::model('Menu')->display($menuName, $type, $options);
+        return Navia\Facades\Navia::model('Menu')->display($menuName, $type, $options);
     }
 }
 
-if (!function_exists('voyager_asset')) {
-    function voyager_asset($path, $secure = null)
+if (!function_exists('navia_asset')) {
+    function navia_asset($path, $secure = null)
     {
-        return route('voyager.voyager_assets').'?path='.urlencode($path);
+        return route('navia.navia_assets').'?path='.urlencode($path);
     }
 }
 

@@ -3,7 +3,7 @@
 namespace Navia\Listeners;
 
 use Navia\Events\BreadDeleted;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class DeleteBreadMenuItem
 {
@@ -26,8 +26,8 @@ class DeleteBreadMenuItem
      */
     public function handle(BreadDeleted $bread)
     {
-        if (config('voyager.bread.add_menu_item')) {
-            $menuItem = Voyager::model('MenuItem')->where('route', 'voyager.'.$bread->dataType->slug.'.index');
+        if (config('navia.bread.add_menu_item')) {
+            $menuItem = Navia::model('MenuItem')->where('route', 'navia.'.$bread->dataType->slug.'.index');
 
             if ($menuItem->exists()) {
                 $menuItem->delete();

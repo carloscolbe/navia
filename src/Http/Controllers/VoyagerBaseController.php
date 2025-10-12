@@ -13,7 +13,7 @@ use Navia\Events\BreadDataDeleted;
 use Navia\Events\BreadDataRestored;
 use Navia\Events\BreadDataUpdated;
 use Navia\Events\BreadImagesDeleted;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Http\Controllers\Traits\BreadRelationshipParser;
 
 class VoyagerBaseController extends Controller
@@ -38,7 +38,7 @@ class VoyagerBaseController extends Controller
         $slug = $this->getSlug($request);
 
         // GET THE DataType based on the slug
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('browse', app($dataType->model_name));
@@ -146,7 +146,7 @@ class VoyagerBaseController extends Controller
         // Actions
         $actions = [];
         if (!empty($dataTypeContent->first())) {
-            foreach (Voyager::actions() as $action) {
+            foreach (Navia::actions() as $action) {
                 $action = new $action($dataType, $dataTypeContent->first());
 
                 if ($action->shouldActionDisplayOnDataType()) {
@@ -177,13 +177,13 @@ class VoyagerBaseController extends Controller
         // Define list of columns that can be sorted server side
         $sortableColumns = $this->getSortableColumns($dataType->browseRows);
 
-        $view = 'voyager::bread.browse';
+        $view = 'navia::bread.browse';
 
-        if (view()->exists("voyager::$slug.browse")) {
-            $view = "voyager::$slug.browse";
+        if (view()->exists("navia::$slug.browse")) {
+            $view = "navia::$slug.browse";
         }
 
-        return Voyager::view($view, compact(
+        return Navia::view($view, compact(
             'actions',
             'dataType',
             'dataTypeContent',
@@ -218,7 +218,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         $isSoftDeleted = false;
 
@@ -257,13 +257,13 @@ class VoyagerBaseController extends Controller
         // Eagerload Relations
         $this->eagerLoadRelations($dataTypeContent, $dataType, 'read', $isModelTranslatable);
 
-        $view = 'voyager::bread.read';
+        $view = 'navia::bread.read';
 
-        if (view()->exists("voyager::$slug.read")) {
-            $view = "voyager::$slug.read";
+        if (view()->exists("navia::$slug.read")) {
+            $view = "navia::$slug.read";
         }
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'isSoftDeleted'));
+        return Navia::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'isSoftDeleted'));
     }
 
     //***************************************
@@ -282,7 +282,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         if (strlen($dataType->model_name) != 0) {
             $model = app($dataType->model_name);
@@ -317,13 +317,13 @@ class VoyagerBaseController extends Controller
         // Eagerload Relations
         $this->eagerLoadRelations($dataTypeContent, $dataType, 'edit', $isModelTranslatable);
 
-        $view = 'voyager::bread.edit-add';
+        $view = 'navia::bread.edit-add';
 
-        if (view()->exists("voyager::$slug.edit-add")) {
-            $view = "voyager::$slug.edit-add";
+        if (view()->exists("navia::$slug.edit-add")) {
+            $view = "navia::$slug.edit-add";
         }
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return Navia::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
 
     // POST BR(E)AD
@@ -331,7 +331,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Compatibility with Model binding.
         $id = $id instanceof \Illuminate\Database\Eloquent\Model ? $id->{$id->getKeyName()} : $id;
@@ -368,13 +368,13 @@ class VoyagerBaseController extends Controller
         event(new BreadDataUpdated($dataType, $data));
 
         if (auth()->user()->can('browse', app($dataType->model_name))) {
-            $redirect = redirect()->route("voyager.{$dataType->slug}.index");
+            $redirect = redirect()->route("navia.{$dataType->slug}.index");
         } else {
             $redirect = redirect()->back();
         }
 
         return $redirect->with([
-            'message'    => __('voyager::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+            'message'    => __('navia::generic.successfully_updated')." {$dataType->getTranslatedAttribute('display_name_singular')}",
             'alert-type' => 'success',
         ]);
     }
@@ -396,7 +396,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('add', app($dataType->model_name));
@@ -418,13 +418,13 @@ class VoyagerBaseController extends Controller
         // Eagerload Relations
         $this->eagerLoadRelations($dataTypeContent, $dataType, 'add', $isModelTranslatable);
 
-        $view = 'voyager::bread.edit-add';
+        $view = 'navia::bread.edit-add';
 
-        if (view()->exists("voyager::$slug.edit-add")) {
-            $view = "voyager::$slug.edit-add";
+        if (view()->exists("navia::$slug.edit-add")) {
+            $view = "navia::$slug.edit-add";
         }
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return Navia::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
 
     /**
@@ -438,7 +438,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('add', app($dataType->model_name));
@@ -451,13 +451,13 @@ class VoyagerBaseController extends Controller
 
         if (!$request->has('_tagging')) {
             if (auth()->user()->can('browse', $data)) {
-                $redirect = redirect()->route("voyager.{$dataType->slug}.index");
+                $redirect = redirect()->route("navia.{$dataType->slug}.index");
             } else {
                 $redirect = redirect()->back();
             }
 
             return $redirect->with([
-                'message'    => __('voyager::generic.successfully_added_new')." {$dataType->getTranslatedAttribute('display_name_singular')}",
+                'message'    => __('navia::generic.successfully_added_new')." {$dataType->getTranslatedAttribute('display_name_singular')}",
                 'alert-type' => 'success',
             ]);
         } else {
@@ -481,7 +481,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Init array of IDs
         $ids = [];
@@ -519,22 +519,22 @@ class VoyagerBaseController extends Controller
 
         $data = $affected
             ? [
-                'message'    => __('voyager::generic.successfully_deleted')." {$displayName}",
+                'message'    => __('navia::generic.successfully_deleted')." {$displayName}",
                 'alert-type' => 'success',
             ]
             : [
-                'message'    => __('voyager::generic.error_deleting')." {$displayName}",
+                'message'    => __('navia::generic.error_deleting')." {$displayName}",
                 'alert-type' => 'error',
             ];
 
-        return redirect()->route("voyager.{$dataType->slug}.index")->with($data);
+        return redirect()->route("navia.{$dataType->slug}.index")->with($data);
     }
 
     public function restore(Request $request, $id)
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $model = app($dataType->model_name);
@@ -552,11 +552,11 @@ class VoyagerBaseController extends Controller
         $res = $data->restore($id);
         $data = $res
             ? [
-                'message'    => __('voyager::generic.successfully_restored')." {$displayName}",
+                'message'    => __('navia::generic.successfully_restored')." {$displayName}",
                 'alert-type' => 'success',
             ]
             : [
-                'message'    => __('voyager::generic.error_restoring')." {$displayName}",
+                'message'    => __('navia::generic.error_restoring')." {$displayName}",
                 'alert-type' => 'error',
             ];
 
@@ -564,7 +564,7 @@ class VoyagerBaseController extends Controller
             event(new BreadDataRestored($dataType, $data));
         }
 
-        return redirect()->route("voyager.{$dataType->slug}.index")->with($data);
+        return redirect()->route("navia.{$dataType->slug}.index")->with($data);
     }
 
     //***************************************
@@ -591,7 +591,7 @@ class VoyagerBaseController extends Controller
             // GET multi value
             $multi = $request->get('multi');
 
-            $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+            $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
             // Load model and find record
             $model = app($dataType->model_name);
@@ -599,7 +599,7 @@ class VoyagerBaseController extends Controller
 
             // Check if field exists
             if (!isset($data->{$field})) {
-                throw new Exception(__('voyager::generic.field_does_not_exist'), 400);
+                throw new Exception(__('navia::generic.field_does_not_exist'), 400);
             }
 
             // Check permission
@@ -608,7 +608,7 @@ class VoyagerBaseController extends Controller
             if (@json_decode($multi)) {
                 // Check if valid json
                 if (is_null(@json_decode($data->{$field}))) {
-                    throw new Exception(__('voyager::json.invalid'), 500);
+                    throw new Exception(__('navia::json.invalid'), 500);
                 }
 
                 // Decode field value
@@ -638,7 +638,7 @@ class VoyagerBaseController extends Controller
 
                 // Check if file was found in array
                 if (is_null($key) || $key === false) {
-                    throw new Exception(__('voyager::media.file_does_not_exist'), 400);
+                    throw new Exception(__('navia::media.file_does_not_exist'), 400);
                 }
 
                 $fileToRemove = $fieldData[$key]['download_link'] ?? $fieldData[$key];
@@ -654,7 +654,7 @@ class VoyagerBaseController extends Controller
 
                     $data->{$field} = null;
                 } else {
-                    throw new Exception(__('voyager::media.file_does_not_exist'), 400);
+                    throw new Exception(__('navia::media.file_does_not_exist'), 400);
                 }
             }
 
@@ -672,12 +672,12 @@ class VoyagerBaseController extends Controller
             return response()->json([
                 'data' => [
                     'status'  => 200,
-                    'message' => __('voyager::media.file_removed'),
+                    'message' => __('navia::media.file_removed'),
                 ],
             ]);
         } catch (Exception $e) {
             $code = 500;
-            $message = __('voyager::generic.internal_error');
+            $message = __('navia::generic.internal_error');
 
             if ($e->getCode()) {
                 $code = $e->getCode();
@@ -762,7 +762,7 @@ class VoyagerBaseController extends Controller
 
             foreach ($images_to_remove as $image) {
                 // Remove only $single_image if we are removing from bread edit
-                if ($image != config('voyager.user.default_avatar') && (is_null($single_image) || $single_image == $image)) {
+                if ($image != config('navia.user.default_avatar') && (is_null($single_image) || $single_image == $image)) {
                     $this->deleteFileIfExists($image);
                     $imagesDeleted = true;
 
@@ -798,16 +798,16 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('edit', app($dataType->model_name));
 
         if (empty($dataType->order_column) || empty($dataType->order_display_column)) {
             return redirect()
-            ->route("voyager.{$dataType->slug}.index")
+            ->route("navia.{$dataType->slug}.index")
             ->with([
-                'message'    => __('voyager::bread.ordering_not_set'),
+                'message'    => __('navia::bread.ordering_not_set'),
                 'alert-type' => 'error',
             ]);
         }
@@ -821,15 +821,15 @@ class VoyagerBaseController extends Controller
 
         $display_column = $dataType->order_display_column;
 
-        $dataRow = Voyager::model('DataRow')->whereDataTypeId($dataType->id)->whereField($display_column)->first();
+        $dataRow = Navia::model('DataRow')->whereDataTypeId($dataType->id)->whereField($display_column)->first();
 
-        $view = 'voyager::bread.order';
+        $view = 'navia::bread.order';
 
-        if (view()->exists("voyager::$slug.order")) {
-            $view = "voyager::$slug.order";
+        if (view()->exists("navia::$slug.order")) {
+            $view = "navia::$slug.order";
         }
 
-        return Voyager::view($view, compact(
+        return Navia::view($view, compact(
             'dataType',
             'display_column',
             'dataRow',
@@ -841,7 +841,7 @@ class VoyagerBaseController extends Controller
     {
         $slug = $this->getSlug($request);
 
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
         $this->authorize('edit', app($dataType->model_name));
@@ -868,7 +868,7 @@ class VoyagerBaseController extends Controller
         }
 
         $slug = $this->getSlug($request);
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         $action = new $request->action($dataType, null);
 
@@ -888,7 +888,7 @@ class VoyagerBaseController extends Controller
         $page = $request->input('page');
         $on_page = 50;
         $search = $request->input('search', false);
-        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Navia::model('DataType')->where('slug', '=', $slug)->first();
 
         $method = $request->input('method', 'add');
 
@@ -952,7 +952,7 @@ class VoyagerBaseController extends Controller
                 if (!$row->required && !$search && $page == 1) {
                     $results[] = [
                         'id'   => '',
-                        'text' => __('voyager::generic.none'),
+                        'text' => __('navia::generic.none'),
                     ];
                 }
 

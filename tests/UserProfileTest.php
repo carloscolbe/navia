@@ -25,27 +25,27 @@ class UserProfileTest extends TestCase
 
         $this->user = Auth::loginUsingId(1);
 
-        $this->editPageForTheCurrentUser = route('voyager.users.edit', [$this->user->id]);
+        $this->editPageForTheCurrentUser = route('navia.users.edit', [$this->user->id]);
 
-        $this->listOfUsers = route('voyager.users.index');
+        $this->listOfUsers = route('navia.users.index');
     }
 
     public function testCanSeeTheUserInfoOnHisProfilePage()
     {
-        $this->visit(route('voyager.profile'))
+        $this->visit(route('navia.profile'))
              ->seeInElement('h4', $this->user->name)
              ->seeInElement('.user-email', $this->user->email)
-             ->seeLink(__('voyager::profile.edit'));
+             ->seeLink(__('navia::profile.edit'));
     }
 
     public function testCanEditUserName()
     {
-        $this->visit(route('voyager.profile'))
-             ->click(__('voyager::profile.edit'))
-             ->see(__('voyager::profile.edit_user'))
+        $this->visit(route('navia.profile'))
+             ->click(__('navia::profile.edit'))
+             ->see(__('navia::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
              ->type('New Awesome Name', 'name')
-             ->press(__('voyager::generic.save'))
+             ->press(__('navia::generic.save'))
              ->seePageIs($this->listOfUsers)
              ->seeInDatabase(
                  'users',
@@ -55,12 +55,12 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserEmail()
     {
-        $this->visit(route('voyager.profile'))
-             ->click(__('voyager::profile.edit'))
-             ->see(__('voyager::profile.edit_user'))
+        $this->visit(route('navia.profile'))
+             ->click(__('navia::profile.edit'))
+             ->see(__('navia::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
              ->type('another@email.com', 'email')
-             ->press(__('voyager::generic.save'))
+             ->press(__('navia::generic.save'))
              ->seePageIs($this->listOfUsers)
              ->seeInDatabase(
                  'users',
@@ -70,26 +70,26 @@ class UserProfileTest extends TestCase
 
     public function testCanEditUserPassword()
     {
-        $this->visit(route('voyager.profile'))
-             ->click(__('voyager::profile.edit'))
-             ->see(__('voyager::profile.edit_user'))
+        $this->visit(route('navia.profile'))
+             ->click(__('navia::profile.edit'))
+             ->see(__('navia::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
-             ->type('voyager-rocks', 'password')
-             ->press(__('voyager::generic.save'))
+             ->type('navia-rocks', 'password')
+             ->press(__('navia::generic.save'))
              ->seePageIs($this->listOfUsers);
 
         $updatedPassword = DB::table('users')->where('id', 1)->first()->password;
-        $this->assertTrue(Hash::check('voyager-rocks', $updatedPassword));
+        $this->assertTrue(Hash::check('navia-rocks', $updatedPassword));
     }
 
     public function testCanEditUserAvatar()
     {
-        $this->visit(route('voyager.profile'))
-             ->click(__('voyager::profile.edit'))
-             ->see(__('voyager::profile.edit_user'))
+        $this->visit(route('navia.profile'))
+             ->click(__('navia::profile.edit'))
+             ->see(__('navia::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
              ->attach($this->newImagePath(), 'avatar')
-             ->press(__('voyager::generic.save'))
+             ->press(__('navia::generic.save'))
              ->seePageIs($this->listOfUsers)
              ->dontSeeInDatabase(
                  'users',
@@ -100,7 +100,7 @@ class UserProfileTest extends TestCase
     public function testCanEditUserEmailWithEditorPermissions()
     {
         $user = \Navia\Models\User::factory()->for(\Navia\Models\Role::factory())->create();
-        $editPageForTheCurrentUser = route('voyager.users.edit', [$user->id]);
+        $editPageForTheCurrentUser = route('navia.users.edit', [$user->id]);
         // add permissions which reflect a possible editor role
         // without permissions to edit  users
         $user->role->permissions()->attach(\Navia\Models\Permission::whereIn('key', [
@@ -108,12 +108,12 @@ class UserProfileTest extends TestCase
             'browse_users',
         ])->get()->pluck('id')->all());
         Auth::onceUsingId($user->id);
-        $this->visit(route('voyager.profile'))
-             ->click(__('voyager::profile.edit'))
-             ->see(__('voyager::profile.edit_user'))
+        $this->visit(route('navia.profile'))
+             ->click(__('navia::profile.edit'))
+             ->see(__('navia::profile.edit_user'))
              ->seePageIs($editPageForTheCurrentUser)
              ->type('another@email.com', 'email')
-             ->press(__('voyager::generic.save'))
+             ->press(__('navia::generic.save'))
              ->seePageIs($this->listOfUsers)
              ->seeInDatabase(
                  'users',
@@ -123,19 +123,19 @@ class UserProfileTest extends TestCase
 
     public function testCanSetUserLocale()
     {
-        $this->visit(route('voyager.profile'))
-             ->click(__('voyager::profile.edit'))
-             ->see(__('voyager::profile.edit_user'))
+        $this->visit(route('navia.profile'))
+             ->click(__('navia::profile.edit'))
+             ->see(__('navia::profile.edit_user'))
              ->seePageIs($this->editPageForTheCurrentUser)
              ->select('de', 'locale')
-             ->press(__('voyager::generic.save'));
+             ->press(__('navia::generic.save'));
 
         $user = User::find(1);
         $this->assertTrue(($user->locale == 'de'));
 
         // Validate that app()->setLocale() is called
         Auth::loginUsingId($user->id);
-        $this->visitRoute('voyager.dashboard');
+        $this->visitRoute('navia.dashboard');
         $this->assertTrue(($user->locale == $this->app->getLocale()));
     }
 
@@ -149,7 +149,7 @@ class UserProfileTest extends TestCase
         );
 
         $this->visit($this->editPageForTheCurrentUser)
-             ->press(__('voyager::generic.save'))
+             ->press(__('navia::generic.save'))
              ->seePageIs($this->editPageForTheCurrentUser);
     }
 

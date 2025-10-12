@@ -26,7 +26,7 @@ class ClearCachedSettingValue
      */
     public function handle(SettingUpdated $event)
     {
-        if (config('voyager.settings.cache', false) === true) {
+        if (config('navia.settings.cache', false) === true) {
             Cache::tags('settings')->forget($event->setting->key);
         }
     }

@@ -5,22 +5,22 @@ use Navia\Events\Routing;
 use Navia\Events\RoutingAdmin;
 use Navia\Events\RoutingAdminAfter;
 use Navia\Events\RoutingAfter;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 /*
 |--------------------------------------------------------------------------
-| Voyager Routes
+| Navia Routes
 |--------------------------------------------------------------------------
 |
 | This file is where you may override any of the routes that are included
-| with Voyager.
+| with Navia.
 |
 */
 
-Route::group(['as' => 'voyager.'], function () {
+Route::group(['as' => 'navia.'], function () {
     event(new Routing());
 
-    $namespacePrefix = '\\'.config('voyager.controllers.namespace').'\\';
+    $namespacePrefix = '\\'.config('navia.controllers.namespace').'\\';
 
     Route::get('login', ['uses' => $namespacePrefix.'VoyagerAuthController@login',     'as' => 'login']);
     Route::post('login', ['uses' => $namespacePrefix.'VoyagerAuthController@postLogin', 'as' => 'postlogin']);
@@ -36,7 +36,7 @@ Route::group(['as' => 'voyager.'], function () {
         Route::get('profile', ['uses' => $namespacePrefix.'VoyagerUserController@profile', 'as' => 'profile']);
 
         try {
-            foreach (Voyager::model('DataType')::all() as $dataType) {
+            foreach (Navia::model('DataType')::all() as $dataType) {
                 $breadController = $dataType->controller
                                  ? Str::start($dataType->controller, '\\')
                                  : $namespacePrefix.'VoyagerBaseController';
@@ -133,7 +133,7 @@ Route::group(['as' => 'voyager.'], function () {
     });
 
     //Asset Routes
-    Route::get('voyager-assets', ['uses' => $namespacePrefix.'VoyagerController@assets', 'as' => 'voyager_assets']);
+    Route::get('navia-assets', ['uses' => $namespacePrefix.'VoyagerController@assets', 'as' => 'navia_assets']);
 
     event(new RoutingAfter());
 });

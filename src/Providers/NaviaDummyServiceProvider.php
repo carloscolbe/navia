@@ -37,7 +37,7 @@ class NaviaDummyServiceProvider extends ServiceProvider
                 "{$publishablePath}/dummy_content/" => storage_path('app/public'),
             ],
             'dummy_config' => [
-                "{$publishablePath}/config/voyager_dummy.php" => config_path('voyager.php'),
+                "{$publishablePath}/config/navia_dummy.php" => config_path('navia.php'),
             ],
             'dummy_migrations' => [
                 "{$publishablePath}/database/migrations/" => database_path('migrations'),
@@ -53,8 +53,8 @@ class NaviaDummyServiceProvider extends ServiceProvider
     public function registerConfigs()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__).'/../publishable/config/voyager_dummy.php',
-            'voyager'
+            dirname(__DIR__).'/../publishable/config/navia_dummy.php',
+            'navia'
         );
     }
 }

@@ -17,12 +17,12 @@ class MenuTest extends TestCase
     public function testCanRenameMenu()
     {
         $menu = Menu::where('name', '=', 'admin')->first();
-        $this->visitRoute('voyager.menus.edit', $menu->id)
+        $this->visitRoute('navia.menus.edit', $menu->id)
              ->seeInField('name', $menu->name)
              ->type('new_admin', 'name')
-             ->seeInElement('button', __('voyager::generic.save'))
-             ->press(__('voyager::generic.save'))
-             ->seePageIs(route('voyager.menus.index'))
+             ->seeInElement('button', __('navia::generic.save'))
+             ->press(__('navia::generic.save'))
+             ->seePageIs(route('navia.menus.index'))
              ->seeInDatabase('menus', [
                  'id'   => $menu->id,
                  'name' => 'new_admin',
@@ -32,7 +32,7 @@ class MenuTest extends TestCase
     public function testCanDeleteMenuItem()
     {
         $menu = Menu::where('name', '=', 'admin')->first();
-        $this->delete(route('voyager.menus.item.destroy', [
+        $this->delete(route('navia.menus.item.destroy', [
             'menu' => $menu->id,
             'id'   => $menu->items->first()->id,
         ]))->notSeeInDatabase('menu_items', [
@@ -43,7 +43,7 @@ class MenuTest extends TestCase
     public function testCanAddMenuItem()
     {
         $menu = Menu::where('name', '=', 'admin')->first();
-        $this->post(route('voyager.menus.item.add', [
+        $this->post(route('navia.menus.item.add', [
             'menu'    => $menu->id,
             'menu_id' => $menu->id,
             'type'    => 'url',
@@ -61,7 +61,7 @@ class MenuTest extends TestCase
     {
         $menu = Menu::where('name', '=', 'admin')->first();
         $item = $menu->items->first();
-        $this->put(route('voyager.menus.item.update', [
+        $this->put(route('navia.menus.item.update', [
             'id'      => $item->id,
             'menu'    => $menu->id,
             'type'    => 'url',
@@ -86,7 +86,7 @@ class MenuTest extends TestCase
     public function testCanSeeMenuBuilder()
     {
         $menu = Menu::where('name', '=', 'admin')->first();
-        $response = $this->call('GET', route('voyager.menus.builder', ['menu' => $menu->id]));
+        $response = $this->call('GET', route('navia.menus.builder', ['menu' => $menu->id]));
         $this->assertEquals(200, $response->status());
     }
 }

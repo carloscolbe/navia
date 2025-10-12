@@ -21,7 +21,7 @@ class ControllersCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Publish all the controllers from Voyager.';
+    protected $description = 'Publish all the controllers from Navia.';
 
     /**
      * The Filesystem instance.
@@ -62,8 +62,8 @@ class ControllersCommand extends Command
     public function handle()
     {
         $stub = $this->getStub();
-        $files = $this->filesystem->files(base_path('vendor/tcg/voyager/src/Http/Controllers'));
-        $namespace = config('voyager.controllers.namespace', 'Navia\\Http\\Controllers');
+        $files = $this->filesystem->files(base_path('vendor/carloscolmenarez/navia/src/Http/Controllers'));
+        $namespace = config('navia.controllers.namespace', 'Navia\\Http\\Controllers');
 
         $appNamespace = app()->getNamespace();
 
@@ -94,7 +94,7 @@ class ControllersCommand extends Command
             }
         }
 
-        $this->info('Published Voyager controllers!');
+        $this->info('Published Navia controllers!');
     }
 
     /**
@@ -104,7 +104,7 @@ class ControllersCommand extends Command
      */
     public function getStub()
     {
-        return $this->filesystem->get(base_path('/vendor/tcg/voyager/stubs/'.$this->stub));
+        return $this->filesystem->get(base_path('/vendor/carloscolmenarez/navia/stubs/'.$this->stub));
     }
 
     /**
@@ -117,7 +117,7 @@ class ControllersCommand extends Command
      */
     protected function generateContent($stub, $class)
     {
-        $namespace = config('voyager.controllers.namespace', 'Navia\\Http\\Controllers');
+        $namespace = config('navia.controllers.namespace', 'Navia\\Http\\Controllers');
 
         $content = str_replace(
             'DummyNamespace',

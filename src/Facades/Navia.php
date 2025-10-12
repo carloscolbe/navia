@@ -4,7 +4,7 @@ namespace Navia\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Voyager extends Facade
+class Navia extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -12,11 +12,11 @@ class Voyager extends Facade
      * @method static string image($file, $default = '')
      * @method static $this useModel($name, $object)
      *
-     * @see \Navia\Voyager
+     * @see \Navia
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'voyager';
+        return 'navia';
     }
 }

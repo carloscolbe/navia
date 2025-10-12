@@ -23,7 +23,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install the Voyager Admin package';
+    protected $description = 'Install the Navia Admin package';
 
     /**
      * The Composer instance.
@@ -84,7 +84,7 @@ class InstallCommand extends Command
      */
     public function handle(Filesystem $filesystem)
     {
-        $this->info('Publishing the Voyager assets, database, and config files');
+        $this->info('Publishing the Navia assets, database, and config files');
 
         // Publish only relevant resources on install
         $tags = ['seeders'];
@@ -94,7 +94,7 @@ class InstallCommand extends Command
         $this->info('Migrating the database tables into your application');
         $this->call('migrate', ['--force' => $this->option('force')]);
 
-        $this->info('Attempting to set Voyager User model as parent to App\User');
+        $this->info('Attempting to set Navia User model as parent to App\User');
         if (file_exists(app_path('User.php')) || file_exists(app_path('Models/User.php'))) {
             $userPath = file_exists(app_path('User.php')) ? app_path('User.php') : app_path('Models/User.php');
 
@@ -110,12 +110,12 @@ class InstallCommand extends Command
             $this->warn('You will need to update this manually.  Change "extends Authenticatable" to "extends \Navia\Models\User" in your User model');
         }
 
-        $this->info('Adding Voyager routes to routes/web.php');
+        $this->info('Adding Navia routes to routes/web.php');
         $routes_contents = $filesystem->get(base_path('routes/web.php'));
-        if (false === strpos($routes_contents, 'Voyager::routes()')) {
+        if (false === strpos($routes_contents, 'Navia::routes()')) {
             $filesystem->append(
                 base_path('routes/web.php'),
-                PHP_EOL.PHP_EOL."Route::group(['prefix' => 'admin'], function () {".PHP_EOL."    Voyager::routes();".PHP_EOL."});".PHP_EOL
+                PHP_EOL.PHP_EOL."Route::group(['prefix' => 'admin'], function () {".PHP_EOL."    Navia::routes();".PHP_EOL."});".PHP_EOL
             );
         }
 
@@ -126,7 +126,7 @@ class InstallCommand extends Command
             $tags = ['dummy_seeders', 'dummy_content', 'dummy_config', 'dummy_migrations'];
             $this->call('vendor:publish', ['--provider' => NaviaDummyServiceProvider::class, '--tag' => $tags]);
         } else {
-            $this->call('vendor:publish', ['--provider' => NaviaServiceProvider::class, '--tag' => ['config', 'voyager_avatar']]);
+            $this->call('vendor:publish', ['--provider' => NaviaServiceProvider::class, '--tag' => ['config', 'navia_avatar']]);
         }
 
         $this->info('Dumping the autoloaded files and reloading all new files');
@@ -146,7 +146,7 @@ class InstallCommand extends Command
         $this->info('Adding the storage symlink to your public folder');
         $this->call('storage:link');
 
-        $this->info('Successfully installed Voyager! Enjoy');
+        $this->info('Successfully installed Navia! Enjoy');
     }
 
 }

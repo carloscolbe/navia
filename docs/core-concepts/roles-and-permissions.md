@@ -1,6 +1,6 @@
 # Roles and Permissions
 
-Voyager comes with Roles and Permissions out of the box. Each _User_ has a _Role_ which has a set of _Permissions_.
+Navia comes with Roles and Permissions out of the box. Each _User_ has a _Role_ which has a set of _Permissions_.
 
 Inside of the dashboard you can choose to Add, Edit, or delete the current Roles. Additionally when you click to edit a particular role you can specify the BREAD permissions.
 
@@ -46,7 +46,7 @@ If you create a custom page and you want only allow specific user roles to acces
 This only works if your slug comes directly after `/admin/`. So for a custom page of the form `/admin/sub/foo` the menu item will not be hidden from  the menu.
 
 ### Create permission
-First, create a permission in the permissions table (you could use BREAD for example, model name is `TCG\Voyager\Models\Permission`). The column `table_name` should be set to null. The column `key` should be of the form `browse_slug` where `slug` has to be replaced with  the actual slug of your custom page. For example, to restrict access to your custom page with url `/admin/create_bill` you may create the permission `browse_create_bill`.
+First, create a permission in the permissions table (you could use BREAD for example, model name is `Navia\Models\Permission`). The column `table_name` should be set to null. The column `key` should be of the form `browse_slug` where `slug` has to be replaced with  the actual slug of your custom page. For example, to restrict access to your custom page with url `/admin/create_bill` you may create the permission `browse_create_bill`.
 
 ### Set role
 Check the permission for each role that you wish to grant access to the site at `admin/roles`. In the above example you would find a new checkbox called "Browse Create Bill". If a user does not have the required permission, the menu item leading to your custom page will be hidden.
@@ -79,7 +79,7 @@ If you do so, make sure add the custom guard to your controller:
    */
   protected function guard()
   {
-      return Auth::guard(app('VoyagerGuard'));
+      return Auth::guard(app('NaviaGuard'));
   }
 ```
 

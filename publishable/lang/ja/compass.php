@@ -10,7 +10,7 @@ return [
     ],
     'commands'      => [
         'title'                 => 'コマンド',
-        'text'                  => 'VoyagerからArtisanコマンドを実行します。',
+        'text'                  => 'NaviaからArtisanコマンドを実行します。',
         'clear_output'          => '出力をクリア',
         'command_output'        => 'Artisanコマンドのアウトプット',
         'additional_args'       => '引数を追加しますか？',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'リソース',
-        'text'                  => 'Voyagerリソースはより素早く探しものをする手助けとなります。',
+        'text'                  => 'Naviaリソースはより素早く探しものをする手助けとなります。',
 
     ],
     'logs'          => [

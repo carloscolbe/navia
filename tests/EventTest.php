@@ -31,7 +31,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.bread.store'), [
+        $this->post(route('navia.bread.store'), [
             'name'                  => 'Toast',
             'slug'                  => 'toast',
             'display_name_singular' => 'toast',
@@ -55,7 +55,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.bread.store'), [
+        $this->post(route('navia.bread.store'), [
             'name'                  => 'Toast',
             'slug'                  => 'toast',
             'display_name_singular' => 'toast',
@@ -67,7 +67,7 @@ class EventTest extends TestCase
         Event::assertNotDispatched(BreadUpdated::class);
         $dataType = DataType::where('slug', 'toast')->firstOrFail();
 
-        $this->put(route('voyager.bread.update', [$dataType->id]), [
+        $this->put(route('navia.bread.update', [$dataType->id]), [
             'name'                  => 'Test',
             'slug'                  => 'test',
             'display_name_singular' => 'test',
@@ -91,7 +91,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.bread.store'), [
+        $this->post(route('navia.bread.store'), [
             'name'                  => 'Toast',
             'slug'                  => 'toast',
             'display_name_singular' => 'toast',
@@ -103,7 +103,7 @@ class EventTest extends TestCase
         Event::assertNotDispatched(BreadDeleted::class);
         $dataType = DataType::where('slug', 'toast')->firstOrFail();
 
-        $this->delete(route('voyager.bread.delete', [$dataType->id]));
+        $this->delete(route('navia.bread.delete', [$dataType->id]));
 
         Event::assertDispatched(BreadDeleted::class);
     }
@@ -113,7 +113,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.pages.store'), [
+        $this->post(route('navia.pages.store'), [
             'author_id' => 1,
             'title'     => 'Toast',
             'slug'      => 'toasts',
@@ -128,7 +128,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.pages.store'), [
+        $this->post(route('navia.pages.store'), [
             'author_id' => 1,
             'title'     => 'Toast',
             'slug'      => 'toasts',
@@ -139,7 +139,7 @@ class EventTest extends TestCase
 
         $page = Page::where('slug', 'toasts')->firstOrFail();
 
-        $this->put(route('voyager.pages.update', [$page->id]), [
+        $this->put(route('navia.pages.update', [$page->id]), [
             'title'  => 'Test',
             'slug'   => 'tests',
             'status' => 'INACTIVE',
@@ -153,7 +153,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.pages.store'), [
+        $this->post(route('navia.pages.store'), [
             'author_id' => 1,
             'title'     => 'Toast',
             'slug'      => 'toasts',
@@ -164,7 +164,7 @@ class EventTest extends TestCase
 
         $page = Page::where('slug', 'toasts')->firstOrFail();
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         Event::assertDispatched(BreadDataDeleted::class);
     }
@@ -177,7 +177,7 @@ class EventTest extends TestCase
 
         $image = UploadedFile::fake()->image('test.png');
 
-        $this->call('POST', route('voyager.pages.store'), [
+        $this->call('POST', route('navia.pages.store'), [
             'author_id' => 1,
             'title'     => 'Toast',
             'slug'      => 'toasts',
@@ -190,7 +190,7 @@ class EventTest extends TestCase
 
         $page = Page::where('slug', 'toasts')->firstOrFail();
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         Event::assertDispatched(BreadImagesDeleted::class);
     }
@@ -203,7 +203,7 @@ class EventTest extends TestCase
 
         $image = UploadedFile::fake()->image('test.png');
 
-        $this->call('POST', route('voyager.pages.store'), [
+        $this->call('POST', route('navia.pages.store'), [
             'author_id' => 1,
             'title'     => 'Toast',
             'slug'      => 'toasts',
@@ -216,7 +216,7 @@ class EventTest extends TestCase
 
         $page = Page::where('slug', 'toasts')->firstOrFail();
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         Event::assertDispatched(FileDeleted::class);
     }
@@ -226,7 +226,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.database.store'), [
+        $this->post(route('navia.database.store'), [
             'table' => [
                 'name'    => 'test',
                 'columns' => [
@@ -251,7 +251,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.database.store'), [
+        $this->post(route('navia.database.store'), [
             'table' => [
                 'name'    => 'test',
                 'columns' => [
@@ -270,7 +270,7 @@ class EventTest extends TestCase
 
         Event::assertNotDispatched(TableUpdated::class);
 
-        $this->put(route('voyager.database.update', ['test']), [
+        $this->put(route('navia.database.update', ['test']), [
             'table' => json_encode([
                 'name'    => 'test',
                 'oldName' => 'test',
@@ -297,7 +297,7 @@ class EventTest extends TestCase
         Event::fake();
         Auth::loginUsingId(1);
 
-        $this->post(route('voyager.database.store'), [
+        $this->post(route('navia.database.store'), [
             'table' => [
                 'name'    => 'test',
                 'columns' => [
@@ -316,7 +316,7 @@ class EventTest extends TestCase
 
         Event::assertNotDispatched(TableDeleted::class);
 
-        $this->delete(route('voyager.database.destroy', ['test']));
+        $this->delete(route('navia.database.destroy', ['test']));
 
         Event::assertDispatched(TableDeleted::class);
     }
@@ -329,7 +329,7 @@ class EventTest extends TestCase
 
         $image = UploadedFile::fake()->image('test.png');
 
-        $this->json('POST', route('voyager.media.upload'), ['file'=>$image, 'upload_path' => '/']);
+        $this->json('POST', route('navia.media.upload'), ['file'=>$image, 'upload_path' => '/']);
 
         // Ensure file exists on disk
         $this->assertFileExists(public_path('storage/'.$image->name));
@@ -345,7 +345,7 @@ class EventTest extends TestCase
 
         $image = UploadedFile::fake()->image('test.png');
 
-        $this->json('POST', route('voyager.media.upload'), ['file'=>$image, 'upload_path' => '/nested/']);
+        $this->json('POST', route('navia.media.upload'), ['file'=>$image, 'upload_path' => '/nested/']);
 
         // Ensure file exists on disk
         $this->assertFileExists(public_path('storage/nested/'.$image->name));

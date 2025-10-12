@@ -3,7 +3,7 @@
 namespace Navia\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Traits\Translatable;
 
 class Category extends Model
@@ -18,7 +18,7 @@ class Category extends Model
 
     public function posts()
     {
-        return $this->hasMany(Voyager::modelClass('Post'))
+        return $this->hasMany(Navia::modelClass('Post'))
             ->published()
             ->orderBy('created_at', 'DESC');
     }

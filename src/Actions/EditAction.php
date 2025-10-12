@@ -6,7 +6,7 @@ class EditAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.edit');
+        return __('navia::generic.edit');
     }
 
     public function getIcon()
@@ -28,6 +28,6 @@ class EditAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getKeyName()});
+        return route('navia.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getKeyName()});
     }
 }

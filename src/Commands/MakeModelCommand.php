@@ -19,7 +19,7 @@ class MakeModelCommand extends ModelMakeCommand
      *
      * @var string
      */
-    protected $description = 'Create a new Voyager model class';
+    protected $description = 'Create a new Navia model class';
 
     /**
      * Get the stub file for the generator.

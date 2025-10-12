@@ -4,7 +4,7 @@ namespace Navia\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Tests\Database\Factories\RoleFactory;
 
 class Role extends Model
@@ -15,7 +15,7 @@ class Role extends Model
 
     public function users()
     {
-        $userModel = Voyager::modelClass('User');
+        $userModel = Navia::modelClass('User');
 
         return $this->belongsToMany($userModel, 'user_roles')
                     ->select(app($userModel)->getTable().'.*')
@@ -24,7 +24,7 @@ class Role extends Model
 
     public function permissions()
     {
-        return $this->belongsToMany(Voyager::modelClass('Permission'));
+        return $this->belongsToMany(Navia::modelClass('Permission'));
     }
 
     protected static function newFactory()

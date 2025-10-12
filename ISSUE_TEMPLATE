@@ -1,12 +1,12 @@
 <!---
-IF YOU'RE POSTING A QUESTION ABOUT HOW TO USE VOYAGER, PLEASE CONSIDER ASKING IN SLACK FIRST
+IF YOU'RE POSTING A QUESTION ABOUT HOW TO USE NAVIA, PLEASE CONSIDER ASKING IN SLACK FIRST
 
 PLEASE CONSIDER USING ONE OF THE DEFINED TEMPLATES INSTEAD
 --->
 ## Version information
 <!--- The following information is strongly encouraged --->
  - Laravel: v#.#.#
- - Voyager: v#.#.#
+ - Navia: v#.#.#
  - PHP: #.#
  - Database: [type] [version] (e.g. MySQL 8.0)
 

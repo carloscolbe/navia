@@ -9,7 +9,7 @@ First we create a new class in our project \(it doesn't matter where it is place
 
 namespace App\FormFields;
 
-use TCG\Voyager\FormFields\AbstractHandler;
+use Navia\FormFields\AbstractHandler;
 
 class NumberFormField extends AbstractHandler
 {
@@ -51,7 +51,7 @@ When we are done with our view, we will tell Navia that we have a new form field
 
 namespace App\Providers;
 
-use TCG\Voyager\Facades\Voyager;
+use Navia\Facades\Navia;
 use App\FormFields\NumberFormField;
 use Illuminate\Support\ServiceProvider;
 

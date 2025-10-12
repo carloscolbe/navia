@@ -3,7 +3,7 @@
 namespace Navia\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class Permission extends Model
 {
@@ -11,7 +11,7 @@ class Permission extends Model
 
     public function roles()
     {
-        return $this->belongsToMany(Voyager::modelClass('Role'));
+        return $this->belongsToMany(Navia::modelClass('Role'));
     }
 
     public static function generateFor($table_name)

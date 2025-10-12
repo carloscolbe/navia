@@ -1,15 +1,15 @@
 # Helper methods
 
-Voyager has several helper functions that are ready to use. Here you can find the list of available function that may speed up your development.
+Navia has several helper functions that are ready to use. Here you can find the list of available function that may speed up your development.
 
 ## Thumbnails URL
 
-Voyager will generate thumbnails for Image field type when you specify the [additional field options](../bread/introduction.md#additional-field-options).
+Navia will generate thumbnails for Image field type when you specify the [additional field options](../bread/introduction.md#additional-field-options).
 
 After you have your thumbnails generated, you may want to display the thumbnails in your view or get the thumbnail URL. In order to do that you need to add `Resizable` traits to your model.
 
 ```php
-use TCG\Voyager\Traits\Resizable;
+use Navia\Traits\Resizable;
 
 class Post extends Model
 {
@@ -21,7 +21,7 @@ class Post extends Model
 
 ```php
 @foreach($posts as $post)
-    <img src="{{Voyager::image($post->thumbnail('small'))}}" />
+    <img src="{{Navia::image($post->thumbnail('small'))}}" />
 @endforeach
 ```
 
@@ -29,7 +29,7 @@ Or you can specify the optional image field name \(attribute\), default to `imag
 
 ```php
 @foreach($posts as $post)
-    <img src="{{Voyager::image($post->thumbnail('small', 'photo'))}}" />
+    <img src="{{Navia::image($post->thumbnail('small', 'photo'))}}" />
 @endforeach
 ```
 

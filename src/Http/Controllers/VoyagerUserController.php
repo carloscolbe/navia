@@ -4,21 +4,21 @@ namespace Navia\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerUserController extends VoyagerBaseController
 {
     public function profile(Request $request)
     {
         $route = '';
-        $dataType = Voyager::model('DataType')->where('model_name', Auth::guard(app('VoyagerGuard'))->getProvider()->getModel())->first();
-        if (!$dataType && app('VoyagerGuard') == 'web') {
-            $route = route('voyager.users.edit', Auth::user()->getKey());
+        $dataType = Navia::model('DataType')->where('model_name', Auth::guard(app('NaviaGuard'))->getProvider()->getModel())->first();
+        if (!$dataType && app('NaviaGuard') == 'web') {
+            $route = route('navia.users.edit', Auth::user()->getKey());
         } elseif ($dataType) {
-            $route = route('voyager.'.$dataType->slug.'.edit', Auth::user()->getKey());
+            $route = route('navia.'.$dataType->slug.'.edit', Auth::user()->getKey());
         }
 
-        return Voyager::view('voyager::profile', compact('route'));
+        return Navia::view('navia::profile', compact('route'));
     }
 
     // POST BR(E)AD

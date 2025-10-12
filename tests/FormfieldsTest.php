@@ -25,23 +25,23 @@ class FormfieldsTest extends TestCase
             'default' => 'Default Text',
             'null'    => 'NULL',
         ]));
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->see('Default Text')
         ->type('New Text', 'text')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('New Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('Edited Text', 'text')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Edited Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('NULL', 'text')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->seeInDatabase('categories', [
             'text' => null,
         ]);
@@ -53,17 +53,17 @@ class FormfieldsTest extends TestCase
             'default' => 'Default Text',
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->see('Default Text')
         ->type('New Text', 'text_area')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('New Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('Edited Text', 'text_area')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Edited Text');
     }
 
@@ -73,17 +73,17 @@ class FormfieldsTest extends TestCase
             'default' => 'Default Text',
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->see('Default Text')
         ->type('New Text', 'code_editor')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('New Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('Edited Text', 'code_editor')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Edited Text');
     }
 
@@ -91,16 +91,16 @@ class FormfieldsTest extends TestCase
     {
         $this->createBreadForFormfield('text', 'markdown_editor');
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->type('# New Text', 'markdown_editor')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('New Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('# Edited Text', 'markdown_editor')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Edited Text');
     }
 
@@ -108,16 +108,16 @@ class FormfieldsTest extends TestCase
     {
         $this->createBreadForFormfield('text', 'rich_text_box');
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->type('New Text', 'rich_text_box')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('New Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('Edited Text', 'rich_text_box')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Edited Text');
     }
 
@@ -127,17 +127,17 @@ class FormfieldsTest extends TestCase
             'default' => 'Default Text',
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->see('Default Text')
         ->type('New Text', 'hidden')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('New Text')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('Edited Text', 'hidden')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Edited Text');
     }
 
@@ -145,16 +145,16 @@ class FormfieldsTest extends TestCase
     {
         $this->createBreadForFormfield('text', 'password');
 
-        $t = $this->visitRoute('voyager.categories.create')
+        $t = $this->visitRoute('navia.categories.create')
         ->type('newpassword', 'password')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index');
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index');
         $this->assertTrue(Hash::check('newpassword', Category::first()->password));
 
-        $t->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index');
+        $t->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index');
         $this->assertTrue(Hash::check('newpassword', Category::first()->password));
     }
 
@@ -164,17 +164,17 @@ class FormfieldsTest extends TestCase
             'default' => 1,
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->see('1')
         ->type('2', 'number')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('2')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('3', 'number')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('3');
     }
 
@@ -185,17 +185,17 @@ class FormfieldsTest extends TestCase
             'off' => 'Inactive',
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->see('Inactive')
         ->check('checkbox')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Active')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->uncheck('checkbox')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Inactive');
     }
 
@@ -203,16 +203,16 @@ class FormfieldsTest extends TestCase
     {
         $this->createBreadForFormfield('time', 'time');
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->type('12:50', 'time')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('12:50')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('6:25', 'time')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('6:25');
     }
 
@@ -222,16 +222,16 @@ class FormfieldsTest extends TestCase
             'format' => '%Y-%m-%d',
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->type('2019-01-01', 'date')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('2019-01-01')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('2018-12-31', 'date')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('2018-12-31');
     }
 
@@ -241,22 +241,22 @@ class FormfieldsTest extends TestCase
             'format' => '%F %T',
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->type('2019-01-01 12:00:00', 'timestamp')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('2019-01-01 12:00:00')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('2018-12-31 23:59:59', 'timestamp')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('2018-12-31 23:59:59')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('', 'timestamp')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->seeInDatabase('categories', [
             'timestamp' => null,
         ]);
@@ -266,16 +266,16 @@ class FormfieldsTest extends TestCase
     {
         $this->createBreadForFormfield('text', 'color');
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->type('#FF0000', 'color')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('#FF0000')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->type('#00FF00', 'color')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('#00FF00');
     }
 
@@ -289,16 +289,16 @@ class FormfieldsTest extends TestCase
             ],
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->select('radio1', 'radio_btn')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Foo')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->select('radio2', 'radio_btn')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Bar');
     }
 
@@ -312,16 +312,16 @@ class FormfieldsTest extends TestCase
             ],
         ]));
 
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->select('option1', 'select_dropdown')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Foo')
-        ->click(__('voyager::generic.edit'))
-        ->seeRouteIs('voyager.categories.edit', 1)
+        ->click(__('navia::generic.edit'))
+        ->seeRouteIs('navia.categories.edit', 1)
         ->select('option2', 'select_dropdown')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->see('Bar');
     }
 
@@ -329,13 +329,13 @@ class FormfieldsTest extends TestCase
     {
         $this->createBreadForFormfield('text', 'file');
         $file = UploadedFile::fake()->create('test.txt', 1);
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->attach([$file->getPathName()], 'file[]')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
-        ->visitRoute('voyager.categories.create')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
+        ->visitRoute('navia.categories.create')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->seeInDatabase('categories', [
             'file' => '[]',
         ]);
@@ -347,13 +347,13 @@ class FormfieldsTest extends TestCase
             'preserveFileUploadName' => true,
         ]));
         $file = UploadedFile::fake()->create('test.txt', 1);
-        $this->visitRoute('voyager.categories.create')
+        $this->visitRoute('navia.categories.create')
         ->attach([$file->getPathName()], 'file[]')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
-        ->visitRoute('voyager.categories.create')
-        ->press(__('voyager::generic.save'))
-        ->seeRouteIs('voyager.categories.index')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
+        ->visitRoute('navia.categories.create')
+        ->press(__('navia::generic.save'))
+        ->seeRouteIs('navia.categories.index')
         ->seeInDatabase('categories', [
             'file' => '[]',
         ]);
@@ -369,15 +369,15 @@ class FormfieldsTest extends TestCase
         });
 
         // Delete old BREAD
-        $this->delete(route('voyager.bread.delete', ['id' => DataType::where('name', 'categories')->first()->id]));
+        $this->delete(route('navia.bread.delete', ['id' => DataType::where('name', 'categories')->first()->id]));
 
         // Create BREAD
-        $this->visitRoute('voyager.bread.create', ['table' => 'categories'])
+        $this->visitRoute('navia.bread.create', ['table' => 'categories'])
         ->select($name, 'field_input_type_'.$name)
         ->type($options, 'field_details_'.$name)
         ->type('Navia\\Models\\Category', 'model_name')
-        ->press(__('voyager::generic.submit'))
-        ->seeRouteIs('voyager.bread.index');
+        ->press(__('navia::generic.submit'))
+        ->seeRouteIs('navia.bread.index');
 
         // Attach permissions to role
         Auth::user()->role->permissions()->syncWithoutDetaching(Permission::all()->pluck('id'));

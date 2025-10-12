@@ -5,7 +5,7 @@ namespace Navia\Http\Controllers;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerAuthController extends Controller
 {
@@ -14,10 +14,10 @@ class VoyagerAuthController extends Controller
     public function login()
     {
         if ($this->guard()->user()) {
-            return redirect()->route('voyager.dashboard');
+            return redirect()->route('navia.dashboard');
         }
 
-        return Voyager::view('voyager::login');
+        return Navia::view('navia::login');
     }
 
     public function postLogin(Request $request)
@@ -52,7 +52,7 @@ class VoyagerAuthController extends Controller
      */
     public function redirectTo()
     {
-        return config('voyager.user.redirect', route('voyager.dashboard'));
+        return config('navia.user.redirect', route('navia.dashboard'));
     }
 
     /**
@@ -62,6 +62,6 @@ class VoyagerAuthController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard(app('VoyagerGuard'));
+        return Auth::guard(app('NaviaGuard'));
     }
 }

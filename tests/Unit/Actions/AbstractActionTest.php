@@ -3,7 +3,7 @@
 namespace Navia\Tests\Unit\Actions;
 
 use Navia\Actions\AbstractAction;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Models\User;
 use Navia\Tests\TestCase;
 
@@ -27,7 +27,7 @@ class AbstractActionTest extends TestCase
     {
         parent::setUp();
 
-        $this->userDataType = Voyager::model('DataType')->where('name', 'users')->first();
+        $this->userDataType = Navia::model('DataType')->where('name', 'users')->first();
         $this->user = \Navia\Models\User::factory()->create();
     }
 

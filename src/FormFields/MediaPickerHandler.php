@@ -48,7 +48,7 @@ class MediaPickerHandler extends AbstractHandler
             }
         }
 
-        return view('voyager::formfields.media_picker', [
+        return view('navia::formfields.media_picker', [
             'row'      => $row,
             'options'  => $options,
             'dataType' => $dataType,

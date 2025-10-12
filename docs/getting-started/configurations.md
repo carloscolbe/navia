@@ -1,6 +1,6 @@
 # Configurations
 
-With the installation of Navia you will find a new configuration file located at `config/voyager.php`.  
+With the installation of Navia you will find a new configuration file located at `config/navia.php`.  
 In this file you can find various options to change the configuration of your Navia installation.
 
 {% hint style="info" %}
@@ -35,7 +35,7 @@ Below we will take a deep dive into the configuration file and give a detailed d
 <?php
 
 'controllers' => [
-    'namespace' => 'TCG\\Voyager\\Http\\Controllers',
+    'namespace' => 'Navia\\Http\\Controllers',
 ],
 ```
 
@@ -64,13 +64,13 @@ You can specify the namespace or location of your models. This is used when crea
 ```php
 <?php
 
-'assets_path' => '/vendor/tcg/voyager/assets',
+'assets_path' => '/vendor/carloscolmenarez/navia/assets',
 ```
 
 You may wish to specify a different asset path. If your site lives in a subfolder you may need to include that directory to the beginning of the path. This may also be used in case you wish to duplicate the published assets and customize your own.
 
 {% hint style="info" %}
-When upgrading to new version of voyager the assets located in the `/vendor/tcg/voyager/assets` directory may need to be overwritten, so if you wish to customize any styles you will want to duplicate that directory and specify the new location of your asset\_path.
+When upgrading to new version of naviathe assets located in the `/vendor/carloscolmenarez/navia/assets` directory may need to be overwritten, so if you wish to customize any styles you will want to duplicate that directory and specify the new location of your asset\_path.
 {% endhint %}
 
 ## Storage
@@ -99,7 +99,7 @@ By default Navia is going to use the `public` local storage. You can additionall
 ```
 
 You may wish to hide some database tables in the Navia database section. In the database config you can choose which tables would like to hide.  
-`autoload_migrations` allows you to exclude Voyagers migration-files from loading when running `php artisan migrate`.
+`autoload_migrations` allows you to exclude Navias migration-files from loading when running `php artisan migrate`.
 
 ## Multilingual
 
@@ -128,7 +128,7 @@ Read more about multilanguage [here](../core-concepts/multilanguage.md).
 'dashboard' => [
     'navbar_items' => [
         'Profile' => [
-            'route'         => 'voyager.profile',
+            'route'         => 'navia.profile',
             'classes'       => 'class-full-of-rum',
             'icon_class'    => 'voyager-person',
         ],
@@ -138,14 +138,14 @@ Read more about multilanguage [here](../core-concepts/multilanguage.md).
             'target_blank'  => true,
         ],
         'Logout' => [
-            'route'      => 'voyager.logout',
+            'route'      => 'navia.logout',
             'icon_class' => 'voyager-power',
         ],
     ],
     'widgets' => [
-        'TCG\\Voyager\\Widgets\\UserDimmer',
-        'TCG\\Voyager\\Widgets\\PostDimmer',
-        'TCG\\Voyager\\Widgets\\PageDimmer',
+        'Navia\\Widgets\\UserDimmer',
+        'Navia\\Widgets\\PostDimmer',
+        'Navia\\Widgets\\PageDimmer',
     ],
 ],
 ```
@@ -156,7 +156,7 @@ In the dashboard config you can add **navbar\_items**, make the **data\_tables**
 
 **data\_tables** If you set 'responsive' to true the datatables will be responsive.
 
-**widgets** Here you can manage the widgets that live on your dashboard. You can take a look at an example widget class by viewing the current widgets inside of `tcg/voyager/src/Widgets`.
+**widgets** Here you can manage the widgets that live on your dashboard. You can take a look at an example widget class by viewing the current widgets inside of `carloscolmenarez/navia/src/Widgets`.
 
 ## Primary color
 

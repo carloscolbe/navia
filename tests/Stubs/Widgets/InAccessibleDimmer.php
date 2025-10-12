@@ -19,7 +19,7 @@ class InAccessibleDimmer extends AbstractWidget
      */
     public function run()
     {
-        return view('voyager::dimmer', array_merge($this->config, [
+        return view('navia::dimmer', array_merge($this->config, [
             'icon'   => '',
             'title'  => '',
             'text'   => '',

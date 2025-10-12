@@ -24,7 +24,7 @@ class CompassTest extends TestCase
 
     private function enableCompass()
     {
-        $this->app['config']->set('voyager.compass_in_production', true);
+        $this->app['config']->set('navia.compass_in_production', true);
     }
 
     private function logString($string)
@@ -35,16 +35,16 @@ class CompassTest extends TestCase
     public function testCantAccessCompass()
     {
         // Can't access compass because environment is != local (testing)
-        $response = $this->call('GET', route('voyager.compass.index'));
+        $response = $this->call('GET', route('navia.compass.index'));
         $this->assertEquals(403, $response->status());
     }
 
     public function testCanAccessCompass()
     {
-        // Can access compass because we set voyager.compass_in_production configuration to true
+        // Can access compass because we set navia.compass_in_production configuration to true
         $this->enableCompass();
 
-        $response = $this->call('GET', route('voyager.compass.index'));
+        $response = $this->call('GET', route('navia.compass.index'));
         $this->assertEquals(200, $response->status());
     }
 
@@ -54,7 +54,7 @@ class CompassTest extends TestCase
         $this->logString($info);
         $this->enableCompass();
 
-        $this->visit(route('voyager.compass.index').'?log='.base64_encode('laravel.log'))
+        $this->visit(route('navia.compass.index').'?log='.base64_encode('laravel.log'))
              ->see($info);
     }
 
@@ -62,7 +62,7 @@ class CompassTest extends TestCase
     {
         $this->enableCompass();
 
-        $response = $this->post(route('voyager.compass.index'), [
+        $response = $this->post(route('navia.compass.index'), [
             'command' => 'make:model',
             'args'    => 'TestModel',
         ]);
@@ -73,7 +73,7 @@ class CompassTest extends TestCase
     {
         $this->enableCompass();
 
-        $response = $this->post(route('voyager.compass.index'), [
+        $response = $this->post(route('navia.compass.index'), [
             'command' => 'unknown:command',
             'args'    => 'AnArgument',
         ]);
@@ -84,7 +84,7 @@ class CompassTest extends TestCase
     {
         $this->enableCompass();
 
-        $response = $this->call('GET', route('voyager.compass.index').'?del='.base64_encode('laravel.log'));
+        $response = $this->call('GET', route('navia.compass.index').'?del='.base64_encode('laravel.log'));
         $this->assertEquals(302, $response->status()); // Redirect
     }
 }

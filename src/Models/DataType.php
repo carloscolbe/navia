@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Navia\Database\Schema\SchemaManager;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Traits\Translatable;
 
 class DataType extends Model
@@ -39,7 +39,7 @@ class DataType extends Model
 
     public function rows()
     {
-        return $this->hasMany(Voyager::modelClass('DataRow'))->orderBy('order');
+        return $this->hasMany(Navia::modelClass('DataRow'))->orderBy('order');
     }
 
     public function browseRows()
@@ -69,7 +69,7 @@ class DataType extends Model
 
     public function lastRow()
     {
-        return $this->hasMany(Voyager::modelClass('DataRow'))->orderBy('order', 'DESC')->first();
+        return $this->hasMany(Navia::modelClass('DataRow'))->orderBy('order', 'DESC')->first();
     }
 
     public function setGeneratePermissionsAttribute($value)
@@ -122,7 +122,7 @@ class DataType extends Model
                         : [];
 
                     if (!$dataRow->save()) {
-                        throw new \Exception(__('voyager::database.field_safe_failed', ['field' => $field]));
+                        throw new \Exception(__('navia::database.field_safe_failed', ['field' => $field]));
                     }
 
                     // Save translations if applied
@@ -136,7 +136,7 @@ class DataType extends Model
 
                 // It seems everything was fine. Let's check if we need to generate permissions
                 if ($this->generate_permissions) {
-                    Voyager::model('Permission')->generateFor($this->name);
+                    Navia::model('Permission')->generateFor($this->name);
                 }
 
                 DB::commit();

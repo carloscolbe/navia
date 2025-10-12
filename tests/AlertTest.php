@@ -3,7 +3,7 @@
 namespace Navia\Tests;
 
 use Navia\Alert;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class AlertTest extends TestCase
 {
@@ -12,21 +12,21 @@ class AlertTest extends TestCase
         $alert = (new Alert('test', 'warning'))
             ->title('Title');
 
-        Voyager::addAlert($alert);
+        Navia::addAlert($alert);
 
-        $alerts = Voyager::alerts();
+        $alerts = Navia::alerts();
 
         $this->assertCount(1, $alerts);
     }
 
     public function testComponentRenders()
     {
-        Voyager::addAlert((new Alert('test', 'warning'))
+        Navia::addAlert((new Alert('test', 'warning'))
             ->title('Title')
             ->text('Text')
             ->button('Button', 'http://example.com', 'danger'));
 
-        $alerts = Voyager::alerts();
+        $alerts = Navia::alerts();
 
         $this->assertEquals('<strong>Title</strong>', $alerts[0]->components[0]->render());
         $this->assertEquals('<p>Text</p>', $alerts[0]->components[1]->render());
@@ -35,19 +35,19 @@ class AlertTest extends TestCase
 
     public function testAlertsRenders()
     {
-        Voyager::addAlert((new Alert('test', 'warning'))
+        Navia::addAlert((new Alert('test', 'warning'))
             ->title('Title')
             ->text('Text')
             ->button('Button', 'http://example.com', 'danger'));
 
-        Voyager::addAlert((new Alert('foo'))
+        Navia::addAlert((new Alert('foo'))
             ->title('Bar')
             ->text('Foobar')
             ->button('Link', 'http://example.org'));
 
         $this->assertXmlStringEqualsXmlFile(
             __DIR__.'/rendered_alerts.html',
-            view('voyager::alerts')->render()
+            view('navia::alerts')->render()
         );
     }
 }

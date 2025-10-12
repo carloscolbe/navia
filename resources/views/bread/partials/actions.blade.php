@@ -12,7 +12,7 @@
         @endif
     @endcan
 @elseif (method_exists($action, 'massAction'))
-    <form method="post" action="{{ route('voyager.'.$dataType->slug.'.action') }}" style="display:inline">
+    <form method="post" action="{{ route('navia.'.$dataType->slug.'.action') }}" style="display:inline">
         {{ csrf_field() }}
         <button type="submit" {!! $action->convertAttributesToHtml() !!}><i class="{{ $action->getIcon() }}"></i>  {{ $action->getTitle() }}</button>
         <input type="hidden" name="action" value="{{ get_class($action) }}">

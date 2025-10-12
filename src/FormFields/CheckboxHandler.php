@@ -8,7 +8,7 @@ class CheckboxHandler extends AbstractHandler
 
     public function createContent($row, $dataType, $dataTypeContent, $options)
     {
-        return view('voyager::formfields.checkbox', [
+        return view('navia::formfields.checkbox', [
             'row'             => $row,
             'options'         => $options,
             'dataType'        => $dataType,

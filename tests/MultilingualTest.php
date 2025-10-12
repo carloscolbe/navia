@@ -4,7 +4,7 @@ namespace Navia\Tests;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 use Navia\Models\Page;
 use Navia\Traits\Translatable;
 use Navia\Translator;
@@ -17,22 +17,22 @@ class MultilingualTest extends TestCase
         parent::setUp();
 
         // Add another language
-        config()->set('voyager.multilingual.locales', ['en', 'da']);
+        config()->set('navia.multilingual.locales', ['en', 'da']);
 
         // Turn on multilingual
-        config()->set('voyager.multilingual.enabled', true);
+        config()->set('navia.multilingual.enabled', true);
     }
 
     public function testCheckingModelIsTranslatable()
     {
-        $this->assertTrue(Voyager::translatable(TranslatableModel::class));
-        $this->assertTrue(Voyager::translatable(ActuallyTranslatableModel::class));
+        $this->assertTrue(Navia::translatable(TranslatableModel::class));
+        $this->assertTrue(Navia::translatable(ActuallyTranslatableModel::class));
     }
 
     public function testCheckingModelIsNotTranslatable()
     {
-        $this->assertFalse(Voyager::translatable(NotTranslatableModel::class));
-        $this->assertFalse(Voyager::translatable(StillNotTranslatableModel::class));
+        $this->assertFalse(Navia::translatable(NotTranslatableModel::class));
+        $this->assertFalse(Navia::translatable(StillNotTranslatableModel::class));
     }
 
     public function testGettingModelTranslatableAttributes()

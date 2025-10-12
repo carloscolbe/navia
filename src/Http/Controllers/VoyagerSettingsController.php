@@ -5,31 +5,31 @@ namespace Navia\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class VoyagerSettingsController extends Controller
 {
     public function index()
     {
         // Check permission
-        $this->authorize('browse', Voyager::model('Setting'));
+        $this->authorize('browse', Navia::model('Setting'));
 
-        $data = Voyager::model('Setting')->orderBy('order', 'ASC')->get();
+        $data = Navia::model('Setting')->orderBy('order', 'ASC')->get();
 
         $settings = [];
-        $settings[__('voyager::settings.group_general')] = [];
+        $settings[__('navia::settings.group_general')] = [];
         foreach ($data as $d) {
-            if ($d->group == '' || $d->group == __('voyager::settings.group_general')) {
-                $settings[__('voyager::settings.group_general')][] = $d;
+            if ($d->group == '' || $d->group == __('navia::settings.group_general')) {
+                $settings[__('navia::settings.group_general')][] = $d;
             } else {
                 $settings[$d->group][] = $d;
             }
         }
-        if (count($settings[__('voyager::settings.group_general')]) == 0) {
-            unset($settings[__('voyager::settings.group_general')]);
+        if (count($settings[__('navia::settings.group_general')]) == 0) {
+            unset($settings[__('navia::settings.group_general')]);
         }
 
-        $groups_data = Voyager::model('Setting')->select('group')->distinct()->get();
+        $groups_data = Navia::model('Setting')->select('group')->distinct()->get();
         $groups = [];
         foreach ($groups_data as $group) {
             if ($group->group != '') {
@@ -39,25 +39,25 @@ class VoyagerSettingsController extends Controller
 
         $active = (request()->session()->has('setting_tab')) ? request()->session()->get('setting_tab') : old('setting_tab', key($settings));
 
-        return Voyager::view('voyager::settings.index', compact('settings', 'groups', 'active'));
+        return Navia::view('navia::settings.index', compact('settings', 'groups', 'active'));
     }
 
     public function store(Request $request)
     {
         // Check permission
-        $this->authorize('add', Voyager::model('Setting'));
+        $this->authorize('add', Navia::model('Setting'));
 
         $key = implode('.', [Str::slug($request->input('group')), $request->input('key')]);
-        $key_check = Voyager::model('Setting')->where('key', $key)->get()->count();
+        $key_check = Navia::model('Setting')->where('key', $key)->get()->count();
 
         if ($key_check > 0) {
             return back()->with([
-                'message'    => __('voyager::settings.key_already_exists', ['key' => $key]),
+                'message'    => __('navia::settings.key_already_exists', ['key' => $key]),
                 'alert-type' => 'error',
             ]);
         }
 
-        $lastSetting = Voyager::model('Setting')->orderBy('order', 'DESC')->first();
+        $lastSetting = Navia::model('Setting')->orderBy('order', 'DESC')->first();
 
         if (is_null($lastSetting)) {
             $order = 0;
@@ -69,12 +69,12 @@ class VoyagerSettingsController extends Controller
         $request->merge(['value' => '']);
         $request->merge(['key' => $key]);
 
-        Voyager::model('Setting')->create($request->except('setting_tab'));
+        Navia::model('Setting')->create($request->except('setting_tab'));
 
         request()->flashOnly('setting_tab');
 
         return back()->with([
-            'message'    => __('voyager::settings.successfully_created'),
+            'message'    => __('navia::settings.successfully_created'),
             'alert-type' => 'success',
         ]);
     }
@@ -82,9 +82,9 @@ class VoyagerSettingsController extends Controller
     public function update(Request $request)
     {
         // Check permission
-        $this->authorize('edit', Voyager::model('Setting'));
+        $this->authorize('edit', Navia::model('Setting'));
 
-        $settings = Voyager::model('Setting')->all();
+        $settings = Navia::model('Setting')->all();
 
         foreach ($settings as $setting) {
             $content = $this->getContentBasedOnType($request, 'settings', (object) [
@@ -112,7 +112,7 @@ class VoyagerSettingsController extends Controller
         request()->flashOnly('setting_tab');
 
         return back()->with([
-            'message'    => __('voyager::settings.successfully_saved'),
+            'message'    => __('navia::settings.successfully_saved'),
             'alert-type' => 'success',
         ]);
     }
@@ -120,16 +120,16 @@ class VoyagerSettingsController extends Controller
     public function delete($id)
     {
         // Check permission
-        $this->authorize('delete', Voyager::model('Setting'));
+        $this->authorize('delete', Navia::model('Setting'));
 
-        $setting = Voyager::model('Setting')->find($id);
+        $setting = Navia::model('Setting')->find($id);
 
-        Voyager::model('Setting')->destroy($id);
+        Navia::model('Setting')->destroy($id);
 
         request()->session()->flash('setting_tab', $setting->group);
 
         return back()->with([
-            'message'    => __('voyager::settings.successfully_deleted'),
+            'message'    => __('navia::settings.successfully_deleted'),
             'alert-type' => 'success',
         ]);
     }
@@ -137,20 +137,20 @@ class VoyagerSettingsController extends Controller
     public function move_up($id)
     {
         // Check permission
-        $this->authorize('edit', Voyager::model('Setting'));
+        $this->authorize('edit', Navia::model('Setting'));
 
-        $setting = Voyager::model('Setting')->find($id);
+        $setting = Navia::model('Setting')->find($id);
 
         // Check permission
         $this->authorize('browse', $setting);
 
         $swapOrder = $setting->order;
-        $previousSetting = Voyager::model('Setting')
+        $previousSetting = Navia::model('Setting')
                             ->where('order', '<', $swapOrder)
                             ->where('group', $setting->group)
                             ->orderBy('order', 'DESC')->first();
         $data = [
-            'message'    => __('voyager::settings.already_at_top'),
+            'message'    => __('navia::settings.already_at_top'),
             'alert-type' => 'error',
         ];
 
@@ -161,7 +161,7 @@ class VoyagerSettingsController extends Controller
             $previousSetting->save();
 
             $data = [
-                'message'    => __('voyager::settings.moved_order_up', ['name' => $setting->display_name]),
+                'message'    => __('navia::settings.moved_order_up', ['name' => $setting->display_name]),
                 'alert-type' => 'success',
             ];
         }
@@ -173,7 +173,7 @@ class VoyagerSettingsController extends Controller
 
     public function delete_value($id)
     {
-        $setting = Voyager::model('Setting')->find($id);
+        $setting = Navia::model('Setting')->find($id);
 
         // Check permission
         $this->authorize('delete', $setting);
@@ -181,8 +181,8 @@ class VoyagerSettingsController extends Controller
         if (isset($setting->id)) {
             // If the type is an image... Then delete it
             if ($setting->type == 'image') {
-                if (Storage::disk(config('voyager.storage.disk'))->exists($setting->value)) {
-                    Storage::disk(config('voyager.storage.disk'))->delete($setting->value);
+                if (Storage::disk(config('navia.storage.disk'))->exists($setting->value)) {
+                    Storage::disk(config('navia.storage.disk'))->delete($setting->value);
                 }
             }
             $setting->value = '';
@@ -192,7 +192,7 @@ class VoyagerSettingsController extends Controller
         request()->session()->flash('setting_tab', $setting->group);
 
         return back()->with([
-            'message'    => __('voyager::settings.successfully_removed', ['name' => $setting->display_name]),
+            'message'    => __('navia::settings.successfully_removed', ['name' => $setting->display_name]),
             'alert-type' => 'success',
         ]);
     }
@@ -200,21 +200,21 @@ class VoyagerSettingsController extends Controller
     public function move_down($id)
     {
         // Check permission
-        $this->authorize('edit', Voyager::model('Setting'));
+        $this->authorize('edit', Navia::model('Setting'));
 
-        $setting = Voyager::model('Setting')->find($id);
+        $setting = Navia::model('Setting')->find($id);
 
         // Check permission
         $this->authorize('browse', $setting);
 
         $swapOrder = $setting->order;
 
-        $previousSetting = Voyager::model('Setting')
+        $previousSetting = Navia::model('Setting')
                             ->where('order', '>', $swapOrder)
                             ->where('group', $setting->group)
                             ->orderBy('order', 'ASC')->first();
         $data = [
-            'message'    => __('voyager::settings.already_at_bottom'),
+            'message'    => __('navia::settings.already_at_bottom'),
             'alert-type' => 'error',
         ];
 
@@ -225,7 +225,7 @@ class VoyagerSettingsController extends Controller
             $previousSetting->save();
 
             $data = [
-                'message'    => __('voyager::settings.moved_order_down', ['name' => $setting->display_name]),
+                'message'    => __('navia::settings.moved_order_down', ['name' => $setting->display_name]),
                 'alert-type' => 'success',
             ];
         }

@@ -3,20 +3,20 @@
     $add  = is_null($dataTypeContent->getKey());
 @endphp
 
-@extends('voyager::master')
+@extends('navia::master')
 
 @section('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 @stop
 
-@section('page_title', __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular'))
+@section('page_title', __('navia::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular'))
 
 @section('page_header')
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i>
-        {{ __('voyager::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
+        {{ __('navia::generic.'.($edit ? 'edit' : 'add')).' '.$dataType->getTranslatedAttribute('display_name_singular') }}
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('navia::multilingual.language-selector')
 @stop
 
 @section('content')
@@ -28,7 +28,7 @@
                     <!-- form start -->
                     <form role="form"
                             class="form-edit-add"
-                            action="{{ $edit ? route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) : route('voyager.'.$dataType->slug.'.store') }}"
+                            action="{{ $edit ? route('navia.'.$dataType->slug.'.update', $dataTypeContent->getKey()) : route('navia.'.$dataType->slug.'.store') }}"
                             method="POST" enctype="multipart/form-data">
                         <!-- PUT Method if we are editing -->
                         @if($edit)
@@ -70,7 +70,7 @@
                                 <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width ?? 12 }} {{ $errors->has($row->field) ? 'has-error' : '' }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                     {{ $row->slugify }}
                                     <label class="control-label" for="name">{{ $row->getTranslatedAttribute('display_name') }}</label>
-                                    @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                    @include('navia::multilingual.input-hidden-bread-edit-add')
                                     @if ($add && isset($row->details->view_add))
                                         @include($row->details->view_add, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'view' => 'add', 'options' => $row->details])
                                     @elseif ($edit && isset($row->details->view_edit))
@@ -78,12 +78,12 @@
                                     @elseif (isset($row->details->view))
                                         @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add'), 'view' => ($edit ? 'edit' : 'add'), 'options' => $row->details])
                                     @elseif ($row->type == 'relationship')
-                                        @include('voyager::formfields.relationship', ['options' => $row->details])
+                                        @include('navia::formfields.relationship', ['options' => $row->details])
                                     @else
-                                        {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                        {!! app('navia')->formField($row, $dataType, $dataTypeContent) !!}
                                     @endif
 
-                                    @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
+                                    @foreach (app('navia')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
                                         {!! $after->handle($row, $dataType, $dataTypeContent) !!}
                                     @endforeach
                                     @if ($errors->has($row->field))
@@ -98,14 +98,14 @@
 
                         <div class="panel-footer">
                             @section('submit-buttons')
-                                <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                <button type="submit" class="btn btn-primary save">{{ __('navia::generic.save') }}</button>
                             @stop
                             @yield('submit-buttons')
                         </div>
                     </form>
 
                     <div style="display:none">
-                        <input type="hidden" id="upload_url" value="{{ route('voyager.upload') }}">
+                        <input type="hidden" id="upload_url" value="{{ route('navia.upload') }}">
                         <input type="hidden" id="upload_type_slug" value="{{ $dataType->slug }}">
                     </div>
                 </div>
@@ -120,16 +120,16 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"
                             aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="voyager-warning"></i> {{ __('voyager::generic.are_you_sure') }}</h4>
+                    <h4 class="modal-title"><i class="voyager-warning"></i> {{ __('navia::generic.are_you_sure') }}</h4>
                 </div>
 
                 <div class="modal-body">
-                    <h4>{{ __('voyager::generic.are_you_sure_delete') }} '<span class="confirm_delete_name"></span>'</h4>
+                    <h4>{{ __('navia::generic.are_you_sure_delete') }} '<span class="confirm_delete_name"></span>'</h4>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
-                    <button type="button" class="btn btn-danger" id="confirm_delete">{{ __('voyager::generic.delete_confirm') }}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('navia::generic.cancel') }}</button>
+                    <button type="button" class="btn btn-danger" id="confirm_delete">{{ __('navia::generic.delete_confirm') }}</button>
                 </div>
             </div>
         </div>
@@ -192,7 +192,7 @@
             $('.form-group').on('click', '.remove-single-file', deleteHandler('a', false));
 
             $('#confirm_delete').on('click', function(){
-                $.post('{{ route('voyager.'.$dataType->slug.'.media.remove') }}', params, function (response) {
+                $.post('{{ route('navia.'.$dataType->slug.'.media.remove') }}', params, function (response) {
                     if ( response
                         && response.data
                         && response.data.status

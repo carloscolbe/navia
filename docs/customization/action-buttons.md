@@ -6,14 +6,14 @@ Action buttons are displayed when browsing a BREAD next to each row
 
 ![](../.gitbook/assets/action_buttons.jpg)
 
-You can add your own buttons very easily. First we will create an Action-class which extends Voyagers AbstractAction in app/Actions/MyAction.php
+You can add your own buttons very easily. First we will create an Action-class which extends Navias AbstractAction in app/Actions/MyAction.php
 
 ```php
 <?php
 
 namespace App\Actions;
 
-use TCG\Voyager\Actions\AbstractAction;
+use Navia\Actions\AbstractAction;
 
 class MyAction extends AbstractAction
 {
@@ -55,7 +55,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Events\Dispatcher;
-use TCG\Voyager\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class AppServiceProvider extends ServiceProvider
 {

@@ -9,7 +9,7 @@ return [
     ],
     'commands'      => [
         'title'                 => '命令',
-        'text'                  => 'Voyager的Artisan命令.',
+        'text'                  => 'Navia的Artisan命令.',
         'clear_output'          => '清除输出',
         'command_output'        => 'Artisan命令输出',
         'additional_args'       => '附加参数?',
@@ -17,7 +17,7 @@ return [
     ],
     'resources'     => [
         'title'                 => '资源',
-        'text'                  => 'Voyager资源，帮助你更快地找到东西。',
+        'text'                  => 'Navia资源，帮助你更快地找到东西。',
 
     ],
     'logs'          => [

@@ -24,8 +24,8 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'slug'                  => 'categories',
-                'display_name_singular' => __('voyager::seeders.data_types.category.singular'),
-                'display_name_plural'   => __('voyager::seeders.data_types.category.plural'),
+                'display_name_singular' => __('navia::seeders.data_types.category.singular'),
+                'display_name_plural'   => __('navia::seeders.data_types.category.plural'),
                 'icon'                  => 'voyager-categories',
                 'model_name'            => 'Navia\\Models\\Category',
                 'controller'            => '',
@@ -39,7 +39,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => __('voyager::seeders.data_rows.id'),
+                'display_name' => __('navia::seeders.data_rows.id'),
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
@@ -54,7 +54,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'select_dropdown',
-                'display_name' => __('voyager::seeders.data_rows.parent'),
+                'display_name' => __('navia::seeders.data_rows.parent'),
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
@@ -80,7 +80,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.order'),
+                'display_name' => __('navia::seeders.data_rows.order'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -98,7 +98,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.name'),
+                'display_name' => __('navia::seeders.data_rows.name'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -113,7 +113,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.slug'),
+                'display_name' => __('navia::seeders.data_rows.slug'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -133,7 +133,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => __('voyager::seeders.data_rows.created_at'),
+                'display_name' => __('navia::seeders.data_rows.created_at'),
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
@@ -148,7 +148,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => __('voyager::seeders.data_rows.updated_at'),
+                'display_name' => __('navia::seeders.data_rows.updated_at'),
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -163,9 +163,9 @@ class CategoriesTableSeeder extends Seeder
         $menu = Menu::where('name', 'admin')->firstOrFail();
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.categories'),
+            'title'   => __('navia::seeders.menu_items.categories'),
             'url'     => '',
-            'route'   => 'voyager.categories.index',
+            'route'   => 'navia.categories.index',
         ]);
         if (!$menuItem->exists) {
             $menuItem->fill([

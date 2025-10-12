@@ -4,7 +4,7 @@ namespace Navia\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Navia\Contracts\User;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 class BasePolicy
 {
@@ -77,7 +77,7 @@ class BasePolicy
     {
         $model_name = get_class($model);
         if (!isset(self::$datatypes[$model_name])) {
-            $dataType = Voyager::model('DataType');
+            $dataType = Navia::model('DataType');
             self::$datatypes[$model_name] = $dataType->where('model_name', $model_name)->first();
         }
 

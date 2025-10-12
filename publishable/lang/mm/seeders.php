@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image' => 'စီမံခန့်ခွဲသူ နောက်ခံပုံ',
             'description' => 'စီမံခန့်ခွဲသူ ဖော်ပြချက်',
-            'description_value' => 'Voyager ကြိုဆိုပါသည်. The Missing Admin for Laravel',
+            'description_value' => 'Navia ကြိုဆိုပါသည်. A powerful and revitalized admin panel for Laravel.',
             'google_analytics_client_id' => 'Google Analytics Client ID (စီမံခန့်ခွဲသူရဲ့ dashboard အတွက်သုံးပါ)',
             'icon_image' => 'စီမံခန့်ခွဲသူ အိုင်ကွန် ရုပ်ပုံ',
             'loader' => 'စီမံခန့်ခွဲသူရဲ့ Loader',

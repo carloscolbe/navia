@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageServiceProvider;
 use Navia\Events\FormFieldsRegistered;
-use Navia\Facades\Voyager as VoyagerFacade;
+use Navia\Facades\Navia as NaviaFacade;
 use Navia\FormFields\After\DescriptionHandler;
 use Navia\Http\Middleware\VoyagerAdminMiddleware;
 use Navia\Models\MenuItem;
@@ -60,13 +60,13 @@ class NaviaServiceProvider extends ServiceProvider
         $this->app->register(NaviaDummyServiceProvider::class);
 
         $loader = AliasLoader::getInstance();
-        $loader->alias('Voyager', VoyagerFacade::class);
+        $loader->alias('Navia', NaviaFacade::class);
 
-        $this->app->singleton('voyager', function () {
-            return new Voyager();
+        $this->app->singleton('navia', function () {
+            return new Navia();
         });
 
-        $this->app->singleton('VoyagerGuard', function () {
+        $this->app->singleton('NaviaGuard', function () {
             return config('auth.defaults.guard', 'web');
         });
 
@@ -94,24 +94,24 @@ class NaviaServiceProvider extends ServiceProvider
      */
     public function boot(Router $router, Dispatcher $event)
     {
-        if (config('voyager.user.add_default_role_on_register')) {
-            $model = Auth::guard(app('VoyagerGuard'))->getProvider()->getModel();
+        if (config('navia.user.add_default_role_on_register')) {
+            $model = Auth::guard(app('NaviaGuard'))->getProvider()->getModel();
             call_user_func($model.'::created', function ($user) use ($model) {
                 if (is_null($user->role_id)) {
                     call_user_func($model.'::findOrFail', $user->id)
-                        ->setRole(config('voyager.user.default_role'))
+                        ->setRole(config('navia.user.default_role'))
                         ->save();
                 }
             });
         }
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'voyager');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'navia');
 
         $router->aliasMiddleware('admin.user', VoyagerAdminMiddleware::class);
 
-        $this->loadTranslationsFrom(realpath(__DIR__.'/../publishable/lang'), 'voyager');
+        $this->loadTranslationsFrom(realpath(__DIR__.'/../publishable/lang'), 'navia');
 
-        if (config('voyager.database.autoload_migrations', true)) {
+        if (config('navia.database.autoload_migrations', true)) {
             if (config('app.env') == 'testing') {
                 $this->loadMigrationsFrom(realpath(__DIR__.'/migrations'));
             }
@@ -123,7 +123,7 @@ class NaviaServiceProvider extends ServiceProvider
 
         $this->registerViewComposers();
 
-        $event->listen('voyager.alerts.collecting', function () {
+        $event->listen('navia.alerts.collecting', function () {
             $this->addStorageSymlinkAlert();
         });
 
@@ -150,8 +150,8 @@ class NaviaServiceProvider extends ServiceProvider
     protected function registerViewComposers()
     {
         // Register alerts
-        View::composer('voyager::*', function ($view) {
-            $view->with('alerts', VoyagerFacade::alerts());
+        View::composer('navia::*', function ($view) {
+            $view->with('alerts', NaviaFacade::alerts());
         });
     }
 
@@ -167,11 +167,11 @@ class NaviaServiceProvider extends ServiceProvider
         }
         $routeName = is_array($currentRouteAction) ? Arr::get($currentRouteAction, 'as') : null;
 
-        if ($routeName != 'voyager.dashboard') {
+        if ($routeName != 'navia.dashboard') {
             return;
         }
 
-        $storage_disk = (!empty(config('voyager.storage.disk'))) ? config('voyager.storage.disk') : 'public';
+        $storage_disk = (!empty(config('navia.storage.disk'))) ? config('navia.storage.disk') : 'public';
 
         if (request()->has('fix-missing-storage-symlink')) {
             if (file_exists(public_path('storage'))) {
@@ -186,10 +186,10 @@ class NaviaServiceProvider extends ServiceProvider
         } elseif ($storage_disk == 'public') {
             if (!file_exists(public_path('storage')) || @readlink(public_path('storage')) == public_path('storage')) {
                 $alert = (new Alert('missing-storage-symlink', 'warning'))
-                    ->title(__('voyager::error.symlink_missing_title'))
-                    ->text(__('voyager::error.symlink_missing_text'))
-                    ->button(__('voyager::error.symlink_missing_button'), '?fix-missing-storage-symlink=1');
-                VoyagerFacade::addAlert($alert);
+                    ->title(__('navia::error.symlink_missing_title'))
+                    ->text(__('navia::error.symlink_missing_text'))
+                    ->button(__('navia::error.symlink_missing_button'), '?fix-missing-storage-symlink=1');
+                NaviaFacade::addAlert($alert);
             }
         }
     }
@@ -200,15 +200,15 @@ class NaviaServiceProvider extends ServiceProvider
 
         if (file_exists(public_path('storage'))) {
             $alert = (new Alert('fixed-missing-storage-symlink', 'success'))
-                ->title(__('voyager::error.symlink_created_title'))
-                ->text(__('voyager::error.symlink_created_text'));
+                ->title(__('navia::error.symlink_created_title'))
+                ->text(__('navia::error.symlink_created_text'));
         } else {
             $alert = (new Alert('failed-fixing-missing-storage-symlink', 'danger'))
-                ->title(__('voyager::error.symlink_failed_title'))
-                ->text(__('voyager::error.symlink_failed_text'));
+                ->title(__('navia::error.symlink_failed_title'))
+                ->text(__('navia::error.symlink_failed_text'));
         }
 
-        VoyagerFacade::addAlert($alert);
+        NaviaFacade::addAlert($alert);
     }
 
     /**
@@ -221,7 +221,7 @@ class NaviaServiceProvider extends ServiceProvider
         foreach ($components as $component) {
             $class = 'Navia\\Alert\\Components\\'.ucfirst(Str::camel($component)).'Component';
 
-            $this->app->bind("voyager.alert.components.{$component}", $class);
+            $this->app->bind("navia.alert.components.{$component}", $class);
         }
     }
 
@@ -246,14 +246,14 @@ class NaviaServiceProvider extends ServiceProvider
         $publishablePath = dirname(__DIR__).'/publishable';
 
         $publishable = [
-            'voyager_avatar' => [
+            'navia_avatar' => [
                 "{$publishablePath}/dummy_content/users/" => storage_path('app/public/users'),
             ],
             'seeders' => [
                 "{$publishablePath}/database/seeders/" => database_path('seeders'),
             ],
             'config' => [
-                "{$publishablePath}/config/voyager.php" => config_path('voyager.php'),
+                "{$publishablePath}/config/navia.php" => config_path('navia.php'),
             ],
 
         ];
@@ -266,8 +266,8 @@ class NaviaServiceProvider extends ServiceProvider
     public function registerConfigs()
     {
         $this->mergeConfigFrom(
-            dirname(__DIR__).'/publishable/config/voyager.php',
-            'voyager'
+            dirname(__DIR__).'/publishable/config/navia.php',
+            'navia'
         );
     }
 
@@ -279,8 +279,8 @@ class NaviaServiceProvider extends ServiceProvider
         // otherwise it will throw an error because no database
         // connection has been made yet.
         try {
-            if (Schema::hasTable(VoyagerFacade::model('DataType')->getTable())) {
-                $dataType = VoyagerFacade::model('DataType');
+            if (Schema::hasTable(NaviaFacade::model('DataType')->getTable())) {
+                $dataType = NaviaFacade::model('DataType');
                 $dataTypes = $dataType->select('policy_name', 'model_name')->get();
 
                 foreach ($dataTypes as $dataType) {
@@ -337,10 +337,10 @@ class NaviaServiceProvider extends ServiceProvider
         foreach ($formFields as $formField) {
             $class = Str::studly("{$formField}_handler");
 
-            VoyagerFacade::addFormField("Navia\\FormFields\\{$class}");
+            NaviaFacade::addFormField("Navia\\FormFields\\{$class}");
         }
 
-        VoyagerFacade::addAfterFormField(DescriptionHandler::class);
+        NaviaFacade::addAfterFormField(DescriptionHandler::class);
 
         event(new FormFieldsRegistered($formFields));
     }

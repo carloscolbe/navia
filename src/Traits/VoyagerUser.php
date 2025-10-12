@@ -3,7 +3,7 @@
 namespace Navia\Traits;
 
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 /**
  * @property  \Illuminate\Database\Eloquent\Collection  roles
@@ -15,7 +15,7 @@ trait VoyagerUser
      */
     public function role()
     {
-        return $this->belongsTo(Voyager::modelClass('Role'));
+        return $this->belongsTo(Navia::modelClass('Role'));
     }
 
     /**
@@ -23,7 +23,7 @@ trait VoyagerUser
      */
     public function roles()
     {
-        return $this->belongsToMany(Voyager::modelClass('Role'), 'user_roles', 'user_id', 'role_id');
+        return $this->belongsToMany(Navia::modelClass('Role'), 'user_roles', 'user_id', 'role_id');
     }
 
     /**
@@ -63,7 +63,7 @@ trait VoyagerUser
      */
     public function setRole($name)
     {
-        $role = Voyager::model('Role')->where('name', '=', $name)->first();
+        $role = Navia::model('Role')->where('name', '=', $name)->first();
 
         if ($role) {
             $this->role()->associate($role);

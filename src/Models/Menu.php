@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Navia\Events\MenuDisplay;
-use Navia\Facades\Voyager;
+use Navia\Facades\Navia;
 
 /**
  * @todo: Refactor this class by using something like MenuBuilder Helper.
@@ -32,12 +32,12 @@ class Menu extends Model
 
     public function items()
     {
-        return $this->hasMany(Voyager::modelClass('MenuItem'));
+        return $this->hasMany(Navia::modelClass('MenuItem'));
     }
 
     public function parent_items()
     {
-        return $this->hasMany(Voyager::modelClass('MenuItem'))
+        return $this->hasMany(Navia::modelClass('MenuItem'))
             ->whereNull('parent_id');
     }
 
@@ -53,7 +53,7 @@ class Menu extends Model
     public static function display($menuName, $type = null, array $options = [])
     {
         // GET THE MENU - sort collection in blade
-        $menu = \Cache::remember('voyager_menu_'.$menuName, \Carbon\Carbon::now()->addDays(30), function () use ($menuName) {
+        $menu = \Cache::remember('navia_menu_'.$menuName, \Carbon\Carbon::now()->addDays(30), function () use ($menuName) {
             return static::where('name', '=', $menuName)
             ->with(['parent_items.children' => function ($q) {
                 $q->orderBy('order');
@@ -78,12 +78,12 @@ class Menu extends Model
         }
 
         if ($type == 'admin') {
-            $type = 'voyager::menu.'.$type;
+            $type = 'navia::menu.'.$type;
         } else {
             if (is_null($type)) {
-                $type = 'voyager::menu.default';
+                $type = 'navia::menu.default';
             } elseif ($type == 'bootstrap' && !view()->exists($type)) {
-                $type = 'voyager::menu.bootstrap';
+                $type = 'navia::menu.bootstrap';
             }
         }
 
@@ -102,13 +102,13 @@ class Menu extends Model
 
     public function removeMenuFromCache()
     {
-        \Cache::forget('voyager_menu_'.$this->name);
+        \Cache::forget('navia_menu_'.$this->name);
     }
 
     protected static function processItems($items)
     {
         // Eagerload Translations
-        if (config('voyager.multilingual.enabled')) {
+        if (config('navia.multilingual.enabled')) {
             $items->load('translations');
         }
 
@@ -125,10 +125,10 @@ class Menu extends Model
                 // The current URL is "below" the menu-item URL. For example "admin/posts/1/edit" => "admin/posts"
                 $item->active = true;
             }
-            if (($item->href == url('') || $item->href == route('voyager.dashboard')) && $item->children->count() > 0) {
+            if (($item->href == url('') || $item->href == route('navia.dashboard')) && $item->children->count() > 0) {
                 // Exclude sub-menus
                 $item->active = false;
-            } elseif ($item->href == route('voyager.dashboard') && url()->current() != route('voyager.dashboard')) {
+            } elseif ($item->href == route('navia.dashboard') && url()->current() != route('navia.dashboard')) {
                 // Exclude dashboard
                 $item->active = false;
             }

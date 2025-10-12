@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => '管理者 背景イメージ',
             'description'                => '管理者 説明',
-            'description_value'          => 'Voyagerへようこそ. The Missing Admin for Laravel',
+            'description_value'          => 'Voyagerへようこそ. A powerful and revitalized admin panel for Laravel.',
             'google_analytics_client_id' => 'Googleアナリティクス クライアントID (管理ダッシュボード用)',
             'icon_image'                 => '管理者 アイコンイメージ',
             'loader'                     => '管理者 ローダー',

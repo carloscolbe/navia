@@ -17,7 +17,7 @@ class VoyagerAdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        auth()->setDefaultDriver(app('VoyagerGuard'));
+        auth()->setDefaultDriver(app('NaviaGuard'));
 
         if (!Auth::guest()) {
             $user = Auth::user();
@@ -26,7 +26,7 @@ class VoyagerAdminMiddleware
             return $user->hasPermission('browse_admin') ? $next($request) : redirect('/');
         }
 
-        $urlLogin = route('voyager.login');
+        $urlLogin = route('navia.login');
 
         return redirect()->guest($urlLogin);
     }

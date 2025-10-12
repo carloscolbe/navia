@@ -8,7 +8,7 @@ class TimeHandler extends AbstractHandler
 
     public function createContent($row, $dataType, $dataTypeContent, $options)
     {
-        return view('voyager::formfields.time', [
+        return view('navia::formfields.time', [
             'row'             => $row,
             'options'         => $options,
             'dataType'        => $dataType,

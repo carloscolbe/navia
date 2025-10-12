@@ -56,27 +56,27 @@ class TranslationsTableSeeder extends Seeder
         //
         $_fld = 'display_name_singular';
         $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.post.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Post');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.page.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Página');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.user.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.user.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizador');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.category.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.category.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categoria');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.menu.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menu');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.role.singular'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.role.singular'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Função');
         }
@@ -85,27 +85,27 @@ class TranslationsTableSeeder extends Seeder
         //
         $_fld = 'display_name_plural';
         $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.post.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Posts');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.page.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Páginas');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.user.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.user.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizadores');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.category.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.category.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categorias');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.menu.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menus');
         }
-        $dtp = DataType::where($_fld, __('voyager::seeders.data_types.role.plural'))->firstOrFail();
+        $dtp = DataType::where($_fld, __('navia::seeders.data_types.role.plural'))->firstOrFail();
         if ($dtp->exists) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Funções');
         }
@@ -147,57 +147,57 @@ class TranslationsTableSeeder extends Seeder
     private function menusTranslations()
     {
         $_tpl = ['menu_items', 'title'];
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.dashboard'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.dashboard'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Painel de Controle');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.media'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.media'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Media');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.posts'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.posts'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Publicações');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.users'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.users'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Utilizadores');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.categories'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.categories'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Categorias');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.pages'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.pages'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Páginas');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.roles'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.roles'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Funções');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.tools'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.tools'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Ferramentas');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.menu_builder'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.menu_builder'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Menus');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.database'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.database'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Base de dados');
         }
 
-        $_item = $this->findMenuItem(__('voyager::seeders.menu_items.settings'));
+        $_item = $this->findMenuItem(__('navia::seeders.menu_items.settings'));
         if ($_item->exists) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Configurações');
         }

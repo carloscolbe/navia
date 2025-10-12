@@ -26,7 +26,7 @@ class BreadMediaUploadTest extends TestCase
 
         Auth::loginUsingId(1);
 
-        $this->storage = Storage::disk(config('voyager.storage.disk'));
+        $this->storage = Storage::disk(config('navia.storage.disk'));
     }
 
     public function testMultipleImagesUpload()
@@ -41,7 +41,7 @@ class BreadMediaUploadTest extends TestCase
         $this->storage->assertExists($files[1]);
         $this->storage->assertExists($files[2]);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testMultipleImagesDelete()
@@ -52,7 +52,7 @@ class BreadMediaUploadTest extends TestCase
 
         $files = json_decode($page->image, true);
 
-        $response = $this->post(route('voyager.pages.media.remove'), [
+        $response = $this->post(route('navia.pages.media.remove'), [
             'id'        => $page->id,
             'slug'      => 'pages',
             'field'     => 'image',
@@ -64,7 +64,7 @@ class BreadMediaUploadTest extends TestCase
         $this->storage->assertMissing($files[1]);
         $this->storage->assertExists($files[2]);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testMultipleImagesRemoveOnDelete()
@@ -75,7 +75,7 @@ class BreadMediaUploadTest extends TestCase
 
         $files = json_decode($page->image, true);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         $this->storage->assertMissing($files[0]);
         $this->storage->assertMissing($files[1]);
@@ -94,14 +94,14 @@ class BreadMediaUploadTest extends TestCase
             $this->storage->assertExists($path);
         }
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testImageWithThumbnailsDelete()
     {
         $page = $this->uploadMedia([$this->image_one], 'image', json_decode($this->details));
 
-        $response = $this->post(route('voyager.pages.media.remove'), [
+        $response = $this->post(route('navia.pages.media.remove'), [
             'id'        => $page->id,
             'slug'      => 'pages',
             'field'     => 'image',
@@ -115,7 +115,7 @@ class BreadMediaUploadTest extends TestCase
             $this->storage->assertMissing($path);
         }
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testImageWithThumbnailsRemoveOnDelete()
@@ -124,7 +124,7 @@ class BreadMediaUploadTest extends TestCase
 
         $details = json_decode($this->details);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         foreach ($details->thumbnails as $thumbnail) {
             $path = preg_replace('/(.*)(\.[\w\d]{2,4})$/', '$1-'.$thumbnail->name.'$2', $page->image);
@@ -150,7 +150,7 @@ class BreadMediaUploadTest extends TestCase
             }
         }
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testMultipleImagesWithThumbnailsDelete()
@@ -161,7 +161,7 @@ class BreadMediaUploadTest extends TestCase
 
         $files = json_decode($page->image, true);
 
-        $response = $this->post(route('voyager.pages.media.remove'), [
+        $response = $this->post(route('navia.pages.media.remove'), [
             'id'        => $page->id,
             'slug'      => 'pages',
             'field'     => 'image',
@@ -183,7 +183,7 @@ class BreadMediaUploadTest extends TestCase
             }
         }
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testMultipleImagesWithThumbnailsRemoveOnDelete()
@@ -195,7 +195,7 @@ class BreadMediaUploadTest extends TestCase
         $files = json_decode($page->image, true);
         $details = json_decode($this->details);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         foreach ($files as $file) {
             foreach ($details->thumbnails as $thumbnail) {
@@ -213,7 +213,7 @@ class BreadMediaUploadTest extends TestCase
         $file = json_decode($page->image, true);
         $this->storage->assertExists($file[0]['download_link']);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testFileDelete()
@@ -222,7 +222,7 @@ class BreadMediaUploadTest extends TestCase
 
         $file = json_decode($page->image, true);
 
-        $this->call('POST', route('voyager.pages.media.remove'), [
+        $this->call('POST', route('navia.pages.media.remove'), [
             'id'        => $page->id,
             'slug'      => 'pages',
             'field'     => 'image',
@@ -232,7 +232,7 @@ class BreadMediaUploadTest extends TestCase
 
         $this->storage->assertMissing($file[0]['download_link']);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testValidationForFile()
@@ -250,14 +250,14 @@ class BreadMediaUploadTest extends TestCase
         $this->storage->assertExists($file[0]['download_link']);
         $this->storage->assertExists($file[1]['download_link']);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testFileRemoveOnDelete()
     {
         $page = $this->uploadMedia([$this->file], 'file');
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         $file = json_decode($page->image, true);
         $this->storage->assertMissing($file[0]['download_link']);
@@ -271,7 +271,7 @@ class BreadMediaUploadTest extends TestCase
         // Second file
         $file = [];
         $file[] = UploadedFile::fake()->create($this->file_two, 1);
-        $this->call('PUT', route('voyager.pages.update', $page->id), [
+        $this->call('PUT', route('navia.pages.update', $page->id), [
             'author_id' => $page->author_id,
             'title'     => $page->title,
             'slug'      => $page->slug,
@@ -287,7 +287,7 @@ class BreadMediaUploadTest extends TestCase
         $this->storage->assertExists($file[0]['download_link']);
         $this->storage->assertExists($file[1]['download_link']);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testImageUpload()
@@ -296,14 +296,14 @@ class BreadMediaUploadTest extends TestCase
 
         $this->storage->assertExists($page->image);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testImageDelete()
     {
         $page = $this->uploadMedia([$this->image_one], 'image');
 
-        $response = $this->post(route('voyager.pages.media.remove'), [
+        $response = $this->post(route('navia.pages.media.remove'), [
             'id'        => $page->id,
             'slug'      => 'pages',
             'field'     => 'image',
@@ -313,14 +313,14 @@ class BreadMediaUploadTest extends TestCase
 
         $this->storage->assertMissing($page->image);
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
     }
 
     public function testImageRemoveOnDelete()
     {
         $page = $this->uploadMedia([$this->image_one], 'image');
 
-        $this->delete(route('voyager.pages.destroy', [$page->id]));
+        $this->delete(route('navia.pages.destroy', [$page->id]));
 
         $this->storage->assertMissing($page->image);
     }
@@ -355,7 +355,7 @@ class BreadMediaUploadTest extends TestCase
                 break;
         }
 
-        $this->call('POST', route('voyager.pages.store'), [
+        $this->call('POST', route('navia.pages.store'), [
             'author_id' => 1,
             'title'     => 'Upload',
             'slug'      => 'upload-media',

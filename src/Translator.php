@@ -5,7 +5,7 @@ namespace Navia;
 use ArrayAccess;
 use Illuminate\Database\Eloquent\Model;
 use JsonSerializable;
-use Navia\Facades\Voyager as VoyagerFacade;
+use Navia\Facades\Navia as NaviaFacade;
 
 class Translator implements ArrayAccess, JsonSerializable
 {
@@ -20,7 +20,7 @@ class Translator implements ArrayAccess, JsonSerializable
         }
 
         $this->model = $model;
-        $this->locale = config('voyager.multilingual.default', 'en');
+        $this->locale = config('navia.multilingual.default', 'en');
         $attributes = [];
 
         foreach ($this->model->getAttributes() as $attribute => $value) {
@@ -60,7 +60,7 @@ class Translator implements ArrayAccess, JsonSerializable
             if ($attribute['exists']) {
                 $translation = $this->getTranslationModel($key);
             } else {
-                $translation = VoyagerFacade::model('Translation')->where('table_name', $this->model->getTable())
+                $translation = NaviaFacade::model('Translation')->where('table_name', $this->model->getTable())
                     ->where('column_name', $key)
                     ->where('foreign_key', $this->model->getKey())
                     ->where('locale', $this->locale)
@@ -68,7 +68,7 @@ class Translator implements ArrayAccess, JsonSerializable
             }
 
             if (is_null($translation)) {
-                $translation = VoyagerFacade::model('Translation');
+                $translation = NaviaFacade::model('Translation');
             }
 
             $translation->fill([
@@ -140,7 +140,7 @@ class Translator implements ArrayAccess, JsonSerializable
     {
         $this->attributes[$attribute] = [
             'value'    => $this->model->attributes[$attribute],
-            'locale'   => config('voyager.multilingual.default', 'en'),
+            'locale'   => config('navia.multilingual.default', 'en'),
             'exists'   => true,
             'modified' => false,
         ];
@@ -235,7 +235,7 @@ class Translator implements ArrayAccess, JsonSerializable
             return false;
         }
 
-        $translation = VoyagerFacade::model('Translation');
+        $translation = NaviaFacade::model('Translation');
         $translation->fill([
             'table_name'  => $this->model->getTable(),
             'column_name' => $key,
@@ -276,7 +276,7 @@ class Translator implements ArrayAccess, JsonSerializable
         $translations = $this->model->getRelation('translations');
         $locale = $this->locale;
 
-        VoyagerFacade::model('Translation')->where('table_name', $this->model->getTable())
+        NaviaFacade::model('Translation')->where('table_name', $this->model->getTable())
             ->where('column_name', $key)
             ->where('foreign_key', $this->model->getKey())
             ->where('locale', $locale)
