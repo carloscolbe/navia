@@ -19,7 +19,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'منابع',
-        'text'                  => 'منابع Voyager برای کمک به شما جهت یافتن سریع تر آنچه به دنبالش هستید',
+        'text'                  => 'منابع Navia برای کمک به شما جهت یافتن سریع تر آنچه به دنبالش هستید',
 
     ],
     'logs'          => [
@@ -39,7 +39,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'فونت ها',
-        'font_class'            => 'نقشه کلاس های فونت Voyager',
-        'font_character'        => 'نقشه کاراکترهای فونت Voyager',
+        'font_class'            => 'نقشه کلاس های فونت Navia',
+        'font_character'        => 'نقشه کاراکترهای فونت Navia',
     ],
 ];

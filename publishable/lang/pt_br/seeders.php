@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Imagem de Background do Ambiente Administrativo',
             'description'                => 'Descrição do Ambiente Administrativo',
-            'description_value'          => 'Bem-vindo ao Voyager. O Ambiente Administrativo que faltava para Laravel',
+            'description_value'          => 'Bem-vindo ao Navia. O Ambiente Administrativo que faltava para Laravel',
             'google_analytics_client_id' => 'Google Analytics Client ID (used for admin dashboard)',
             'icon_image'                 => 'Ícone do Ambiente Administrativo',
             'loader'                     => 'Loader do Ambiente Administrativo',

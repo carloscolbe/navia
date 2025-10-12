@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Générer les permissions',
     'icon_class'             => 'Icône à utiliser pour cette table',
     'icon_hint'              => 'Icône (optionnel), utiliser une',
-    'icon_hint2'             => 'police d\'icônes de Voyager',
+    'icon_hint2'             => 'police d\'icônes de Navia',
     'model_class'            => 'Nom de la classe du modèle (model)',
     'model_name'             => 'Nom du modèle (model)',
     'model_name_ph'          => 'exemple : \App\User. Si laissé vide, essayera d\'utiliser le nom de la table',

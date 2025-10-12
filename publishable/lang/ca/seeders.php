@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Imatge de Fons del Administrador',
             'description'                => 'Descripció del Administrador',
-            'description_value'          => 'Benvingut a Voyager. L\'administrador que faltava a Laravel',
+            'description_value'          => 'Benvingut a Navia. L\'administrador que faltava a Laravel',
             'google_analytics_client_id' => 'ID de Client per a Google Analytics (fet servir al taulell)',
             'icon_image'                 => 'Imatge de l\'Icona del Administrador',
             'loader'                     => 'Imatge de Càrrega del Administrador',

@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Imaxe de fondo do panel',
             'description'                => 'Descripción do panel',
-            'description_value'          => 'Benvido a Voyager. O panel perdido de Laravel',
+            'description_value'          => 'Benvido a Navia. O panel perdido de Laravel',
             'google_analytics_client_id' => 'Google Analytics Client ID (usado para panel de administración)',
             'icon_image'                 => 'Icono do panel',
             'loader'                     => 'Cargador do panel',

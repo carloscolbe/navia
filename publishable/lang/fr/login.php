@@ -3,5 +3,5 @@
 return [
     'loggingin'    => 'Se connecter',
     'signin_below' => 'Connectez-vous ci-dessous :',
-    'welcome'      => 'Bienvenue dans Voyager, le panneau d\'administration qui manquait à Laravel',
+    'welcome'      => 'Bienvenue dans Navia, le panneau d\'administration qui manquait à Laravel',
 ];

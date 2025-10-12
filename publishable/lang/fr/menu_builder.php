@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Route dynamique',
     'edit_item'            => 'Editer l\'élément du menu',
     'icon_class'           => 'Icône pour l\'élément de menu (utilisez la ',
-    'icon_class2'          => 'police d\'icône Voyager</a>)',
+    'icon_class2'          => 'police d\'icône Navia</a>)',
     'icon_class_ph'        => 'Classe d\'icône (optionnel)',
     'item_route'           => 'Route pour l\'élément de menu',
     'item_title'           => 'Titre pour l\'élément de menu',

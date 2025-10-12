@@ -10,7 +10,7 @@ return [
     ],
     'commands'      => [
         'title'                 => 'Komutlar',
-        'text'                  => 'Artisan Komutlarını Voyager\'dan Çalıştır.',
+        'text'                  => 'Artisan Komutlarını Navia\'dan Çalıştır.',
         'clear_output'          => 'çıktıyı temizle',
         'command_output'        => 'Artisan Komut Çıktısı',
         'additional_args'       => 'İlave Argümanlar?',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Kaynaklar',
-        'text'                  => 'Aradığınız şeyleri bulmanızı kolaylaştıracak Voyager kaynakları.',
+        'text'                  => 'Aradığınız şeyleri bulmanızı kolaylaştıracak Navia kaynakları.',
 
     ],
     'logs'          => [

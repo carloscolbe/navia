@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dynamiczna ścieżka',
     'edit_item'            => 'Edytuj element menu',
     'icon_class'           => 'Klasa ikony elementu menu (Użyj',
-    'icon_class2'          => 'klasy ikon Voyager</a>)',
+    'icon_class2'          => 'klasy ikon Navia</a>)',
     'icon_class_ph'        => 'Klasa ikony (opcjonalnie)',
     'item_route'           => 'Ścieżka dla elementu menu',
     'item_title'           => 'Tytuł elementu menu',

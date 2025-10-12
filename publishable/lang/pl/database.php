@@ -44,7 +44,7 @@ return [
     'generate_permissions'      => 'Wygeneruj uprawnienia',
     'icon_class'                => 'Ikona dla tej tabeli',
     'icon_hint'                 => 'Ikona (opcjonalnie) Użyj',
-    'icon_hint2'                => 'klasę ikony Voyager',
+    'icon_hint2'                => 'klasę ikony Navia',
     'index'                     => 'Indeks',
     'input_type'                => 'Rodzaj pola',
     'key'                       => 'Klucz',

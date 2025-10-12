@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Админ Изображение',
             'description'                => 'Админ Описание',
-            'description_value'          => 'Добре дошли във Voyager. Липсващият админ панел за Laravel',
+            'description_value'          => 'Добре дошли във Navia. Липсващият админ панел за Laravel',
             'google_analytics_client_id' => 'Google Analytics Client ID (използва се за административно табло)',
             'icon_image'                 => 'Админ Лого',
             'loader'                     => 'Админ Loader',

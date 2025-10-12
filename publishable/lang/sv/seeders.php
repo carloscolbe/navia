@@ -76,7 +76,7 @@ return [
         'admin' => [
             'background_image'           => 'Admin Backgroundsbild',
             'description'                => 'Admin Beskrivning',
-            'description_value'          => 'Välkommen till Voyager. Den saknade kontrollpanelen för Laravel',
+            'description_value'          => 'Välkommen till Navia. Den saknade kontrollpanelen för Laravel',
             'google_analytics_client_id' => 'Google Analytics Klient ID (används på admins skrivbord)',
             'icon_image'                 => 'Admin Ikon Bild',
             'loader'                     => 'Admin Laddare',

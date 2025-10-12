@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Admin Hintergrundbild',
             'description'                => 'Admin Beschreibung',
-            'description_value'          => 'Willkommen bei Voyager. Dem fehlendem Admin für Laravel',
+            'description_value'          => 'Willkommen bei Navia. Dem fehlendem Admin für Laravel',
             'google_analytics_client_id' => 'Google Analytics Client ID (für Dashboard)',
             'icon_image'                 => 'Admin Icon',
             'loader'                     => 'Admin Ladebild',

@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Resurslar',
-        'text'                  => 'Axtardığınızı tez tapmağa kömək edəcək Voyager resursları.',
+        'text'                  => 'Axtardığınızı tez tapmağa kömək edəcək Navia resursları.',
 
     ],
     'logs'          => [

@@ -47,7 +47,7 @@ return [
     'generate_permissions' => 'Generate Permissions',
     'icon_class'           => 'Ikona për t\'u përdorur për këtë tabelë',
     'icon_hint'            => 'Icon (opsional) Përdorni një',
-    'icon_hint2'           => 'Klasa Font Voyager',
+    'icon_hint2'           => 'Klasa Font Navia',
     'index'                => 'INDEKSI',
     'input_type'           => 'Lloji i hyrjes',
     'key'                  => 'Çelësi',

@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Rota Dinâmica',
     'edit_item'            => 'Editar item de menu',
     'icon_class'           => 'Classe do Ícone da Fonte para o item de menu (Use ',
-    'icon_class2'          => 'Classe da Fonte Voyager</a>)',
+    'icon_class2'          => 'Classe da Fonte Navia</a>)',
     'icon_class_ph'        => 'Classe do Ícone (opcional)',
     'item_route'           => 'Rota do item de menu',
     'item_title'           => 'Título do item de menu',

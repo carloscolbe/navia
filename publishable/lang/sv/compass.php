@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'           => 'Välkommen till Voyager Compass. Alla bra appar behöver in kompass som visar riktningen.
+    'welcome'           => 'Välkommen till Navia Compass. Alla bra appar behöver in kompass som visar riktningen.
     I denna avdelning hittar du resurser som hjälper dig att bygga din applikation',
     'links' => [
         'title'                 => 'Länkar',
@@ -10,7 +10,7 @@ return [
     ],
     'commands' => [
         'title'                 => 'Kommandon',
-        'text'                  => 'Kör Artisan Kommandon från Voyager.',
+        'text'                  => 'Kör Artisan Kommandon från Navia.',
         'clear_output'          => 'rensa utdata',
         'command_output'        => 'Artisan Kommando Utdata',
         'additional_args'       => 'Lägg till argument?',

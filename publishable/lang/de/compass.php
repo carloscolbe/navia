@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'                => 'Willkommen beim Voyager Kompass. Jede gute App braucht einen Kompass um einen in die richtige Richtung zu lenken.
+    'welcome'                => 'Willkommen beim Navia Kompass. Jede gute App braucht einen Kompass um einen in die richtige Richtung zu lenken.
     In dieser Sektion finden Sie viele Ressourcen und administrative Ausgaben die Ihnen beim Bauen Ihrer App helfen.',
     'links'         => [
         'title'                 => 'Links',
@@ -10,7 +10,7 @@ return [
     ],
     'commands'      => [
         'title'                 => 'Befehle',
-        'text'                  => 'Artisan Befehle aus Voyager ausführen.',
+        'text'                  => 'Artisan Befehle aus Navia ausführen.',
         'clear_output'          => 'ausgabe leeren',
         'command_output'        => 'Artisan Befehl-Ausgabe',
         'additional_args'       => 'Zusätzliche Argumente?',

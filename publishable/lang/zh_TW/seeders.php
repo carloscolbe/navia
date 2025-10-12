@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => '後台背景圖像',
             'description'                => '後台描述',
-            'description_value'          => '歡迎使用 Voyager - 不可錯過的 Laravel 後台管理框架',
+            'description_value'          => '歡迎使用 Navia - 不可錯過的 Laravel 後台管理框架',
             'google_analytics_client_id' => 'Google Analytics Client ID （於後台控制面板使用）',
             'icon_image'                 => '後台圖標',
             'loader'                     => 'Admin Loader',

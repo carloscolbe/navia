@@ -78,7 +78,7 @@ return [
         'admin' => [
             'background_image'           => 'រូបភាពផ្ទះ',
             'description'                => 'ការពិពណ៌នាអ្នកអភិបាល',
-            'description_value'          => 'សូមស្វាគមន៍មកកាន់ Voyager ។ អ្នកគ្រប់គ្រងដែលបាត់សម្រាប់ Laravel',
+            'description_value'          => 'សូមស្វាគមន៍មកកាន់ Navia ។ អ្នកគ្រប់គ្រងដែលបាត់សម្រាប់ Laravel',
             'google_analytics_client_id' => 'លេខសម្គាល់អតិថិជន Google Analytics (ប្រើសម្រាប់ផ្ទាំងគ្រប់គ្រងគ្រប់គ្រង)',
             'icon_image'                 => 'រូបភាពតំណាង',
             'loader'                     => 'រូបភាពកំពុងផ្ទុក',

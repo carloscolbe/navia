@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Route متغییر',
     'edit_item'            => 'ویرایش آیتم منو',
     'icon_class'           => 'کلاس آیکون این آیتم منو (استفاده از',
-    'icon_class2'          => 'کلاس Voyager Font</a>)',
+    'icon_class2'          => 'کلاس Navia Font</a>)',
     'icon_class_ph'        => 'کلاس آیکون (دلخواه)',
     'item_route'           => 'نامک برای آیتم منو',
     'item_title'           => 'عنوان آیتم منو',

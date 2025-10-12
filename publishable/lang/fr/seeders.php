@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Image de fond de l\'espace admin',
             'description'                => 'Description de l\'espace admin',
-            'description_value'          => 'Bienvenue dans Voyager, le panneau d\'administration qui manquait à Laravel.',
+            'description_value'          => 'Bienvenue dans Navia, le panneau d\'administration qui manquait à Laravel.',
             'google_analytics_client_id' => 'Google Analytics ID Client (Utilisé pour le panneau d\'administration)',
             'icon_image'                 => 'Icône de l\'espace admin',
             'loader'                     => 'Chargement de l\'espace admin',

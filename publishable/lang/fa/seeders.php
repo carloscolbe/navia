@@ -76,7 +76,7 @@ return [
         'admin' => [
             'background_image'           => 'تصویر پس زمینه برای ادمین',
             'description'                => 'توضیحات ادمین',
-            'description_value'          => 'به Voyager ، پنل گم شده ی لاراول خوش آمدید',
+            'description_value'          => 'به Navia ، پنل گم شده ی لاراول خوش آمدید',
             'google_analytics_client_id' => 'شناسه گوگل انالیز (برای داشبورد ادمین مورد استفاده قرار می گیرد)',
             'icon_image'                 => 'تصویر آیکون ادمین',
             'loader'                     => 'لودر ادمین',

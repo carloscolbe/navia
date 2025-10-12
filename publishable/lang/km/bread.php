@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'បង្កើតសិទ្ធិដោយស្វ័យប្រវត្តិ',
     'icon_class'             => 'រូបតំណាងដែលត្រូវប្រើសម្រាប់តារាងនេះ',
     'icon_hint'              => 'រូបតំណាង (ជាជម្រើស) ប្រើ',
-    'icon_hint2'             => 'ពុម្ភអក្សរ Voyager',
+    'icon_hint2'             => 'ពុម្ភអក្សរ Navia',
     'model_class'            => 'ឈ្មោះ Model Class',
     'model_name'             => 'ឈ្មោះ Model',
     'model_name_ph'          => 'ឧ. \App\User ប្រសិនបើទុកទទេនឹងព្យាយាមប្រើឈ្មោះតារាង',

@@ -27,7 +27,7 @@ return [
     'generate_permissions'   => 'Generar permisos',
     'icon_class'             => 'Ícono a utilizar para esta tabla',
     'icon_hint'              => 'Ícono (opcional) Use una ',
-    'icon_hint2'             => 'clase de Voyager Fonts',
+    'icon_hint2'             => 'clase de Navia Fonts',
     'model_class'            => 'Nombre de la clase del modelo',
     'model_name'             => 'Nombre del modelo',
     'model_name_ph'          => 'P. ej. \App\User (Si se deja vacío, intentará usar el nombre de la tabla)',

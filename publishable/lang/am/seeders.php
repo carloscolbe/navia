@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Ղեկավարման էջի ֆոնային նկար',
             'description'                => 'Ղեկավարման էջի վերնագիր',
-            'description_value'          => 'Բարի գալուստ Voyager։ Անհայտ ղեկավարող Laravel-ի համար',
+            'description_value'          => 'Բարի գալուստ Navia։ Անհայտ ղեկավարող Laravel-ի համար',
             'google_analytics_client_id' => 'Google Analytics Client ID (used for admin dashboard)',
             'icon_image'                 => 'Ղեկավարման էջի Icon նկար',
             'loader'                     => 'Ղեկավարման էջի Բեռնիչ',

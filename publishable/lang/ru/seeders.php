@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Фоновое Изображение для Админки',
             'description'                => 'Описание Админки',
-            'description_value'          => 'Добро пожаловать в Voyager. Пропавшую Админку для Laravel',
+            'description_value'          => 'Добро пожаловать в Navia. Пропавшую Админку для Laravel',
             'google_analytics_client_id' => 'Google Analytics Client ID (используется для панели администратора)',
             'icon_image'                 => 'Иконка Админки',
             'loader'                     => 'Загрузчик Админки',

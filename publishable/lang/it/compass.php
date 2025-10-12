@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'                => 'Benvenuto in Voyager Compass. Every good app needs a compass to point them in the right direction.
+    'welcome'                => 'Benvenuto in Navia Compass. Every good app needs a compass to point them in the right direction.
     In this section you will find many resources and administrative tasks to help guide you as you build out your application.',
     'links'         => [
         'title'                 => 'Links',
@@ -10,7 +10,7 @@ return [
     ],
     'commands'      => [
         'title'                 => 'Comandi',
-        'text'                  => 'Run Artisan Commands from Voyager.',
+        'text'                  => 'Run Artisan Commands from Navia.',
         'clear_output'          => 'clear output',
         'command_output'        => 'Artisan Command Output',
         'additional_args'       => 'Additional Args?',

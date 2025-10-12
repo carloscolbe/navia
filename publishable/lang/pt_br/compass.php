@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'welcome'                => 'Bem-vindo à Bússola do Voyager. Todo bom app precisa de uma bússola para mostrar a direção correta.
+    'welcome'                => 'Bem-vindo à Bússola do Navia. Todo bom app precisa de uma bússola para mostrar a direção correta.
     Nessa seção você encontrará muitos recursos e tarefas administativas que o guiará na construção de sua aplicação.',
     'links'         => [
         'title'                 => 'Links',
         'documentation'         => 'Documentação',
-        'voyager_homepage'      => 'Página Inicial do Voyager',
+        'voyager_homepage'      => 'Página Inicial do Navia',
     ],
     'commands'      => [
         'title'                 => 'Comandos',
-        'text'                  => 'Rodar Comandos Artisan a partir do Voyager.',
+        'text'                  => 'Rodar Comandos Artisan a partir do Navia.',
         'clear_output'          => 'Limpar saída',
         'command_output'        => 'Saída do Comando Artisan',
         'additional_args'       => 'Argumentos Adicionais?',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Recursos',
-        'text'                  => 'Os Recursos Voyager ajudará você encontrar as coisas mais rápido.',
+        'text'                  => 'Os Recursos Navia ajudará você encontrar as coisas mais rápido.',
 
     ],
     'logs'          => [
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Fontes',
-        'font_class'            => 'Mapa de Classe de Fonte Voyager',
-        'font_character'        => 'Mapa de Caracteres de Fonte Voyager',
+        'font_class'            => 'Mapa de Classe de Fonte Navia',
+        'font_character'        => 'Mapa de Caracteres de Fonte Navia',
     ],
 ];

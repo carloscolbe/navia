@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Εικόνα υπόβαθρου για τον τομέα διαχείρισης',
             'description'                => 'Περιγραφή τομέα διαχείρισης',
-            'description_value'          => 'Καλωσήρθατε στο Voyager. Το διαχειριστικό εργαλείο που έλειπε από την Laravel',
+            'description_value'          => 'Καλωσήρθατε στο Navia. Το διαχειριστικό εργαλείο που έλειπε από την Laravel',
             'google_analytics_client_id' => 'Google Analytics Client ID (χρησιμοποιείται για τον πίνακα ελέγχου)',
             'icon_image'                 => 'Εικονίδιο τομέα διαχείρισης',
             'loader'                     => 'Εικονίδιο φόρτωσης στον τομέα διαχείρισης',

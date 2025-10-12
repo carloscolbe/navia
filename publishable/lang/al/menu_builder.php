@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Rruga dinamike',
     'edit_item'            => 'Modifiko artikullin e menysë',
     'icon_class'           => 'Klasa e Font Icon për Item Menu (Përdorni një',
-    'icon_class2'          => 'Klasa e Fonteve Voyager)',
+    'icon_class2'          => 'Klasa e Fonteve Navia)',
     'icon_class_ph'        => 'Klasa e ikonave (opsionale)',
     'item_route'           => 'Rruga për artikullin e menysë',
     'item_title'           => 'Titulli i artikullit të menysë',

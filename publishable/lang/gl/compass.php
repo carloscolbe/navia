@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'                => 'Benvido a Voyager Compass. Toda boa aplicación precisa un compás para sinalarnos a dirección correcta.
+    'welcome'                => 'Benvido a Navia Compass. Toda boa aplicación precisa un compás para sinalarnos a dirección correcta.
     Nesta sección atoparás moitos recursos e tarefas administrativas para axudarche a medida que compilas a túa aplicación.',
     'links'         => [
         'title'                 => 'Enlaces',
@@ -10,7 +10,7 @@ return [
     ],
     'commands'      => [
         'title'                 => 'Comandos',
-        'text'                  => 'Executar comandos de Artisan dende Voyager.',
+        'text'                  => 'Executar comandos de Artisan dende Navia.',
         'clear_output'          => 'limpar saída',
         'command_output'        => 'Saída de comandos de Artisan',
         'additional_args'       => 'Argumentos adicionais?',
@@ -18,7 +18,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Recursos',
-        'text'                  => 'Recursos de Voyager para axudarche a atopar as cousas máis rápido.',
+        'text'                  => 'Recursos de Navia para axudarche a atopar as cousas máis rápido.',
 
     ],
     'logs'          => [
