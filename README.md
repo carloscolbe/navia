@@ -1,4 +1,5 @@
 # 🌊 **N**avia
+
 A modern Laravel admin panel featuring a role-based BREAD system (browse, read, edit, add and delete), built as an evolution of [Voyager](https://github.com/thedevdojo/voyager).
 
 ## ⚙️ Installation
@@ -15,7 +16,7 @@ composer require carloscolmenarez/navia
 
 Next make sure to create a new database and add your database credentials to your .env file:
 
-```
+```yaml
 DB_HOST=localhost
 DB_DATABASE=homestead
 DB_USERNAME=homestead
@@ -24,7 +25,7 @@ DB_PASSWORD=secret
 
 You will also want to update your website URL inside of the `APP_URL` variable inside the .env file:
 
-```
+```yaml
 APP_URL=http://localhost:8000
 ```
 
@@ -53,7 +54,7 @@ Start up a local development server with `php artisan serve` And, visit [http://
 
 If you did go ahead with the dummy data, a user should have been created for you with the following login credentials:
 
->**email:** `admin@admin.com`   
+>**email:** `admin@admin.com`
 >**password:** `password`
 
 NOTE: Please note that a dummy user is **only** created if there are no current users in your database.
