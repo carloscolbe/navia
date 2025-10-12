@@ -1,8 +1,8 @@
 # Enabling Soft-Delete
 
-This is only to assist with enabling soft-deletion for your models within Voyager. Please refer to the [Laravel documentation](https://laravel.com/docs/eloquent#soft-deleting) for specifics.
+This is only to assist with enabling soft-deletion for your models within Navia. Please refer to the [Laravel documentation](https://laravel.com/docs/eloquent#soft-deleting) for specifics.
 
-## Table Configurations in Voyager
+## Table Configurations in Navia
 
 When creating a table using the Database Manager you've selected the 'Add Soft Deletes' button and then when adding the BREAD functionality to that table you've added a Model Name, you only have to edit your Model file to fully enable Soft-Delete on that table.
 

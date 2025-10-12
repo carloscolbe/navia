@@ -66,9 +66,9 @@ If you want to override any of Voyagers core controllers you first have to chang
 ],
 ```
 
-Then run `php artisan navia:controllers`, Voyager will now use the child controllers which will be created at `App/Http/Controllers/Voyager`
+Then run `php artisan navia:controllers`, Navia will now use the child controllers which will be created at `App/Http/Controllers/Voyager`
 
-## Overriding Voyager-Models
+## Overriding Navia-Models
 
 You are also able to override Voyagers models if you need to.  
 To do so, you need to add the following to your AppServiceProviders register method:
@@ -92,7 +92,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Voyager::useModel('DataRow', \App\DataRow::class);
+        Navia::useModel('DataRow', \App\DataRow::class);
     }
     // ...
 }
@@ -112,7 +112,7 @@ class DataRow extends \TCG\Voyager\Models\DataRow
 ```
 
 If the model you are overriding has an associated BREAD, go to the BREAD settings for the model you are overriding
-and replace the Model Name with your fully-qualified class-name. For example, if you are overriding the Voyager `Menu`
+and replace the Model Name with your fully-qualified class-name. For example, if you are overriding the Navia `Menu`
 model with your own `App\Menu` model:
 
 ![](../.gitbook/assets/bread_override_voyager_models.png)

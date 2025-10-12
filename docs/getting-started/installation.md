@@ -1,6 +1,6 @@
 # Installation
 
-Voyager is super easy to install. After creating your new Laravel application you can include the Voyager package with the following command:
+Voyager is super easy to install. After creating your new Laravel application you can include the Navia package with the following command:
 
 ```bash
 composer require tcg/voyager
@@ -16,9 +16,9 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 ```
 
-Finally, we can install Voyager. You can choose to install Voyager with dummy data or without the dummy data. The dummy data will include 1 admin account \(if no users already exist\), 1 demo page, 4 demo posts, 2 categories and 7 settings.
+Finally, we can install Navia. You can choose to install Navia with dummy data or without the dummy data. The dummy data will include 1 admin account \(if no users already exist\), 1 demo page, 4 demo posts, 2 categories and 7 settings.
 
-To install Voyager without dummy data simply run
+To install Navia without dummy data simply run
 
 ```bash
 php artisan navia:install
@@ -65,16 +65,16 @@ And you will be prompted for the users name and password.
 
 ## Advanced
 
-This section is meant for users who are installing Voyager on an already existing Laravel installation or for users who want to perform a manual install. If this is not the case, you should go back to the [installation](installation.md) documentation or skip this section.
+This section is meant for users who are installing Navia on an already existing Laravel installation or for users who want to perform a manual install. If this is not the case, you should go back to the [installation](installation.md) documentation or skip this section.
 
-The first thing you should do is publish the assets that come with Voyager. You can do that by running the following commands:
+The first thing you should do is publish the assets that come with Navia. You can do that by running the following commands:
 
 ```bash
 php artisan vendor:publish --provider="TCG\Voyager\VoyagerServiceProvider"
 php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
 ```
 
-Next, call `php artisan migrate` to migrate all Voyager table.
+Next, call `php artisan migrate` to migrate all Navia table.
 
 {% hint style="info" %}
 If you want to change migrations, for example to use a different table for users, don't migrate. Instead copy Voyagers migrations to `database/migrations`, make your changes, turn off the config option `database.autoload_migrations` and then migrate.
@@ -97,7 +97,7 @@ The next step is to add Voyagers routes to your `routes/web.php` file:
 <?php
 
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+    Navia::routes();
 });
 ```
 

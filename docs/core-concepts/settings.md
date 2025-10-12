@@ -17,5 +17,5 @@ Or inside of any blade template like:
 {{ setting('site.title') }}
 ```
 
-So, now you can add all kinds of settings in Voyager and reference them in your application.
+So, now you can add all kinds of settings in Navia and reference them in your application.
 

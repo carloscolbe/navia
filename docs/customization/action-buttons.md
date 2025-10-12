@@ -46,7 +46,7 @@ class MyAction extends AbstractAction
 }
 ```
 
-Next we need to tell Voyager that we want to use this action. For this open your `app/Providers/AppServiceProvider.php` and search for the `boot()` method
+Next we need to tell Navia that we want to use this action. For this open your `app/Providers/AppServiceProvider.php` and search for the `boot()` method
 
 ```php
 <?php
@@ -61,7 +61,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Voyager::addAction(\App\Actions\MyAction::class);
+        Navia::addAction(\App\Actions\MyAction::class);
     }
 }
 ```

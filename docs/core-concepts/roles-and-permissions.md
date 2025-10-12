@@ -6,7 +6,7 @@ Inside of the dashboard you can choose to Add, Edit, or delete the current Roles
 
 ![](../.gitbook/assets/role.png)
 
-New in version 1.0, we've changed Voyager's authorization system to be [more in line with Laravel](https://laravel.com/docs/authorization#authorizing-actions-using-policies)! This means that you can check for permissions in the following ways:
+New in version 1.0, we've changed Navia's authorization system to be [more in line with Laravel](https://laravel.com/docs/authorization#authorizing-actions-using-policies)! This means that you can check for permissions in the following ways:
 
 ```php
 // via user object
@@ -19,12 +19,12 @@ $canViewPost = $this->authorize('read', $post);
 
 Out of the box there are some permissions you can use by default:
 
-* `browse_admin`: Whether or not the user may browse the Voyager admin panel.
-* `browse_database`: Whether or not the user may browse the Voyager database menu section.
-* `browse_bread`: Whether or not the user may browse the Voyager BREAD menu section.
-* `browse_media`: Whether or not the user may browse the Voyager media section.
-* `browse_menu`: Whether or not the user may browse the Voyager menu section.
-* `browse_settings`: Whether or not the user may browse the Voyager settings section.
+* `browse_admin`: Whether or not the user may browse the Navia admin panel.
+* `browse_database`: Whether or not the user may browse the Navia database menu section.
+* `browse_bread`: Whether or not the user may browse the Navia BREAD menu section.
+* `browse_media`: Whether or not the user may browse the Navia media section.
+* `browse_menu`: Whether or not the user may browse the Navia menu section.
+* `browse_settings`: Whether or not the user may browse the Navia settings section.
 * `read_settings`: Whether or not the user can view or see a particular setting.
 * `edit_settings`: Whether or not the user can edit a particular setting.
 * `add_settings`: Whether or not the user can add a new setting.

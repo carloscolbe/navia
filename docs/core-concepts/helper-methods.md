@@ -39,7 +39,7 @@ Or you can specify the optional image field name \(attribute\), default to `imag
 @foreach($posts as $post)
     $images = json_decode($post->images);
     @foreach($images as $image)
-        <img src="{{ Voyager::image($post->getThumbnail($image, 'small')) }}" />
+        <img src="{{ Navia::image($post->getThumbnail($image, 'small')) }}" />
     @endforeach
 @endforeach
 ```

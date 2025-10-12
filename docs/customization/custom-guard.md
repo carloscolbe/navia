@@ -1,6 +1,6 @@
 # Custom guard
 
-Starting with Voyager 1.2 you can define a \(custom\) guard which is used throughout Voyager.  
+Starting with Navia 1.2 you can define a \(custom\) guard which is used throughout Navia.  
 To do so, just bind the name of your auth-guard to `VoyagerGuard`.  
 First, make sure you have defined a guard as per the [Laravel documentation](https://laravel.com/docs/authentication#adding-custom-guards).  
 After that open your `AuthServiceProvider` and add the following to the register method:
@@ -69,7 +69,7 @@ And a user provider called `admins`:
 ],
 ```
 
-Next you have to tell Voyager to use your new guard.  
+Next you have to tell Navia to use your new guard.  
 Open you `AppServiceProvider.php` and add the following to the `register` method:
 
 ```php
