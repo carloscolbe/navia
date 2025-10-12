@@ -14,7 +14,7 @@ class ControllersCommand extends Command
      *
      * @var string
      */
-    protected $name = 'voyager:controllers';
+    protected $name = 'navia:controllers';
 
     /**
      * The console command description.

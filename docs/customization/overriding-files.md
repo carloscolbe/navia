@@ -66,7 +66,7 @@ If you want to override any of Voyagers core controllers you first have to chang
 ],
 ```
 
-Then run `php artisan voyager:controllers`, Voyager will now use the child controllers which will be created at `App/Http/Controllers/Voyager`
+Then run `php artisan navia:controllers`, Voyager will now use the child controllers which will be created at `App/Http/Controllers/Voyager`
 
 ## Overriding Voyager-Models
 
