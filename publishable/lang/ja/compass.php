@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'リンク',
         'documentation'         => 'ドキュメント(英語サイト)',
-        'voyager_homepage'      => 'Voyager ホームページ (英語サイト)',
+        'voyager_homepage'      => 'Navia ホームページ (英語サイト)',
     ],
     'commands'      => [
         'title'                 => 'コマンド',

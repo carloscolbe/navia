@@ -8,11 +8,11 @@ return [
     'links'         => [
         'title'                 => 'Links',
         'documentation'         => 'စာရွက်စာတမ်း (အင်္ဂလိပ်ဆိုက်)',
-        'voyager_homepage'      => 'Voyager ပင်မစာမျက်နှာ (အင်္ဂလိပ်ဆိုက်)',
+        'voyager_homepage'      => 'Navia ပင်မစာမျက်နှာ (အင်္ဂလိပ်ဆိုက်)',
     ],
     'commands'      => [
         'title'                 => 'Commands',
-        'text'                  => 'Voyager မှ Artisan command ကိုဖွင့်ပါ။',
+        'text'                  => 'Navia မှ Artisan command ကိုဖွင့်ပါ။',
         'clear_output'          => 'အထွက်ကိုရှင်းလင်းပါ။',
         'command_output'        => 'Artisan Command Output',
         'additional_args'       => 'အငြင်းအခုံတစ်ခုကို ထည့်လိုပါသလား။',
@@ -20,7 +20,7 @@ return [
     ],
     'resources'     => [
         'title'                 => 'Resources',
-        'text'                  => 'Voyager အရင်းအမြစ်များသည် သင်ရှာဖွေနေသည့်အရာကို ပိုမိုမြန်ဆန်စွာရှာဖွေရန် ကူညီပေးပါသည်။',
+        'text'                  => 'Navia အရင်းအမြစ်များသည် သင်ရှာဖွေနေသည့်အရာကို ပိုမိုမြန်ဆန်စွာရှာဖွေရန် ကူညီပေးပါသည်။',
 
     ],
     'logs'          => [

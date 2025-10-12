@@ -6,7 +6,7 @@ return [
     'links' => [
         'title'                 => 'Länkar',
         'documentation'         => 'Dokumentation',
-        'voyager_homepage'      => 'Voyager Hemsida',
+        'voyager_homepage'      => 'Navia Hemsida',
     ],
     'commands' => [
         'title'                 => 'Kommandon',
@@ -18,7 +18,7 @@ return [
     ],
     'resources' => [
         'title'                 => 'Resurser',
-        'text'                  => 'Voyager resurser som hjälper dig hitta snabbare.',
+        'text'                  => 'Navia resurser som hjälper dig hitta snabbare.',
     ],
     'logs' => [
         'title'                 => 'Loggar',
