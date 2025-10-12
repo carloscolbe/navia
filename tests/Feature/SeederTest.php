@@ -1,8 +1,8 @@
 <?php
 
-namespace TCG\Voyager\Tests\Feature;
+namespace Navia\Tests\Feature;
 
-use TCG\Voyager\Tests\TestCase;
+use Navia\Tests\TestCase;
 
 class SeederTest extends TestCase
 {

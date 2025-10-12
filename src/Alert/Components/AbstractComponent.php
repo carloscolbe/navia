@@ -1,8 +1,8 @@
 <?php
 
-namespace TCG\Voyager\Alert\Components;
+namespace Navia\Alert\Components;
 
-use TCG\Voyager\Alert;
+use Navia\Alert;
 
 abstract class AbstractComponent implements ComponentInterface
 {

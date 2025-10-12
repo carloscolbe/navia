@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Actions;
+namespace Navia\Actions;
 
 class ViewAction extends AbstractAction
 {

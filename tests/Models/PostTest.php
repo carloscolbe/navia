@@ -1,10 +1,10 @@
 <?php
 
-namespace TCG\Voyager\Tests;
+namespace Navia\Tests;
 
 use Illuminate\Support\Facades\Auth;
-use TCG\Voyager\Models\Category;
-use TCG\Voyager\Models\Post;
+use Navia\Models\Category;
+use Navia\Models\Post;
 
 class PostTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace TCG\Voyager\Tests;
+namespace Navia\Tests;
 
-use TCG\Voyager\Facades\Voyager;
+use Navia\Facades\Voyager;
 
 class ViewEventTest extends TestCase
 {

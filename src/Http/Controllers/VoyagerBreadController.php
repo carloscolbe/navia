@@ -1,18 +1,18 @@
 <?php
 
-namespace TCG\Voyager\Http\Controllers;
+namespace Navia\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use ReflectionClass;
-use TCG\Voyager\Database\Schema\SchemaManager;
-use TCG\Voyager\Database\Schema\Table;
-use TCG\Voyager\Database\Types\Type;
-use TCG\Voyager\Events\BreadAdded;
-use TCG\Voyager\Events\BreadDeleted;
-use TCG\Voyager\Events\BreadUpdated;
-use TCG\Voyager\Facades\Voyager;
+use Navia\Database\Schema\SchemaManager;
+use Navia\Database\Schema\Table;
+use Navia\Database\Types\Type;
+use Navia\Events\BreadAdded;
+use Navia\Events\BreadDeleted;
+use Navia\Events\BreadUpdated;
+use Navia\Facades\Voyager;
 
 class VoyagerBreadController extends Controller
 {
@@ -151,7 +151,7 @@ class VoyagerBreadController extends Controller
     {
         $this->authorize('browse_bread');
 
-        /* @var \TCG\Voyager\Models\DataType $dataType */
+        /* @var \Navia\Models\DataType $dataType */
         try {
             $dataType = Voyager::model('DataType')->find($id);
 
@@ -188,7 +188,7 @@ class VoyagerBreadController extends Controller
     {
         $this->authorize('browse_bread');
 
-        /* @var \TCG\Voyager\Models\DataType $dataType */
+        /* @var \Navia\Models\DataType $dataType */
         $dataType = Voyager::model('DataType')->find($id);
 
         // Delete Translations, if present

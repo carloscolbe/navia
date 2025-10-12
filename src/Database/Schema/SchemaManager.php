@@ -1,11 +1,11 @@
 <?php
 
-namespace TCG\Voyager\Database\Schema;
+namespace Navia\Database\Schema;
 
 use Doctrine\DBAL\Schema\SchemaException;
 use Doctrine\DBAL\Schema\Table as DoctrineTable;
 use Illuminate\Support\Facades\DB;
-use TCG\Voyager\Database\Types\Type;
+use Navia\Database\Types\Type;
 
 abstract class SchemaManager
 {
@@ -49,7 +49,7 @@ abstract class SchemaManager
     /**
      * @param string $tableName
      *
-     * @return \TCG\Voyager\Database\Schema\Table
+     * @return \Navia\Database\Schema\Table
      */
     public static function listTableDetails($tableName)
     {

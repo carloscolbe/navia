@@ -1,9 +1,9 @@
 <?php
 
-namespace TCG\Voyager\FormFields;
+namespace Navia\FormFields;
 
 use Illuminate\Support\Str;
-use TCG\Voyager\Traits\Renderable;
+use Navia\Traits\Renderable;
 
 abstract class AbstractHandler implements HandlerInterface
 {

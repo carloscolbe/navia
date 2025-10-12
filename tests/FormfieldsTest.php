@@ -1,14 +1,14 @@
 <?php
 
-namespace TCG\Voyager\Tests;
+namespace Navia\Tests;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
-use TCG\Voyager\Models\Category;
-use TCG\Voyager\Models\DataType;
-use TCG\Voyager\Models\Permission;
+use Navia\Models\Category;
+use Navia\Models\DataType;
+use Navia\Models\Permission;
 
 class FormfieldsTest extends TestCase
 {
@@ -375,7 +375,7 @@ class FormfieldsTest extends TestCase
         $this->visitRoute('voyager.bread.create', ['table' => 'categories'])
         ->select($name, 'field_input_type_'.$name)
         ->type($options, 'field_details_'.$name)
-        ->type('TCG\\Voyager\\Models\\Category', 'model_name')
+        ->type('Navia\\Models\\Category', 'model_name')
         ->press(__('voyager::generic.submit'))
         ->seeRouteIs('voyager.bread.index');
 

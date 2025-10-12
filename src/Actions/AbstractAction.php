@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Actions;
+namespace Navia\Actions;
 
 abstract class AbstractAction implements ActionInterface
 {

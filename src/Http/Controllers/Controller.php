@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Http\Controllers;
+namespace Navia\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -9,19 +9,19 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Storage;
-use TCG\Voyager\Events\FileDeleted;
-use TCG\Voyager\Http\Controllers\ContentTypes\Checkbox;
-use TCG\Voyager\Http\Controllers\ContentTypes\Coordinates;
-use TCG\Voyager\Http\Controllers\ContentTypes\File;
-use TCG\Voyager\Http\Controllers\ContentTypes\Image as ContentImage;
-use TCG\Voyager\Http\Controllers\ContentTypes\MultipleCheckbox;
-use TCG\Voyager\Http\Controllers\ContentTypes\MultipleImage;
-use TCG\Voyager\Http\Controllers\ContentTypes\Password;
-use TCG\Voyager\Http\Controllers\ContentTypes\Relationship;
-use TCG\Voyager\Http\Controllers\ContentTypes\SelectMultiple;
-use TCG\Voyager\Http\Controllers\ContentTypes\Text;
-use TCG\Voyager\Http\Controllers\ContentTypes\Timestamp;
-use TCG\Voyager\Traits\AlertsMessages;
+use Navia\Events\FileDeleted;
+use Navia\Http\Controllers\ContentTypes\Checkbox;
+use Navia\Http\Controllers\ContentTypes\Coordinates;
+use Navia\Http\Controllers\ContentTypes\File;
+use Navia\Http\Controllers\ContentTypes\Image as ContentImage;
+use Navia\Http\Controllers\ContentTypes\MultipleCheckbox;
+use Navia\Http\Controllers\ContentTypes\MultipleImage;
+use Navia\Http\Controllers\ContentTypes\Password;
+use Navia\Http\Controllers\ContentTypes\Relationship;
+use Navia\Http\Controllers\ContentTypes\SelectMultiple;
+use Navia\Http\Controllers\ContentTypes\Text;
+use Navia\Http\Controllers\ContentTypes\Timestamp;
+use Navia\Traits\AlertsMessages;
 use Validator;
 
 abstract class Controller extends BaseController

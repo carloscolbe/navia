@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\FormFields;
+namespace Navia\FormFields;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;

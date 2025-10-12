@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Http\Controllers\ContentTypes;
+namespace Navia\Http\Controllers\ContentTypes;
 
 use Illuminate\Support\Facades\DB;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace TCG\Voyager\Providers;
+namespace Navia\Providers;
 
 use Arrilot\Widgets\ServiceProvider as WidgetServiceProvider;
 use Illuminate\Support\ServiceProvider;
-use TCG\Voyager\Seed;
+use Navia\Seed;
 
 class VoyagerDummyServiceProvider extends ServiceProvider
 {

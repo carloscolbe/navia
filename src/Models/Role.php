@@ -1,11 +1,11 @@
 <?php
 
-namespace TCG\Voyager\Models;
+namespace Navia\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Tests\Database\Factories\RoleFactory;
+use Navia\Facades\Voyager;
+use Navia\Tests\Database\Factories\RoleFactory;
 
 class Role extends Model
 {

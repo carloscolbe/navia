@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Traits;
+namespace Navia\Traits;
 
 use Illuminate\View\View;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\Http\Controllers;
+namespace Navia\Http\Controllers;
 
 use Artisan;
 use Exception;

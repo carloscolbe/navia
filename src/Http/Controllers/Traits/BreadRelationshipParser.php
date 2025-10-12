@@ -1,10 +1,10 @@
 <?php
 
-namespace TCG\Voyager\Http\Controllers\Traits;
+namespace Navia\Http\Controllers\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
-use TCG\Voyager\Models\DataType;
+use Navia\Models\DataType;
 
 trait BreadRelationshipParser
 {

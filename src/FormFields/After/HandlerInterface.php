@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\FormFields\After;
+namespace Navia\FormFields\After;
 
 interface HandlerInterface
 {

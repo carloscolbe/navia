@@ -1,9 +1,9 @@
 <?php
 
-namespace TCG\Voyager\Database\Types\Common;
+namespace Navia\Database\Types\Common;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use TCG\Voyager\Database\Types\Type;
+use Navia\Database\Types\Type;
 
 class JsonType extends Type
 {

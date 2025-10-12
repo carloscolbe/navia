@@ -1,15 +1,15 @@
 <?php
 
-namespace TCG\Voyager\Policies;
+namespace Navia\Policies;
 
-use TCG\Voyager\Contracts\User;
+use Navia\Contracts\User;
 
 class UserPolicy extends BasePolicy
 {
     /**
      * Determine if the given model can be viewed by the user.
      *
-     * @param \TCG\Voyager\Contracts\User $user
+     * @param \Navia\Contracts\User $user
      * @param  $model
      *
      * @return bool
@@ -25,7 +25,7 @@ class UserPolicy extends BasePolicy
     /**
      * Determine if the given model can be edited by the user.
      *
-     * @param \TCG\Voyager\Contracts\User $user
+     * @param \Navia\Contracts\User $user
      * @param  $model
      *
      * @return bool
@@ -41,7 +41,7 @@ class UserPolicy extends BasePolicy
     /**
      * Determine if the given user can change a user a role.
      *
-     * @param \TCG\Voyager\Contracts\User $user
+     * @param \Navia\Contracts\User $user
      * @param  $model
      *
      * @return bool

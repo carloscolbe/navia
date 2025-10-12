@@ -1,6 +1,6 @@
 <?php
 
-namespace TCG\Voyager\FormFields;
+namespace Navia\FormFields;
 
 class ColorHandler extends AbstractHandler
 {
