@@ -4,7 +4,7 @@ A modern Laravel admin panel featuring a role-based BREAD system (browse, read, 
 
 ## ⚙️ Installation
 
-### 2️⃣ Install Navia using Composer
+### 1️⃣ Install Navia using Composer
 
 Run the following command from your Laravel project root:
 
