@@ -42,12 +42,12 @@
                     <div class="collapse-content collapse in" id="links">
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="https://github.com/carloscolmenarez/navia/tree/main/docs" target="_blank" class="navia-link" style="background-image:url('{{ navia_asset('images/compass/documentation.jpg') }}')">
+                                <a href="https://github.com/carloscolbe/navia/tree/main/docs" target="_blank" class="navia-link" style="background-image:url('{{ navia_asset('images/compass/documentation.jpg') }}')">
                                     <span class="resource_label"><i class="navia-documentation"></i> <span class="copy">{{ __('navia::compass.links.documentation') }}</span></span>
                                 </a>
                             </div>
                             <div class="col-md-6">
-                                <a href="https://github.com/carloscolmenarez/navia" target="_blank" class="navia-link" style="background-image:url('{{ navia_asset('images/compass/navia-home.jpg') }}')">
+                                <a href="https://github.com/carloscolbe/navia" target="_blank" class="navia-link" style="background-image:url('{{ navia_asset('images/compass/navia-home.jpg') }}')">
                                     <span class="resource_label"><i class="navia-browser"></i> <span class="copy">{{ __('navia::compass.links.navia_homepage') }}</span></span>
                                 </a>
                             </div>
