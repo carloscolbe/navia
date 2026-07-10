@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Navia is a Laravel admin-panel **package** (a fork/evolution of Voyager) providing a role-based BREAD system (Browse, Read, Edit, Add, Delete). It is a Composer library (`carloscolmenarez/navia`), not a standalone Laravel app — it is developed and tested via Orchestra Testbench, and installed into host apps with `php artisan navia:install`.
+Navia is a Laravel admin-panel **package** (a fork/evolution of Voyager) providing a role-based BREAD system (Browse, Read, Edit, Add, Delete). It is a Composer library (`carloscolbe/navia`), not a standalone Laravel app — it is developed and tested via Orchestra Testbench, and installed into host apps with `php artisan navia:install`.
 
 ## Commands
 

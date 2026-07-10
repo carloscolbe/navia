@@ -307,7 +307,7 @@ class Navia
 
             // Loop through all the packages and get the version of navia
             foreach ($file->packages as $package) {
-                if ($package->name == 'carloscolmenarez/navia') {
+                if ($package->name == 'carloscolbe/navia') {
                     $this->version = $package->version;
                     break;
                 }

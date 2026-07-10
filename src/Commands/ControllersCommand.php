@@ -62,7 +62,7 @@ class ControllersCommand extends Command
     public function handle()
     {
         $stub = $this->getStub();
-        $files = $this->filesystem->files(base_path('vendor/carloscolmenarez/navia/src/Http/Controllers'));
+        $files = $this->filesystem->files(base_path('vendor/carloscolbe/navia/src/Http/Controllers'));
         $namespace = config('navia.controllers.namespace', 'Navia\\Http\\Controllers');
 
         $appNamespace = app()->getNamespace();
@@ -104,7 +104,7 @@ class ControllersCommand extends Command
      */
     public function getStub()
     {
-        return $this->filesystem->get(base_path('/vendor/carloscolmenarez/navia/stubs/'.$this->stub));
+        return $this->filesystem->get(base_path('/vendor/carloscolbe/navia/stubs/'.$this->stub));
     }
 
     /**

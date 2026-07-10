@@ -9,7 +9,7 @@ A modern Laravel admin panel featuring a role-based BREAD system (browse, read, 
 Run the following command from your Laravel project root:
 
 ```bash
-composer require carloscolmenarez/navia
+composer require carloscolbe/navia
 ```
 
 ### 2️⃣ Add the DB Credentials & APP_URL

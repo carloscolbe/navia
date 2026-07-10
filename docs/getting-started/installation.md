@@ -3,7 +3,7 @@
 Navia is super easy to install. After creating your new Laravel application you can include the Navia package with the following command:
 
 ```bash
-composer require carloscolmenarez/navia
+composer require carloscolbe/navia
 ```
 
 Next make sure to create a new database and add your database credentials to your .env file, you will also want to add your application URL in the `APP_URL` variable:
