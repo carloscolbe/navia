@@ -53,13 +53,23 @@ class Menu extends Model
     public static function display($menuName, $type = null, array $options = [])
     {
         // GET THE MENU - sort collection in blade
-        $menu = \Cache::remember('navia_menu_'.$menuName, \Carbon\Carbon::now()->addDays(30), function () use ($menuName) {
+        $getMenu = function () use ($menuName) {
             return static::where('name', '=', $menuName)
             ->with(['parent_items.children' => function ($q) {
                 $q->orderBy('order');
             }])
             ->first();
-        });
+        };
+
+        $menu = \Cache::remember('navia_menu_'.$menuName, \Carbon\Carbon::now()->addDays(30), $getMenu);
+
+        // Cache stores that refuse to unserialize objects (e.g. Laravel's
+        // database store with the default cache.serializable_classes = false)
+        // hand back a __PHP_Incomplete_Class instead of the cached menu.
+        if (!is_null($menu) && !($menu instanceof self)) {
+            \Cache::forget('navia_menu_'.$menuName);
+            $menu = $getMenu();
+        }
 
         // Check for Menu Existence
         if (!isset($menu)) {
@@ -147,6 +157,9 @@ class Menu extends Model
         // Filter items by permission
         $items = $items->filter(function ($item) {
             return !$item->children->isEmpty() || Auth::user()->can('browse', $item);
+        })->filter(function ($item) {
+            // The Database Manager is disabled — hide its menu entry
+            return $item->route != 'navia.database.index';
         })->filter(function ($item) {
             // Filter out empty menu-items
             if ($item->url == '' && $item->route == '' && $item->children->count() == 0) {

@@ -15,12 +15,12 @@ vendor/bin/phpunit tests/MenuTest.php            # run one test file
 vendor/bin/phpunit --filter test_method_name    # run one test by name
 
 npm install
-npm run dev        # compile assets (JS/Sass) into publishable/assets via Laravel Mix
+npm run dev        # build assets: JS via Vite (vite.config.js) + CSS via the sass CLI + static copies (scripts/copy-static.mjs)
 npm run watch      # recompile on change
-npm run prod       # production asset build
+npm run prod       # same as dev (output is always minified)
 ```
 
-Tests bootstrap through `tests/bootstrap.php` + `tests/TestCase.php` (Orchestra Testbench BrowserKit); no Laravel app or database setup is needed beyond `composer install`. PHP must be >=7.3 <8.1.
+Tests bootstrap through `tests/bootstrap.php` + `tests/TestCase.php` (Orchestra Testbench BrowserKit); no Laravel app or database setup is needed beyond `composer install`. PHP must be >= 8.3 (on this machine use `php8.3` / `php8.3 /usr/bin/composer`; the default `php` is 8.0). Supports Laravel 12 and 13 (`illuminate/support ^12|^13`, PHPUnit 11, testbench 10/11).
 
 ## Architecture
 
@@ -30,7 +30,7 @@ Tests bootstrap through `tests/bootstrap.php` + `tests/TestCase.php` (Orchestra 
 - **Actions** (`src/Actions/`): the buttons shown per row on browse pages (view/edit/delete/restore), registered on the `Navia` singleton and extendable via `Navia::addAction()`.
 - **Extension points fire events** (`src/Events/`): routing events in `routes/navia.php`, `FormFieldsRegistered`, alerts, etc.
 - **`publishable/`** holds everything copied into host apps: config (`publishable/config/navia.php`), compiled assets, seeders/dummy data, and translations. Compiled assets are **committed** — `webpack.mix.js` builds from `resources/assets/` into `publishable/assets/`, so rebuild and include the output when changing JS/Sass.
-- **`src/Database/`** wraps Doctrine DBAL for the in-browser database/BREAD builder UI (`VoyagerDatabaseController`).
+- **`src/Database/`**: `Schema/SchemaManager.php` does schema introspection over Laravel's native `Schema::getTables/getColumns/getIndexes/getForeignKeys` and powers the BREAD builder. The rest of the directory (`Types/*`, `Platforms/*`, `Schema/{Table,Column,Index,ForeignKey}`, `DatabaseUpdater`) is dead code that still references Doctrine DBAL (removed dependency) — kept only for parity with upstream Voyager 1.8, never autoloaded from active routes. The **Database Manager UI is disabled**: `NaviaDatabaseController` create/store/edit/update/destroy redirect to the database index with a `navia::database.manager_disabled` warning, and the menu entry is filtered out in `Menu::processItems()`.
 - Multilingual support lives in `src/Translator/` + the `Translatable` trait + the `Translation` model.
 
 ## Voyager → Navia rename

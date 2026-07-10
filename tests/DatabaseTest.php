@@ -2,7 +2,6 @@
 
 namespace Navia\Tests;
 
-use Doctrine\DBAL\Schema\SchemaException;
 use Illuminate\Support\Facades\Auth;
 use Navia\Database\Schema\SchemaManager;
 use Navia\Database\Schema\Table;
@@ -17,6 +16,8 @@ class DatabaseTest extends TestCase
 
     public function setUp(): void
     {
+        $this->markTestSkipped('The Database Manager is disabled since the removal of doctrine/dbal.');
+
         parent::setUp();
 
         // todo: make sure tests are isolated and do not effect other ones

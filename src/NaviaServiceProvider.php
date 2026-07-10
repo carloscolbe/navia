@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
-use Intervention\Image\ImageServiceProvider;
+use Intervention\Image\Laravel\ServiceProvider as ImageServiceProvider;
 use Navia\Events\FormFieldsRegistered;
 use Navia\Facades\Navia as NaviaFacade;
 use Navia\FormFields\After\DescriptionHandler;
@@ -82,7 +82,7 @@ class NaviaServiceProvider extends ServiceProvider
             $this->registerConsoleCommands();
         }
 
-        if (!$this->app->runningInConsole() || config('app.env') == 'testing') {
+        if (!$this->app->runningInConsole() || app()->environment('testing')) {
             $this->registerAppCommands();
         }
     }
@@ -112,7 +112,7 @@ class NaviaServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(realpath(__DIR__.'/../publishable/lang'), 'navia');
 
         if (config('navia.database.autoload_migrations', true)) {
-            if (config('app.env') == 'testing') {
+            if (app()->environment('testing')) {
                 $this->loadMigrationsFrom(realpath(__DIR__.'/migrations'));
             }
 

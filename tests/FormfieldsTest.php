@@ -219,7 +219,7 @@ class FormfieldsTest extends TestCase
     public function testFormfieldDate()
     {
         $this->createBreadForFormfield('date', 'date', json_encode([
-            'format' => '%Y-%m-%d',
+            'format' => 'Y-m-d',
         ]));
 
         $this->visitRoute('navia.categories.create')
@@ -238,7 +238,7 @@ class FormfieldsTest extends TestCase
     public function testFormfieldTimestamp()
     {
         $this->createBreadForFormfield('timestamp', 'timestamp', json_encode([
-            'format' => '%F %T',
+            'format' => 'Y-m-d H:i:s',
         ]));
 
         $this->visitRoute('navia.categories.create')

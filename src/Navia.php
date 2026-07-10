@@ -274,7 +274,7 @@ class Navia
 
     public function getVersion()
     {
-        return $this->version;
+        return $this->version ?? '';
     }
 
     public function addAlert(Alert $alert)

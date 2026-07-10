@@ -2,15 +2,12 @@
 
 namespace Navia\Database\Schema;
 
-use Doctrine\DBAL\Schema\SchemaException;
-use Doctrine\DBAL\Schema\Table as DoctrineTable;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
-use Navia\Database\Types\Type;
+use Illuminate\Support\Facades\Schema;
 
 abstract class SchemaManager
 {
-    // todo: trim parameters
-
     public static function __callStatic($method, $args)
     {
         return static::manager()->$method(...$args);
@@ -18,12 +15,12 @@ abstract class SchemaManager
 
     public static function manager()
     {
-        return DB::connection()->getDoctrineSchemaManager();
+        return DB::connection();
     }
 
     public static function getDatabaseConnection()
     {
-        return DB::connection()->getDoctrineConnection();
+        return DB::connection();
     }
 
     public static function tableExists($table)
@@ -32,14 +29,14 @@ abstract class SchemaManager
             $table = [$table];
         }
 
-        return static::manager()->tablesExist($table);
+        return Schema::hasTable($table[0]);
     }
 
     public static function listTables()
     {
         $tables = [];
 
-        foreach (static::manager()->listTableNames() as $tableName) {
+        foreach (static::listTableNames() as $tableName) {
             $tables[$tableName] = static::listTableDetails($tableName);
         }
 
@@ -53,16 +50,15 @@ abstract class SchemaManager
      */
     public static function listTableDetails($tableName)
     {
-        $columns = static::manager()->listTableColumns($tableName);
+        $columns = Schema::getColumnListing($tableName);
+        $columnDetails = collect($columns)->mapWithKeys(function ($column) use ($tableName) {
+            return [$column => static::getColumnDetails($tableName, $column)];
+        });
 
-        $foreignKeys = [];
-        if (static::manager()->getDatabasePlatform()->supportsForeignKeyConstraints()) {
-            $foreignKeys = static::manager()->listTableForeignKeys($tableName);
-        }
+        $indexes = static::getTableIndexes($tableName);
+        $foreignKeys = static::getTableForeignKeys($tableName);
 
-        $indexes = static::manager()->listTableIndexes($tableName);
-
-        return new Table($tableName, $columns, $indexes, [], $foreignKeys, []);
+        return new Table($tableName, $columnDetails->toArray(), $indexes, [], $foreignKeys, []);
     }
 
     /**
@@ -74,70 +70,97 @@ abstract class SchemaManager
      */
     public static function describeTable($tableName)
     {
-        Type::registerCustomPlatformTypes();
+        $columns = collect(Schema::getColumns($tableName));
+        $indexes = collect(static::getTableIndexes($tableName));
 
-        $table = static::listTableDetails($tableName);
+        return $columns->mapWithKeys(function ($column) use ($indexes) {
+            $name = $column['name'];
 
-        return collect($table->columns)->map(function ($column) use ($table) {
-            $columnArr = Column::toArray($column);
+            $columnIndexes = $indexes->filter(function ($index) use ($name) {
+                return in_array($name, $index['columns']);
+            })->values();
 
-            $columnArr['field'] = $columnArr['name'];
-            $columnArr['type'] = $columnArr['type']['name'];
-
-            // Set the indexes and key
-            $columnArr['indexes'] = [];
-            $columnArr['key'] = null;
-            if ($columnArr['indexes'] = $table->getColumnsIndexes($columnArr['name'], true)) {
-                // Convert indexes to Array
-                foreach ($columnArr['indexes'] as $name => $index) {
-                    $columnArr['indexes'][$name] = Index::toArray($index);
+            $key = null;
+            if ($columnIndexes->isNotEmpty()) {
+                if ($columnIndexes->contains(fn ($index) => $index['primary'] ?? false)) {
+                    $key = 'PRI';
+                } elseif ($columnIndexes->contains(fn ($index) => $index['unique'] ?? false)) {
+                    $key = 'UNI';
+                } else {
+                    $key = 'IND';
                 }
-
-                // If there are multiple indexes for the column
-                // the Key will be one with highest priority
-                $indexType = array_values($columnArr['indexes'])[0]['type'];
-                $columnArr['key'] = substr($indexType, 0, 3);
             }
 
-            return $columnArr;
+            return [$name => [
+                'field'   => $name,
+                'type'    => $column['type_name'],
+                'null'    => ($column['nullable'] ?? false) ? 'YES' : 'NO',
+                'key'     => $key,
+                'default' => $column['default'] ?? null,
+                'extra'   => ($column['auto_increment'] ?? false) ? 'auto_increment' : '',
+                'indexes' => $columnIndexes->toArray(),
+            ]];
         });
     }
 
     public static function listTableColumnNames($tableName)
     {
-        Type::registerCustomPlatformTypes();
-
-        $columnNames = [];
-
-        foreach (static::manager()->listTableColumns($tableName) as $column) {
-            $columnNames[] = $column->getName();
-        }
-
-        return $columnNames;
+        return Schema::getColumnListing($tableName);
     }
 
     public static function createTable($table)
     {
-        if (!($table instanceof DoctrineTable)) {
-            $table = Table::make($table);
+        if ($table instanceof Blueprint) {
+            Schema::create($table->getTable(), function (Blueprint $blueprint) use ($table) {
+                foreach ($table->getColumns() as $column) {
+                    $blueprint->addColumn(
+                        $column->getType()->getName(),
+                        $column->getName(),
+                        $column->toArray()
+                    );
+                }
+            });
+        } else {
+            throw new \InvalidArgumentException('Table must be an instance of Blueprint');
         }
-
-        static::manager()->createTable($table);
     }
 
-    public static function getDoctrineTable($table)
+    protected static function getColumnDetails($table, $column)
     {
-        $table = trim($table);
+        $schema = Schema::getConnection()->getSchemaBuilder();
+        $columnInfo = collect($schema->getColumns($table))->firstWhere('name', $column);
 
-        if (!static::tableExists($table)) {
-            throw SchemaException::tableDoesNotExist($table);
+        if (!$columnInfo) {
+            throw new \InvalidArgumentException("Column '$column' not found in table '$table'.");
         }
 
-        return static::manager()->listTableDetails($table);
+        return [
+            'type'           => $columnInfo['type_name'],
+            'nullable'       => (bool) ($columnInfo['nullable'] ?? false),
+            'default'        => $columnInfo['default'] ?? null,
+            'auto_increment' => (bool) ($columnInfo['auto_increment'] ?? false),
+        ];
     }
 
-    public static function getDoctrineColumn($table, $column)
+    protected static function getTableIndexes($table)
     {
-        return static::getDoctrineTable($table)->getColumn($column);
+        return Schema::getIndexes($table);
+    }
+
+    protected static function getColumnIndexes($table, $column)
+    {
+        return collect(static::getTableIndexes($table))->filter(function ($index) use ($column) {
+            return in_array($column, $index['columns']);
+        })->values()->toArray();
+    }
+
+    protected static function getTableForeignKeys($table)
+    {
+        return Schema::getForeignKeys($table);
+    }
+
+    public static function listTableNames()
+    {
+        return collect(Schema::getTables())->pluck('name')->values()->all();
     }
 }

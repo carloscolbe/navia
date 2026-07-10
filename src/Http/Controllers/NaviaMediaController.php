@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Laravel\Facades\Image;
 use Navia\Events\MediaFileAdded;
 use Navia\Facades\Navia;
 
@@ -53,13 +53,8 @@ class NaviaMediaController extends Controller
         $dir = $this->directory.$folder;
 
         $files = [];
-        if (class_exists(\League\Flysystem\Plugin\ListWith::class)) {
-            $storage = Storage::disk($this->filesystem)->addPlugin(new \League\Flysystem\Plugin\ListWith());
-            $storageItems = $storage->listWith(['mimetype'], $dir);
-        } else {
-            $storage = Storage::disk($this->filesystem);
-            $storageItems = $storage->listContents($dir)->sortByPath()->toArray();
-        }
+        $storage = Storage::disk($this->filesystem);
+        $storageItems = $storage->listContents($dir)->sortByPath()->toArray();
 
         foreach ($storageItems as $item) {
             if ($item['type'] == 'dir') {
@@ -269,44 +264,41 @@ class NaviaMediaController extends Controller
             ];
             if (in_array($request->file->getMimeType(), $imageMimeTypes)) {
                 $content = Storage::disk($this->filesystem)->get($file);
-                $image = Image::make($content);
+                $image = Image::read($content);
 
                 if ($request->file->getClientOriginalExtension() == 'gif') {
                     copy($request->file->getRealPath(), $realPath.$file);
                 } else {
-                    $image = $image->orientate();
                     // Generate thumbnails
                     if (property_exists($details, 'thumbnails') && is_array($details->thumbnails)) {
                         foreach ($details->thumbnails as $thumbnail_data) {
                             $type = $thumbnail_data->type ?? 'fit';
-                            $thumbnail = Image::make(clone $image);
+                            $thumbnail = clone $image;
                             if ($type == 'fit') {
-                                $thumbnail = $thumbnail->fit(
+                                $thumbnail = $thumbnail->cover(
                                     $thumbnail_data->width,
-                                    ($thumbnail_data->height ?? null),
-                                    function ($constraint) {
-                                        $constraint->aspectRatio();
-                                    },
+                                    ($thumbnail_data->height ?? $thumbnail_data->width),
                                     ($thumbnail_data->position ?? 'center')
                                 );
                             } elseif ($type == 'crop') {
                                 $thumbnail = $thumbnail->crop(
                                     $thumbnail_data->width,
                                     $thumbnail_data->height,
-                                    ($thumbnail_data->x ?? null),
-                                    ($thumbnail_data->y ?? null)
+                                    ($thumbnail_data->x ?? 0),
+                                    ($thumbnail_data->y ?? 0)
                                 );
                             } elseif ($type == 'resize') {
-                                $thumbnail = $thumbnail->resize(
-                                    $thumbnail_data->width,
-                                    ($thumbnail_data->height ?? null),
-                                    function ($constraint) use ($thumbnail_data) {
-                                        $constraint->aspectRatio();
-                                        if (!($thumbnail_data->upsize ?? true)) {
-                                            $constraint->upsize();
-                                        }
-                                    }
-                                );
+                                if (!($thumbnail_data->upsize ?? true)) {
+                                    $thumbnail = $thumbnail->scaleDown(
+                                        $thumbnail_data->width,
+                                        ($thumbnail_data->height ?? null)
+                                    );
+                                } else {
+                                    $thumbnail = $thumbnail->scale(
+                                        $thumbnail_data->width,
+                                        ($thumbnail_data->height ?? null)
+                                    );
+                                }
                             }
                             if (
                                 property_exists($details, 'watermark') &&
@@ -317,14 +309,14 @@ class NaviaMediaController extends Controller
                                 $thumbnail = $this->addWatermarkToImage($thumbnail, $details->watermark);
                             }
                             $thumbnail_file = $request->upload_path.$name.'-'.($thumbnail_data->name ?? 'thumbnail').'.'.$extension;
-                            Storage::disk($this->filesystem)->put($thumbnail_file, $thumbnail->encode($extension, ($details->quality ?? 90))->encoded);
+                            Storage::disk($this->filesystem)->put($thumbnail_file, (string) $thumbnail->encodeByExtension($extension, quality: ($details->quality ?? 90)));
                         }
                     }
                     // Add watermark to image
                     if (property_exists($details, 'watermark') && property_exists($details->watermark, 'source')) {
                         $image = $this->addWatermarkToImage($image, $details->watermark);
                     }
-                    Storage::disk($this->filesystem)->put($file, $image->encode($extension, ($details->quality ?? 90))->encoded);
+                    Storage::disk($this->filesystem)->put($file, (string) $image->encodeByExtension($extension, quality: ($details->quality ?? 90)));
                 }
             }
 
@@ -370,8 +362,8 @@ class NaviaMediaController extends Controller
             }
 
             $content = Storage::disk($this->filesystem)->get($originImagePath);
-            $image = Image::make($content)->crop($width, $height, $x, $y);
-            Storage::disk($this->filesystem)->put($destImagePath, $image->encode()->encoded);
+            $image = Image::read($content)->crop((int) $width, (int) $height, (int) $x, (int) $y);
+            Storage::disk($this->filesystem)->put($destImagePath, (string) $image->encode());
 
             $success = true;
             $message = __('navia::media.success_crop_image');
@@ -385,14 +377,12 @@ class NaviaMediaController extends Controller
 
     private function addWatermarkToImage($image, $options)
     {
-        $watermark = Image::make(Storage::disk($this->filesystem)->path($options->source));
+        $watermark = Image::read(Storage::disk($this->filesystem)->path($options->source));
         // Resize watermark
-        $width = $image->width() * (($options->size ?? 15) / 100);
-        $watermark->resize($width, null, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+        $width = (int) ($image->width() * (($options->size ?? 15) / 100));
+        $watermark = $watermark->scale(width: $width);
 
-        return $image->insert(
+        return $image->place(
             $watermark,
             ($options->position ?? 'top-left'),
             ($options->x ?? 0),

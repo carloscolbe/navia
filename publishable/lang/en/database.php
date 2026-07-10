@@ -27,6 +27,7 @@ return [
     'index'                     => 'INDEX',
     'input_type'                => 'Input Type',
     'key'                       => 'Key',
+    'manager_disabled'          => 'The Database Manager is not supported in this version of Navia. Creating, altering and dropping tables must be done through migrations.',
     'name_warning'              => 'Please name the column before adding an index',
     'no_composites_warning'     => 'This table has composite indexes. Please note that they are not supported at the moment. Be careful when trying to add/remove indexes.',
     'null'                      => 'Null',

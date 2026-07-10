@@ -11,6 +11,7 @@ use Navia\Models\DataRow;
 use Navia\Models\DataType;
 use Navia\Models\Post;
 use Navia\Models\User;
+use Navia\Tests\Database\Factories\UserFactory;
 
 class SearchTest extends TestCase
 {
@@ -82,7 +83,7 @@ class SearchTest extends TestCase
         $post->author_id = $user->id;
         $post->save();
 
-        $other_user = factory(User::class)->create(['name' => 'Admin 2']);
+        $other_user = UserFactory::new()->create(['name' => 'Admin 2']);
         $other_post = $posts->last();
         $other_post->author_id = $other_user->id;
         $other_post->save();

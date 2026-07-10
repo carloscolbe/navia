@@ -223,6 +223,8 @@ class EventTest extends TestCase
 
     public function testTableAddedEvent()
     {
+        $this->markTestSkipped('The Database Manager is disabled since the removal of doctrine/dbal.');
+
         Event::fake();
         Auth::loginUsingId(1);
 
@@ -248,6 +250,8 @@ class EventTest extends TestCase
 
     public function testTableUpdatedEvent()
     {
+        $this->markTestSkipped('The Database Manager is disabled since the removal of doctrine/dbal.');
+
         Event::fake();
         Auth::loginUsingId(1);
 
@@ -294,6 +298,8 @@ class EventTest extends TestCase
 
     public function testTableDeletedEvent()
     {
+        $this->markTestSkipped('The Database Manager is disabled since the removal of doctrine/dbal.');
+
         Event::fake();
         Auth::loginUsingId(1);
 
@@ -362,5 +368,7 @@ class EventTest extends TestCase
         if (file_exists(public_path('storage/nested/test.png'))) {
             unlink(public_path('storage/nested/test.png'));
         }
+
+        parent::tearDown();
     }
 }

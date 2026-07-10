@@ -27,6 +27,7 @@ return [
     'index'                     => 'ÍNDICE',
     'input_type'                => 'Tipo de entrada',
     'key'                       => 'Clave',
+    'manager_disabled'          => 'El gestor de base de datos no está soportado en esta versión de Navia. La creación, modificación y eliminación de tablas debe hacerse mediante migraciones.',
     'name_warning'              => 'Por favor, nombre la columna antes de añadir un índice',
     'no_composites_warning'     => 'Esta tabla tiene índices compuestos. Tenga en cuenta que en este momento no se admiten. Tenga cuidado al intentar agregar/quitar índices.',
     'null'                      => 'Nulo',

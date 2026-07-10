@@ -39,7 +39,7 @@ class MenuItemPolicy extends BasePolicy
 
         if ($slug == '') {
             $slug = 'admin';
-        } elseif ($slug == 'compass' && !\App::environment('local') && !config('navia.compass_in_production', false)) {
+        } elseif ($slug == 'compass' && !app()->environment('local') && !config('navia.compass_in_production', false)) {
             return false;
         }
 

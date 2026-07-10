@@ -4,8 +4,7 @@ namespace Navia\Http\Controllers\ContentTypes;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Constraint;
-use Intervention\Image\Facades\Image as InterventionImage;
+use Intervention\Image\Laravel\Facades\Image as InterventionImage;
 
 class MultipleImage extends BaseType
 {
@@ -26,7 +25,7 @@ class MultipleImage extends BaseType
                 continue;
             }
 
-            $image = InterventionImage::make($file)->orientate();
+            $image = InterventionImage::read($file);
 
             $resize_width = null;
             $resize_height = null;
@@ -47,21 +46,20 @@ class MultipleImage extends BaseType
 
             $resize_quality = intval($this->options->quality ?? 75);
 
+            $resize_width = is_numeric($resize_width) ? (int) $resize_width : null;
+            $resize_height = is_numeric($resize_height) ? (int) $resize_height : null;
+
             $filename = Str::random(20);
             $path = $this->slug.DIRECTORY_SEPARATOR.date('FY').DIRECTORY_SEPARATOR;
             array_push($filesPath, $path.$filename.'.'.$file->getClientOriginalExtension());
             $filePath = $path.$filename.'.'.$file->getClientOriginalExtension();
 
-            $image = $image->resize(
-                $resize_width,
-                $resize_height,
-                function (Constraint $constraint) {
-                    $constraint->aspectRatio();
-                    if (isset($this->options->upsize) && !$this->options->upsize) {
-                        $constraint->upsize();
-                    }
-                }
-            )->encode($file->getClientOriginalExtension(), $resize_quality);
+            if (isset($this->options->upsize) && !$this->options->upsize) {
+                $image = $image->scaleDown($resize_width, $resize_height);
+            } else {
+                $image = $image->scale($resize_width, $resize_height);
+            }
+            $image = $image->encodeByExtension($file->getClientOriginalExtension(), quality: $resize_quality);
 
             Storage::disk(config('navia.storage.disk'))->put($filePath, (string) $image, 'public');
 
@@ -73,32 +71,26 @@ class MultipleImage extends BaseType
                         $thumb_resize_height = $resize_height;
 
                         if ($thumb_resize_width != null && $thumb_resize_width != 'null') {
-                            $thumb_resize_width = $thumb_resize_width * $scale;
+                            $thumb_resize_width = intval($thumb_resize_width * $scale);
                         }
 
                         if ($thumb_resize_height != null && $thumb_resize_height != 'null') {
-                            $thumb_resize_height = $thumb_resize_height * $scale;
+                            $thumb_resize_height = intval($thumb_resize_height * $scale);
                         }
 
-                        $image = InterventionImage::make($file)
-                            ->orientate()
-                            ->resize(
-                                $thumb_resize_width,
-                                $thumb_resize_height,
-                                function (Constraint $constraint) {
-                                    $constraint->aspectRatio();
-                                    if (isset($this->options->upsize) && !$this->options->upsize) {
-                                        $constraint->upsize();
-                                    }
-                                }
-                            )->encode($file->getClientOriginalExtension(), $resize_quality);
+                        $image = InterventionImage::read($file);
+                        if (isset($this->options->upsize) && !$this->options->upsize) {
+                            $image = $image->scaleDown($thumb_resize_width, $thumb_resize_height);
+                        } else {
+                            $image = $image->scale($thumb_resize_width, $thumb_resize_height);
+                        }
+                        $image = $image->encodeByExtension($file->getClientOriginalExtension(), quality: $resize_quality);
                     } elseif (isset($this->options->thumbnails) && isset($thumbnails->crop->width) && isset($thumbnails->crop->height)) {
                         $crop_width = $thumbnails->crop->width;
                         $crop_height = $thumbnails->crop->height;
-                        $image = InterventionImage::make($file)
-                            ->orientate()
-                            ->fit($crop_width, $crop_height)
-                            ->encode($file->getClientOriginalExtension(), $resize_quality);
+                        $image = InterventionImage::read($file)
+                            ->cover($crop_width, $crop_height)
+                            ->encodeByExtension($file->getClientOriginalExtension(), quality: $resize_quality);
                     }
 
                     Storage::disk(config('navia.storage.disk'))->put(

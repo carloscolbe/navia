@@ -21,7 +21,7 @@ class NaviaCompassController extends Controller
         // Check permission
         $this->authorize('browse_compass');
         //Check if app is not local
-        if (!\App::environment('local') && !config('navia.compass_in_production', false)) {
+        if (!app()->environment('local') && !config('navia.compass_in_production', false)) {
             throw new AccessDeniedHttpException();
         }
 

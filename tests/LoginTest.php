@@ -53,15 +53,22 @@ class LoginTest extends TestCase
 
     public function testGetsLockedOutAfterFiveAttempts()
     {
-        session()->setPreviousUrl(route('navia.login'));
+        // Freeze time so the lockout message always reports the full 60 seconds
+        \Illuminate\Support\Carbon::setTestNow(now());
 
-        for ($i = 0; $i <= 5; $i++) {
-            $t = $this->visit(route('navia.login'))
-                 ->type('john@Doe.com', 'email')
-                 ->type('pass', 'password')
-                 ->press(__('navia::generic.login'));
+        try {
+            session()->setPreviousUrl(route('navia.login'));
+
+            for ($i = 0; $i <= 5; $i++) {
+                $t = $this->visit(route('navia.login'))
+                     ->type('john@Doe.com', 'email')
+                     ->type('pass', 'password')
+                     ->press(__('navia::generic.login'));
+            }
+
+            $t->see(__('auth.throttle', ['seconds' => 60]));
+        } finally {
+            \Illuminate\Support\Carbon::setTestNow();
         }
-
-        $t->see(__('auth.throttle', ['seconds' => 60]));
     }
 }

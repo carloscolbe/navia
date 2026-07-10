@@ -53,9 +53,27 @@ class TestCase extends OrchestraTestCase
 
     public function tearDown(): void
     {
-        //parent::tearDown();
+        parent::tearDown();
 
-        //$this->artisan('migrate:reset');
+        // The framework leaves its global error/exception handlers registered,
+        // which PHPUnit >= 11 reports as risky. Pop any leftover handlers.
+        while (true) {
+            $previous = set_error_handler(static fn () => false);
+            restore_error_handler();
+            if ($previous === null || $previous instanceof \PHPUnit\Runner\ErrorHandler) {
+                break;
+            }
+            restore_error_handler();
+        }
+
+        while (true) {
+            $previous = set_exception_handler(null);
+            restore_exception_handler();
+            if ($previous === null) {
+                break;
+            }
+            restore_exception_handler();
+        }
     }
 
     /**

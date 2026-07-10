@@ -4,8 +4,7 @@ namespace Navia\Http\Controllers\ContentTypes;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Constraint;
-use Intervention\Image\Facades\Image as InterventionImage;
+use Intervention\Image\Laravel\Facades\Image as InterventionImage;
 
 class Image extends BaseType
 {
@@ -18,7 +17,7 @@ class Image extends BaseType
 
             $filename = $this->generateFileName($file, $path);
 
-            $image = InterventionImage::make($file)->orientate();
+            $image = InterventionImage::read($file);
 
             $fullPath = $path.$filename.'.'.$file->getClientOriginalExtension();
 
@@ -40,16 +39,15 @@ class Image extends BaseType
 
             $resize_quality = isset($this->options->quality) ? intval($this->options->quality) : 75;
 
-            $image = $image->resize(
-                $resize_width,
-                $resize_height,
-                function (Constraint $constraint) {
-                    $constraint->aspectRatio();
-                    if (isset($this->options->upsize) && !$this->options->upsize) {
-                        $constraint->upsize();
-                    }
-                }
-            )->encode($file->getClientOriginalExtension(), $resize_quality);
+            $resize_width = is_numeric($resize_width) ? (int) $resize_width : null;
+            $resize_height = is_numeric($resize_height) ? (int) $resize_height : null;
+
+            if (isset($this->options->upsize) && !$this->options->upsize) {
+                $image = $image->scaleDown($resize_width, $resize_height);
+            } else {
+                $image = $image->scale($resize_width, $resize_height);
+            }
+            $image = $image->encodeByExtension($file->getClientOriginalExtension(), quality: $resize_quality);
 
             if ($this->is_animated_gif($file)) {
                 Storage::disk(config('navia.storage.disk'))->put($fullPath, file_get_contents($file), 'public');
@@ -74,25 +72,19 @@ class Image extends BaseType
                             $thumb_resize_height = intval($thumb_resize_height * $scale);
                         }
 
-                        $image = InterventionImage::make($file)
-                            ->orientate()
-                            ->resize(
-                                $thumb_resize_width,
-                                $thumb_resize_height,
-                                function (Constraint $constraint) {
-                                    $constraint->aspectRatio();
-                                    if (isset($this->options->upsize) && !$this->options->upsize) {
-                                        $constraint->upsize();
-                                    }
-                                }
-                            )->encode($file->getClientOriginalExtension(), $resize_quality);
+                        $image = InterventionImage::read($file);
+                        if (isset($this->options->upsize) && !$this->options->upsize) {
+                            $image = $image->scaleDown($thumb_resize_width, $thumb_resize_height);
+                        } else {
+                            $image = $image->scale($thumb_resize_width, $thumb_resize_height);
+                        }
+                        $image = $image->encodeByExtension($file->getClientOriginalExtension(), quality: $resize_quality);
                     } elseif (isset($thumbnails->crop->width) && isset($thumbnails->crop->height)) {
                         $crop_width = $thumbnails->crop->width;
                         $crop_height = $thumbnails->crop->height;
-                        $image = InterventionImage::make($file)
-                            ->orientate()
-                            ->fit($crop_width, $crop_height)
-                            ->encode($file->getClientOriginalExtension(), $resize_quality);
+                        $image = InterventionImage::read($file)
+                            ->cover($crop_width, $crop_height)
+                            ->encodeByExtension($file->getClientOriginalExtension(), quality: $resize_quality);
                     }
 
                     Storage::disk(config('navia.storage.disk'))->put(

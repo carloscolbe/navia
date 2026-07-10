@@ -48,13 +48,24 @@ class RouteTest extends TestCase
             route('navia.menus.edit', 1),
             route('navia.database.index'),
             route('navia.bread.edit', 'categories'),
-            route('navia.database.edit', 'categories'),
-            route('navia.database.create'),
         ];
 
         foreach ($urls as $url) {
             $response = $this->call('GET', $url);
             $this->assertEquals(200, $response->status(), $url.' did not return a 200');
+        }
+
+        // The Database Manager is disabled: its create/edit routes redirect
+        // back to the database index with a warning instead of failing.
+        $gatedUrls = [
+            route('navia.database.edit', 'categories'),
+            route('navia.database.create'),
+        ];
+
+        foreach ($gatedUrls as $url) {
+            $response = $this->call('GET', $url);
+            $this->assertEquals(302, $response->status(), $url.' did not redirect');
+            $this->assertEquals(route('navia.database.index'), $response->headers->get('Location'));
         }
     }
 }
