@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'ခွင့်ပြုချက်များကို ပြောင်းပါ။',
     'icon_class'             => 'ဤဇယားအတွက် သင်္ကေတ',
     'icon_hint'              => 'အိုင်ကွန် (ချန်လှပ်ထားနိုင်သည်) ဤအရာကို အသုံးပြုပါ',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'မော်ဒယ်အတန်းအမည်',
     'model_name'             => 'မော်ဒယ်အမည်',
     'model_name_ph'          => 'ဥပမာ- \App\User၊ ဇယားအမည်ကို အသုံးပြုမည်| ဘာမှမရှိဘူးဆိုလျှင် table name ကို အသုံးပြုမည်',

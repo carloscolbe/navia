@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Event;
 use Navia\Events;
 use Navia\Listeners;
 
-class VoyagerEventServiceProvider extends ServiceProvider
+class NaviaEventServiceProvider extends ServiceProvider
 {
     /**
      * The event listener mappings for the application.

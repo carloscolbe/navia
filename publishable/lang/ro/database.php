@@ -43,7 +43,7 @@ return [
     'generate_permissions'      => 'Generare permisiuni',
     'icon_class'                => 'Iconiță pentru acest tabel',
     'icon_hint'                 => 'Iconiță pentru (opțional)',
-    'icon_hint2'                => 'Voyager Font Class',
+    'icon_hint2'                => 'Navia Font Class',
     'index'                     => 'INDEX',
     'input_type'                => 'Tipul input-ului',
     'key'                       => 'Cheie',

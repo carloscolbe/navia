@@ -43,7 +43,7 @@ return [
     'generate_permissions'      => 'Створення прав доступу',
     'icon_class'                => 'Значок для даної таблиці',
     'icon_hint'                 => 'Значок для (необов\'язково)',
-    'icon_hint2'                => 'Voyager Font Class',
+    'icon_hint2'                => 'Navia Font Class',
     'index'                     => 'INDEX',
     'input_type'                => 'Тип вводу',
     'key'                       => 'Ключ',

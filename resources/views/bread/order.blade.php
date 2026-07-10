@@ -4,7 +4,7 @@
 
 @section('page_header')
 <h1 class="page-title">
-    <i class="voyager-list"></i>{{ $dataType->getTranslatedAttribute('display_name_plural') }} {{ __('navia::bread.order') }}
+    <i class="navia-list"></i>{{ $dataType->getTranslatedAttribute('display_name_plural') }} {{ __('navia::bread.order') }}
 </h1>
 @stop
 

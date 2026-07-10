@@ -5,7 +5,7 @@
     <li class="dd-item" data-id="{{ $item->id }}">
         <div class="pull-right item_actions">
             <div class="btn btn-sm btn-danger pull-right delete" data-id="{{ $item->id }}">
-                <i class="voyager-trash"></i> {{ __('navia::generic.delete') }}
+                <i class="navia-trash"></i> {{ __('navia::generic.delete') }}
             </div>
             <div class="btn btn-sm btn-primary pull-right edit"
                 data-id="{{ $item->id }}"
@@ -17,7 +17,7 @@
                 data-route="{{ $item->route }}"
                 data-parameters="{{ json_encode($item->parameters) }}"
             >
-                <i class="voyager-edit"></i> {{ __('navia::generic.edit') }}
+                <i class="navia-edit"></i> {{ __('navia::generic.edit') }}
             </div>
         </div>
         <div class="dd-handle">

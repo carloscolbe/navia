@@ -11,7 +11,7 @@ class ViewAction extends AbstractAction
 
     public function getIcon()
     {
-        return 'voyager-eye';
+        return 'navia-eye';
     }
 
     public function getPolicy()

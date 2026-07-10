@@ -44,7 +44,7 @@ You can specify the default `controller` namespace of Navia. If you ever wish to
 {% hint style="info" %}
 **Overwrite a single controller**  
 If you only want to overwrite a single controller, you might consider adding the following piece of code to your `AppServiceProvider` class in the `register` method.  
-`$this->app->bind(VoyagerBreadController::class, MyBreadController::class);`
+`$this->app->bind(NaviaBreadController::class, MyBreadController::class);`
 {% endhint %}
 
 ## Model
@@ -130,16 +130,16 @@ Read more about multilanguage [here](../core-concepts/multilanguage.md).
         'Profile' => [
             'route'         => 'navia.profile',
             'classes'       => 'class-full-of-rum',
-            'icon_class'    => 'voyager-person',
+            'icon_class'    => 'navia-person',
         ],
         'Home' => [
             'route'         => '/',
-            'icon_class'    => 'voyager-home',
+            'icon_class'    => 'navia-home',
             'target_blank'  => true,
         ],
         'Logout' => [
             'route'      => 'navia.logout',
-            'icon_class' => 'voyager-power',
+            'icon_class' => 'navia-power',
         ],
     ],
     'widgets' => [

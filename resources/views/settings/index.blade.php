@@ -4,10 +4,10 @@
 
 @section('css')
     <style>
-        .panel-actions .voyager-trash {
+        .panel-actions .navia-trash {
             cursor: pointer;
         }
-        .panel-actions .voyager-trash:hover {
+        .panel-actions .navia-trash:hover {
             color: #e94542;
         }
         .settings .panel-actions{
@@ -28,10 +28,10 @@
         .sort-icons:hover {
             color: #37474F;
         }
-        .voyager-sort-desc {
+        .navia-sort-desc {
             margin-right: 10px;
         }
-        .voyager-sort-asc {
+        .navia-sort-asc {
             top: 10px;
         }
         .page-title {
@@ -125,12 +125,12 @@
             display:none;
         }
 
-        .voyager .settings .nav-tabs{
+        .navia .settings .nav-tabs{
             background:none;
             border-bottom:0px;
         }
 
-        .voyager .settings .nav-tabs .active a{
+        .navia .settings .nav-tabs .active a{
             border:0px;
         }
 
@@ -140,7 +140,7 @@
             border-radius: 3px;
         }
 
-        .voyager .settings input[type=file]{
+        .navia .settings input[type=file]{
             width:100%;
         }
 
@@ -153,11 +153,11 @@
             padding: 2px;
         }
 
-        .voyager .settings .nav-tabs > li{
+        .navia .settings .nav-tabs > li{
             margin-bottom:-1px !important;
         }
 
-        .voyager .settings .nav-tabs a{
+        .navia .settings .nav-tabs a{
             text-align: center;
             background: #f8f8f8;
             border: 1px solid #f1f1f1;
@@ -167,7 +167,7 @@
             border-bottom-right-radius: 0px;
         }
 
-        .voyager .settings .nav-tabs a i{
+        .navia .settings .nav-tabs a i{
             display: block;
             font-size: 22px;
         }
@@ -202,7 +202,7 @@
             top:0px !important;
         }
 
-        .voyager .settings .nav-tabs > li > a:hover{
+        .navia .settings .nav-tabs > li > a:hover{
             background-color:#fff !important;
         }
     </style>
@@ -210,7 +210,7 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="voyager-settings"></i> {{ __('navia::generic.settings') }}
+        <i class="navia-settings"></i> {{ __('navia::generic.settings') }}
     </h1>
 @stop
 
@@ -251,13 +251,13 @@
                                 </h3>
                                 <div class="panel-actions">
                                     <a href="{{ route('navia.settings.move_up', $setting->id) }}">
-                                        <i class="sort-icons voyager-sort-asc"></i>
+                                        <i class="sort-icons navia-sort-asc"></i>
                                     </a>
                                     <a href="{{ route('navia.settings.move_down', $setting->id) }}">
-                                        <i class="sort-icons voyager-sort-desc"></i>
+                                        <i class="sort-icons navia-sort-desc"></i>
                                     </a>
                                     @can('delete', Navia::model('Setting'))
-                                    <i class="voyager-trash"
+                                    <i class="navia-trash"
                                        data-id="{{ $setting->id }}"
                                        data-display-key="{{ $setting->key }}"
                                        data-display-name="{{ $setting->display_name }}"></i>
@@ -282,7 +282,7 @@
                                     @elseif($setting->type == "image" || $setting->type == "file")
                                         @if(isset( $setting->value ) && !empty( $setting->value ) && Storage::disk(config('navia.storage.disk'))->exists($setting->value))
                                             <div class="img_settings_container">
-                                                <a href="{{ route('navia.settings.delete_value', $setting->id) }}" class="voyager-x delete_value"></a>
+                                                <a href="{{ route('navia.settings.delete_value', $setting->id) }}" class="navia-x delete_value"></a>
                                                 <img src="{{ Storage::disk(config('navia.storage.disk'))->url($setting->value) }}" style="width:200px; height:auto; padding:2px; border:1px solid #ddd; margin-bottom:10px;">
                                             </div>
                                             <div class="clearfix"></div>
@@ -293,7 +293,7 @@
                                                     <a class="fileType" target="_blank" href="{{ Storage::disk(config('navia.storage.disk'))->url($file->download_link) }}">
                                                       {{ $file->original_name }}
                                                     </a>
-                                                    <a href="{{ route('navia.settings.delete_value', $setting->id) }}" class="voyager-x delete_value"></a>
+                                                    <a href="{{ route('navia.settings.delete_value', $setting->id) }}" class="navia-x delete_value"></a>
                                                  </div>
                                                 @endforeach
                                             @endif
@@ -364,7 +364,7 @@
         <div class="panel" style="margin-top:10px;">
             <div class="panel-heading new-setting">
                 <hr>
-                <h3 class="panel-title"><i class="voyager-plus"></i> {{ __('navia::settings.new') }}</h3>
+                <h3 class="panel-title"><i class="navia-plus"></i> {{ __('navia::settings.new') }}</h3>
             </div>
             <div class="panel-body">
                 <form action="{{ route('navia.settings.store') }}" method="POST">
@@ -403,7 +403,7 @@
                         </select>
                     </div>
                     <div class="col-md-12">
-                        <a id="toggle_options"><i class="voyager-double-down"></i> {{ mb_strtoupper(__('navia::generic.options')) }}</a>
+                        <a id="toggle_options"><i class="navia-double-down"></i> {{ mb_strtoupper(__('navia::generic.options')) }}</a>
                         <div class="new-settings-options">
                             <label for="options">{{ __('navia::generic.options') }}
                                 <small>{{ __('navia::settings.help_option') }}</small>
@@ -416,7 +416,7 @@
                     </div>
                     <div style="clear:both"></div>
                     <button type="submit" class="btn btn-primary pull-right new-setting-btn">
-                        <i class="voyager-plus"></i> {{ __('navia::settings.add_new') }}
+                        <i class="navia-plus"></i> {{ __('navia::settings.add_new') }}
                     </button>
                     <div style="clear:both"></div>
                 </form>
@@ -434,7 +434,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title">
-                        <i class="voyager-trash"></i> {!! __('navia::settings.delete_question', ['setting' => '<span id="delete_setting_title"></span>']) !!}
+                        <i class="navia-trash"></i> {!! __('navia::settings.delete_question', ['setting' => '<span id="delete_setting_title"></span>']) !!}
                     </h4>
                 </div>
                 <div class="modal-footer">
@@ -457,15 +457,15 @@
         $('document').ready(function () {
             $('#toggle_options').click(function () {
                 $('.new-settings-options').toggle();
-                if ($('#toggle_options .voyager-double-down').length) {
-                    $('#toggle_options .voyager-double-down').removeClass('voyager-double-down').addClass('voyager-double-up');
+                if ($('#toggle_options .navia-double-down').length) {
+                    $('#toggle_options .navia-double-down').removeClass('navia-double-down').addClass('navia-double-up');
                 } else {
-                    $('#toggle_options .voyager-double-up').removeClass('voyager-double-up').addClass('voyager-double-down');
+                    $('#toggle_options .navia-double-up').removeClass('navia-double-up').addClass('navia-double-down');
                 }
             });
 
             @can('delete', Navia::model('Setting'))
-            $('.panel-actions .voyager-trash').click(function () {
+            $('.panel-actions .navia-trash').click(function () {
                 var display = $(this).data('display-name') + '/' + $(this).data('display-key');
 
                 $('#delete_setting_title').text(display);
@@ -488,7 +488,7 @@
             });
 
             // Initiliaze rich text editor
-            tinymce.init(window.voyagerTinyMCE.getConfig());
+            tinymce.init(window.naviaTinyMCE.getConfig());
         });
     </script>
     <script type="text/javascript">

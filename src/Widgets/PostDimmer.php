@@ -25,7 +25,7 @@ class PostDimmer extends BaseDimmer
         $string = trans_choice('navia::dimmer.post', $count);
 
         return view('navia::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-news',
+            'icon'   => 'navia-news',
             'title'  => "{$count} {$string}",
             'text'   => __('navia::dimmer.post_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [

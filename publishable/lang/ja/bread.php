@@ -28,7 +28,7 @@ return [
     'generate_permissions'   => 'パーミッションを変換',
     'icon_class'             => 'このテーブル用のアイコン',
     'icon_hint'              => 'アイコン (オプション)  これを使用:',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'モデルクラス名',
     'model_name'             => 'モデル名',
     'model_name_ph'          => '例: \App\User, 空にするとテーブル名が使われます',

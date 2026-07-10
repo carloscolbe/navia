@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Linklər',
         'documentation'         => 'Dokumentasiya',
-        'voyager_homepage'      => 'Navia səhifəsi',
+        'navia_homepage'      => 'Navia səhifəsi',
     ],
     'commands'      => [
         'title'                 => 'Əmrlər',
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Şriftlər',
-        'font_class'            => 'Voyager şriftinin siniflərinin xəritəsi',
-        'font_character'        => 'Voyager simvol siniflərinin xəritəsi',
+        'font_class'            => 'Navia şriftinin siniflərinin xəritəsi',
+        'font_character'        => 'Navia simvol siniflərinin xəritəsi',
     ],
 ];

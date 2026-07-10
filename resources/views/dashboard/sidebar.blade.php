@@ -11,7 +11,7 @@
                             <img src="{{ Navia::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                     </div>
-                    <div class="title">{{Navia::setting('admin.title', 'VOYAGER')}}</div>
+                    <div class="title">{{Navia::setting('admin.title', 'NAVIA')}}</div>
                 </a>
             </div><!-- .navbar-header -->
 

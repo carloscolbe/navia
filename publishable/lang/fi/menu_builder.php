@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dynaaminen routtaus',
     'edit_item'            => 'Muokkaa valikkoriviä',
     'icon_class'           => 'Fontti-ikonin luokka valikkoriville (käytä ',
-    'icon_class2'          => 'Voyager Fonttiluokkaa</a>)',
+    'icon_class2'          => 'Navia Fonttiluokkaa</a>)',
     'icon_class_ph'        => 'ikoniluokka (valinnainen)',
     'item_route'           => 'Valikkorivin routtaus',
     'item_title'           => 'Valikkorivin otsikko',

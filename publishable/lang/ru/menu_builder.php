@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Динамический путь',
     'edit_item'            => 'Редактировать пункт меню',
     'icon_class'           => 'Иконка для пункта меню (Используйте ',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Иконка (необязательно)',
     'item_route'           => 'Путь для пункта меню',
     'item_title'           => 'Название пункта меню',

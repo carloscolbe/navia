@@ -130,16 +130,16 @@ return [
             'navia::generic.profile' => [
                 'route'      => 'navia.profile',
                 'classes'    => 'class-full-of-rum',
-                'icon_class' => 'voyager-person',
+                'icon_class' => 'navia-person',
             ],
             'navia::generic.home' => [
                 'route'        => '/',
-                'icon_class'   => 'voyager-home',
+                'icon_class'   => 'navia-home',
                 'target_blank' => true,
             ],
             'navia::generic.logout' => [
                 'route'      => 'navia.logout',
-                'icon_class' => 'voyager-power',
+                'icon_class' => 'navia-power',
             ],
         ],
 

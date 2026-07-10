@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dinamik rota',
     'edit_item'            => 'Menüyü düzenle',
     'icon_class'           => 'Font Icon sınıfları menü için (İnceleyin: ',
-    'icon_class2'          => 'Voyager Font Sınıfları</a>)',
+    'icon_class2'          => 'Navia Font Sınıfları</a>)',
     'icon_class_ph'        => 'Icon sınıfları (tercihen)',
     'item_route'           => 'Menü için rota',
     'item_title'           => 'Menü başlığı',

@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Создание прав доступа',
     'icon_class'             => 'Значок для данной таблицы',
     'icon_hint'              => 'Значок для (необязательно)',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Название класса модели',
     'model_name'             => 'Название модели',
     'model_name_ph'          => 'например \App\User, если оставить пустым - попытается использовать название таблицы',

@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => '動態路由',
     'edit_item'            => '編輯側邊欄項目',
     'icon_class'           => '側邊欄項目的字體圖標類（使用',
-    'icon_class2'          => 'Voyager 圖標庫</a>）',
+    'icon_class2'          => 'Navia 圖標庫</a>）',
     'icon_class_ph'        => 'Icon Class（可選）',
     'item_route'           => '側邊欄項目的路由',
     'item_title'           => '側邊欄項目的標題',

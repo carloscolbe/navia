@@ -6,12 +6,12 @@
 @endphp
 <div class="row row-dd row-dd-relationship">
     <div class="col-xs-2">
-        <h4><i class="voyager-heart"></i><strong>{{ $relationship->getTranslatedAttribute('display_name') }}</strong></h4>
-        <div class="handler voyager-handle"></div>
+        <h4><i class="navia-heart"></i><strong>{{ $relationship->getTranslatedAttribute('display_name') }}</strong></h4>
+        <div class="handler navia-handle"></div>
         <strong>{{ __('navia::database.type') }}:</strong> <span>{{ __('navia::database.relationship.relationship') }}</span><br/>
         <strong>{{ __('navia::generic.required') }}:</strong>
         <input type="checkbox" value="1" name="field_required_{{ $relationship['field'] }}" @if(!empty($relationship->required))checked="checked"@endif>
-        <div class="handler voyager-handle"></div>
+        <div class="handler navia-handle"></div>
         <input class="row_order" type="hidden" value="{{ $relationship['order'] }}" name="field_order_{{ $relationship['field'] }}">
     </div>
     <div class="col-xs-2">
@@ -40,15 +40,15 @@
         <input type="text" name="field_display_name_{{ $relationship['field'] }}" class="form-control relationship_display_name" value="{{ $relationship['display_name'] }}">
     </div>
     <div class="col-xs-4">
-        <div class="voyager-relationship-details-btn">
-            <i class="voyager-angle-down"></i><i class="voyager-angle-up"></i>
+        <div class="navia-relationship-details-btn">
+            <i class="navia-angle-down"></i><i class="navia-angle-up"></i>
             <span class="open_text">{{ __('navia::database.relationship.open') }}</span>
             <span class="close_text">{{ __('navia::database.relationship.close') }}</span>
             {{ __('navia::database.relationship.relationship_details') }}
         </div>
     </div>
-    <div class="col-md-12 voyager-relationship-details">
-        <a href="{{ route('navia.bread.delete_relationship', $relationship['id']) }}" class="delete_relationship"><i class="voyager-trash"></i> {{ __('navia::database.relationship.delete') }}</a>
+    <div class="col-md-12 navia-relationship-details">
+        <a href="{{ route('navia.bread.delete_relationship', $relationship['id']) }}" class="delete_relationship"><i class="navia-trash"></i> {{ __('navia::database.relationship.delete') }}</a>
         <div class="relationship_details_content">
             <p class="relationship_table_select">{{ \Illuminate\Support\Str::singular(ucfirst($table)) }}</p>
             <select class="relationship_type select2" name="relationship_type_{{ $relationship['field'] }}">

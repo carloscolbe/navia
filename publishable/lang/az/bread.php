@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'İcazələri generasiya et',
     'icon_class'             => 'Cədvəli sitfadə etmək üçün icon',
     'icon_hint'              => 'İcon (vacib deyil) İstifadə',
-    'icon_hint2'             => 'Voyager Şrift Sinfi',
+    'icon_hint2'             => 'Navia Şrift Sinfi',
     'model_class'            => 'Modelin Sinif adı',
     'model_name'             => 'Modelin adı',
     'model_name_ph'          => 'məs. \App\User, boş qaldıqda cədvəl adından istifadə etməyə çalışacaq',

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Navia\Facades\Navia;
 
-class VoyagerSettingsController extends Controller
+class NaviaSettingsController extends Controller
 {
     public function index()
     {

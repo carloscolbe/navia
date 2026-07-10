@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class VoyagerDatabaseSeeder extends Seeder
+class NaviaDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeders.

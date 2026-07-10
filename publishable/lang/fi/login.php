@@ -3,5 +3,5 @@
 return [
     'loggingin'    => 'Kirjaudutaan sisään',
     'signin_below' => 'Kirjaudu sisään:',
-    'welcome'      => 'Tervetuloa Voyageriin. Tämä on se Laravelista puuttunut hallintapaneeli.',
+    'welcome'      => 'Tervetuloa Naviaiin. Tämä on se Laravelista puuttunut hallintapaneeli.',
 ];

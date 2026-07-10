@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Route',
     'edit_item'            => 'Chỉnh sửa mục',
     'icon_class'           => 'Font Icon class cho mục này (Sử dụng một',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icon Class (không bắt buộc)',
     'item_route'           => 'Route cho mục này',
     'item_title'           => 'Tiêu đề của mục',

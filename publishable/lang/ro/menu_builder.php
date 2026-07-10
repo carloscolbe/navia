@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Cale(route) dinamică',
     'edit_item'            => 'Editează punct de meniu',
     'icon_class'           => 'Iconiță pentru punctul de meniu (Folosiți ',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Iconiță (opțional)',
     'item_route'           => 'Calea pentru punctul de meniu',
     'item_title'           => 'Denumirea punctului de meniu',

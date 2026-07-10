@@ -28,7 +28,7 @@ return [
     'generate_permissions'   => '權限生成',
     'icon_class'             => '用於該表的圖標',
     'icon_hint'              => '使用圖標（可選）',
-    'icon_hint2'             => 'Voyager 字體',
+    'icon_hint2'             => 'Navia 字體',
     'model_class'            => '模型類別名稱',
     'model_name'             => '模型名稱',
     'model_name_ph'          => '如果左側留空，將嘗試使用表名',

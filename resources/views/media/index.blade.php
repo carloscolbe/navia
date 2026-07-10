@@ -9,7 +9,7 @@
             <div class="col-md-12">
 
                 <div class="admin-section-title">
-                    <h3><i class="voyager-images"></i> {{ __('navia::generic.media') }}</h3>
+                    <h3><i class="navia-images"></i> {{ __('navia::generic.media') }}</h3>
                 </div>
                 <div class="clear"></div>
                 <div id="filemanager">

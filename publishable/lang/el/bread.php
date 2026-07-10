@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Δημιουργία αδειών',
     'icon_class'             => 'Εικονίδιο για αυτόν τον πίνακα',
     'icon_hint'              => 'Εικονίδιο (προαιρετικό) Χρησιμοποιήστε μία',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Model Class Name',
     'model_name'             => 'Model Name',
     'model_name_ph'          => 'Π.χ. \App\User, αν μείνει κενό θα γίνει προσπάθεια χρήσης του ονόματος του πίνακα',

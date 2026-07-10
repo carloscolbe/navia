@@ -14,7 +14,7 @@ use Navia\Events\BreadDeleted;
 use Navia\Events\BreadUpdated;
 use Navia\Facades\Navia;
 
-class VoyagerBreadController extends Controller
+class NaviaBreadController extends Controller
 {
     public function index()
     {

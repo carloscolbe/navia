@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Admin panel fon şəkli',
             'description'                => 'Admin panelin təsviri',
-            'description_value'          => 'Voyagerə xoş gəlmisiniz. Laravel üçün itmiş admin panel',
+            'description_value'          => 'Naviaə xoş gəlmisiniz. Laravel üçün itmiş admin panel',
             'google_analytics_client_id' => 'Google Analytics Client ID (Admin panel üçün istifadə olunur)',
             'icon_image'                 => 'Admin panelin ikonkası',
             'loader'                     => 'Admin panelin loaderi',

@@ -30,7 +30,7 @@ You can override the controller for a single BREAD by creating a controller whic
 
 namespace App\Http\Controllers;
 
-class VoyagerCategoriesController extends \Navia\Http\Controllers\VoyagerBaseController
+class NaviaCategoriesController extends \Navia\Http\Controllers\NaviaBaseController
 {
     //...
 }
@@ -40,7 +40,7 @@ After that go to the BREAD-settings and fill in the Controller Name with your fu
 
 ![](../.gitbook/assets/bread_controller.png)
 
-You can now override all methods from the [VoyagerBaseController]
+You can now override all methods from the [NaviaBaseController]
 
 ## Overriding Navias Controllers
 
@@ -115,5 +115,5 @@ If the model you are overriding has an associated BREAD, go to the BREAD setting
 and replace the Model Name with your fully-qualified class-name. For example, if you are overriding the Navia `Menu`
 model with your own `App\Menu` model:
 
-![](../.gitbook/assets/bread_override_voyager_models.png)
+![](../.gitbook/assets/bread_override_navia_models.png)
 

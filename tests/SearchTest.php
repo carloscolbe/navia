@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Navia\Http\Controllers\VoyagerBaseController;
+use Navia\Http\Controllers\NaviaBaseController;
 use Navia\Models\DataRow;
 use Navia\Models\DataType;
 use Navia\Models\Post;
@@ -121,7 +121,7 @@ class SearchTest extends TestCase
             return $stub;
         });
 
-        return (new VoyagerBaseController())->index($request);
+        return (new NaviaBaseController())->index($request);
     }
 
     protected function setupAuthorRelationship()

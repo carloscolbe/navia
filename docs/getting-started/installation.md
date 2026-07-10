@@ -70,7 +70,7 @@ This section is meant for users who are installing Navia on an already existing 
 The first thing you should do is publish the assets that come with Navia. You can do that by running the following commands:
 
 ```bash
-php artisan vendor:publish --provider="Navia\VoyagerServiceProvider"
+php artisan vendor:publish --provider="Navia\NaviaServiceProvider"
 php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
 ```
 
@@ -102,7 +102,7 @@ Route::group(['prefix' => 'admin'], function () {
 ```
 
 Now run  
-`php artisan db:seed --class=VoyagerDatabaseSeeder`  
+`php artisan db:seed --class=NaviaDatabaseSeeder`  
 to seed some necessary data to your database, and  
 `php artisan storage:link`  
 to create the storage symlink to your public folder.

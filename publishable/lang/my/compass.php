@@ -8,7 +8,7 @@ return [
     'links'         => [
         'title'                 => 'Links',
         'documentation'         => 'စာရွက်စာတမ်း (အင်္ဂလိပ်ဆိုက်)',
-        'voyager_homepage'      => 'Navia ပင်မစာမျက်နှာ (အင်္ဂလိပ်ဆိုက်)',
+        'navia_homepage'      => 'Navia ပင်မစာမျက်နှာ (အင်္ဂလိပ်ဆိုက်)',
     ],
     'commands'      => [
         'title'                 => 'Commands',
@@ -40,7 +40,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Fonts',
-        'font_class'            => 'Voyager Fonts Class Mapping',
-        'font_character'        => 'Voyager Fonts Character Mapping',
+        'font_class'            => 'Navia Fonts Class Mapping',
+        'font_character'        => 'Navia Fonts Character Mapping',
     ],
 ];

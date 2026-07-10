@@ -28,7 +28,7 @@ return [
     'generate_permissions'   => 'تولید مجوزها',
     'icon_class'             => 'آیکون برای این جدول',
     'icon_hint'              => 'آیکون (دلبخواه) استفاده کنید از',
-    'icon_hint2'             => 'کلاس فونت voyager',
+    'icon_hint2'             => 'کلاس فونت navia',
     'model_class'            => 'نام کلاس مدل',
     'model_name'             => 'نام مدل',
     'model_name_ph'          => 'مثال App\User. در صورت خالی بودن از نام جدول استفاده خواهد شد',

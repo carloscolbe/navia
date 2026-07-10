@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Tạo phân quyền',
     'icon_class'             => 'Icon dùng cho bảng',
     'icon_hint'              => 'Icon (không bắt buộc). Sử dụng',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Tên Model Class',
     'model_name'             => 'Tên Model',
     'model_name_ph'          => 'VD: \App\User, nếu để trống sẽ sử dụng tên của bảng',

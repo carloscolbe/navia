@@ -31,7 +31,7 @@ return [
     'generate_permissions'   => '权限生成',
     'icon_class'             => '用于该表的图标',
     'icon_hint'              => '使用图标（可选）',
-    'icon_hint2'             => 'Voyager 字体类',
+    'icon_hint2'             => 'Navia 字体类',
     'model_class'            => '模型类名称',
     'model_name'             => '模型名称',
     'model_name_ph'          => '如果左侧留空，将尝试使用表名',

@@ -8,7 +8,7 @@ use Navia\Facades\Navia;
 /**
  * @property  \Illuminate\Database\Eloquent\Collection  roles
  */
-trait VoyagerUser
+trait NaviaUser
 {
     /**
      * Return default User Role.

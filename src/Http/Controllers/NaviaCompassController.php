@@ -7,7 +7,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
-class VoyagerCompassController extends Controller
+class NaviaCompassController extends Controller
 {
     protected $request;
 

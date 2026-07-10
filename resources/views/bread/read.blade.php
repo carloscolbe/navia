@@ -14,11 +14,11 @@
         @can('delete', $dataTypeContent)
             @if($isSoftDeleted)
                 <a href="{{ route('navia.'.$dataType->slug.'.restore', $dataTypeContent->getKey()) }}" title="{{ __('navia::generic.restore') }}" class="btn btn-default restore" data-id="{{ $dataTypeContent->getKey() }}" id="restore-{{ $dataTypeContent->getKey() }}">
-                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('navia::generic.restore') }}</span>
+                    <i class="navia-trash"></i> <span class="hidden-xs hidden-sm">{{ __('navia::generic.restore') }}</span>
                 </a>
             @else
                 <a href="javascript:;" title="{{ __('navia::generic.delete') }}" class="btn btn-danger delete" data-id="{{ $dataTypeContent->getKey() }}" id="delete-{{ $dataTypeContent->getKey() }}">
-                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('navia::generic.delete') }}</span>
+                    <i class="navia-trash"></i> <span class="hidden-xs hidden-sm">{{ __('navia::generic.delete') }}</span>
                 </a>
             @endif
         @endcan
@@ -147,7 +147,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('navia::generic.close') }}"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('navia::generic.delete_question') }} {{ strtolower($dataType->getTranslatedAttribute('display_name_singular')) }}?</h4>
+                    <h4 class="modal-title"><i class="navia-trash"></i> {{ __('navia::generic.delete_question') }} {{ strtolower($dataType->getTranslatedAttribute('display_name_singular')) }}?</h4>
                 </div>
                 <div class="modal-footer">
                     <form action="{{ route('navia.'.$dataType->slug.'.index') }}" id="delete_form" method="POST">

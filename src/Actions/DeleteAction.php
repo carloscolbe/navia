@@ -11,7 +11,7 @@ class DeleteAction extends AbstractAction
 
     public function getIcon()
     {
-        return 'voyager-trash';
+        return 'navia-trash';
     }
 
     public function getPolicy()

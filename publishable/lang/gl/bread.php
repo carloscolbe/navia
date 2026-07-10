@@ -28,7 +28,7 @@ return [
     'generate_permissions'   => 'Xerar Permisos',
     'icon_class'             => 'Icono para usar nesta táboa',
     'icon_hint'              => 'Icono (opcional) Use un',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Nome da clase do modelo',
     'model_name'             => 'Nome do modelo',
     'model_name_ph'          => 'ex. \App\User, se se deixa baleiro empregarase o nome da táboa',

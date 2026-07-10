@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Genera Permessi',
     'icon_class'             => 'Icona da utilizzare per questa Tabella',
     'icon_hint'              => 'Icona (opzionale) Usare una',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Nome della Classe del Model',
     'model_name'             => 'Nome Model',
     'model_name_ph'          => 'es. \App\User, se lasciato vuoto proverà ad utilizzare il nome della tabella',

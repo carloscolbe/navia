@@ -16,7 +16,7 @@ use Navia\Events\BreadImagesDeleted;
 use Navia\Facades\Navia;
 use Navia\Http\Controllers\Traits\BreadRelationshipParser;
 
-class VoyagerBaseController extends Controller
+class NaviaBaseController extends Controller
 {
     use BreadRelationshipParser;
 

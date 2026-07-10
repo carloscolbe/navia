@@ -7,7 +7,7 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="voyager-data"></i>
+        <i class="navia-data"></i>
         @if($db->action == 'update')
             {{ __('navia::database.editing_table', ['table' => $db->table->name]) }}
         @else
@@ -19,7 +19,7 @@
 @section('breadcrumbs')
 <ol class="breadcrumb hidden-xs">
     <li>
-        <a href="{{ route('navia.dashboard')}}"><i class="voyager-boat"></i> {{ __('navia::generic.dashboard') }}</a>
+        <a href="{{ route('navia.dashboard')}}"><i class="navia-boat"></i> {{ __('navia::generic.dashboard') }}</a>
     </li>
     <li>
         <a href="{{ route('navia.database.index') }}">

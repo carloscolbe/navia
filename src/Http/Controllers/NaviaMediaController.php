@@ -11,7 +11,7 @@ use Intervention\Image\Facades\Image;
 use Navia\Events\MediaFileAdded;
 use Navia\Facades\Navia;
 
-class VoyagerMediaController extends Controller
+class NaviaMediaController extends Controller
 {
     /** @var string */
     private $filesystem;

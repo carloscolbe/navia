@@ -4,7 +4,7 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="voyager-bread"></i> {{ __('navia::generic.bread') }}
+        <i class="navia-bread"></i> {{ __('navia::generic.bread') }}
     </h1>
 @stop
 
@@ -32,7 +32,7 @@
                                    data-name="{{ $table->prefix.$table->name }}" class="desctable">
                                    {{ $table->name }}
                                 </a>
-                                <i class="voyager-data"
+                                <i class="navia-data"
                                    style="font-size:25px; position:absolute; margin-left:10px; margin-top:-3px;"></i>
                             </p>
                         </td>
@@ -41,20 +41,20 @@
                             @if($table->dataTypeId)
                                 <a href="{{ route('navia.' . $table->slug . '.index') }}"
                                    class="btn btn-warning btn-sm browse_bread" style="margin-right: 0;">
-                                    <i class="voyager-plus"></i> {{ __('navia::generic.browse') }}
+                                    <i class="navia-plus"></i> {{ __('navia::generic.browse') }}
                                 </a>
                                 <a href="{{ route('navia.bread.edit', $table->name) }}"
                                    class="btn btn-primary btn-sm edit">
-                                    <i class="voyager-edit"></i> {{ __('navia::generic.edit') }}
+                                    <i class="navia-edit"></i> {{ __('navia::generic.edit') }}
                                 </a>
                                 <a href="#delete-bread" data-id="{{ $table->dataTypeId }}" data-name="{{ $table->name }}"
                                      class="btn btn-danger btn-sm delete">
-                                    <i class="voyager-trash"></i> {{ __('navia::generic.delete') }}
+                                    <i class="navia-trash"></i> {{ __('navia::generic.delete') }}
                                 </a>
                             @else
                                 <a href="{{ route('navia.bread.create', $table->name) }}"
                                    class="_btn btn-default btn-sm pull-right">
-                                    <i class="voyager-plus"></i> {{ __('navia::bread.add_bread') }}
+                                    <i class="navia-plus"></i> {{ __('navia::bread.add_bread') }}
                                 </a>
                             @endif
                         </td>
@@ -71,7 +71,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('navia::generic.close') }}"><span
                                 aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-trash"></i>  {!! __('navia::bread.delete_bread_quest', ['table' => '<span id="delete_builder_name"></span>']) !!}</h4>
+                    <h4 class="modal-title"><i class="navia-trash"></i>  {!! __('navia::bread.delete_bread_quest', ['table' => '<span id="delete_builder_name"></span>']) !!}</h4>
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="delete_builder_form" method="POST">
@@ -91,7 +91,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('navia::generic.close') }}"><span
                                 aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-data"></i> @{{ table.name }}</h4>
+                    <h4 class="modal-title"><i class="navia-data"></i> @{{ table.name }}</h4>
                 </div>
                 <div class="modal-body" style="overflow:scroll">
                     <table class="table table-striped">

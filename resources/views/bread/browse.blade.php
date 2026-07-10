@@ -9,7 +9,7 @@
         </h1>
         @can('add', app($dataType->model_name))
             <a href="{{ route('navia.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
-                <i class="voyager-plus"></i> <span>{{ __('navia::generic.add_new') }}</span>
+                <i class="navia-plus"></i> <span>{{ __('navia::generic.add_new') }}</span>
             </a>
         @endcan
         @can('delete', app($dataType->model_name))
@@ -18,7 +18,7 @@
         @can('edit', app($dataType->model_name))
             @if(!empty($dataType->order_column) && !empty($dataType->order_display_column))
                 <a href="{{ route('navia.'.$dataType->slug.'.order') }}" class="btn btn-primary btn-add-new">
-                    <i class="voyager-list"></i> <span>{{ __('navia::bread.order') }}</span>
+                    <i class="navia-list"></i> <span>{{ __('navia::bread.order') }}</span>
                 </a>
             @endif
         @endcan
@@ -63,7 +63,7 @@
                                         <input type="text" class="form-control" placeholder="{{ __('navia::generic.search') }}" name="s" value="{{ $search->value }}">
                                         <span class="input-group-btn">
                                             <button class="btn btn-info btn-lg" type="submit">
-                                                <i class="voyager-search"></i>
+                                                <i class="navia-search"></i>
                                             </button>
                                         </span>
                                     </div>
@@ -92,9 +92,9 @@
                                             @if ($isServerSide)
                                                 @if ($row->isCurrentSortField($orderBy))
                                                     @if ($sortOrder == 'asc')
-                                                        <i class="voyager-angle-up pull-right"></i>
+                                                        <i class="navia-angle-up pull-right"></i>
                                                     @else
-                                                        <i class="voyager-angle-down pull-right"></i>
+                                                        <i class="navia-angle-down pull-right"></i>
                                                     @endif
                                                 @endif
                                                 </a>
@@ -296,7 +296,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('navia::generic.close') }}"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('navia::generic.delete_question') }} {{ strtolower($dataType->getTranslatedAttribute('display_name_singular')) }}?</h4>
+                    <h4 class="modal-title"><i class="navia-trash"></i> {{ __('navia::generic.delete_question') }} {{ strtolower($dataType->getTranslatedAttribute('display_name_singular')) }}?</h4>
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="delete_form" method="POST">

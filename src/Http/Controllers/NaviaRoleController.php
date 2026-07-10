@@ -5,7 +5,7 @@ namespace Navia\Http\Controllers;
 use Illuminate\Http\Request;
 use Navia\Facades\Navia;
 
-class VoyagerRoleController extends VoyagerBaseController
+class NaviaRoleController extends NaviaBaseController
 {
     // POST BR(E)AD
     public function update(Request $request, $id)

@@ -4,8 +4,8 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="voyager-list"></i>{{ __('navia::generic.menu_builder') }} ({{ $menu->name }})
-        <div class="btn btn-success add_item"><i class="voyager-plus"></i> {{ __('navia::menu_builder.new_menu_item') }}</div>
+        <i class="navia-list"></i>{{ __('navia::generic.menu_builder') }} ({{ $menu->name }})
+        <div class="btn btn-success add_item"><i class="navia-plus"></i> {{ __('navia::menu_builder.new_menu_item') }}</div>
     </h1>
     @include('navia::multilingual.language-selector')
 @stop
@@ -38,7 +38,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('navia::generic.close') }}"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('navia::menu_builder.delete_item_question') }}</h4>
+                    <h4 class="modal-title"><i class="navia-trash"></i> {{ __('navia::menu_builder.delete_item_question') }}</h4>
                 </div>
                 <div class="modal-footer">
                     <form action="{{ route('navia.menus.item.destroy', ['menu' => $menu->id, 'id' => '__id']) }}"
@@ -62,8 +62,8 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('navia::generic.close') }}"><span
                                 aria-hidden="true">&times;</span></button>
-                    <h4 id="m_hd_add" class="modal-title hidden"><i class="voyager-plus"></i> {{ __('navia::menu_builder.create_new_item') }}</h4>
-                    <h4 id="m_hd_edit" class="modal-title hidden"><i class="voyager-edit"></i> {{ __('navia::menu_builder.edit_item') }}</h4>
+                    <h4 id="m_hd_add" class="modal-title hidden"><i class="navia-plus"></i> {{ __('navia::menu_builder.create_new_item') }}</h4>
+                    <h4 id="m_hd_edit" class="modal-title hidden"><i class="navia-edit"></i> {{ __('navia::menu_builder.edit_item') }}</h4>
                 </div>
                 <form action="" id="m_form" method="POST"
                       data-action-add="{{ route('navia.menus.item.add', ['menu' => $menu->id]) }}"

@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dynamic Route',
     'edit_item'            => 'Edit Menu Item',
     'icon_class'           => 'Font Icon class for the Menu Item (Use a',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icon Class (optional)',
     'item_route'           => 'Route for the menu item',
     'item_title'           => 'Title of the Menu Item',

@@ -25,7 +25,7 @@ class PageDimmer extends BaseDimmer
         $string = trans_choice('navia::dimmer.page', $count);
 
         return view('navia::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-file-text',
+            'icon'   => 'navia-file-text',
             'title'  => "{$count} {$string}",
             'text'   => __('navia::dimmer.page_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [

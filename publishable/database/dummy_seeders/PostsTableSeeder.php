@@ -24,7 +24,7 @@ class PostsTableSeeder extends Seeder
                 'name'                  => 'posts',
                 'display_name_singular' => __('navia::seeders.data_types.post.singular'),
                 'display_name_plural'   => __('navia::seeders.data_types.post.plural'),
-                'icon'                  => 'voyager-news',
+                'icon'                  => 'navia-news',
                 'model_name'            => 'Navia\\Models\\Post',
                 'policy_name'           => 'Navia\\Policies\\PostPolicy',
                 'controller'            => '',
@@ -312,7 +312,7 @@ class PostsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-news',
+                'icon_class' => 'navia-news',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 6,

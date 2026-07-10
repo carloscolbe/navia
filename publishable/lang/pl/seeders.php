@@ -77,7 +77,7 @@ return [
         'admin' => [
             'background_image'           => 'Admin Grafika Tła',
             'description'                => 'Admin Opis',
-            'description_value'          => 'Witaj w Voyagerze. Zaginionym administratorze dla Laravela',
+            'description_value'          => 'Witaj w Naviaze. Zaginionym administratorze dla Laravela',
             'google_analytics_client_id' => 'Google Analytics Client ID (dla panelu administracyjnego)',
             'icon_image'                 => 'Admin Grafika Ikony',
             'loader'                     => 'Admin Loader',

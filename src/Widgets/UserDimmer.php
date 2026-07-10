@@ -25,7 +25,7 @@ class UserDimmer extends BaseDimmer
         $string = trans_choice('navia::dimmer.user', $count);
 
         return view('navia::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-group',
+            'icon'   => 'navia-group',
             'title'  => "{$count} {$string}",
             'text'   => __('navia::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
             'button' => [

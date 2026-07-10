@@ -12,7 +12,7 @@
 
 @section('page_header')
     <div class="page-title">
-        <i class="voyager-data"></i>
+        <i class="navia-data"></i>
         @if (isset($dataType->id))
             {{ __('navia::bread.edit_bread_for_table', ['table' => $dataType->name]) }}
         @else
@@ -31,7 +31,7 @@
 @section('breadcrumbs')
 <ol class="breadcrumb hidden-xs">
     <li class="active">
-        <a href="{{ route('navia.dashboard')}}"><i class="voyager-boat"></i> {{ __('navia::generic.dashboard') }}</a>
+        <a href="{{ route('navia.dashboard')}}"><i class="navia-boat"></i> {{ __('navia::generic.dashboard') }}</a>
     </li>
     <li class="active">
         <a href="{{ route('navia.bread.index') }}">
@@ -56,7 +56,7 @@
 @endsection
 
 @section('content')
-    <div class="page-content container-fluid" id="voyagerBreadEditAdd">
+    <div class="page-content container-fluid" id="naviaBreadEditAdd">
         <div class="row">
             <div class="col-md-12">
 
@@ -72,9 +72,9 @@
                     <div class="panel panel-primary panel-bordered">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title panel-icon"><i class="voyager-bread"></i> {{ ucfirst($table) }} {{ __('navia::bread.bread_info') }}</h3>
+                            <h3 class="panel-title panel-icon"><i class="navia-bread"></i> {{ ucfirst($table) }} {{ __('navia::bread.bread_info') }}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-up" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-up" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
 
@@ -136,7 +136,7 @@
                             <div class="row clearfix">
                                 <div class="col-md-6 form-group">
                                     <label for="model_name">{{ __('navia::bread.model_name') }}</label>
-                                    <span class="voyager-question"
+                                    <span class="navia-question"
                                         aria-hidden="true"
                                         data-toggle="tooltip"
                                         data-placement="right"
@@ -146,7 +146,7 @@
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="controller">{{ __('navia::bread.controller_name') }}</label>
-                                    <span class="voyager-question"
+                                    <span class="navia-question"
                                         aria-hidden="true"
                                         data-toggle="tooltip"
                                         data-placement="right"
@@ -158,7 +158,7 @@
                             <div class="row clearfix">
                                 <div class="col-md-6 form-group">
                                     <label for="policy_name">{{ __('navia::bread.policy_name') }}</label>
-                                    <span class="voyager-question"
+                                    <span class="navia-question"
                                           aria-hidden="true"
                                           data-toggle="tooltip"
                                           data-placement="right"
@@ -190,7 +190,7 @@
                             <div class="row clearfix">
                                 <div class="col-md-3 form-group">
                                     <label for="order_column">{{ __('navia::bread.order_column') }}</label>
-                                    <span class="voyager-question"
+                                    <span class="navia-question"
                                           aria-hidden="true"
                                           data-toggle="tooltip"
                                           data-placement="right"
@@ -206,7 +206,7 @@
                                 </div>
                                 <div class="col-md-3 form-group">
                                     <label for="order_display_column">{{ __('navia::bread.order_ident_column') }}</label>
-                                    <span class="voyager-question"
+                                    <span class="navia-question"
                                           aria-hidden="true"
                                           data-toggle="tooltip"
                                           data-placement="right"
@@ -233,7 +233,7 @@
                                 </div>
                                 <div class="col-md-3 form-group">
                                     <label for="default_search_key">{{ __('navia::bread.default_search_key') }}</label>
-                                    <span class="voyager-question"
+                                    <span class="navia-question"
                                           aria-hidden="true"
                                           data-toggle="tooltip"
                                           data-placement="right"
@@ -276,9 +276,9 @@
 
                     <div class="panel panel-primary panel-bordered">
                         <div class="panel-heading">
-                            <h3 class="panel-title panel-icon"><i class="voyager-window-list"></i> {{ __('navia::bread.edit_rows', ['table' => $table]) }}:</h3>
+                            <h3 class="panel-title panel-icon"><i class="navia-window-list"></i> {{ __('navia::bread.edit_rows', ['table' => $table]) }}:</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-up" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-up" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
 
@@ -317,7 +317,7 @@
                                             <span>{{ __('navia::generic.no') }}</span>
                                             <input type="hidden" value="0" name="field_required_{{ $data['field'] }}">
                                         @endif
-                                        <div class="handler voyager-handle"></div>
+                                        <div class="handler navia-handle"></div>
                                         <input class="row_order" type="hidden" value="{{ $dataRow->order ?? $r_order }}" name="field_order_{{ $data['field'] }}">
                                     </div>
                                     <div class="col-xs-2">
@@ -407,7 +407,7 @@
 
                         </div><!-- .panel-body -->
                         <div class="panel-footer">
-                             <div class="btn btn-new-relationship"><i class="voyager-heart"></i> <span>
+                             <div class="btn btn-new-relationship"><i class="navia-heart"></i> <span>
                              {{ __('navia::database.relationship.create') }}</span></div>
                         </div>
                     </div><!-- .panel -->
@@ -600,13 +600,13 @@
                 populateRowsFromTable($(this));
             });
 
-            $('.voyager-relationship-details-btn').click(function(){
+            $('.navia-relationship-details-btn').click(function(){
                 $(this).toggleClass('open');
                 if($(this).hasClass('open')){
-                    $(this).parent().parent().find('.voyager-relationship-details').slideDown();
+                    $(this).parent().parent().find('.navia-relationship-details').slideDown();
                     populateRowsFromTable($(this).parent().parent().find('select.relationship_table'));
                 } else {
-                    $(this).parent().parent().find('.voyager-relationship-details').slideUp();
+                    $(this).parent().parent().find('.navia-relationship-details').slideUp();
                 }
             });
 

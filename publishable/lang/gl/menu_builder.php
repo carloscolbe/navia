@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Ruta Dinámica',
     'edit_item'            => 'Editar opción do menú',
     'icon_class'           => 'Icono para a opción do menú (Use unha',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icono (opcional)',
     'item_route'           => 'Ruta para a opción de menú',
     'item_title'           => 'Título da opción de menú',

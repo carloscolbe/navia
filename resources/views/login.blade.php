@@ -28,7 +28,7 @@
             </div>
 
             <button type="submit" class="btn btn-block login-button">
-                <span class="signingin hidden"><span class="voyager-refresh"></span> {{ __('navia::login.loggingin') }}...</span>
+                <span class="signingin hidden"><span class="navia-refresh"></span> {{ __('navia::login.loggingin') }}...</span>
                 <span class="signin">{{ __('navia::generic.login') }}</span>
             </button>
 

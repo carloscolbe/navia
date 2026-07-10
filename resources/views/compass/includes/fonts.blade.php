@@ -1,828 +1,828 @@
 <h2>{{ __('navia::compass.fonts.font_class') }}</h2>
 <ul class="glyphs css-mapping">
     <li>
-        <div class="icon voyager-bread"></div>
-        <input type="text" readonly="readonly" value="voyager-bread">
+        <div class="icon navia-bread"></div>
+        <input type="text" readonly="readonly" value="navia-bread">
     </li>
     <li>
-        <div class="icon voyager-helm"></div>
-        <input type="text" readonly="readonly" value="voyager-helm">
+        <div class="icon navia-helm"></div>
+        <input type="text" readonly="readonly" value="navia-helm">
     </li>
     <li>
-        <div class="icon voyager-play"></div>
-        <input type="text" readonly="readonly" value="voyager-play">
+        <div class="icon navia-play"></div>
+        <input type="text" readonly="readonly" value="navia-play">
     </li>
     <li>
-        <div class="icon voyager-activity"></div>
-        <input type="text" readonly="readonly" value="voyager-activity">
+        <div class="icon navia-activity"></div>
+        <input type="text" readonly="readonly" value="navia-activity">
     </li>
     <li>
-        <div class="icon voyager-company"></div>
-        <input type="text" readonly="readonly" value="voyager-company">
+        <div class="icon navia-company"></div>
+        <input type="text" readonly="readonly" value="navia-company">
     </li>
     <li>
-        <div class="icon voyager-file-text"></div>
-        <input type="text" readonly="readonly" value="voyager-file-text">
+        <div class="icon navia-file-text"></div>
+        <input type="text" readonly="readonly" value="navia-file-text">
     </li>
     <li>
-        <div class="icon voyager-folder"></div>
-        <input type="text" readonly="readonly" value="voyager-folder">
+        <div class="icon navia-folder"></div>
+        <input type="text" readonly="readonly" value="navia-folder">
     </li>
     <li>
-        <div class="icon voyager-paw"></div>
-        <input type="text" readonly="readonly" value="voyager-paw">
+        <div class="icon navia-paw"></div>
+        <input type="text" readonly="readonly" value="navia-paw">
     </li>
     <li>
-        <div class="icon voyager-sort"></div>
-        <input type="text" readonly="readonly" value="voyager-sort">
+        <div class="icon navia-sort"></div>
+        <input type="text" readonly="readonly" value="navia-sort">
     </li>
     <li>
-        <div class="icon voyager-sort-asc"></div>
-        <input type="text" readonly="readonly" value="voyager-sort-asc">
+        <div class="icon navia-sort-asc"></div>
+        <input type="text" readonly="readonly" value="navia-sort-asc">
     </li>
     <li>
-        <div class="icon voyager-sort-desc"></div>
-        <input type="text" readonly="readonly" value="voyager-sort-desc">
+        <div class="icon navia-sort-desc"></div>
+        <input type="text" readonly="readonly" value="navia-sort-desc">
     </li>
     <li>
-        <div class="icon voyager-handle"></div>
-        <input type="text" readonly="readonly" value="voyager-handle">
+        <div class="icon navia-handle"></div>
+        <input type="text" readonly="readonly" value="navia-handle">
     </li>
     <li>
-        <div class="icon voyager-hammer"></div>
-        <input type="text" readonly="readonly" value="voyager-hammer">
+        <div class="icon navia-hammer"></div>
+        <input type="text" readonly="readonly" value="navia-hammer">
     </li>
     <li>
-        <div class="icon voyager-images"></div>
-        <input type="text" readonly="readonly" value="voyager-images">
+        <div class="icon navia-images"></div>
+        <input type="text" readonly="readonly" value="navia-images">
     </li>
     <li>
-        <div class="icon voyager-categories"></div>
-        <input type="text" readonly="readonly" value="voyager-categories">
+        <div class="icon navia-categories"></div>
+        <input type="text" readonly="readonly" value="navia-categories">
     </li>
     <li>
-        <div class="icon voyager-group"></div>
-        <input type="text" readonly="readonly" value="voyager-group">
+        <div class="icon navia-group"></div>
+        <input type="text" readonly="readonly" value="navia-group">
     </li>
     <li>
-        <div class="icon voyager-person"></div>
-        <input type="text" readonly="readonly" value="voyager-person">
+        <div class="icon navia-person"></div>
+        <input type="text" readonly="readonly" value="navia-person">
     </li>
     <li>
-        <div class="icon voyager-people"></div>
-        <input type="text" readonly="readonly" value="voyager-people">
+        <div class="icon navia-people"></div>
+        <input type="text" readonly="readonly" value="navia-people">
     </li>
     <li>
-        <div class="icon voyager-power"></div>
-        <input type="text" readonly="readonly" value="voyager-power">
+        <div class="icon navia-power"></div>
+        <input type="text" readonly="readonly" value="navia-power">
     </li>
     <li>
-        <div class="icon voyager-tools"></div>
-        <input type="text" readonly="readonly" value="voyager-tools">
+        <div class="icon navia-tools"></div>
+        <input type="text" readonly="readonly" value="navia-tools">
     </li>
     <li>
-        <div class="icon voyager-anchor"></div>
-        <input type="text" readonly="readonly" value="voyager-anchor">
+        <div class="icon navia-anchor"></div>
+        <input type="text" readonly="readonly" value="navia-anchor">
     </li>
     <li>
-        <div class="icon voyager-double-down"></div>
-        <input type="text" readonly="readonly" value="voyager-double-down">
+        <div class="icon navia-double-down"></div>
+        <input type="text" readonly="readonly" value="navia-double-down">
     </li>
     <li>
-        <div class="icon voyager-double-up"></div>
-        <input type="text" readonly="readonly" value="voyager-double-up">
+        <div class="icon navia-double-up"></div>
+        <input type="text" readonly="readonly" value="navia-double-up">
     </li>
     <li>
-        <div class="icon voyager-double-left"></div>
-        <input type="text" readonly="readonly" value="voyager-double-left">
+        <div class="icon navia-double-left"></div>
+        <input type="text" readonly="readonly" value="navia-double-left">
     </li>
     <li>
-        <div class="icon voyager-double-right"></div>
-        <input type="text" readonly="readonly" value="voyager-double-right">
+        <div class="icon navia-double-right"></div>
+        <input type="text" readonly="readonly" value="navia-double-right">
     </li>
     <li>
-        <div class="icon voyager-window-list"></div>
-        <input type="text" readonly="readonly" value="voyager-window-list">
+        <div class="icon navia-window-list"></div>
+        <input type="text" readonly="readonly" value="navia-window-list">
     </li>
     <li>
-        <div class="icon voyager-x"></div>
-        <input type="text" readonly="readonly" value="voyager-x">
+        <div class="icon navia-x"></div>
+        <input type="text" readonly="readonly" value="navia-x">
     </li>
     <li>
-        <div class="icon voyager-dot"></div>
-        <input type="text" readonly="readonly" value="voyager-dot">
+        <div class="icon navia-dot"></div>
+        <input type="text" readonly="readonly" value="navia-dot">
     </li>
     <li>
-        <div class="icon voyager-dot-2"></div>
-        <input type="text" readonly="readonly" value="voyager-dot-2">
+        <div class="icon navia-dot-2"></div>
+        <input type="text" readonly="readonly" value="navia-dot-2">
     </li>
     <li>
-        <div class="icon voyager-dot-3"></div>
-        <input type="text" readonly="readonly" value="voyager-dot-3">
+        <div class="icon navia-dot-3"></div>
+        <input type="text" readonly="readonly" value="navia-dot-3">
     </li>
     <li>
-        <div class="icon voyager-list"></div>
-        <input type="text" readonly="readonly" value="voyager-list">
+        <div class="icon navia-list"></div>
+        <input type="text" readonly="readonly" value="navia-list">
     </li>
     <li>
-        <div class="icon voyager-list-add"></div>
-        <input type="text" readonly="readonly" value="voyager-list-add">
+        <div class="icon navia-list-add"></div>
+        <input type="text" readonly="readonly" value="navia-list-add">
     </li>
     <li>
-        <div class="icon voyager-pie-chart"></div>
-        <input type="text" readonly="readonly" value="voyager-pie-chart">
+        <div class="icon navia-pie-chart"></div>
+        <input type="text" readonly="readonly" value="navia-pie-chart">
     </li>
     <li>
-        <div class="icon voyager-watch"></div>
-        <input type="text" readonly="readonly" value="voyager-watch">
+        <div class="icon navia-watch"></div>
+        <input type="text" readonly="readonly" value="navia-watch">
     </li>
     <li>
-        <div class="icon voyager-data"></div>
-        <input type="text" readonly="readonly" value="voyager-data">
+        <div class="icon navia-data"></div>
+        <input type="text" readonly="readonly" value="navia-data">
     </li>
     <li>
-        <div class="icon voyager-music"></div>
-        <input type="text" readonly="readonly" value="voyager-music">
+        <div class="icon navia-music"></div>
+        <input type="text" readonly="readonly" value="navia-music">
     </li>
     <li>
-        <div class="icon voyager-settings"></div>
-        <input type="text" readonly="readonly" value="voyager-settings">
+        <div class="icon navia-settings"></div>
+        <input type="text" readonly="readonly" value="navia-settings">
     </li>
     <li>
-        <div class="icon voyager-video"></div>
-        <input type="text" readonly="readonly" value="voyager-video">
+        <div class="icon navia-video"></div>
+        <input type="text" readonly="readonly" value="navia-video">
     </li>
     <li>
-        <div class="icon voyager-trash"></div>
-        <input type="text" readonly="readonly" value="voyager-trash">
+        <div class="icon navia-trash"></div>
+        <input type="text" readonly="readonly" value="navia-trash">
     </li>
     <li>
-        <div class="icon voyager-tv"></div>
-        <input type="text" readonly="readonly" value="voyager-tv">
+        <div class="icon navia-tv"></div>
+        <input type="text" readonly="readonly" value="navia-tv">
     </li>
     <li>
-        <div class="icon voyager-lock"></div>
-        <input type="text" readonly="readonly" value="voyager-lock">
+        <div class="icon navia-lock"></div>
+        <input type="text" readonly="readonly" value="navia-lock">
     </li>
     <li>
-        <div class="icon voyager-news"></div>
-        <input type="text" readonly="readonly" value="voyager-news">
+        <div class="icon navia-news"></div>
+        <input type="text" readonly="readonly" value="navia-news">
     </li>
     <li>
-        <div class="icon voyager-bag"></div>
-        <input type="text" readonly="readonly" value="voyager-bag">
+        <div class="icon navia-bag"></div>
+        <input type="text" readonly="readonly" value="navia-bag">
     </li>
     <li>
-        <div class="icon voyager-upload"></div>
-        <input type="text" readonly="readonly" value="voyager-upload">
+        <div class="icon navia-upload"></div>
+        <input type="text" readonly="readonly" value="navia-upload">
     </li>
     <li>
-        <div class="icon voyager-refresh"></div>
-        <input type="text" readonly="readonly" value="voyager-refresh">
+        <div class="icon navia-refresh"></div>
+        <input type="text" readonly="readonly" value="navia-refresh">
     </li>
     <li>
-        <div class="icon voyager-character"></div>
-        <input type="text" readonly="readonly" value="voyager-character">
+        <div class="icon navia-character"></div>
+        <input type="text" readonly="readonly" value="navia-character">
     </li>
     <li>
-        <div class="icon voyager-move"></div>
-        <input type="text" readonly="readonly" value="voyager-move">
+        <div class="icon navia-move"></div>
+        <input type="text" readonly="readonly" value="navia-move">
     </li>
     <li>
-        <div class="icon voyager-paypal"></div>
-        <input type="text" readonly="readonly" value="voyager-paypal">
+        <div class="icon navia-paypal"></div>
+        <input type="text" readonly="readonly" value="navia-paypal">
     </li>
     <li>
-        <div class="icon voyager-paper-plane"></div>
-        <input type="text" readonly="readonly" value="voyager-paper-plane">
+        <div class="icon navia-paper-plane"></div>
+        <input type="text" readonly="readonly" value="navia-paper-plane">
     </li>
     <li>
-        <div class="icon voyager-ticket"></div>
-        <input type="text" readonly="readonly" value="voyager-ticket">
+        <div class="icon navia-ticket"></div>
+        <input type="text" readonly="readonly" value="navia-ticket">
     </li>
     <li>
-        <div class="icon voyager-youtube-play"></div>
-        <input type="text" readonly="readonly" value="voyager-youtube-play">
+        <div class="icon navia-youtube-play"></div>
+        <input type="text" readonly="readonly" value="navia-youtube-play">
     </li>
     <li>
-        <div class="icon voyager-boat"></div>
-        <input type="text" readonly="readonly" value="voyager-boat">
+        <div class="icon navia-boat"></div>
+        <input type="text" readonly="readonly" value="navia-boat">
     </li>
     <li>
-        <div class="icon voyager-check"></div>
-        <input type="text" readonly="readonly" value="voyager-check">
+        <div class="icon navia-check"></div>
+        <input type="text" readonly="readonly" value="navia-check">
     </li>
     <li>
-        <div class="icon voyager-alarm-clock"></div>
-        <input type="text" readonly="readonly" value="voyager-alarm-clock">
+        <div class="icon navia-alarm-clock"></div>
+        <input type="text" readonly="readonly" value="navia-alarm-clock">
     </li>
     <li>
-        <div class="icon voyager-controller"></div>
-        <input type="text" readonly="readonly" value="voyager-controller">
+        <div class="icon navia-controller"></div>
+        <input type="text" readonly="readonly" value="navia-controller">
     </li>
     <li>
-        <div class="icon voyager-pizza"></div>
-        <input type="text" readonly="readonly" value="voyager-pizza">
+        <div class="icon navia-pizza"></div>
+        <input type="text" readonly="readonly" value="navia-pizza">
     </li>
     <li>
-        <div class="icon voyager-backpack"></div>
-        <input type="text" readonly="readonly" value="voyager-backpack">
+        <div class="icon navia-backpack"></div>
+        <input type="text" readonly="readonly" value="navia-backpack">
     </li>
     <li>
-        <div class="icon voyager-barbeque"></div>
-        <input type="text" readonly="readonly" value="voyager-barbeque">
+        <div class="icon navia-barbeque"></div>
+        <input type="text" readonly="readonly" value="navia-barbeque">
     </li>
     <li>
-        <div class="icon voyager-bomb"></div>
-        <input type="text" readonly="readonly" value="voyager-bomb">
+        <div class="icon navia-bomb"></div>
+        <input type="text" readonly="readonly" value="navia-bomb">
     </li>
     <li>
-        <div class="icon voyager-book-download"></div>
-        <input type="text" readonly="readonly" value="voyager-book-download">
+        <div class="icon navia-book-download"></div>
+        <input type="text" readonly="readonly" value="navia-book-download">
     </li>
     <li>
-        <div class="icon voyager-browser"></div>
-        <input type="text" readonly="readonly" value="voyager-browser">
+        <div class="icon navia-browser"></div>
+        <input type="text" readonly="readonly" value="navia-browser">
     </li>
     <li>
-        <div class="icon voyager-brush"></div>
-        <input type="text" readonly="readonly" value="voyager-brush">
+        <div class="icon navia-brush"></div>
+        <input type="text" readonly="readonly" value="navia-brush">
     </li>
     <li>
-        <div class="icon voyager-bubble-hear"></div>
-        <input type="text" readonly="readonly" value="voyager-bubble-hear">
+        <div class="icon navia-bubble-hear"></div>
+        <input type="text" readonly="readonly" value="navia-bubble-hear">
     </li>
     <li>
-        <div class="icon voyager-polaroid"></div>
-        <input type="text" readonly="readonly" value="voyager-polaroid">
+        <div class="icon navia-polaroid"></div>
+        <input type="text" readonly="readonly" value="navia-polaroid">
     </li>
     <li>
-        <div class="icon voyager-crop"></div>
-        <input type="text" readonly="readonly" value="voyager-crop">
+        <div class="icon navia-crop"></div>
+        <input type="text" readonly="readonly" value="navia-crop">
     </li>
     <li>
-        <div class="icon voyager-dashboard"></div>
-        <input type="text" readonly="readonly" value="voyager-dashboard">
+        <div class="icon navia-dashboard"></div>
+        <input type="text" readonly="readonly" value="navia-dashboard">
     </li>
     <li>
-        <div class="icon voyager-hotdog"></div>
-        <input type="text" readonly="readonly" value="voyager-hotdog">
+        <div class="icon navia-hotdog"></div>
+        <input type="text" readonly="readonly" value="navia-hotdog">
     </li>
     <li>
-        <div class="icon voyager-laptop"></div>
-        <input type="text" readonly="readonly" value="voyager-laptop">
+        <div class="icon navia-laptop"></div>
+        <input type="text" readonly="readonly" value="navia-laptop">
     </li>
     <li>
-        <div class="icon voyager-paint-bucket"></div>
-        <input type="text" readonly="readonly" value="voyager-paint-bucket">
+        <div class="icon navia-paint-bucket"></div>
+        <input type="text" readonly="readonly" value="navia-paint-bucket">
     </li>
     <li>
-        <div class="icon voyager-photo"></div>
-        <input type="text" readonly="readonly" value="voyager-photo">
+        <div class="icon navia-photo"></div>
+        <input type="text" readonly="readonly" value="navia-photo">
     </li>
     <li>
-        <div class="icon voyager-photos"></div>
-        <input type="text" readonly="readonly" value="voyager-photos">
+        <div class="icon navia-photos"></div>
+        <input type="text" readonly="readonly" value="navia-photos">
     </li>
     <li>
-        <div class="icon voyager-receipt"></div>
-        <input type="text" readonly="readonly" value="voyager-receipt">
+        <div class="icon navia-receipt"></div>
+        <input type="text" readonly="readonly" value="navia-receipt">
     </li>
     <li>
-        <div class="icon voyager-buy"></div>
-        <input type="text" readonly="readonly" value="voyager-buy">
+        <div class="icon navia-buy"></div>
+        <input type="text" readonly="readonly" value="navia-buy">
     </li>
     <li>
-        <div class="icon voyager-lightbulb"></div>
-        <input type="text" readonly="readonly" value="voyager-lightbulb">
+        <div class="icon navia-lightbulb"></div>
+        <input type="text" readonly="readonly" value="navia-lightbulb">
     </li>
     <li>
-        <div class="icon voyager-archive"></div>
-        <input type="text" readonly="readonly" value="voyager-archive">
+        <div class="icon navia-archive"></div>
+        <input type="text" readonly="readonly" value="navia-archive">
     </li>
     <li>
-        <div class="icon voyager-paperclip"></div>
-        <input type="text" readonly="readonly" value="voyager-paperclip">
+        <div class="icon navia-paperclip"></div>
+        <input type="text" readonly="readonly" value="navia-paperclip">
     </li>
     <li>
-        <div class="icon voyager-warning"></div>
-        <input type="text" readonly="readonly" value="voyager-warning">
+        <div class="icon navia-warning"></div>
+        <input type="text" readonly="readonly" value="navia-warning">
     </li>
     <li>
-        <div class="icon voyager-basket"></div>
-        <input type="text" readonly="readonly" value="voyager-basket">
+        <div class="icon navia-basket"></div>
+        <input type="text" readonly="readonly" value="navia-basket">
     </li>
     <li>
-        <div class="icon voyager-bell"></div>
-        <input type="text" readonly="readonly" value="voyager-bell">
+        <div class="icon navia-bell"></div>
+        <input type="text" readonly="readonly" value="navia-bell">
     </li>
     <li>
-        <div class="icon voyager-book"></div>
-        <input type="text" readonly="readonly" value="voyager-book">
+        <div class="icon navia-book"></div>
+        <input type="text" readonly="readonly" value="navia-book">
     </li>
     <li>
-        <div class="icon voyager-chat"></div>
-        <input type="text" readonly="readonly" value="voyager-chat">
+        <div class="icon navia-chat"></div>
+        <input type="text" readonly="readonly" value="navia-chat">
     </li>
     <li>
-        <div class="icon voyager-down-circled"></div>
-        <input type="text" readonly="readonly" value="voyager-down-circled">
+        <div class="icon navia-down-circled"></div>
+        <input type="text" readonly="readonly" value="navia-down-circled">
     </li>
     <li>
-        <div class="icon voyager-location"></div>
-        <input type="text" readonly="readonly" value="voyager-location">
+        <div class="icon navia-location"></div>
+        <input type="text" readonly="readonly" value="navia-location">
     </li>
     <li>
-        <div class="icon voyager-forward"></div>
-        <input type="text" readonly="readonly" value="voyager-forward">
+        <div class="icon navia-forward"></div>
+        <input type="text" readonly="readonly" value="navia-forward">
     </li>
     <li>
-        <div class="icon voyager-flashlight"></div>
-        <input type="text" readonly="readonly" value="voyager-flashlight">
+        <div class="icon navia-flashlight"></div>
+        <input type="text" readonly="readonly" value="navia-flashlight">
     </li>
     <li>
-        <div class="icon voyager-trophy"></div>
-        <input type="text" readonly="readonly" value="voyager-trophy">
+        <div class="icon navia-trophy"></div>
+        <input type="text" readonly="readonly" value="navia-trophy">
     </li>
     <li>
-        <div class="icon voyager-diamond"></div>
-        <input type="text" readonly="readonly" value="voyager-diamond">
+        <div class="icon navia-diamond"></div>
+        <input type="text" readonly="readonly" value="navia-diamond">
     </li>
     <li>
-        <div class="icon voyager-credit-cards"></div>
-        <input type="text" readonly="readonly" value="voyager-credit-cards">
+        <div class="icon navia-credit-cards"></div>
+        <input type="text" readonly="readonly" value="navia-credit-cards">
     </li>
     <li>
-        <div class="icon voyager-shop"></div>
-        <input type="text" readonly="readonly" value="voyager-shop">
+        <div class="icon navia-shop"></div>
+        <input type="text" readonly="readonly" value="navia-shop">
     </li>
     <li>
-        <div class="icon voyager-sound"></div>
-        <input type="text" readonly="readonly" value="voyager-sound">
+        <div class="icon navia-sound"></div>
+        <input type="text" readonly="readonly" value="navia-sound">
     </li>
     <li>
-        <div class="icon voyager-study"></div>
-        <input type="text" readonly="readonly" value="voyager-study">
+        <div class="icon navia-study"></div>
+        <input type="text" readonly="readonly" value="navia-study">
     </li>
     <li>
-        <div class="icon voyager-pen"></div>
-        <input type="text" readonly="readonly" value="voyager-pen">
+        <div class="icon navia-pen"></div>
+        <input type="text" readonly="readonly" value="navia-pen">
     </li>
     <li>
-        <div class="icon voyager-params"></div>
-        <input type="text" readonly="readonly" value="voyager-params">
+        <div class="icon navia-params"></div>
+        <input type="text" readonly="readonly" value="navia-params">
     </li>
     <li>
-        <div class="icon voyager-fire"></div>
-        <input type="text" readonly="readonly" value="voyager-fire">
+        <div class="icon navia-fire"></div>
+        <input type="text" readonly="readonly" value="navia-fire">
     </li>
     <li>
-        <div class="icon voyager-dollar"></div>
-        <input type="text" readonly="readonly" value="voyager-dollar">
+        <div class="icon navia-dollar"></div>
+        <input type="text" readonly="readonly" value="navia-dollar">
     </li>
     <li>
-        <div class="icon voyager-bulb"></div>
-        <input type="text" readonly="readonly" value="voyager-bulb">
+        <div class="icon navia-bulb"></div>
+        <input type="text" readonly="readonly" value="navia-bulb">
     </li>
     <li>
-        <div class="icon voyager-lab"></div>
-        <input type="text" readonly="readonly" value="voyager-lab">
+        <div class="icon navia-lab"></div>
+        <input type="text" readonly="readonly" value="navia-lab">
     </li>
     <li>
-        <div class="icon voyager-cup"></div>
-        <input type="text" readonly="readonly" value="voyager-cup">
+        <div class="icon navia-cup"></div>
+        <input type="text" readonly="readonly" value="navia-cup">
     </li>
     <li>
-        <div class="icon voyager-megaphone"></div>
-        <input type="text" readonly="readonly" value="voyager-megaphone">
+        <div class="icon navia-megaphone"></div>
+        <input type="text" readonly="readonly" value="navia-megaphone">
     </li>
     <li>
-        <div class="icon voyager-heart"></div>
-        <input type="text" readonly="readonly" value="voyager-heart">
+        <div class="icon navia-heart"></div>
+        <input type="text" readonly="readonly" value="navia-heart">
     </li>
     <li>
-        <div class="icon voyager-bubble"></div>
-        <input type="text" readonly="readonly" value="voyager-bubble">
+        <div class="icon navia-bubble"></div>
+        <input type="text" readonly="readonly" value="navia-bubble">
     </li>
     <li>
-        <div class="icon voyager-search"></div>
-        <input type="text" readonly="readonly" value="voyager-search">
+        <div class="icon navia-search"></div>
+        <input type="text" readonly="readonly" value="navia-search">
     </li>
     <li>
-        <div class="icon voyager-tag"></div>
-        <input type="text" readonly="readonly" value="voyager-tag">
+        <div class="icon navia-tag"></div>
+        <input type="text" readonly="readonly" value="navia-tag">
     </li>
     <li>
-        <div class="icon voyager-world"></div>
-        <input type="text" readonly="readonly" value="voyager-world">
+        <div class="icon navia-world"></div>
+        <input type="text" readonly="readonly" value="navia-world">
     </li>
     <li>
-        <div class="icon voyager-camera"></div>
-        <input type="text" readonly="readonly" value="voyager-camera">
+        <div class="icon navia-camera"></div>
+        <input type="text" readonly="readonly" value="navia-camera">
     </li>
     <li>
-        <div class="icon voyager-calendar"></div>
-        <input type="text" readonly="readonly" value="voyager-calendar">
+        <div class="icon navia-calendar"></div>
+        <input type="text" readonly="readonly" value="navia-calendar">
     </li>
     <li>
-        <div class="icon voyager-mail"></div>
-        <input type="text" readonly="readonly" value="voyager-mail">
+        <div class="icon navia-mail"></div>
+        <input type="text" readonly="readonly" value="navia-mail">
     </li>
     <li>
-        <div class="icon voyager-phone"></div>
-        <input type="text" readonly="readonly" value="voyager-phone">
+        <div class="icon navia-phone"></div>
+        <input type="text" readonly="readonly" value="navia-phone">
     </li>
     <li>
-        <div class="icon voyager-star"></div>
-        <input type="text" readonly="readonly" value="voyager-star">
+        <div class="icon navia-star"></div>
+        <input type="text" readonly="readonly" value="navia-star">
     </li>
     <li>
-        <div class="icon voyager-star-half"></div>
-        <input type="text" readonly="readonly" value="voyager-star-half">
+        <div class="icon navia-star-half"></div>
+        <input type="text" readonly="readonly" value="navia-star-half">
     </li>
     <li>
-        <div class="icon voyager-star-half-1"></div>
-        <input type="text" readonly="readonly" value="voyager-star-half-1">
+        <div class="icon navia-star-half-1"></div>
+        <input type="text" readonly="readonly" value="navia-star-half-1">
     </li>
     <li>
-        <div class="icon voyager-star-two"></div>
-        <input type="text" readonly="readonly" value="voyager-star-two">
+        <div class="icon navia-star-two"></div>
+        <input type="text" readonly="readonly" value="navia-star-two">
     </li>
     <li>
-        <div class="icon voyager-medal-rank-star"></div>
-        <input type="text" readonly="readonly" value="voyager-medal-rank-star">
+        <div class="icon navia-medal-rank-star"></div>
+        <input type="text" readonly="readonly" value="navia-medal-rank-star">
     </li>
     <li>
-        <div class="icon voyager-facebook"></div>
-        <input type="text" readonly="readonly" value="voyager-facebook">
+        <div class="icon navia-facebook"></div>
+        <input type="text" readonly="readonly" value="navia-facebook">
     </li>
     <li>
-        <div class="icon voyager-google-plus"></div>
-        <input type="text" readonly="readonly" value="voyager-google-plus">
+        <div class="icon navia-google-plus"></div>
+        <input type="text" readonly="readonly" value="navia-google-plus">
     </li>
     <li>
-        <div class="icon voyager-twitter"></div>
-        <input type="text" readonly="readonly" value="voyager-twitter">
+        <div class="icon navia-twitter"></div>
+        <input type="text" readonly="readonly" value="navia-twitter">
     </li>
     <li>
-        <div class="icon voyager-github"></div>
-        <input type="text" readonly="readonly" value="voyager-github">
+        <div class="icon navia-github"></div>
+        <input type="text" readonly="readonly" value="navia-github">
     </li>
     <li>
-        <div class="icon voyager-code"></div>
-        <input type="text" readonly="readonly" value="voyager-code">
+        <div class="icon navia-code"></div>
+        <input type="text" readonly="readonly" value="navia-code">
     </li>
     <li>
-        <div class="icon voyager-pie-graph"></div>
-        <input type="text" readonly="readonly" value="voyager-pie-graph">
+        <div class="icon navia-pie-graph"></div>
+        <input type="text" readonly="readonly" value="navia-pie-graph">
     </li>
     <li>
-        <div class="icon voyager-javascript"></div>
-        <input type="text" readonly="readonly" value="voyager-javascript">
+        <div class="icon navia-javascript"></div>
+        <input type="text" readonly="readonly" value="navia-javascript">
     </li>
     <li>
-        <div class="icon voyager-wand"></div>
-        <input type="text" readonly="readonly" value="voyager-wand">
+        <div class="icon navia-wand"></div>
+        <input type="text" readonly="readonly" value="navia-wand">
     </li>
     <li>
-        <div class="icon voyager-wineglass"></div>
-        <input type="text" readonly="readonly" value="voyager-wineglass">
+        <div class="icon navia-wineglass"></div>
+        <input type="text" readonly="readonly" value="navia-wineglass">
     </li>
     <li>
-        <div class="icon voyager-milestone"></div>
-        <input type="text" readonly="readonly" value="voyager-milestone">
+        <div class="icon navia-milestone"></div>
+        <input type="text" readonly="readonly" value="navia-milestone">
     </li>
     <li>
-        <div class="icon voyager-terminal"></div>
-        <input type="text" readonly="readonly" value="voyager-terminal">
+        <div class="icon navia-terminal"></div>
+        <input type="text" readonly="readonly" value="navia-terminal">
     </li>
     <li>
-        <div class="icon voyager-plug"></div>
-        <input type="text" readonly="readonly" value="voyager-plug">
+        <div class="icon navia-plug"></div>
+        <input type="text" readonly="readonly" value="navia-plug">
     </li>
     <li>
-        <div class="icon voyager-gift"></div>
-        <input type="text" readonly="readonly" value="voyager-gift">
+        <div class="icon navia-gift"></div>
+        <input type="text" readonly="readonly" value="navia-gift">
     </li>
     <li>
-        <div class="icon voyager-markdown"></div>
-        <input type="text" readonly="readonly" value="voyager-markdown">
+        <div class="icon navia-markdown"></div>
+        <input type="text" readonly="readonly" value="navia-markdown">
     </li>
     <li>
-        <div class="icon voyager-beer"></div>
-        <input type="text" readonly="readonly" value="voyager-beer">
+        <div class="icon navia-beer"></div>
+        <input type="text" readonly="readonly" value="navia-beer">
     </li>
     <li>
-        <div class="icon voyager-credit-card"></div>
-        <input type="text" readonly="readonly" value="voyager-credit-card">
+        <div class="icon navia-credit-card"></div>
+        <input type="text" readonly="readonly" value="navia-credit-card">
     </li>
     <li>
-        <div class="icon voyager-bolt"></div>
-        <input type="text" readonly="readonly" value="voyager-bolt">
+        <div class="icon navia-bolt"></div>
+        <input type="text" readonly="readonly" value="navia-bolt">
     </li>
     <li>
-        <div class="icon voyager-external"></div>
-        <input type="text" readonly="readonly" value="voyager-external">
+        <div class="icon navia-external"></div>
+        <input type="text" readonly="readonly" value="navia-external">
     </li>
     <li>
-        <div class="icon voyager-magnet"></div>
-        <input type="text" readonly="readonly" value="voyager-magnet">
+        <div class="icon navia-magnet"></div>
+        <input type="text" readonly="readonly" value="navia-magnet">
     </li>
     <li>
-        <div class="icon voyager-certificate"></div>
-        <input type="text" readonly="readonly" value="voyager-certificate">
+        <div class="icon navia-certificate"></div>
+        <input type="text" readonly="readonly" value="navia-certificate">
     </li>
     <li>
-        <div class="icon voyager-cloud-download"></div>
-        <input type="text" readonly="readonly" value="voyager-cloud-download">
+        <div class="icon navia-cloud-download"></div>
+        <input type="text" readonly="readonly" value="navia-cloud-download">
     </li>
     <li>
-        <div class="icon voyager-campfire"></div>
-        <input type="text" readonly="readonly" value="voyager-campfire">
+        <div class="icon navia-campfire"></div>
+        <input type="text" readonly="readonly" value="navia-campfire">
     </li>
     <li>
-        <div class="icon voyager-new"></div>
-        <input type="text" readonly="readonly" value="voyager-new">
+        <div class="icon navia-new"></div>
+        <input type="text" readonly="readonly" value="navia-new">
     </li>
     <li>
-        <div class="icon voyager-skull"></div>
-        <input type="text" readonly="readonly" value="voyager-skull">
+        <div class="icon navia-skull"></div>
+        <input type="text" readonly="readonly" value="navia-skull">
     </li>
     <li>
-        <div class="icon voyager-telephone"></div>
-        <input type="text" readonly="readonly" value="voyager-telephone">
+        <div class="icon navia-telephone"></div>
+        <input type="text" readonly="readonly" value="navia-telephone">
     </li>
     <li>
-        <div class="icon voyager-trees"></div>
-        <input type="text" readonly="readonly" value="voyager-trees">
+        <div class="icon navia-trees"></div>
+        <input type="text" readonly="readonly" value="navia-trees">
     </li>
     <li>
-        <div class="icon voyager-bar-chart"></div>
-        <input type="text" readonly="readonly" value="voyager-bar-chart">
+        <div class="icon navia-bar-chart"></div>
+        <input type="text" readonly="readonly" value="navia-bar-chart">
     </li>
     <li>
-        <div class="icon voyager-check-circle"></div>
-        <input type="text" readonly="readonly" value="voyager-check-circle">
+        <div class="icon navia-check-circle"></div>
+        <input type="text" readonly="readonly" value="navia-check-circle">
     </li>
     <li>
-        <div class="icon voyager-exclamation"></div>
-        <input type="text" readonly="readonly" value="voyager-exclamation">
+        <div class="icon navia-exclamation"></div>
+        <input type="text" readonly="readonly" value="navia-exclamation">
     </li>
     <li>
-        <div class="icon voyager-font"></div>
-        <input type="text" readonly="readonly" value="voyager-font">
+        <div class="icon navia-font"></div>
+        <input type="text" readonly="readonly" value="navia-font">
     </li>
     <li>
-        <div class="icon voyager-puzzle"></div>
-        <input type="text" readonly="readonly" value="voyager-puzzle">
+        <div class="icon navia-puzzle"></div>
+        <input type="text" readonly="readonly" value="navia-puzzle">
     </li>
     <li>
-        <div class="icon voyager-smile"></div>
-        <input type="text" readonly="readonly" value="voyager-smile">
+        <div class="icon navia-smile"></div>
+        <input type="text" readonly="readonly" value="navia-smile">
     </li>
     <li>
-        <div class="icon voyager-frown"></div>
-        <input type="text" readonly="readonly" value="voyager-frown">
+        <div class="icon navia-frown"></div>
+        <input type="text" readonly="readonly" value="navia-frown">
     </li>
     <li>
-        <div class="icon voyager-meh"></div>
-        <input type="text" readonly="readonly" value="voyager-meh">
+        <div class="icon navia-meh"></div>
+        <input type="text" readonly="readonly" value="navia-meh">
     </li>
     <li>
-        <div class="icon voyager-leaf"></div>
-        <input type="text" readonly="readonly" value="voyager-leaf">
+        <div class="icon navia-leaf"></div>
+        <input type="text" readonly="readonly" value="navia-leaf">
     </li>
     <li>
-        <div class="icon voyager-info-circled"></div>
-        <input type="text" readonly="readonly" value="voyager-info-circled">
+        <div class="icon navia-info-circled"></div>
+        <input type="text" readonly="readonly" value="navia-info-circled">
     </li>
     <li>
-        <div class="icon voyager-underline"></div>
-        <input type="text" readonly="readonly" value="voyager-underline">
+        <div class="icon navia-underline"></div>
+        <input type="text" readonly="readonly" value="navia-underline">
     </li>
     <li>
-        <div class="icon voyager-wallet"></div>
-        <input type="text" readonly="readonly" value="voyager-wallet">
+        <div class="icon navia-wallet"></div>
+        <input type="text" readonly="readonly" value="navia-wallet">
     </li>
     <li>
-        <div class="icon voyager-truck"></div>
-        <input type="text" readonly="readonly" value="voyager-truck">
+        <div class="icon navia-truck"></div>
+        <input type="text" readonly="readonly" value="navia-truck">
     </li>
     <li>
-        <div class="icon voyager-eye"></div>
-        <input type="text" readonly="readonly" value="voyager-eye">
+        <div class="icon navia-eye"></div>
+        <input type="text" readonly="readonly" value="navia-eye">
     </li>
     <li>
-        <div class="icon voyager-sun"></div>
-        <input type="text" readonly="readonly" value="voyager-sun">
+        <div class="icon navia-sun"></div>
+        <input type="text" readonly="readonly" value="navia-sun">
     </li>
     <li>
-        <div class="icon voyager-barbell"></div>
-        <input type="text" readonly="readonly" value="voyager-barbell">
+        <div class="icon navia-barbell"></div>
+        <input type="text" readonly="readonly" value="navia-barbell">
     </li>
     <li>
-        <div class="icon voyager-bookmark"></div>
-        <input type="text" readonly="readonly" value="voyager-bookmark">
+        <div class="icon navia-bookmark"></div>
+        <input type="text" readonly="readonly" value="navia-bookmark">
     </li>
     <li>
-        <div class="icon voyager-volume-up"></div>
-        <input type="text" readonly="readonly" value="voyager-volume-up">
+        <div class="icon navia-volume-up"></div>
+        <input type="text" readonly="readonly" value="navia-volume-up">
     </li>
     <li>
-        <div class="icon voyager-volume-down"></div>
-        <input type="text" readonly="readonly" value="voyager-volume-down">
+        <div class="icon navia-volume-down"></div>
+        <input type="text" readonly="readonly" value="navia-volume-down">
     </li>
     <li>
-        <div class="icon voyager-wifi"></div>
-        <input type="text" readonly="readonly" value="voyager-wifi">
+        <div class="icon navia-wifi"></div>
+        <input type="text" readonly="readonly" value="navia-wifi">
     </li>
     <li>
-        <div class="icon voyager-pause"></div>
-        <input type="text" readonly="readonly" value="voyager-pause">
+        <div class="icon navia-pause"></div>
+        <input type="text" readonly="readonly" value="navia-pause">
     </li>
     <li>
-        <div class="icon voyager-resize-full"></div>
-        <input type="text" readonly="readonly" value="voyager-resize-full">
+        <div class="icon navia-resize-full"></div>
+        <input type="text" readonly="readonly" value="navia-resize-full">
     </li>
     <li>
-        <div class="icon voyager-resize-small"></div>
-        <input type="text" readonly="readonly" value="voyager-resize-small">
+        <div class="icon navia-resize-small"></div>
+        <input type="text" readonly="readonly" value="navia-resize-small">
     </li>
     <li>
-        <div class="icon voyager-download"></div>
-        <input type="text" readonly="readonly" value="voyager-download">
+        <div class="icon navia-download"></div>
+        <input type="text" readonly="readonly" value="navia-download">
     </li>
     <li>
-        <div class="icon voyager-droplet"></div>
-        <input type="text" readonly="readonly" value="voyager-droplet">
+        <div class="icon navia-droplet"></div>
+        <input type="text" readonly="readonly" value="navia-droplet">
     </li>
     <li>
-        <div class="icon voyager-umbrella"></div>
-        <input type="text" readonly="readonly" value="voyager-umbrella">
+        <div class="icon navia-umbrella"></div>
+        <input type="text" readonly="readonly" value="navia-umbrella">
     </li>
     <li>
-        <div class="icon voyager-harddrive"></div>
-        <input type="text" readonly="readonly" value="voyager-harddrive">
+        <div class="icon navia-harddrive"></div>
+        <input type="text" readonly="readonly" value="navia-harddrive">
     </li>
     <li>
-        <div class="icon voyager-css3"></div>
-        <input type="text" readonly="readonly" value="voyager-css3">
+        <div class="icon navia-css3"></div>
+        <input type="text" readonly="readonly" value="navia-css3">
     </li>
     <li>
-        <div class="icon voyager-html5"></div>
-        <input type="text" readonly="readonly" value="voyager-html5">
+        <div class="icon navia-html5"></div>
+        <input type="text" readonly="readonly" value="navia-html5">
     </li>
     <li>
-        <div class="icon voyager-tree"></div>
-        <input type="text" readonly="readonly" value="voyager-tree">
+        <div class="icon navia-tree"></div>
+        <input type="text" readonly="readonly" value="navia-tree">
     </li>
     <li>
-        <div class="icon voyager-file-code"></div>
-        <input type="text" readonly="readonly" value="voyager-file-code">
+        <div class="icon navia-file-code"></div>
+        <input type="text" readonly="readonly" value="navia-file-code">
     </li>
     <li>
-        <div class="icon voyager-bug"></div>
-        <input type="text" readonly="readonly" value="voyager-bug">
+        <div class="icon navia-bug"></div>
+        <input type="text" readonly="readonly" value="navia-bug">
     </li>
     <li>
-        <div class="icon voyager-rocket"></div>
-        <input type="text" readonly="readonly" value="voyager-rocket">
+        <div class="icon navia-rocket"></div>
+        <input type="text" readonly="readonly" value="navia-rocket">
     </li>
     <li>
-        <div class="icon voyager-key"></div>
-        <input type="text" readonly="readonly" value="voyager-key">
+        <div class="icon navia-key"></div>
+        <input type="text" readonly="readonly" value="navia-key">
     </li>
     <li>
-        <div class="icon voyager-question"></div>
-        <input type="text" readonly="readonly" value="voyager-question">
+        <div class="icon navia-question"></div>
+        <input type="text" readonly="readonly" value="navia-question">
     </li>
     <li>
-        <div class="icon voyager-cursor"></div>
-        <input type="text" readonly="readonly" value="voyager-cursor">
+        <div class="icon navia-cursor"></div>
+        <input type="text" readonly="readonly" value="navia-cursor">
     </li>
     <li>
-        <div class="icon voyager-lifebuoy"></div>
-        <input type="text" readonly="readonly" value="voyager-lifebuoy">
+        <div class="icon navia-lifebuoy"></div>
+        <input type="text" readonly="readonly" value="navia-lifebuoy">
     </li>
     <li>
-        <div class="icon voyager-thumbs-up"></div>
-        <input type="text" readonly="readonly" value="voyager-thumbs-up">
+        <div class="icon navia-thumbs-up"></div>
+        <input type="text" readonly="readonly" value="navia-thumbs-up">
     </li>
     <li>
-        <div class="icon voyager-thumb-tack"></div>
-        <input type="text" readonly="readonly" value="voyager-thumb-tack">
+        <div class="icon navia-thumb-tack"></div>
+        <input type="text" readonly="readonly" value="navia-thumb-tack">
     </li>
     <li>
-        <div class="icon voyager-edit"></div>
-        <input type="text" readonly="readonly" value="voyager-edit">
+        <div class="icon navia-edit"></div>
+        <input type="text" readonly="readonly" value="navia-edit">
     </li>
     <li>
-        <div class="icon voyager-angle-down"></div>
-        <input type="text" readonly="readonly" value="voyager-angle-down">
+        <div class="icon navia-angle-down"></div>
+        <input type="text" readonly="readonly" value="navia-angle-down">
     </li>
     <li>
-        <div class="icon voyager-angle-left"></div>
-        <input type="text" readonly="readonly" value="voyager-angle-left">
+        <div class="icon navia-angle-left"></div>
+        <input type="text" readonly="readonly" value="navia-angle-left">
     </li>
     <li>
-        <div class="icon voyager-angle-right"></div>
-        <input type="text" readonly="readonly" value="voyager-angle-right">
+        <div class="icon navia-angle-right"></div>
+        <input type="text" readonly="readonly" value="navia-angle-right">
     </li>
     <li>
-        <div class="icon voyager-angle-up"></div>
-        <input type="text" readonly="readonly" value="voyager-angle-up">
+        <div class="icon navia-angle-up"></div>
+        <input type="text" readonly="readonly" value="navia-angle-up">
     </li>
     <li>
-        <div class="icon voyager-home"></div>
-        <input type="text" readonly="readonly" value="voyager-home">
+        <div class="icon navia-home"></div>
+        <input type="text" readonly="readonly" value="navia-home">
     </li>
     <li>
-        <div class="icon voyager-pirate-swords"></div>
-        <input type="text" readonly="readonly" value="voyager-pirate-swords">
+        <div class="icon navia-pirate-swords"></div>
+        <input type="text" readonly="readonly" value="navia-pirate-swords">
     </li>
     <li>
-        <div class="icon voyager-pirate"></div>
-        <input type="text" readonly="readonly" value="voyager-pirate">
+        <div class="icon navia-pirate"></div>
+        <input type="text" readonly="readonly" value="navia-pirate">
     </li>
     <li>
-        <div class="icon voyager-rum"></div>
-        <input type="text" readonly="readonly" value="voyager-rum">
+        <div class="icon navia-rum"></div>
+        <input type="text" readonly="readonly" value="navia-rum">
     </li>
     <li>
-        <div class="icon voyager-cannon"></div>
-        <input type="text" readonly="readonly" value="voyager-cannon">
+        <div class="icon navia-cannon"></div>
+        <input type="text" readonly="readonly" value="navia-cannon">
     </li>
     <li>
-        <div class="icon voyager-hook"></div>
-        <input type="text" readonly="readonly" value="voyager-hook">
+        <div class="icon navia-hook"></div>
+        <input type="text" readonly="readonly" value="navia-hook">
     </li>
     <li>
-        <div class="icon voyager-kraken"></div>
-        <input type="text" readonly="readonly" value="voyager-kraken">
+        <div class="icon navia-kraken"></div>
+        <input type="text" readonly="readonly" value="navia-kraken">
     </li>
     <li>
-        <div class="icon voyager-lighthouse"></div>
-        <input type="text" readonly="readonly" value="voyager-lighthouse">
+        <div class="icon navia-lighthouse"></div>
+        <input type="text" readonly="readonly" value="navia-lighthouse">
     </li>
     <li>
-        <div class="icon voyager-pirate-hat"></div>
-        <input type="text" readonly="readonly" value="voyager-pirate-hat">
+        <div class="icon navia-pirate-hat"></div>
+        <input type="text" readonly="readonly" value="navia-pirate-hat">
     </li>
     <li>
-        <div class="icon voyager-rum-1"></div>
-        <input type="text" readonly="readonly" value="voyager-rum-1">
+        <div class="icon navia-rum-1"></div>
+        <input type="text" readonly="readonly" value="navia-rum-1">
     </li>
     <li>
-        <div class="icon voyager-ship"></div>
-        <input type="text" readonly="readonly" value="voyager-ship">
+        <div class="icon navia-ship"></div>
+        <input type="text" readonly="readonly" value="navia-ship">
     </li>
     <li>
-        <div class="icon voyager-treasure"></div>
-        <input type="text" readonly="readonly" value="voyager-treasure">
+        <div class="icon navia-treasure"></div>
+        <input type="text" readonly="readonly" value="navia-treasure">
     </li>
     <li>
-        <div class="icon voyager-treasure-open"></div>
-        <input type="text" readonly="readonly" value="voyager-treasure-open">
+        <div class="icon navia-treasure-open"></div>
+        <input type="text" readonly="readonly" value="navia-treasure-open">
     </li>
     <li>
-        <div class="icon voyager-whale"></div>
-        <input type="text" readonly="readonly" value="voyager-whale">
+        <div class="icon navia-whale"></div>
+        <input type="text" readonly="readonly" value="navia-whale">
     </li>
     <li>
-        <div class="icon voyager-compass"></div>
-        <input type="text" readonly="readonly" value="voyager-compass">
+        <div class="icon navia-compass"></div>
+        <input type="text" readonly="readonly" value="navia-compass">
     </li>
     <li>
-        <div class="icon voyager-logbook"></div>
-        <input type="text" readonly="readonly" value="voyager-logbook">
+        <div class="icon navia-logbook"></div>
+        <input type="text" readonly="readonly" value="navia-logbook">
     </li>
     <li>
-        <div class="icon voyager-plus"></div>
-        <input type="text" readonly="readonly" value="voyager-plus">
+        <div class="icon navia-plus"></div>
+        <input type="text" readonly="readonly" value="navia-plus">
     </li>
     <li>
-        <div class="icon voyager-documentation"></div>
-        <input type="text" readonly="readonly" value="voyager-documentation">
+        <div class="icon navia-documentation"></div>
+        <input type="text" readonly="readonly" value="navia-documentation">
     </li>
     <li>
-        <div class="icon voyager-belt"></div>
-        <input type="text" readonly="readonly" value="voyager-belt">
+        <div class="icon navia-belt"></div>
+        <input type="text" readonly="readonly" value="navia-belt">
     </li>
     <li>
-        <div class="icon voyager-zoom-in"></div>
-        <input type="text" readonly="readonly" value="voyager-zoom-in">
+        <div class="icon navia-zoom-in"></div>
+        <input type="text" readonly="readonly" value="navia-zoom-in">
     </li>
     <li>
-        <div class="icon voyager-zoom-out"></div>
-        <input type="text" readonly="readonly" value="voyager-zoom-out">
+        <div class="icon navia-zoom-out"></div>
+        <input type="text" readonly="readonly" value="navia-zoom-out">
     </li>
     <li>
-        <div class="icon voyager-scissors"></div>
-        <input type="text" readonly="readonly" value="voyager-scissors">
+        <div class="icon navia-scissors"></div>
+        <input type="text" readonly="readonly" value="navia-scissors">
     </li>
     <li>
-        <div class="icon voyager-github-icon"></div>
-        <input type="text" readonly="readonly" value="voyager-github-icon">
+        <div class="icon navia-github-icon"></div>
+        <input type="text" readonly="readonly" value="navia-github-icon">
     </li>
 </ul>
 

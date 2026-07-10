@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'តំណរភ្ជាប់',
         'documentation'         => 'ឯកសារ',
-        'voyager_homepage'      => 'គេហទំព័រ Navia',
+        'navia_homepage'      => 'គេហទំព័រ Navia',
     ],
     'commands'      => [
         'title'                 => 'ការបញ្ជារ',

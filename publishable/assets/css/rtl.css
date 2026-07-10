@@ -35,13 +35,13 @@
     float: left !important;
     padding: 28px 0 0 15px;
 }
-[dir="rtl"] .voyager div.dataTables_paginate li.next a::after,
-[dir="rtl"] .voyager div.dataTables_paginate li.previous a::before {
+[dir="rtl"] .navia div.dataTables_paginate li.next a::after,
+[dir="rtl"] .navia div.dataTables_paginate li.previous a::before {
     content: none;
 }
-[dir="rtl"] .voyager div.dataTables_paginate li.previous a::before {
+[dir="rtl"] .navia div.dataTables_paginate li.previous a::before {
     content: "\e046";
-    font-family: Voyager;
+    font-family: Navia;
     right: 10px;
     left: auto;
 }
@@ -56,14 +56,14 @@
     padding-left: 24px;
     padding-right: 10px;
 }
-[dir="rtl"] .voyager div.dataTables_paginate li.next a::after {
+[dir="rtl"] .navia div.dataTables_paginate li.next a::after {
     content: "\e039";
-    font-family: Voyager;
+    font-family: Navia;
     left: 10px;
     right: auto;
 }
 
-[dir="rtl"] .dropdown-menu > li > form .voyager-power
+[dir="rtl"] .dropdown-menu > li > form .navia-power
 {
     float: right;
 }
@@ -86,7 +86,7 @@
     padding: 0 5px;
 }
 [dir="rtl"] .breadcrumb > li + li:after {
-    font-family: Voyager;
+    font-family: Navia;
     content: '\e039';
     position: relative;
     top: 1px;
@@ -226,11 +226,11 @@
     display: inline-block;
 }
 
-[dir="rtl"] .panel-actions .voyager-trash, [dir="rtl"] .voyager-sort-desc, [dir="rtl"] .voyager-sort-asc {
+[dir="rtl"] .panel-actions .navia-trash, [dir="rtl"] .navia-sort-desc, [dir="rtl"] .navia-sort-asc {
     display: inline-block;
 }
 
-[dir="rtl"] .voyager-sort-desc {
+[dir="rtl"] .navia-sort-desc {
     margin-left: 10px;
     margin-right: auto;
 }
@@ -239,7 +239,7 @@
     float: right;
 }
 
-[dir="rtl"] .database-tables .voyager-bread{
+[dir="rtl"] .database-tables .navia-bread{
     margin-right: 10px;
     margin-left: auto;
     right: 100%;
@@ -333,8 +333,8 @@
     height: 60px;
 }
 
-[dir="rtl"] .voyager .navbar .navbar-nav .dropdown-menu,
-[dir="rtl"] .voyager .navbar.navbar-default .navbar-nav .dropdown-menu {
+[dir="rtl"] .navia .navbar .navbar-nav .dropdown-menu,
+[dir="rtl"] .navia .navbar.navbar-default .navbar-nav .dropdown-menu {
     background-color: #fff;
     display: block;
     position: absolute !important;
@@ -344,8 +344,8 @@
 
 
 
-[dir="rtl"] .voyager .navbar.navbar-default>.container-fluid:after,
-[dir="rtl"] .voyager .navbar>.container-fluid {
+[dir="rtl"] .navia .navbar.navbar-default>.container-fluid:after,
+[dir="rtl"] .navia .navbar>.container-fluid {
     border-bottom:0;
     width: 99.5%;
     height: 1px;
@@ -369,7 +369,7 @@ table.dataTable tbody th {
 }
 [dir="rtl"] .btn-group-sm > .btn i, .btn-sm i {top:3px}
 
-[dir="rtl"] .glyphicon-list::before{font-family: voyager !important;}
+[dir="rtl"] .glyphicon-list::before{font-family: navia !important;}
 
 
 [dir="rtl"] .ps.ps--active-y > .ps__scrollbar-y-rail {

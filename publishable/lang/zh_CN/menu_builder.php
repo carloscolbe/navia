@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => '动态路由',
     'edit_item'            => '编辑菜单项',
     'icon_class'           => '菜单项的字体图标类（使用',
-    'icon_class2'          => 'Voyager 图标库</a>）',
+    'icon_class2'          => 'Navia 图标库</a>）',
     'icon_class_ph'        => 'Icon Class（可选）',
     'item_route'           => '菜单项的路由',
     'item_title'           => '菜单项的标题',

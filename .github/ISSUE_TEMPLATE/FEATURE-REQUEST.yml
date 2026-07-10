@@ -23,7 +23,7 @@ body:
     validations:
       required: false
   - type: input
-    id: voyager_version
+    id: navia_version
     attributes:
       label: Navia version
       description: The full Navia version including minor and patch version. When using the dev-version please attach the commit-id (1.x-dev#abcdef)

@@ -26,7 +26,7 @@ class PagesTableSeeder extends Seeder
                 'name'                  => 'pages',
                 'display_name_singular' => __('navia::seeders.data_types.page.singular'),
                 'display_name_plural'   => __('navia::seeders.data_types.page.plural'),
-                'icon'                  => 'voyager-file-text',
+                'icon'                  => 'navia-file-text',
                 'model_name'            => 'Navia\\Models\\Page',
                 'controller'            => '',
                 'generate_permissions'  => 1,
@@ -242,7 +242,7 @@ class PagesTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-file-text',
+                'icon_class' => 'navia-file-text',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 7,

@@ -8,7 +8,7 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="voyager-compass"></i>
+        <i class="navia-compass"></i>
         <p> {{ __('navia::generic.compass') }}</p>
         <span class="page-description">{{ __('navia::compass.welcome') }}</span>
     </h1>
@@ -24,31 +24,31 @@
 
     <div class="page-content compass container-fluid">
         <ul class="nav nav-tabs">
-          <li @if(empty($active_tab) || (isset($active_tab) && $active_tab == 'resources')){!! 'class="active"' !!}@endif><a data-toggle="tab" href="#resources"><i class="voyager-book"></i> {{ __('navia::compass.resources.title') }}</a></li>
-          <li @if($active_tab == 'commands'){!! 'class="active"' !!}@endif><a data-toggle="tab" href="#commands"><i class="voyager-terminal"></i> {{ __('navia::compass.commands.title') }}</a></li>
-          <li @if($active_tab == 'logs'){!! 'class="active"' !!}@endif><a data-toggle="tab" href="#logs"><i class="voyager-logbook"></i> {{ __('navia::compass.logs.title') }}</a></li>
+          <li @if(empty($active_tab) || (isset($active_tab) && $active_tab == 'resources')){!! 'class="active"' !!}@endif><a data-toggle="tab" href="#resources"><i class="navia-book"></i> {{ __('navia::compass.resources.title') }}</a></li>
+          <li @if($active_tab == 'commands'){!! 'class="active"' !!}@endif><a data-toggle="tab" href="#commands"><i class="navia-terminal"></i> {{ __('navia::compass.commands.title') }}</a></li>
+          <li @if($active_tab == 'logs'){!! 'class="active"' !!}@endif><a data-toggle="tab" href="#logs"><i class="navia-logbook"></i> {{ __('navia::compass.logs.title') }}</a></li>
         </ul>
 
         <div class="tab-content">
             <div id="resources" class="tab-pane fade in @if(empty($active_tab) || (isset($active_tab) && $active_tab == 'resources')){!! 'active' !!}@endif">
-                <h3><i class="voyager-book"></i> {{ __('navia::compass.resources.title') }} <small>{{ __('navia::compass.resources.text') }}</small></h3>
+                <h3><i class="navia-book"></i> {{ __('navia::compass.resources.title') }} <small>{{ __('navia::compass.resources.text') }}</small></h3>
 
                 <div class="collapsible">
                     <div class="collapse-head" data-toggle="collapse" data-target="#links" aria-expanded="true" aria-controls="links">
                         <h4>{{ __('navia::compass.links.title') }}</h4>
-                        <i class="voyager-angle-down"></i>
-                        <i class="voyager-angle-up"></i>
+                        <i class="navia-angle-down"></i>
+                        <i class="navia-angle-up"></i>
                     </div>
                     <div class="collapse-content collapse in" id="links">
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="https://voyager-docs.devdojo.com/" target="_blank" class="voyager-link" style="background-image:url('{{ navia_asset('images/compass/documentation.jpg') }}')">
-                                    <span class="resource_label"><i class="voyager-documentation"></i> <span class="copy">{{ __('navia::compass.links.documentation') }}</span></span>
+                                <a href="https://github.com/carloscolmenarez/navia/tree/main/docs" target="_blank" class="navia-link" style="background-image:url('{{ navia_asset('images/compass/documentation.jpg') }}')">
+                                    <span class="resource_label"><i class="navia-documentation"></i> <span class="copy">{{ __('navia::compass.links.documentation') }}</span></span>
                                 </a>
                             </div>
                             <div class="col-md-6">
-                                <a href="https://navia.devdojo.com/" target="_blank" class="voyager-link" style="background-image:url('{{ navia_asset('images/compass/voyager-home.jpg') }}')">
-                                    <span class="resource_label"><i class="voyager-browser"></i> <span class="copy">{{ __('navia::compass.links.voyager_homepage') }}</span></span>
+                                <a href="https://github.com/carloscolmenarez/navia" target="_blank" class="navia-link" style="background-image:url('{{ navia_asset('images/compass/navia-home.jpg') }}')">
+                                    <span class="resource_label"><i class="navia-browser"></i> <span class="copy">{{ __('navia::compass.links.navia_homepage') }}</span></span>
                                 </a>
                             </div>
                         </div>
@@ -59,8 +59,8 @@
 
                 <div class="collapse-head" data-toggle="collapse" data-target="#fonts" aria-expanded="true" aria-controls="fonts">
                     <h4>{{ __('navia::compass.fonts.title') }}</h4>
-                    <i class="voyager-angle-down"></i>
-                    <i class="voyager-angle-up"></i>
+                    <i class="navia-angle-down"></i>
+                    <i class="navia-angle-up"></i>
                 </div>
 
                 <div class="collapse-content collapse in" id="fonts">
@@ -73,7 +73,7 @@
             </div>
 
           <div id="commands" class="tab-pane fade in @if($active_tab == 'commands'){!! 'active' !!}@endif">
-            <h3><i class="voyager-terminal"></i> {{ __('navia::compass.commands.title') }} <small>{{ __('navia::compass.commands.text') }}</small></h3>
+            <h3><i class="navia-terminal"></i> {{ __('navia::compass.commands.title') }} <small>{{ __('navia::compass.commands.text') }}</small></h3>
             <div id="command_lists">
                 @include('navia::compass.includes.commands')
             </div>
@@ -97,11 +97,11 @@
             $('.collapse-head').click(function(){
                 var collapseContainer = $(this).parent();
                 if(collapseContainer.find('.collapse-content').hasClass('in')){
-                    collapseContainer.find('.voyager-angle-up').fadeOut('fast');
-                    collapseContainer.find('.voyager-angle-down').fadeIn('slow');
+                    collapseContainer.find('.navia-angle-up').fadeOut('fast');
+                    collapseContainer.find('.navia-angle-down').fadeIn('slow');
                 } else {
-                    collapseContainer.find('.voyager-angle-down').fadeOut('fast');
-                    collapseContainer.find('.voyager-angle-up').fadeIn('slow');
+                    collapseContainer.find('.navia-angle-down').fadeOut('fast');
+                    collapseContainer.find('.navia-angle-up').fadeIn('slow');
                 }
             });
         });

@@ -4,10 +4,10 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="voyager-list-add"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
+        <i class="navia-list-add"></i> {{ $dataType->getTranslatedAttribute('display_name_plural') }}
         @can('add',app($dataType->model_name))
             <a href="{{ route('navia.'.$dataType->slug.'.create') }}" class="btn btn-success">
-                <i class="voyager-plus"></i> {{ __('navia::generic.add_new') }}
+                <i class="navia-plus"></i> {{ __('navia::generic.add_new') }}
             </a>
         @endcan
     </h1>
@@ -46,17 +46,17 @@
                                     <td class="no-sort no-click bread-actions">
                                         @can('delete', $data)
                                             <div class="btn btn-sm btn-danger pull-right delete" data-id="{{ $data->{$data->getKeyName()} }}">
-                                                <i class="voyager-trash"></i> {{ __('navia::generic.delete') }}
+                                                <i class="navia-trash"></i> {{ __('navia::generic.delete') }}
                                             </div>
                                         @endcan
                                         @can('edit', $data)
                                             <a href="{{ route('navia.'.$dataType->slug.'.edit', $data->{$data->getKeyName()}) }}" class="btn btn-sm btn-primary pull-right edit">
-                                                <i class="voyager-edit"></i> {{ __('navia::generic.edit') }}
+                                                <i class="navia-edit"></i> {{ __('navia::generic.edit') }}
                                             </a>
                                         @endcan
                                         @can('edit', $data)
                                             <a href="{{ route('navia.'.$dataType->slug.'.builder', $data->{$data->getKeyName()}) }}" class="btn btn-sm btn-success pull-right">
-                                                <i class="voyager-list"></i> {{ __('navia::generic.builder') }}
+                                                <i class="navia-list"></i> {{ __('navia::generic.builder') }}
                                             </a>
                                         @endcan
                                     </td>
@@ -78,7 +78,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <h4 class="modal-title">
-                        <i class="voyager-trash"></i> {{ __('navia::generic.delete_question') }} {{ $dataType->getTranslatedAttribute('display_name_singular') }}?
+                        <i class="navia-trash"></i> {{ __('navia::generic.delete_question') }} {{ $dataType->getTranslatedAttribute('display_name_singular') }}?
                     </h4>
                 </div>
                 <div class="modal-footer">

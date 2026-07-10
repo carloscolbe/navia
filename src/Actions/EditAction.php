@@ -11,7 +11,7 @@ class EditAction extends AbstractAction
 
     public function getIcon()
     {
-        return 'voyager-edit';
+        return 'navia-edit';
     }
 
     public function getPolicy()

@@ -28,7 +28,7 @@ return [
     'generate_permissions'   => 'İzin Oluştur',
     'icon_class'             => 'Bu tablo için kullanılacak ikon',
     'icon_hint'              => 'İkon (isteğe bağlı) seçebileceğiniz ',
-    'icon_hint2'             => 'Voyager İkon Paketi',
+    'icon_hint2'             => 'Navia İkon Paketi',
     'model_class'            => 'Model Class İsmi',
     'model_name'             => 'Model İsmi',
     'model_name_ph'          => 'ör. \App\User, eğer boş bırakılırsa tablo ismi kullanılmasına çalışılacak',

@@ -26,7 +26,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-boat',
+                'icon_class' => 'navia-boat',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 1,
@@ -42,7 +42,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-images',
+                'icon_class' => 'navia-images',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 5,
@@ -58,7 +58,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-person',
+                'icon_class' => 'navia-person',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 3,
@@ -74,7 +74,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-lock',
+                'icon_class' => 'navia-lock',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 2,
@@ -89,7 +89,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$toolsMenuItem->exists) {
             $toolsMenuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-tools',
+                'icon_class' => 'navia-tools',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 9,
@@ -105,7 +105,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-list',
+                'icon_class' => 'navia-list',
                 'color'      => null,
                 'parent_id'  => $toolsMenuItem->id,
                 'order'      => 10,
@@ -121,7 +121,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-data',
+                'icon_class' => 'navia-data',
                 'color'      => null,
                 'parent_id'  => $toolsMenuItem->id,
                 'order'      => 11,
@@ -137,7 +137,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-compass',
+                'icon_class' => 'navia-compass',
                 'color'      => null,
                 'parent_id'  => $toolsMenuItem->id,
                 'order'      => 12,
@@ -153,7 +153,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-bread',
+                'icon_class' => 'navia-bread',
                 'color'      => null,
                 'parent_id'  => $toolsMenuItem->id,
                 'order'      => 13,
@@ -169,7 +169,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill([
                 'target'     => '_self',
-                'icon_class' => 'voyager-settings',
+                'icon_class' => 'navia-settings',
                 'color'      => null,
                 'parent_id'  => null,
                 'order'      => 14,

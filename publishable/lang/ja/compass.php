@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'welcome'                => 'Voyagerコンパスへようこそ。 すべての素晴らしいアプリケーションには正しい方向を示すコンパスが必要です。
+    'welcome'                => 'Naviaコンパスへようこそ。 すべての素晴らしいアプリケーションには正しい方向を示すコンパスが必要です。
         このセクションでは、アプリケーションを構築する際に役立つ多くのリソースと管理タスクを紹介します。',
     'links'         => [
         'title'                 => 'リンク',
         'documentation'         => 'ドキュメント(英語サイト)',
-        'voyager_homepage'      => 'Navia ホームページ (英語サイト)',
+        'navia_homepage'      => 'Navia ホームページ (英語サイト)',
     ],
     'commands'      => [
         'title'                 => 'コマンド',
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'フォント',
-        'font_class'            => 'Voyager Fonts Class マッピング',
-        'font_character'        => 'Voyager Fonts Character マッピング',
+        'font_class'            => 'Navia Fonts Class マッピング',
+        'font_character'        => 'Navia Fonts Character マッピング',
     ],
 ];

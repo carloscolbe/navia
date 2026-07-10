@@ -5,7 +5,7 @@ return [
     'links'                  => [
         'title'                 => 'Σύνδεσμοι',
         'documentation'         => 'Τεκμηρίωση',
-        'voyager_homepage'      => 'Αρχική σελίδα Navia',
+        'navia_homepage'      => 'Αρχική σελίδα Navia',
     ],
     'commands'      => [
         'title'                 => 'Εντολές',
@@ -37,7 +37,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Γραμματοσειρές',
-        'font_class'            => 'Voyager Fonts Class Mapping',
-        'font_character'        => 'Voyager Fonts Character Mapping',
+        'font_class'            => 'Navia Fonts Class Mapping',
+        'font_character'        => 'Navia Fonts Character Mapping',
     ],
 ];

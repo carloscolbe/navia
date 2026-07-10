@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Динамичен път/линк',
     'edit_item'            => 'Редактиране на елемент от менюто',
     'icon_class'           => 'Клас на икона за елемент от менюто (Използвайте ',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icon Class (по избор)',
     'item_route'           => 'Линк за елемента от менюто',
     'item_title'           => 'Заглавие на елемента от менюто',

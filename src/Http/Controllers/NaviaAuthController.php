@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Navia\Facades\Navia;
 
-class VoyagerAuthController extends Controller
+class NaviaAuthController extends Controller
 {
     use AuthenticatesUsers;
 

@@ -18,7 +18,7 @@ use Navia\Events\TableDeleted;
 use Navia\Events\TableUpdated;
 use Navia\Facades\Navia;
 
-class VoyagerDatabaseController extends Controller
+class NaviaDatabaseController extends Controller
 {
     public function index()
     {

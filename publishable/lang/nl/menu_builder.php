@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dynamische route',
     'edit_item'            => 'Menu item aanpassen',
     'icon_class'           => 'Font icoon css-class voor het menu item (Gebruik een ',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icoon css-class (optioneel)',
     'item_route'           => 'Route voor het menu item',
     'item_title'           => 'Titel van het menu item',

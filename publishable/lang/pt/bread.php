@@ -28,7 +28,7 @@ return [
     'generate_permissions'   => 'Gerar Permissões',
     'icon_class'             => 'Icon para usar nesta Tabela',
     'icon_hint'              => 'Icon (opcional) Usar a',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Nome da Classe do Model',
     'model_name'             => 'Nome do Model',
     'model_name_ph'          => 'ex. \App\User, se vazio irá tentar usar o nome da tabela',

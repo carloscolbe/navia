@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Генериране на пермисии',
     'icon_class'             => 'Иконка за използване на тази Таблица',
     'icon_hint'              => 'Иконка (по избор) Използвай',
-    'icon_hint2'             => 'Voyager Font Class',
+    'icon_hint2'             => 'Navia Font Class',
     'model_class'            => 'Model Class Name',
     'model_name'             => 'Име на Model',
     'model_name_ph'          => 'пример. \App\User, ако бъде оставено празно ще опитаме да използваме името на таблицата ',

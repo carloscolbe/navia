@@ -30,7 +30,7 @@
 
     <!-- Few Dynamic Styles -->
     <style type="text/css">
-        .voyager .side-menu .navbar-header {
+        .navia .side-menu .navbar-header {
             background:{{ config('navia.primary_color','#22A7F0') }};
             border-color:{{ config('navia.primary_color','#22A7F0') }};
         }
@@ -40,7 +40,7 @@
         .widget .btn-primary:focus, .widget .btn-primary:hover, .widget .btn-primary:active, .widget .btn-primary.active, .widget .btn-primary:active:focus{
             background:{{ config('navia.primary_color','#22A7F0') }};
         }
-        .voyager .breadcrumb a{
+        .navia .breadcrumb a{
             color:{{ config('navia.primary_color','#22A7F0') }};
         }
     </style>
@@ -52,9 +52,9 @@
     @yield('head')
 </head>
 
-<body class="voyager @if(isset($dataType) && isset($dataType->slug)){{ $dataType->slug }}@endif">
+<body class="navia @if(isset($dataType) && isset($dataType->slug)){{ $dataType->slug }}@endif">
 
-<div id="voyager-loader">
+<div id="navia-loader">
     <?php $admin_loader_img = Navia::setting('admin.loader', ''); ?>
     @if($admin_loader_img == '')
         <img src="{{ navia_asset('images/logo-icon.png') }}" alt="Navia Loader">
@@ -81,7 +81,7 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
                     var appContainer = document.querySelector('.app-container'),
                         sidebar = appContainer.querySelector('.side-menu'),
                         navbar = appContainer.querySelector('nav.navbar.navbar-top'),
-                        loader = document.getElementById('voyager-loader'),
+                        loader = document.getElementById('navia-loader'),
                         hamburgerMenu = document.querySelector('.hamburger'),
                         sidebarTransition = sidebar.style.transition,
                         navbarTransition = navbar.style.transition,
@@ -106,7 +106,7 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
         <div class="container-fluid">
             <div class="side-body padding-top">
                 @yield('page_header')
-                <div id="voyager-notifications"></div>
+                <div id="navia-notifications"></div>
                 @yield('content')
             </div>
         </div>

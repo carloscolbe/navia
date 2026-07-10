@@ -89,11 +89,11 @@
 
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <i class="voyager-character"></i> {{ __('navia::post.title') }}
+                                <i class="navia-character"></i> {{ __('navia::post.title') }}
                                 <span class="panel-desc"> {{ __('navia::post.title_sub') }}</span>
                             </h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -110,7 +110,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">{{ __('navia::post.content') }}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                                <a class="panel-action navia-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
                             </div>
                         </div>
 
@@ -132,7 +132,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">{!! __('navia::post.excerpt') !!}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -148,7 +148,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">{{ __('navia::post.additional_fields') }}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -192,7 +192,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-clipboard"></i> {{ __('navia::post.details') }}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -235,7 +235,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-image"></i> {{ __('navia::post.image') }}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -251,7 +251,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-search"></i> {{ __('navia::post.seo_content') }}</h3>
                             <div class="panel-actions">
-                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                <a class="panel-action navia-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
@@ -305,7 +305,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"
                             aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="voyager-warning"></i> {{ __('navia::generic.are_you_sure') }}</h4>
+                    <h4 class="modal-title"><i class="navia-warning"></i> {{ __('navia::generic.are_you_sure') }}</h4>
                 </div>
 
                 <div class="modal-body">

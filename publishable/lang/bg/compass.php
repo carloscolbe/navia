@@ -7,7 +7,7 @@ return [
     'links'         => [
         'title'                 => 'Линкове',
         'documentation'         => 'Документация',
-        'voyager_homepage'      => 'Начална страница на Navia',
+        'navia_homepage'      => 'Начална страница на Navia',
     ],
     'commands'      => [
         'title'                 => 'Команди',
@@ -39,7 +39,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Фонтове',
-        'font_class'            => 'Voyager Fonts Class Mapping',
-        'font_character'        => 'Voyager Fonts Character Mapping',
+        'font_class'            => 'Navia Fonts Class Mapping',
+        'font_character'        => 'Navia Fonts Character Mapping',
     ],
 ];

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Config;
 use Navia\Facades\Navia;
 use Navia\Tests\TestCase;
 
-class VoyagerTest extends TestCase
+class NaviaTest extends TestCase
 {
     /**
      * Dimmers returns an array filled with widget collections.

@@ -29,8 +29,8 @@ var getConfig = function(options) {
                     formdata.append('image', this.files[0]);
                     formdata.append('type_slug', $('#upload_type_slug').val());
                     // Show loader
-                    $('#voyager-loader').css('z-index', 10000);
-                    $('#voyager-loader').fadeIn();
+                    $('#navia-loader').css('z-index', 10000);
+                    $('#navia-loader').fadeIn();
                     $.ajax({
                         type: 'post',
                         url: $('#upload_url').val(),
@@ -44,8 +44,8 @@ var getConfig = function(options) {
                         callback(result);
                     })
                     .always(() => {
-                        $('#voyager-loader').fadeOut();
-                        $('#voyager-loader').css('z-index', 99);
+                        $('#navia-loader').fadeOut();
+                        $('#navia-loader').css('z-index', 99);
                     });
                 }
 

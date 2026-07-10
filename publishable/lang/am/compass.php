@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Հղումներ',
         'documentation'         => 'Փաստաթղթեր',
-        'voyager_homepage'      => 'Navia Գլխավոր էջ',
+        'navia_homepage'      => 'Navia Գլխավոր էջ',
     ],
     'commands'      => [
         'title'                 => 'Հրամաններ',
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Տառատեսակներ',
-        'font_class'            => 'Voyager-ի տառատեսակների դասերի քարտեզագրում',
-        'font_character'        => 'Voyager-ի տառատեսակների նիշերի քարտեզագրում',
+        'font_class'            => 'Navia-ի տառատեսակների դասերի քարտեզագրում',
+        'font_character'        => 'Navia-ի տառատեսակների նիշերի քարտեզագրում',
     ],
 ];

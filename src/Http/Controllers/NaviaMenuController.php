@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Navia\Facades\Navia;
 
-class VoyagerMenuController extends Controller
+class NaviaMenuController extends Controller
 {
     public function builder($id)
     {

@@ -133,14 +133,14 @@ class InstallCommand extends Command
         $this->composer->dumpAutoloads();
 
         $this->info('Seeding data into the database');
-        $this->call('db:seed', ['--class' => 'VoyagerDatabaseSeeder', '--force' => $this->option('force')]);
+        $this->call('db:seed', ['--class' => 'NaviaDatabaseSeeder', '--force' => $this->option('force')]);
 
         if ($this->option('with-dummy')) {
             $this->info('Migrating dummy tables');
             $this->call('migrate');
 
             $this->info('Seeding dummy data');
-            $this->call('db:seed', ['--class' => 'VoyagerDummyDatabaseSeeder', '--force' => $this->option('force')]);
+            $this->call('db:seed', ['--class' => 'NaviaDummyDatabaseSeeder', '--force' => $this->option('force')]);
         }
 
         $this->info('Adding the storage symlink to your public folder');

@@ -44,7 +44,7 @@ return [
     'generate_permissions'      => 'Luo käyttöoikeudet',
     'icon_class'                => 'Taulua kuvaava ikoni',
     'icon_hint'                 => 'Ikoni (valinnainen) Käytä',
-    'icon_hint2'                => 'Voyager Fonttiluokkaa',
+    'icon_hint2'                => 'Navia Fonttiluokkaa',
     'index'                     => 'INDEKSI',
     'input_type'                => 'Tietotyyppi',
     'key'                       => 'Avainkenttä',

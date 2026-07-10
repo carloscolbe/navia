@@ -29,7 +29,7 @@ return [
     'generate_permissions'      => 'Skapa Behörigheter',
     'icon_class'                => 'Ikon att använda för denna tabell',
     'icon_hint'                 => 'Ikon (frivilligt) Använd a',
-    'icon_hint2'                => 'Voyager Typssnittsklass',
+    'icon_hint2'                => 'Navia Typssnittsklass',
     'model_class'               => 'Modell Klass Namn',
     'model_name'                => 'Modellens Namn',
     'model_name_ph'             => 't ex. \App\User, om tom används tabellens namn',

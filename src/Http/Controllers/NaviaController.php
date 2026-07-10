@@ -11,7 +11,7 @@ use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
 use Navia\Facades\Navia;
 
-class VoyagerController extends Controller
+class NaviaController extends Controller
 {
     public function index()
     {

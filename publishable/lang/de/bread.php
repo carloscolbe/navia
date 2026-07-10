@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Zugriffsrechte Generieren',
     'icon_class'             => 'Icon CSS-Klasse für diese Tabelle',
     'icon_hint'              => 'Icon (optional) Benutze',
-    'icon_hint2'             => 'Voyager Font CSS-Klasse',
+    'icon_hint2'             => 'Navia Font CSS-Klasse',
     'model_class'            => 'Name der Model Klasse',
     'model_name'             => 'Model Name',
     'model_name_ph'          => 'z. B. \App\User, falls leer gelassen wird versucht den Namen der Tabelle zu verwenden',

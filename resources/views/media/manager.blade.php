@@ -9,19 +9,19 @@
                             <div class="img_icon" :style="imgIcon('{{ Storage::disk(config('navia.storage.disk'))->url('/') }}'+file)"></div>
                         </template>
                         <template v-else-if="fileIs(file, 'video')">
-                            <i class="icon voyager-video"></i>
+                            <i class="icon navia-video"></i>
                         </template>
                         <template v-else-if="fileIs(file, 'audio')">
-                            <i class="icon voyager-music"></i>
+                            <i class="icon navia-music"></i>
                         </template>
                         <template v-else-if="fileIs(file, 'zip')">
-                            <i class="icon voyager-archive"></i>
+                            <i class="icon navia-archive"></i>
                         </template>
                         <template v-else-if="fileIs(file, 'folder')">
-                            <i class="icon voyager-folder"></i>
+                            <i class="icon navia-folder"></i>
                         </template>
                         <template v-else>
-                            <i class="icon voyager-file-text"></i>
+                            <i class="icon navia-file-text"></i>
                         </template>
                     </div>
                     <div class="details">
@@ -29,46 +29,46 @@
                             <h4>@{{ getFileName(file) }}</h4>
                         </div>
                     </div>
-                    <i class="voyager-x dd-nodrag" v-on:click="removeFileFromInput(file)"></i>
+                    <i class="navia-x dd-nodrag" v-on:click="removeFileFromInput(file)"></i>
                 </div>
             </li>
         </ol>
     </div>
     <div v-if="hidden_element">
         <div class="btn btn-sm btn-default" v-on:click="isExpanded = !isExpanded;" style="width:100%">
-            <div v-if="!isExpanded"><i class="voyager-double-down"></i> {{ __('navia::generic.open') }}</div>
-            <div v-if="isExpanded"><i class="voyager-double-up"></i> {{ __('navia::generic.close') }}</div>
+            <div v-if="!isExpanded"><i class="navia-double-down"></i> {{ __('navia::generic.open') }}</div>
+            <div v-if="isExpanded"><i class="navia-double-up"></i> {{ __('navia::generic.close') }}</div>
         </div>
     </div>
     <div id="toolbar" v-if="showToolbar" :style="isExpanded ? 'display:block' : 'display:none'">
         <div class="btn-group offset-right">
             <button type="button" class="btn btn-primary" id="upload" v-if="allowUpload">
-                <i class="voyager-upload"></i>
+                <i class="navia-upload"></i>
                 {{ __('navia::generic.upload') }}
             </button>
             <button type="button" class="btn btn-primary" v-if="allowCreateFolder" data-toggle="modal" :data-target="'#create_dir_modal_'+this._uid">
-                <i class="voyager-folder"></i>
+                <i class="navia-folder"></i>
                 {{ __('navia::generic.add_folder') }}
             </button>
         </div>
         <button type="button" class="btn btn-default" v-on:click="getFiles()">
-            <i class="voyager-refresh"></i>
+            <i class="navia-refresh"></i>
         </button>
         <div class="btn-group offset-right">
             <button type="button" :disabled="selected_files.length == 0" v-if="allowUpload && hidden_element" class="btn btn-default" v-on:click="addSelectedFiles()">
-                <i class="voyager-upload"></i>
+                <i class="navia-upload"></i>
                 {{ __('navia::media.add_all_selected') }}
             </button>
             <button type="button" v-if="showFolders && allowMove" class="btn btn-default" data-toggle="modal" :data-target="'#move_files_modal_'+this._uid">
-                <i class="voyager-move"></i>
+                <i class="navia-move"></i>
                 {{ __('navia::generic.move') }}
             </button>
             <button type="button" v-if="allowDelete" :disabled="selected_files.length == 0" class="btn btn-default" data-toggle="modal" :data-target="'#confirm_delete_modal_'+this._uid">
-                <i class="voyager-trash"></i>
+                <i class="navia-trash"></i>
                 {{ __('navia::generic.delete') }}
             </button>
             <button v-if="allowCrop" :disabled="selected_files.length != 1 || !fileIs(selected_file, 'image')" type="button" class="btn btn-default" data-toggle="modal" :data-target="'#crop_modal_'+this._uid">
-                <i class="voyager-crop"></i>
+                <i class="navia-crop"></i>
                 {{ __('navia::media.crop') }}
             </button>
         </div>
@@ -100,19 +100,19 @@
                                     <div class="img_icon" :style="imgIcon(file.path)"></div>
                                 </template>
                                 <template v-else-if="fileIs(file, 'video')">
-                                    <i class="icon voyager-video"></i>
+                                    <i class="icon navia-video"></i>
                                 </template>
                                 <template v-else-if="fileIs(file, 'audio')">
-                                    <i class="icon voyager-music"></i>
+                                    <i class="icon navia-music"></i>
                                 </template>
                                 <template v-else-if="fileIs(file, 'zip')">
-                                    <i class="icon voyager-archive"></i>
+                                    <i class="icon navia-archive"></i>
                                 </template>
                                 <template v-else-if="fileIs(file, 'folder')">
-                                    <i class="icon voyager-folder"></i>
+                                    <i class="icon navia-folder"></i>
                                 </template>
                                 <template v-else>
-                                    <i class="icon voyager-file-text"></i>
+                                    <i class="icon navia-file-text"></i>
                                 </template>
                             </div>
                             <div class="details">
@@ -137,13 +137,13 @@
                 </div>
 
                 <div id="no_files" v-if="files.length == 0">
-                    <h3><i class="voyager-meh"></i> {{ __('navia::media.no_files_in_folder') }}</h3>
+                    <h3><i class="navia-meh"></i> {{ __('navia::media.no_files_in_folder') }}</h3>
                 </div>
             </div>
             <div id="right">
                 <div class="right_details">
                     <div v-if="selected_files.length > 1" class="right_none_selected">
-                        <i class="voyager-list"></i>
+                        <i class="navia-list"></i>
                         <p>@{{ selected_files.length }} {{ __('navia::media.files_selected') }}</p>
                     </div>
                     <div v-else-if="selected_files.length == 1" class="right_details">
@@ -160,7 +160,7 @@
                                 </video>
                             </div>
                             <div v-else-if="fileIs(selected_file, 'audio')">
-                                <i class="voyager-music"></i>
+                                <i class="navia-music"></i>
                                 <audio controls style="width:100%; margin-top:5px;" ref="audioplayer">
                                     <source :src="selected_file.path" type="audio/ogg">
                                     <source :src="selected_file.path" type="audio/mpeg">
@@ -168,13 +168,13 @@
                                 </audio>
                             </div>
                             <div v-else-if="fileIs(selected_file, 'zip')">
-                                <i class="voyager-archive"></i>
+                                <i class="navia-archive"></i>
                             </div>
                             <div v-else-if="fileIs(selected_file, 'folder')">
-                                <i class="voyager-folder"></i>
+                                <i class="navia-folder"></i>
                             </div>
                             <div v-else>
-                                <i class="voyager-file-text"></i>
+                                <i class="navia-file-text"></i>
                             </div>
                         </div>
                         <div class="detail_info">
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                     <div v-else class="right_none_selected">
-                        <i class="voyager-cursor"></i>
+                        <i class="navia-cursor"></i>
                         <p>{{ __('navia::media.nothing_selected') }}</p>
                     </div>
                 </div>
@@ -250,7 +250,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="voyager-folder"></i> {{ __('navia::media.add_new_folder') }}</h4>
+                    <h4 class="modal-title"><i class="navia-folder"></i> {{ __('navia::media.add_new_folder') }}</h4>
                 </div>
 
                 <div class="modal-body">
@@ -273,7 +273,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="voyager-warning"></i> {{ __('navia::generic.are_you_sure') }}</h4>
+                    <h4 class="modal-title"><i class="navia-warning"></i> {{ __('navia::generic.are_you_sure') }}</h4>
                 </div>
 
                 <div class="modal-body">
@@ -282,7 +282,7 @@
                         <li v-for="file in selected_files">@{{ file.name }}</li>
                     </ul>
                     <h5 class="folder_warning">
-                        <i class="voyager-warning"></i> {{ __('navia::media.delete_folder_question') }}
+                        <i class="navia-warning"></i> {{ __('navia::media.delete_folder_question') }}
                     </h5>
                 </div>
 
@@ -303,7 +303,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"
                             aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"><i class="voyager-move"></i> {{ __('navia::media.move_file_folder') }}</h4>
+                    <h4 class="modal-title"><i class="navia-move"></i> {{ __('navia::media.move_file_folder') }}</h4>
                 </div>
 
                 <div class="modal-body">

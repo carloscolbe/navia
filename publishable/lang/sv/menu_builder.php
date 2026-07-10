@@ -10,7 +10,7 @@ return [
     'dynamic_route'         => 'Dynamisk Rutt',
     'edit_item'             => 'Redigera Menyobjekt',
     'icon_class'            => 'Typsnittsikon-klass för menyobjektet (Use a',
-    'icon_class2'           => 'Voyager Typsnittsikon-klass</a>)',
+    'icon_class2'           => 'Navia Typsnittsikon-klass</a>)',
     'icon_class_ph'         => 'Ikonklass (frivilligt)',
     'item_route'            => 'Rutt för menyobjektet',
     'item_title'            => 'Titel för menyobjektet',

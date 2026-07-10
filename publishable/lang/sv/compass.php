@@ -6,7 +6,7 @@ return [
     'links' => [
         'title'                 => 'Länkar',
         'documentation'         => 'Dokumentation',
-        'voyager_homepage'      => 'Navia Hemsida',
+        'navia_homepage'      => 'Navia Hemsida',
     ],
     'commands' => [
         'title'                 => 'Kommandon',
@@ -36,7 +36,7 @@ return [
     ],
     'fonts' => [
         'title'                 => 'Typsnitt',
-        'font_class'            => 'Voyager Typsnitt Klasser',
-        'font_character'        => 'Voyager Typsnitt Tecken',
+        'font_class'            => 'Navia Typsnitt Klasser',
+        'font_character'        => 'Navia Typsnitt Tecken',
     ],
 ];

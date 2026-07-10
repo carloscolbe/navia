@@ -23,9 +23,9 @@ require('brace/theme/github');
 require('./slugify');
 window.TinyMCE = window.tinymce = require('tinymce');
 require('./multilingual');
-require('./voyager_tinymce');
-window.voyagerTinyMCE = require('./voyager_tinymce_config');
-require('./voyager_ace_editor');
+require('./navia_tinymce');
+window.naviaTinyMCE = require('./navia_tinymce_config');
+require('./navia_ace_editor');
 window.helpers = require('./helpers.js');
 
 Vue.component('admin-menu', require('./components/admin_menu.vue').default);
@@ -41,15 +41,15 @@ $(document).ready(function () {
 
     new PerfectScrollbar('.side-menu');
 
-    $('#voyager-loader').fadeOut();
+    $('#navia-loader').fadeOut();
 
     $(".hamburger, .navbar-expand-toggle").on('click', function () {
         appContainer.toggleClass("expanded");
         $(this).toggleClass('is-active');
         if ($(this).hasClass('is-active')) {
-            window.localStorage.setItem('voyager.stickySidebar', true);
+            window.localStorage.setItem('navia.stickySidebar', true);
         } else {
-            window.localStorage.setItem('voyager.stickySidebar', false);
+            window.localStorage.setItem('navia.stickySidebar', false);
         }
     });
 
@@ -159,11 +159,11 @@ $(document).ready(function () {
         if (!$this.hasClass('panel-collapsed')) {
             $this.parents('.panel').find('.panel-body').slideUp();
             $this.addClass('panel-collapsed');
-            $this.removeClass('voyager-angle-up').addClass('voyager-angle-down');
+            $this.removeClass('navia-angle-up').addClass('navia-angle-down');
         } else {
             $this.parents('.panel').find('.panel-body').slideDown();
             $this.removeClass('panel-collapsed');
-            $this.removeClass('voyager-angle-down').addClass('voyager-angle-up');
+            $this.removeClass('navia-angle-down').addClass('navia-angle-up');
         }
     });
 
@@ -171,10 +171,10 @@ $(document).ready(function () {
     $(document).on('click', '.panel-heading a.panel-action[data-toggle="panel-fullscreen"]', function (e) {
         e.preventDefault();
         var $this = $(this);
-        if (!$this.hasClass('voyager-resize-full')) {
-            $this.removeClass('voyager-resize-small').addClass('voyager-resize-full');
+        if (!$this.hasClass('navia-resize-full')) {
+            $this.removeClass('navia-resize-small').addClass('navia-resize-full');
         } else {
-            $this.removeClass('voyager-resize-full').addClass('voyager-resize-small');
+            $this.removeClass('navia-resize-full').addClass('navia-resize-small');
         }
         $this.closest('.panel').toggleClass('is-fullscreen');
     });

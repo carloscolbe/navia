@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Navia\Facades\Navia;
 
-class VoyagerUserController extends VoyagerBaseController
+class NaviaUserController extends NaviaBaseController
 {
     public function profile(Request $request)
     {

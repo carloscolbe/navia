@@ -44,7 +44,7 @@ return [
     'generate_permissions'      => 'Vytvořit oprávnění',
     'icon_class'                => 'Ikona pro tuto tabulku',
     'icon_hint'                 => 'Ikona (nepovinné) použijte',
-    'icon_hint2'                => 'Voyager Font Class',
+    'icon_hint2'                => 'Navia Font Class',
     'index'                     => 'INDEX',
     'input_type'                => 'Input Type',
     'key'                       => 'Klíč',

@@ -43,7 +43,7 @@ return [
     'generate_permissions'      => 'Genereer permissies',
     'icon_class'                => 'Icoon om te gebruiken bij deze tabel',
     'icon_hint'                 => 'Icoon (optioneel) Gebruik een',
-    'icon_hint2'                => 'Voyager Font Class',
+    'icon_hint2'                => 'Navia Font Class',
     'index'                     => 'INDEX',
     'input_type'                => 'Invoertype',
     'key'                       => 'Sleutel',

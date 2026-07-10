@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => '動的ルート',
     'edit_item'            => 'メニューアイテムを編集',
     'icon_class'           => 'メニューアイテムのFont Iconクラス。 (これを使用:',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'アイコンクラス (オプション)',
     'item_route'           => 'メニューアイテムのルート',
     'item_title'           => 'メニューアイテムのタイトル',

@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Navia\Contracts\User as UserContract;
 use Navia\Tests\Database\Factories\UserFactory;
-use Navia\Traits\VoyagerUser;
+use Navia\Traits\NaviaUser;
 
 class User extends Authenticatable implements UserContract
 {
-    use VoyagerUser, HasFactory;
+    use NaviaUser, HasFactory;
 
     protected $guarded = [];
 

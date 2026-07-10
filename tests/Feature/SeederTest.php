@@ -16,12 +16,12 @@ class SeederTest extends TestCase
     /**
      * Test manually seeding is working.
      */
-    public function testVoyagerDatabaseSeederCanBeCalled()
+    public function testNaviaDatabaseSeederCanBeCalled()
     {
         $exception = null;
 
         try {
-            $this->artisan('db:seed', ['--class' => 'VoyagerDatabaseSeeder']);
+            $this->artisan('db:seed', ['--class' => 'NaviaDatabaseSeeder']);
         } catch (\Exception $exception) {
         }
 

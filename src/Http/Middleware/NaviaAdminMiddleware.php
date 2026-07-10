@@ -5,7 +5,7 @@ namespace Navia\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class VoyagerAdminMiddleware
+class NaviaAdminMiddleware
 {
     /**
      * Handle an incoming request.

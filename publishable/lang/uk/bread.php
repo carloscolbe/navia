@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Створення прав доступу',
     'icon_class'             => 'Значок для цієї таблиці',
     'icon_hint'              => 'Значок (необов`язково)',
-    'icon_hint2'             => 'Voyager Fonts Class',
+    'icon_hint2'             => 'Navia Fonts Class',
     'model_class'            => 'Назва класу моделі',
     'model_name'             => 'Назва моделі',
     'model_name_ph'          => 'наприклад, \App\User; if left empty will try and use the table name',

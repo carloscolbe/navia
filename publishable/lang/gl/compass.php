@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'Enlaces',
         'documentation'         => 'Documentación',
-        'voyager_homepage'      => 'Navia Homepage',
+        'navia_homepage'      => 'Navia Homepage',
     ],
     'commands'      => [
         'title'                 => 'Comandos',
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'Fonts',
-        'font_class'            => 'Voyager Fonts Class Mapping',
-        'font_character'        => 'Voyager Fonts Character Mapping',
+        'font_class'            => 'Navia Fonts Class Mapping',
+        'font_character'        => 'Navia Fonts Character Mapping',
     ],
 ];

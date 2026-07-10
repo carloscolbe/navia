@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'welcome'                => 'Voyager Pusula\'ya hoşgeldiniz. Her iyi uygulama doğru istikamette ilerlemek için bir pusulaya ihtiyaç duyar.
+    'welcome'                => 'Navia Pusula\'ya hoşgeldiniz. Her iyi uygulama doğru istikamette ilerlemek için bir pusulaya ihtiyaç duyar.
     Bu bölümde uygulamanızı geliştirirken size rehberlik edecek bir çok kaynak ve yönetimsel görev bulacaksınız.',
     'links'         => [
         'title'                 => 'Bağlantılar',
         'documentation'         => 'Dokümantasyon',
-        'voyager_homepage'      => 'Navia Anasayfa',
+        'navia_homepage'      => 'Navia Anasayfa',
     ],
     'commands'      => [
         'title'                 => 'Komutlar',
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => 'İkonlar',
-        'font_class'            => 'Voyager İkon Class Eşleştirmesi',
-        'font_character'        => 'Voyager İkon Karakter Eşleştirmesi',
+        'font_class'            => 'Navia İkon Class Eşleştirmesi',
+        'font_character'        => 'Navia İkon Karakter Eşleştirmesi',
     ],
 ];

@@ -44,7 +44,7 @@ return [
     'generate_permissions'      => 'Generate Permissions',
     'icon_class'                => 'Icon untuk tabel ini',
     'icon_hint'                 => 'Icon (optional) Gunakan',
-    'icon_hint2'                => 'Voyager Font Class',
+    'icon_hint2'                => 'Navia Font Class',
     'index'                     => 'INDEX',
     'input_type'                => 'Input Type',
     'key'                       => 'Key',

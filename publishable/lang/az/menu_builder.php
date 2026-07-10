@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dinamik yol',
     'edit_item'            => 'Punkt menyunu dəyiş',
     'icon_class'           => 'Punkt menyu üçün ikonka (İstifadə edin ',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'İkonka (vacib deyil)',
     'item_route'           => 'Punkt menyu route',
     'item_title'           => 'Punkt menyu başlığı',

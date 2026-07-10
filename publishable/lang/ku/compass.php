@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => 'لینکەکان',
         'documentation'         => 'بەڵگەنامەکردن',
-        'voyager_homepage'      => 'پەڕەی سەرەتای ڤۆیەیجەر (Navia)',
+        'navia_homepage'      => 'پەڕەی سەرەتای ڤۆیەیجەر (Navia)',
     ],
     'commands'      => [
         'title'                 => 'ناونیشان',

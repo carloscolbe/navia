@@ -6,7 +6,7 @@ return [
     'links'         => [
         'title'                 => '連接',
         'documentation'         => '文件',
-        'voyager_homepage'      => 'Navia 官網',
+        'navia_homepage'      => 'Navia 官網',
     ],
     'commands'      => [
         'title'                 => '指令',
@@ -38,7 +38,7 @@ return [
     ],
     'fonts'         => [
         'title'                 => '字體',
-        'font_class'            => 'Voyager Fonts Class Mapping',
-        'font_character'        => 'Voyager Fonts Character Mapping',
+        'font_class'            => 'Navia Fonts Class Mapping',
+        'font_character'        => 'Navia Fonts Character Mapping',
     ],
 ];

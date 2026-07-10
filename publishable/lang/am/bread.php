@@ -30,7 +30,7 @@ return [
     'generate_permissions'   => 'Գեներացնել Թույտվություններ',
     'icon_class'             => 'Օգտագործել պատկերը այս աղյուսակի համար',
     'icon_hint'              => 'Պատկերը (ոչ պարտադիր) Օգտագործում է',
-    'icon_hint2'             => 'Voyager ֆոնտի դասը',
+    'icon_hint2'             => 'Navia ֆոնտի դասը',
     'model_class'            => 'Model-ի Դասի անունը',
     'model_name'             => 'Model- անունը',
     'model_name_ph'          => 'օր. \App\User, եթե թողնեք դատարկ, այն կփորձի օգտագործել աղյուսակի անունը',

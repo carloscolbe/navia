@@ -19,14 +19,14 @@ use Intervention\Image\ImageServiceProvider;
 use Navia\Events\FormFieldsRegistered;
 use Navia\Facades\Navia as NaviaFacade;
 use Navia\FormFields\After\DescriptionHandler;
-use Navia\Http\Middleware\VoyagerAdminMiddleware;
+use Navia\Http\Middleware\NaviaAdminMiddleware;
 use Navia\Models\MenuItem;
 use Navia\Models\Setting;
 use Navia\Policies\BasePolicy;
 use Navia\Policies\MenuItemPolicy;
 use Navia\Policies\SettingPolicy;
 use Navia\Providers\NaviaDummyServiceProvider;
-use Navia\Providers\VoyagerEventServiceProvider;
+use Navia\Providers\NaviaEventServiceProvider;
 use Navia\Seed;
 use Navia\Translator\Collection as TranslatorCollection;
 
@@ -55,7 +55,7 @@ class NaviaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(VoyagerEventServiceProvider::class);
+        $this->app->register(NaviaEventServiceProvider::class);
         $this->app->register(ImageServiceProvider::class);
         $this->app->register(NaviaDummyServiceProvider::class);
 
@@ -107,7 +107,7 @@ class NaviaServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'navia');
 
-        $router->aliasMiddleware('admin.user', VoyagerAdminMiddleware::class);
+        $router->aliasMiddleware('admin.user', NaviaAdminMiddleware::class);
 
         $this->loadTranslationsFrom(realpath(__DIR__.'/../publishable/lang'), 'navia');
 

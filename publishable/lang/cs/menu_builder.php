@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dynamická cesta',
     'edit_item'            => 'Upravit položku',
     'icon_class'           => 'Font Icon class pro položku (Použijte ',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icon Class (nepovinné)',
     'item_route'           => 'Cesta pro položku',
     'item_title'           => 'Název položky',

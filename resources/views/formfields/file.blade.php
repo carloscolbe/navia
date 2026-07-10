@@ -7,7 +7,7 @@
               data-file-name="{{ $file->original_name }}" data-id="{{ $dataTypeContent->getKey() }}">
               {{ $file->original_name ?: '' }}
             </a>
-            <a href="#" class="voyager-x remove-multi-file"></a>
+            <a href="#" class="navia-x remove-multi-file"></a>
           </div>
         @endforeach
     @else
@@ -17,7 +17,7 @@
           data-file-name="{{ $dataTypeContent->{$row->field} }}" data-id="{{ $dataTypeContent->getKey() }}">>
             {{ __('navia::generic.download') }}
         </a>
-        <a href="#" class="voyager-x remove-single-file"></a>
+        <a href="#" class="navia-x remove-single-file"></a>
       </div>
     @endif
 @endif

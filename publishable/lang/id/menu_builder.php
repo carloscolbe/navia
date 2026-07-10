@@ -10,7 +10,7 @@ return [
     'dynamic_route'        => 'Dynamic Route',
     'edit_item'            => 'Ubah Menu Item',
     'icon_class'           => 'Font Icon class untuk Menu Item (Gunakan',
-    'icon_class2'          => 'Voyager Font Class</a>)',
+    'icon_class2'          => 'Navia Font Class</a>)',
     'icon_class_ph'        => 'Icon Class (optional)',
     'item_route'           => 'Route dari menu item',
     'item_title'           => 'Title dari Menu Item',
