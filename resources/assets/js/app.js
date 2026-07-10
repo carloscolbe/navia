@@ -1,34 +1,29 @@
+import './globals';
 import Vue from 'vue';
-window.Vue = Vue;
-import jQuery from 'jquery';
-window.jQuery = jQuery;
-window.$ = jQuery;
 import PerfectScrollbar from 'perfect-scrollbar';
-window.Cropper = require('cropperjs');
-window.Cropper = 'default' in window.Cropper ? window.Cropper['default'] : window.Cropper;
-window.toastr = require('toastr');
-window.DataTable = require('datatables');
-require('datatables-bootstrap3-plugin/media/js/datatables-bootstrap3');
-window.EasyMDE = require('easymde');
-require('dropzone');
-require('jquery-match-height');
-require('bootstrap-toggle');
-require('nestable2');
-require('bootstrap');
-require('select2');
-require('eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker');
-var brace = require('brace');
-require('brace/mode/json');
-require('brace/theme/github');
-require('./slugify');
-window.TinyMCE = window.tinymce = require('tinymce');
-require('./multilingual');
-require('./navia_tinymce');
-window.naviaTinyMCE = require('./navia_tinymce_config');
-require('./navia_ace_editor');
-window.helpers = require('./helpers.js');
+import 'datatables-bootstrap3-plugin/media/js/datatables-bootstrap3';
+import 'dropzone';
+import 'jquery-match-height';
+import 'bootstrap-toggle';
+import 'nestable2';
+import 'bootstrap';
+import 'select2';
+import 'eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker';
+import 'brace';
+import 'brace/mode/json';
+import 'brace/theme/github';
+import './slugify';
+import './multilingual';
+import './navia_tinymce';
+import * as naviaTinyMCE from './navia_tinymce_config';
+import './navia_ace_editor';
+import * as helpers from './helpers.js';
+import AdminMenu from './components/admin_menu.vue';
 
-Vue.component('admin-menu', require('./components/admin_menu.vue').default);
+window.naviaTinyMCE = naviaTinyMCE;
+window.helpers = helpers;
+
+Vue.component('admin-menu', AdminMenu);
 
 var admin_menu = new Vue({
     el: '#adminmenu',

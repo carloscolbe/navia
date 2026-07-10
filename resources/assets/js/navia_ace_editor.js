@@ -22,9 +22,9 @@ for(var i = 0; i < ace_editor_element.length; i++)
     }
     
     ace_editor.on('change', function(event, el) {
-    	ace_editor_id = el.container.id;
-    	ace_editor_textarea = document.getElementById(ace_editor_id + '_textarea');
-    	ace_editor_instance = ace.edit(ace_editor_id);
+    	var ace_editor_id = el.container.id;
+    	var ace_editor_textarea = document.getElementById(ace_editor_id + '_textarea');
+    	var ace_editor_instance = ace.edit(ace_editor_id);
     	ace_editor_textarea.value = ace_editor_instance.getValue();
     });
 }

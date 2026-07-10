@@ -1,23 +1,19 @@
 {
   "private": true,
   "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "dev": "npm run build:js && npm run build:css",
+    "prod": "npm run dev",
+    "build:js": "vite build && node scripts/copy-static.mjs",
+    "build:css": "sass resources/assets/sass/app.scss publishable/assets/css/app.css --load-path=. --no-source-map --style=compressed",
+    "watch": "npm run watch:js & npm run watch:css",
+    "watch:js": "vite build --watch",
+    "watch:css": "npm run build:css -- --watch"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.3.4",
     "bootstrap-sass": "^3.4.3",
-    "cross-env": "^7.0.3",
-    "laravel-mix": "^6.0.49",
-    "postcss": "^8.4.18",
     "sass": "^1.55.0",
-    "sass-loader": "^13.1.0",
-    "vue-loader": "^15.9.7",
-    "vue-template-compiler": "^2.7.13"
+    "vite": "^7.0.0"
   },
   "dependencies": {
     "ace-builds": "^1.12.3",
@@ -42,5 +38,8 @@
     "tinymce": "^6.2.0",
     "toastr": "^2.1.4",
     "vue": "^2.7.13"
+  },
+  "overrides": {
+    "moment-timezone": "^0.5.43"
   }
 }

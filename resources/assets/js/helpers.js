@@ -22,7 +22,7 @@ var displayAlerts = function(alerts, alerter, type) {
         });
     }
 
-    for (a in alerts) {
+    for (var a in alerts) {
         displayAlert(alerts[a], alerter);
     }
 }
@@ -75,7 +75,4 @@ var setImageValue = function(url){
   $('.mce-btn.mce-open').parent().find('.mce-textbox').val(url);
 }
 
-exports.setImageValue = setImageValue;
-exports.displayAlert = displayAlert;
-exports.displayAlerts = displayAlerts;
-exports.bootstrapAlerter = bootstrapAlerter;
+export { setImageValue, displayAlert, displayAlerts, bootstrapAlerter };
